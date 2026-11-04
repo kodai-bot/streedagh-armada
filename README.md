@@ -1,0 +1,38 @@
+# Streedagh, 1588: three Armada wrecks as a signal field
+
+Three ships of the Spanish Armada's Levant squadron, provisionally *La Juliana*, *La Lavia* and
+*Santa María de Visón*, were driven ashore at Streedagh Strand, Co. Sligo, on 21 September 1588
+(Gregorian). Over a thousand men drowned; the sites are war graves.
+
+This project tries out a way of handling evidence. It does not start from "three ships". It starts
+from what survives as signals: timbers, guns, ballast, sediment, documents, and one survivor's
+letter. Structure is then derived from those signals on its own terms, and only afterwards checked
+against what eyewitnesses said. Each claim carries a tag saying how it was reached (observed,
+derived, inferred or hypothesis), and observation is kept apart from interpretation.
+
+**Status: research in progress, local only, not published.**
+
+## Three strands
+
+| Folder | What it is |
+|---|---|
+| [1_signal_field/](1_signal_field/) | The method. The site assessment v2 recasts the whole site as a signal field (levels L0–L5) and treats it as an inverse problem. The v3 signal store holds signals with probabilistic attribution to the candidate ships. Also: the astro/tide module spec and the legacy pipeline's environment results for the wreck date. |
+| [2_reconstruction/](2_reconstruction/) | The working reconstruction (v0.7, docx and Markdown). From contemporary measurements alone (codo 0.57468 m, administrative tonnage ratings, personnel lists), it derives the deck area the soldiers needed, which requires two or three stepped castle decks fore and aft. That is then compared with iconography and testimony. |
+| [3_cuellar_worldline/](3_cuellar_worldline/) | Captain Francisco de Cuéllar's letter (Antwerp, 4 October 1589) read as a signal field: 125 coded signals of time, light, motion, distance and tide. They are built into a dated worldline from Calais to Antwerp, and every light signal is tested against the sun and moon. |
+| [superseded/](superseded/) | The v1 tonnage→displacement model and its headline figures (it used Visón 666 tons; v0.7 emends this to 566), plus early drafts. Kept as the record, not to be quoted. |
+
+## Running
+
+```bash
+python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
+make worldline      # step 1: dated chain (seconds)
+make sun_moon       # step 2: sun and moon against the light signals (about a minute)
+```
+
+## Sources
+
+Third-party PDFs (Cuéllar's narrative, Colin Martin's thesis, survey reports, comparative papers)
+live in `sources/` and `papers/`. They are kept local and never committed.
+
+Image provenance is noted in [images/README.md](images/README.md). Two schematics are
+AI-generated illustrations, not survey plans.

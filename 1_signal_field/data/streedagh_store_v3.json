@@ -1,0 +1,89 @@
+{
+  "store": "streedagh",
+  "schema": "SignalObjectV3 (subset; JSON projection for the estimator)",
+  "note": "acquisition_class is methodological only; typology/entity live in inference/attributions. Coordinates PLACEHOLDER.",
+  "signals": [
+    {
+      "uari": "streedagh:ENT-JUL", "level": "L3", "acquisition_class": "direct_observation",
+      "geometry": {"type": "Point", "coordinates": [-8.6270, 54.4032]},
+      "worldline": [
+        {"node": "loading", "place": "Lisbon", "t": "1588-05"},
+        {"node": "channel_action", "place": "English Channel", "t": "1588-08"},
+        {"node": "north_about", "place": "N Atlantic", "t": "1588-09"},
+        {"node": "embayment", "place": "Donegal Bay", "t": "1588-09-20"},
+        {"node": "grounding", "place": "Streedagh Strand", "t": "1588-09-21"},
+        {"node": "seabed_terminal", "place": "Site 1", "t": "present"}
+      ],
+      "inference": {"typological_label": "vessel (candidate: La Juliana)", "confidence": 0.80,
+                    "inference_basis": "Birch & McElvogue 1999 provisional site identification"}
+    },
+    {
+      "uari": "streedagh:ENT-VIS", "level": "L3", "acquisition_class": "direct_observation",
+      "geometry": {"type": "Point", "coordinates": [-8.6250, 54.4015]},
+      "inference": {"typological_label": "vessel (candidate: S.M. de Vison)", "confidence": 0.65,
+                    "inference_basis": "Birch & McElvogue 1999 (provisional)"}
+    },
+    {
+      "uari": "streedagh:ENT-LAV", "level": "L3", "acquisition_class": "direct_observation",
+      "geometry": {"type": "Point", "coordinates": [-8.6320, 54.4000]},
+      "inference": {"typological_label": "vessel (candidate: La Lavia)", "confidence": 0.72,
+                    "inference_basis": "Birch & McElvogue 1999 (provisional)"}
+    },
+
+    {
+      "uari": "streedagh:SIG-G-SEVERO", "level": "L0", "acquisition_class": "direct_observation",
+      "acquisition": {"method": "diver_recovery", "date": "1985"},
+      "provenance": ["McElvogue 2002", "Ridella et al. 2016 Tab.1"],
+      "geometry": {"type": "Point", "coordinates": [-8.6271, 54.4033]},
+      "phi": {"material": "bronze",
+        "phi_quantitative": {"quantity": "mass_t", "p05": 0.97, "median": 0.99, "p95": 1.01,
+          "distribution_basis": "measurement (20.82 cantara x 47.65)", "script_ref": "juliana_guns.py"}},
+      "components": [
+        {"type": "founder_mark", "value": "Dorino_II_Gioardi", "diagnostic_group": "casting_provenance"},
+        {"type": "casting_year", "value": 1570, "diagnostic_group": "casting_provenance"},
+        {"type": "saint_relief", "value": "St_Severo", "diagnostic_group": "ship_programme"},
+        {"type": "weight_mark", "value": 20.82, "matches_juliana_record": true, "diagnostic_group": "individual_id"}
+      ],
+      "entity_attributions": []
+    },
+    {
+      "uari": "streedagh:SIG-G-MATRONA", "level": "L0", "acquisition_class": "direct_observation",
+      "acquisition": {"method": "diver_recovery", "date": "2015"},
+      "provenance": ["Moore et al. 2015", "Ridella et al. 2016 Tab.1"],
+      "geometry": {"type": "Point", "coordinates": [-8.6269, 54.4031]},
+      "phi": {"material": "bronze",
+        "phi_quantitative": {"quantity": "mass_t", "p05": 0.51, "median": 0.53, "p95": 0.55,
+          "distribution_basis": "measurement (11.12 cantara x 47.65)", "script_ref": "juliana_guns.py"}},
+      "components": [
+        {"type": "founder_mark", "value": "Dorino_II_Gioardi", "diagnostic_group": "casting_provenance"},
+        {"type": "casting_year", "value": 1570, "diagnostic_group": "casting_provenance"},
+        {"type": "saint_relief", "value": "St_Matrona", "diagnostic_group": "ship_programme"},
+        {"type": "weight_mark", "value": 11.12, "matches_juliana_record": true, "diagnostic_group": "individual_id"}
+      ],
+      "entity_attributions": []
+    },
+    {
+      "uari": "streedagh:SIG-G-AMBIG", "level": "L0", "acquisition_class": "direct_observation",
+      "acquisition": {"method": "diver_survey"},
+      "provenance": ["hypothetical - demonstrates non-collapse"],
+      "geometry": {"type": "Point", "coordinates": [-8.6295, 54.4016]},
+      "phi": {"material": "bronze"},
+      "components": [
+        {"type": "founder_mark", "value": "Dorino_II_Gioardi", "diagnostic_group": "casting_provenance"},
+        {"type": "casting_year", "value": 1570, "diagnostic_group": "casting_provenance"}
+      ],
+      "entity_attributions": []
+    },
+
+    {
+      "uari": "streedagh:SIG-MAG-3", "level": "L0", "acquisition_class": "geophysical",
+      "acquisition": {"method": "marine_magnetometry"},
+      "provenance": ["Birch & McElvogue 1999"],
+      "geometry": {"type": "Point", "coordinates": [-8.6320, 54.4000]},
+      "phi": {"phi_quantitative": {"quantity": "length_m", "p05": 260, "median": 270, "p95": 280,
+              "distribution_basis": "measurement", "script_ref": null}},
+      "components": [],
+      "entity_attributions": []
+    }
+  ]
+}

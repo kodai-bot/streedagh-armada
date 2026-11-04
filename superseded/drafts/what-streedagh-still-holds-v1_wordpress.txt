@@ -1,0 +1,135 @@
+<!-- wp:paragraph -->
+<p><strong>The <em>Galeón Andalucía</em>  in Sligo</strong>, June 30th 2026 </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><br><em>Four hundred and thirty-eight years ago, three ships of the Levant squadron drove ashore at Streedagh — in the same autumn that opened what a contemporary would call the Fifteen Years' War— the most formidable Gaelic resistance to the English conquest. That conquest was administered from a single node: Dublin, the seat of the crown's government in Ireland, the centre from which armies were raised, supplied, and sent against the north and west..</em>.<br></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:separator -->
+<hr class="wp-block-separator has-alpha-channel-opacity"/>
+<!-- /wp:separator -->
+
+<!-- wp:paragraph -->
+<p>A replica galleon sails into Sligo this week. The real Armada ships lie a few miles up the coast — and we have barely begun to raise them.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>On the last day of June a Spanish galleon comes into the the bay. The <em>Galeón Andalucía</em> — the largest sailing replica of her kind afloat — will pause off Streedagh before she enters the harbour, and her crew will drop a wreath on the water for the roughly eleven hundred men who drowned there in September 1588. Then, for a fortnight, anyone can walk her decks.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>It is worth going. A reconstruction like this does something no document can: it lets you stand on a deck and feel a size that records only assert. But the most useful thing the <em>Andalucía</em> can do is send you a few miles up the coast in your mind, to the three ships lying in the sand off Streedagh Strand — because the replica is, in this story, the <em>small</em> ship.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">The yardstick and the giants</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>The <em>Andalucía</em> weighs a little under 600 tonnes. The three ships wrecked at Streedagh — <em>La Juliana</em>, <em>La Lavia</em> and the <em>Santa María de Visón</em> — were not galleons but large Mediterranean merchant <em>naos</em>, requisitioned for the Armada and pressed into one of the biggest seaborne invasions in European history. They were broader, deeper, fuller-bodied vessels, built to carry rather than to race.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>When you do the reconstruction properly — and that is part of what I have been working on, of which more below — the largest of them, <em>La Juliana</em>, comes out at something close to <strong>two and a half times the replica's mass</strong>. So the honest thing to say as you step off the gangway is: this is enormous, and the ships up the coast were larger still. The replica gives us  great idea of the scale of these ships.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">The guns we have raised — and what they are not</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Twelve bronze cannon have been brought up from <em>La Juliana</em>, three in 1985 and nine in the great storm-driven recovery of 2015. They are beautiful objects: cast in Genoa in 1570 — the very year the ship was built — each carrying a saint in relief, among them St. Matrona, patron of Barcelona, where <em>La Juliana</em> was launched. The National Museum is conserving them still.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Those twelve guns are <em>her own armament</em> — the sakers, falcons and stone-throwing <em>pedreros</em> that made up the thirty-two-gun complement a merchantman of this size carried to fight off corsairs. They are the deck guns and the swivel guns: the self-defence kit. The whole recovered battery weighs about six tonnes, and the heaviest single piece is around a tonne.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>For scale, compare to the famous siege gun raised from the <em>Trinidad Valencera</em>, the other big Levant <em>nao</em> wrecked off Donegal: a single bronze battering piece of <strong>two and a half tonnes</strong>, made in Brussels, firing a forty-one-pound ball. <em>That</em> is what an Armada siege train looks like — and nothing of that weight is among the twelve guns lifted at Streedagh.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Which tells you something simple and important. What we have raised is what the ship needed to defend <em>herself</em>. Her anti Corsair armament. It has almost nothing to do with what she was <em>carrying</em>. And what she was carrying is still down there.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:image {"id":3794,"sizeSlug":"full","linkDestination":"none","align":"center"} -->
+<figure class="wp-block-image aligncenter size-full"><img src="https://allismotion.org/wp-content/uploads/2026/06/AndalusiaStreedagh2.png" alt="" class="wp-image-3794"/></figure>
+<!-- /wp:image -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">A floating warehouse for an invasion</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>These ships were heavy-lift transports. The plan in 1588 was to land an army in England and march on London, and that required a siege train — heavy guns, gun carriages, entrenching tools, munitions, the engineering gear to batter and dig. We know <em>La Juliana</em> was carrying it, because the first thing found on her site was a spoked carriage wheel a metre and a half across, and four more like it: the dismantled remains of siege carriages, exactly as found on the <em>Valencera</em>. The guns those carriages were built for are heavier, and they were stowed deep as cargo, well below the defensive battery. They have not been raised.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>There is more than ordnance. The <em>Santa María de Visón</em> took on a share of the whole fleet's medical supplies after the dedicated hospital ship was condemned as unseaworthy on the way north. One of the three Streedagh wrecks is, in effect, carrying an Armada field hospital. And <em>La Juliana</em> herself was no stranger to this work: she had served in the amphibious conquest of Terceira in the Azores in 1583 — the same hull, the same kind of cargo, the same doctrine, rehearsed five years before the main event. One of her guns is even of Turkish manufacture, very likely captured at Lepanto in 1571: a barrel that travelled from the Ottoman fleet to a Catalan merchantman to an Irish beach.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Why Streedagh is different — and possibly world-class</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Also the <em>Valencera</em> comparison is instructive, because the two sites are nothing alike as <em>deposits</em>. The <em>Valencera</em> came to rest on a hard seabed. The lighter material washed away; what remained were the heaviest objects, left exposed on the bottom. Streedagh is the opposite. The hulls filled with sand, and the excavators who have worked there report something remarkable: articulated ship timbers — the structure of the ships themselves — surviving in place beneath the overburden.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>That changes everything. If the hulls are at least partly intact and sand-sealed, then the holds may be partly intact too, and the heavy gear — the siege guns, the bulk munitions, the stores, the medical assemblage — should still be there, where it was stowed, sealed in by the same sand that hid the sites for four centuries.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>And it was <em>only</em> sealed because nobody could rob it. Bronze guns are normally the first thing stripped from any wreck; gunmetal was worth more than the ship. They survived on the surface at Streedagh because the wrecking, in September 1588, opened what a contemporary historian called the Fifteen Years' War. The north-west of Ireland was a contested war zone from that autumn until 1603, with no settled authority and no secure access for the divers and time that organised salvage needs — and by the time the fighting ended, the sand had done its work. The archaeological survey found no evidence of any historic salvage at all. What lies at Streedagh is something genuinely rare in the world: an unsalvaged, sand-sealed invasion cargo.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Putting numbers on it</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>For the past while I have been trying to assemble the actual figures for this site — not impressions, but a reconstruction with stated assumptions and honest error bars. From the recorded tonnages and gun counts, the period naval architecture, the finds already recorded, and the calibrated weights of the guns themselves, you can begin to bound what is physically down there.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>The three ships together displaced something on the order of three and a half thousand tonnes. The durable material likely surviving on the seabed today — iron, bronze, lead, ceramic, and the stone ballast mounds — runs to several hundred tonnes, of which only a small fraction has been touched. Twelve of <em>La Juliana's</em> thirty-two guns are up; the rest, and the heavier siege train beneath them, are not. I will be setting out that reconstruction in full separately, because I think it amounts to something we are oddly missing: a proper assessment of what this site actually contains.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">The sea will not wait</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>There is one reason for a sense of some urgency. The sea at Streedagh is very active. The same dynamic sand that buried and preserved these ships also, periodically, <em>un</em>-buries them — and an exposed timber or gun in a high-energy surf zone is a timber or gun being destroyed. The 2015 recovery happened because storms tore the sand off the <em>Juliana</em> and left her material exposed and, in the divers' word, vulnerable.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>That is not a situation a reactive scramble can manage. Every storm that exposes the site starts a clock, and answering it from a standing start, with expertise and equipment brought in from elsewhere each time, is no way to look after a wreck complex of this importance. What a world-class site needs is a standing plan — and, just as much, the capacity to act on it: the physical infrastructure and the local expertise, based here in Sligo, to survey, recover, conserve and interpret what the sea keeps offering up and then threatening to take back. Building that capacity where the site is, rather than depending on it arriving from away, is the difference between stewarding this place and merely reacting to it.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">The wreath</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>When the <em>Galeón Andalucía</em> drops her wreath off Streedagh this week, it falls above a grave. More than a thousand men died there in the space of an hour, and the sand that may yet hold an intact field hospital and a buried siege train also holds them. The numbers and the reconstructions matter — they are how we understand the scale of what is there — but they sit on top of that.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>A replica is coming to the harbour. The real ships are in the sand a few miles up the coast, mostly unraised, in a place that both preserves them and, slowly, takes them apart. They are worth the plan, the infrastructure, and the people to do it properly. We have, lying off one Sligo beach, one of the most important Armada sites in the world. It is past time we treated it like one.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:separator -->
+<hr class="wp-block-separator has-alpha-channel-opacity"/>
+<!-- /wp:separator -->
+
+<!-- wp:paragraph {"fontSize":"small"} -->
+<p class="has-small-font-size">The reconstruction figures referred to above are part of ongoing work to assemble a full archaeological assessment of the Streedagh site. I will publish the technical detail — the hull reconstructions, the cargo mass-budget, and the calibrated ordnance — separately.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->

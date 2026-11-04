@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.stfolder/
+.kateproject
+.venv/
+/output/
+# Third-party PDFs: keep local, never commit
+sources/
+papers/
+*.pdf

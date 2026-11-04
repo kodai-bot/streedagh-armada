@@ -1,0 +1,32 @@
+node,episode,event,signals,gap_lo_d,gap_hi_d,literal_d,gap_basis,anchor,anchor_pm_d,anchor_source,light_test,note
+N01,calais,Engagement off Calais (morning to 19:00),S006,,,,,1588-08-08,,TEXT,,Gregorian date (Spain used the Gregorian calendar from 1582)
+N02,calais,Pursuit ends; Armada retires,S007,2,2,,TEXT,1588-08-10,,TEXT,,
+N03,anchor,Three ships anchor off Streedagh,S016,,,,,1588-09-17,,DERIVED,,Wreck day minus 4 days at anchor (S016/S017); the voyage round Scotland is not timed in the text
+N04,wreck,Ships driven ashore and broken within an hour,S017;S019;S024,4,4,,TEXT,1588-09-21,,EXTERNAL,DAYLIGHT,Anchor date 21 Sep 1588 Gregorian (11 Sep Julian in English records); 'plainly visible from the battered ships'
+N05,shore1,Calm by about 21:00,S038,0,0,,TEXT,,,,NIGHT@21:00,Same evening as the wreck
+N06,shore1,About 200 horsemen ride past at about 01:00 without seeing him,S040,1,1,,TEXT,,,,NIGHT@01:00,Next calendar day (after midnight)
+N07,mon,Walks inland at dawn to the burned monastery,S044;S045,0,0,,TEXT,,,,DAWN,'At the dawn of day'
+N08,burial,Back at the strand where the ships 'were wrecked three days before'; buries Don Diego,S050;S052,1,3,,TEXT,,,,DAYLIGHT,'Three days before' read as 2 to 4 days after the wreck (inclusive or exclusive counting); the text does not account for the days in between
+N09,wood,Stony road; leg wound; huts in the wood,S056;S061;S064,0,0,,TEXT,,,,DAYLIGHT,Continuous narrative from the burial
+N10,latin1,Night at the huts of the Latin-speaker,S068;S069,0,0,,TEXT,,,,NIGHT,'That night I reached some huts'
+N11,sassana,Horse and boy at morning; 150 horsemen; stripped naked,S070;S072;S075,1,1,,TEXT,,,,DAYLIGHT,'In the morning they gave me a horse'
+N12,oathut,Reaches the lake with about 30 empty huts; night in the oat hut,S078;S080,0,3,,UNSTATED,,,,NIGHT,'I continued travelling little by little' then 'there I wished to pass the night'; same day or a few days later
+N13,oathut,Daybreak; buried in straw all day while reapers work outside,S082,1,1,,TEXT,,,,DAWN,'When... day broke'; oats being reaped
+N14,oathut,Nightfall; 'awaited the rising of the moon'; leave before day,S083;S084;S085,0,0,,TEXT,,,,MOONRISE_AFTER_DARK,Low-trust signal: tested in step 2
+N15,orourke,Huts of 'better people'; kept until fit; then O'Rourke's village,S085;S087,1,10,,UNSTATED,,,,,'Did not permit me to depart till it appeared I should be well able'
+N16,ship,'Early next day' news of a Spanish ship; the twenty set out,S090;S091,1,1,,TEXT,,,,DAWN,
+N17,ship,Wandering; meets the clergyman; directed to a castle six leagues off,S093;S094,2,10,,UNSTATED,,,,,The ship sailed 'in two days'; Cuéllar arrived late and wandered
+N18,smith,Taken to a blacksmith's hut; bellows for more than eight days,S095,1,3,,UNSTATED,,,,,
+N19,castle,Clergyman returns; MacClancy sends for him 'the following day',S097,9,14,9,TEXT,,,,,'More than eight days' at the forge plus a day
+N20,depart,Leaves MacClancy's castle two hours before dawn,S098;S122,75,105,91,TEXT,1589-01-04,1,TEXT,PREDAWN,"'Ten days after the Nativity in the year 1588' (Spanish year began at Christmas); gap = 'three months' at the castle (S098), read as 75-105 days"
+N21,depart,After 20 days' journey reaches the Girona wreck site,S123,18,22,20,TEXT,,,,,
+N22,ocan,Hears of O'Cahan's vessels; reaches them two days late,S126;S127,1,14,,UNSTATED,,,,,'Until one day I heard'
+N23,ocan,Hidden in huts on the mountain more than six weeks,S130,40,56,45,TEXT,,,,,'More than a month and a half'
+N24,ocan,Flight from O'Cahan's village; night by a lake,S132;S134,1,14,,UNSTATED,,,,,English and O'Cahan march off; 'one afternoon'
+N25,bishop,Two days on the mountain with the cowherd boys; leaves very early,S136;S137,2,2,,TEXT,,,,DAWN,
+N26,bishop,Reaches the bishop seven leagues off; six days with him,S138;S140,1,2,,UNSTATED,,,,,Seven leagues (about 30-40 km) for an injured man
+N27,sea,Puts to sea at dawn; driven to Shetland; lands at daylight,S142;S143,6,6,,TEXT,,,,DAWN,
+N28,sea,Leaves Shetland after two days; arrives in Scotland after three,S145,6,8,,TEXT,,,,,Overnight run to Shetland (1-2 days) + 2 + 3
+N29,dunkirk,Leaves Scotland after more than six months,S146;S148,165,240,183,TEXT,,,,,'Left for more than six months as naked as when we arrived'
+N30,end,Shipped past English ports to Dunkirk; wrecked at the bar; ashore in Flanders,S001;S150;S151;S152,2,14,,UNSTATED,1589-09-22,1,TEXT,,Letter dated 4 Oct 1589 says 'arrived twelve days ago'
+N31,end,Letter written at Antwerp,S154,12,12,,TEXT,1589-10-04,,TEXT,,

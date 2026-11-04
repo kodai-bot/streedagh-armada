@@ -1,0 +1,32 @@
+node,episode,event,signals,light_test,lo_d,hi_d,lo_date,hi_date
+N01,calais,Engagement off Calais (morning to 19:00),S006,,-44,-44,1588-08-08,1588-08-08
+N02,calais,Pursuit ends; Armada retires,S007,,-42,-42,1588-08-10,1588-08-10
+N03,anchor,Three ships anchor off Streedagh,S016,,-4,-4,1588-09-17,1588-09-17
+N04,wreck,Ships driven ashore and broken within an hour,S017;S019;S024,DAYLIGHT,0,0,1588-09-21,1588-09-21
+N05,shore1,Calm by about 21:00,S038,NIGHT@21:00,0,0,1588-09-21,1588-09-21
+N06,shore1,About 200 horsemen ride past at about 01:00 without seeing him,S040,NIGHT@01:00,1,1,1588-09-22,1588-09-22
+N07,mon,Walks inland at dawn to the burned monastery,S044;S045,DAWN,1,1,1588-09-22,1588-09-22
+N08,burial,Back at the strand where the ships 'were wrecked three days before'; buries Don Diego,S050;S052,DAYLIGHT,2,4,1588-09-23,1588-09-25
+N09,wood,Stony road; leg wound; huts in the wood,S056;S061;S064,DAYLIGHT,2,4,1588-09-23,1588-09-25
+N10,latin1,Night at the huts of the Latin-speaker,S068;S069,NIGHT,2,4,1588-09-23,1588-09-25
+N11,sassana,Horse and boy at morning; 150 horsemen; stripped naked,S070;S072;S075,DAYLIGHT,3,5,1588-09-24,1588-09-26
+N12,oathut,Reaches the lake with about 30 empty huts; night in the oat hut,S078;S080,NIGHT,3,8,1588-09-24,1588-09-29
+N13,oathut,Daybreak; buried in straw all day while reapers work outside,S082,DAWN,4,9,1588-09-25,1588-09-30
+N14,oathut,Nightfall; 'awaited the rising of the moon'; leave before day,S083;S084;S085,MOONRISE_AFTER_DARK,4,9,1588-09-25,1588-09-30
+N15,orourke,Huts of 'better people'; kept until fit; then O'Rourke's village,S085;S087,,5,18,1588-09-26,1588-10-09
+N16,ship,'Early next day' news of a Spanish ship; the twenty set out,S090;S091,DAWN,6,19,1588-09-27,1588-10-10
+N17,ship,Wandering; meets the clergyman; directed to a castle six leagues off,S093;S094,,8,21,1588-09-29,1588-10-12
+N18,smith,Taken to a blacksmith's hut; bellows for more than eight days,S095,,9,22,1588-09-30,1588-10-13
+N19,castle,Clergyman returns; MacClancy sends for him 'the following day',S097,,18,31,1588-10-09,1588-10-22
+N20,depart,Leaves MacClancy's castle two hours before dawn,S098;S122,PREDAWN,104,106,1589-01-03,1589-01-05
+N21,depart,After 20 days' journey reaches the Girona wreck site,S123,,122,128,1589-01-21,1589-01-27
+N22,ocan,Hears of O'Cahan's vessels; reaches them two days late,S126;S127,,123,142,1589-01-22,1589-02-10
+N23,ocan,Hidden in huts on the mountain more than six weeks,S130,,163,183,1589-03-03,1589-03-23
+N24,ocan,Flight from O'Cahan's village; night by a lake,S132;S134,,164,184,1589-03-04,1589-03-24
+N25,bishop,Two days on the mountain with the cowherd boys; leaves very early,S136;S137,DAWN,166,186,1589-03-06,1589-03-26
+N26,bishop,Reaches the bishop seven leagues off; six days with him,S138;S140,,167,187,1589-03-07,1589-03-27
+N27,sea,Puts to sea at dawn; driven to Shetland; lands at daylight,S142;S143,DAWN,173,193,1589-03-13,1589-04-02
+N28,sea,Leaves Shetland after two days; arrives in Scotland after three,S145,,179,199,1589-03-19,1589-04-08
+N29,dunkirk,Leaves Scotland after more than six months,S146;S148,,352,364,1589-09-08,1589-09-20
+N30,end,Shipped past English ports to Dunkirk; wrecked at the bar; ashore in Flanders,S001;S150;S151;S152,,366,366,1589-09-22,1589-09-22
+N31,end,Letter written at Antwerp,S154,,378,378,1589-10-04,1589-10-04

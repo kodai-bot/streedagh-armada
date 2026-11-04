@@ -1,0 +1,126 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.627,
+          54.4032
+        ]
+      },
+      "properties": {
+        "uari": "streedagh:ENT-JUL",
+        "level": "L3",
+        "acquisition_class": "direct_observation",
+        "top_attribution": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.625,
+          54.4015
+        ]
+      },
+      "properties": {
+        "uari": "streedagh:ENT-VIS",
+        "level": "L3",
+        "acquisition_class": "direct_observation",
+        "top_attribution": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.632,
+          54.4
+        ]
+      },
+      "properties": {
+        "uari": "streedagh:ENT-LAV",
+        "level": "L3",
+        "acquisition_class": "direct_observation",
+        "top_attribution": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.6271,
+          54.4033
+        ]
+      },
+      "properties": {
+        "uari": "streedagh:SIG-G-SEVERO",
+        "level": "L0",
+        "acquisition_class": "direct_observation",
+        "top_attribution": {
+          "entity": "Juliana",
+          "confidence": 0.9999
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.6269,
+          54.4031
+        ]
+      },
+      "properties": {
+        "uari": "streedagh:SIG-G-MATRONA",
+        "level": "L0",
+        "acquisition_class": "direct_observation",
+        "top_attribution": {
+          "entity": "Juliana",
+          "confidence": 0.9999
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.6295,
+          54.4016
+        ]
+      },
+      "properties": {
+        "uari": "streedagh:SIG-G-AMBIG",
+        "level": "L0",
+        "acquisition_class": "direct_observation",
+        "top_attribution": {
+          "entity": "Juliana",
+          "confidence": 0.7425
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.632,
+          54.4
+        ]
+      },
+      "properties": {
+        "uari": "streedagh:SIG-MAG-3",
+        "level": "L0",
+        "acquisition_class": "geophysical",
+        "top_attribution": null
+      }
+    }
+  ]
+}

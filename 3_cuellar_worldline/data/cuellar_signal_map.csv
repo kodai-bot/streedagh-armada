@@ -1,0 +1,126 @@
+signal_id,episode,page,signal_class,anchor,motion_vector,magnitude,inference,trust
+S001,framing,10,TIME,arrived twelve days ago (Flanders),-,~12 d,Letter written ~12 d after reaching Flanders; back-anchors 4 Oct 1589,high
+S002,framing,10,CNT,>twenty of the largest lost Ireland/Scotland/Shetland,-,>20 ships,Scale of fleet loss on N/NW arc,mid
+S003,framing,10,CNT,more than two hundred... not five survived,-,200->~5,Near-total loss of embarked officers/nobility,mid
+S004,framing,10,CNT,three hundred and odd soldiers... swim to shore,-,~300,Initial survivor cohort he associates with,mid
+S005,framing,10,DUR,more than seven months among mountains and woods,-,~7 mo,Total Irish/Scots ordeal Sep->~Apr; bounds whole timeline,high
+S006,calais,10,TIME,"engagement off Calais 8 Aug, morning till seven in the evening",-,dawn-19:00,Gravelines; GREGORIAN date; ~13 h action,high
+S007,calais,11,TIME,retiring... on the 10th,-,10 Aug,Armada retreat begins 10 Aug,high
+S008,calais,11,MOT-H,pilot passed out in advance... about two miles,fwd of flagship,~2 mi,His ship strayed ahead before his arrest,mid
+S009,calais,11,MOT-H,summoned... go on board the admiral's ship; I proceeded thither,ship->flagship,-,Inter-ship transfer,high
+S010,calais,11,MOT-H,taken to the ship of the Judge Advocate,own ship->JA ship,-,"Wrecks on JA ship, not San Pedro (Crawford flags)",high
+S011,scatter,12,MOT-H,"scattered... Germany, Holland/Zealand, Shetland, Scotland",fleet dispersal,-,Dispersal vectors of the broken fleet,mid
+S013,anchor,12,CNT,"three ships, his + two very large",-,3 ships,The Streedagh trio (broad naos),high
+S014,anchor,12,NAV,not being able to weather Cape Clear (?)... make for the land,seaward->shoreward,-,Forced shoreward; storm on bow; placename disputed by translator,low
+S015,anchor,12,DIST,anchor more than half a league from the shore,offshore,~2 km,Anchorage depth vs bathymetry,mid
+S016,anchor,12,DUR,remained for four days without provision,held offshore,4 d,4 days at anchor before wreck,high
+S017,wreck,12,TIME,On the fifth [day]... great storm on our beam,-,day 5,Wreck = day 5; wind broadside,high
+S018,wreck,12,MOT-H,driven ashore... fine sand... shut in by great rocks,offshore->beach,-,Sand beach flanked by rock = Streedagh morphology,high
+S019,wreck,12,DUR,within the space of an hour all three ships broken,-,<1 h,Catastrophic surf breakup,high
+S020,wreck,12,CNT,did not escape three hundred... more than one thousand drowned,-,~1000 dead,Casualties across 3 ships,mid
+S021,wreck,12,MOT-H,"decked boat, >70 men jump in, wave swamps it, grounds upside down",ship->shore (fails),-,Near-shore surf swamps overloaded boat,mid
+S022,wreck,13,DUR,"day and a half after grounding, savages turned her up",-,+1.5 d,Locals salvage iron from wreck,mid
+S023,wreck,13,MOT-V,placed myself on the top of the poop,up (poop),-,Climbs UP for vantage to survey wreck,high
+S024,wreck,13,ILLUM,plainly visible... enemies jumping and dancing on the beach,-,-,DAYLIGHT during the wreck,high
+S025,wreck,13,CNT,two hundred savages fell upon each man reaching the beach,-,~200,Crowd stripping survivors on strand,mid
+S026,wreck,13,STATE,I did not know how to swim,-,-,"Survival depends on flotation, not swimming",high
+S028,wreck,13,MOT-V,hatchway cover sank with me six times my height below the surface,down,~10-11 m?,Deep water at breakup point OR fear-inflated (low tier),low
+S029,wreck,13,MOT-V,When I came up again,up (resurface),-,Resurfaces,high
+S030,wreck,13,ENV,a huge wave bore him away and drowned him (Judge Advocate),-,-,Wave carries off companion on the cover,high
+S031,wreck,13,ACT,a piece of timber crushed my legs,-,-,LEG INJURY #1 - governs reduced mobility for months,high
+S032,wreck,13,ENV,"four waves, one after the other, cast me upon the shore",->shore,4 waves,Wave-set structure at shore (low tier),low
+S033,wreck,13,STATE,"emerged unable to stand, all covered with blood",-,-,Arrives ashore incapacitated + bloodied,high
+S034,shore1,14,ACT,did not touch me... seeing me covered with blood,-,-,Blood acts as camouflage; not stripped,mid
+S035,shore1,14,MOT-H,proceeded little by little... many Spaniards stripped to the skin,along shore,-,Slow wounded movement along strand,high
+S038,shore1,14,TIME,"about nine o'clock at night, wind calm and sea subsiding",-,21:00,Storm decayed to calm by ~3 h after sunset,high
+S039,shore1,14,ACT,two men cut rushes... then plunder; >2000 savages+English,-,>2000,Locals shelter then loot; scale of plunder crowd,mid
+S040,shore1,14,TIME,"about one o'clock in the night, more than two hundred horsemen",->wrecks,01:00 / ~200,Night raiders ride to the wrecks,high
+S041,shore1,14,ACT,found he was dead (companion),-,-,Second companion dies beside him,high
+S042,shore1,14,CNT,more than six hundred other dead bodies the sea cast up,-,~600,Strandline body count (Crawford: 600 not 800),mid
+S043,shore1,14,ENV,crows and wolves devoured them,-,-,Wolves present (extinct in Ireland ~1710),mid
+S044,mon,14,MOT-H,At the dawn of day I began to walk... searching for a monastery,shore->inland,-,"Departs at dawn, inland toward refuge",high
+S045,mon,14,GEO,"monastery deserted, burned, twelve Spaniards hanging within",-,12 hanged,Destroyed monastery + 12 executed Spaniards,high
+S047,mon,14,MOT-H,a road through a great wood... gone by it a mile,inland,~1 mi,~1 mile along wooded road,mid
+S048,mon,14,ACT,woman driving five or six cows to hide them in the wood,->wood,-,Cattle hidden from English (raid economy),mid
+S050,burial,15,MOT-H,decided to go to the shore... wrecked three days before,inland->shore,+3 d,Returns to wreck strand; +3 d marker,mid
+S052,burial,15,CNT,more than four hundred bodies; buried Don Diego at the water's edge,-,~400,Body count; burial in intertidal sand,mid
+S055,burial,15,MOT-H,a chief-like savage led him to a road from the coast to a village,coast->inland,-,Inland guidance begins,mid
+S056,wood,15,STATE,road very stony... shoeless... dying with pain in one leg,slow inland,-,Painful barefoot travel; pace heavily reduced,high
+S058,wood,15,MOT-V,reached a height... discovered huts... going towards them by a valley,up then down,-,"UP for vantage, DOWN into valley to huts",high
+S059,wood,15,DIST,gone two shots of an arquebus into a wood,into wood,~0.6-0.9 km?,Depth into wood (low tier),low
+S060,wood,15,SOC,"old savage, English + French youths, girl of twenty, going to shore to plunder",->shore,-,Mixed looting party heading coastward,mid
+S061,wood,16,ACT,cut the sinew of my right leg (Englishman's knife),-,-,LEG INJURY #2 (compounds S031) - key mobility constraint,high
+S062,wood,16,SOC,stripped; gold chain ~1000 dollars + 45 crown-pieces (Corunna 2 mo pay),-,-,Valuables taken; pay/economic detail,mid
+S064,wood,16,ACT,"herb poultice, butter, milk, oaten bread",-,-,Wound dressed + fed,mid
+S065,wood,16,SOC,helper a Frenchman who had been a soldier at Terceira,-,-,Terceira (1583) veteran among locals,mid
+S066,wood,16,DIST,directed straight towards mountains about six leagues off; chief with >80 Spaniards,bearing set,~6 leagues / ~25-33 km,BEARING + distance to refuge; 80 Spaniards there,mid
+S067,latin1,16,MOT-H,began to walk making for the direction of the mountains,->mountains,-,Sets off on mountain bearing (Crawford disputed phrase),mid
+S068,latin1,16,TIME,That night I reached some huts... one knew Latin,->huts,night,Night halt; educated Latin-speaker present,mid
+S069,latin1,17,SOC,father and brothers arrived loaded with plunder,->huts,night,Household are wreck-looters,mid
+S070,sassana,16,MOT-H,"horse and boy over a mile of bad road, mud up to the girths","mounted, inland",~1 mi,Mounted ~1 mile through deep bog,mid
+S072,sassana,17,CNT,about one hundred and fifty horsemen going back to the coast,->coast,~150,English horse riding coastward to plunder,mid
+S073,sassana,17,MOT-V,hide in rugged places among the rocks,up/into rocks,-,Takes cover in rocks (danger->up),mid
+S074,sassana,17,CNT,more than forty savages on foot,-,~40,Hostile foot party (Lutheran),mid
+S075,sassana,17,ACT,six blows of a stick; stripped naked as when I was born,-,-,STRIPPING #3 - now fully naked,high
+S077,sassana,17,ACT,bracken leaves and old matting wrapped around my body,-,-,Improvised covering vs severe cold,high
+S078,oathut,17,GEO,"reaching the mountain range... a lake, about thirty huts, all forsaken",->lake,~30 huts,Lake ringed by abandoned village (fled from English),high
+S080,oathut,18,CNT,Eleven of us stripped... killed eight... three escaped,-,11->3,Attrition of a separate survivor group,mid
+S081,oathut,18,DIST,O'Rourke's village three or four leagues distant,bearing,~3-4 leagues,Distance to O'Rourke's,mid
+S082,oathut,18,TIME,daybreak: savage inspects oats; hid buried in straw all day,immobile,full day,Forced daylight immobility,high
+S083,oathut,18,ILLUM,awaited the rising of the moon,-,-,MOONRISE used for night travel - lunar-phase cross-check (tension with near-new-moon wreck),low
+S084,oathut,18,MOT-H,sallied forth... without waiting for the day,night departure,-,Travels by moonlight,mid
+S085,oathut,18,ENV,stumbling in the mud... to huts of better people,"night, bog",-,Night bog travel to friendlier settlement,mid
+S087,orourke,19,CNT,"more than seventy Spaniards, all naked and maltreated",-,~70,Survivors concentrated at O'Rourke's,mid
+S088,orourke,19,MOT-H,chief gone to defend a territory the English were coming to take,O'Rourke absent,-,O'Rourke at war elsewhere,mid
+S090,ship,19,NAV,news: a Spanish ship at the coast came for the Spaniards,draws coastward,-,Rescue-ship rumour reverses direction to coast,mid
+S091,ship,19,MOT-H,the whole twenty of us left for the direction where the ship was,inland->coast,20 men,20 set off toward the coast,mid
+S092,ship,19,NAV,"ship sailed in 2 days, ran aground on the same coast; >200 drowned",wreck,~200 dead,Rescue ship wrecks; the coast is a death-trap,mid
+S093,ship,19,CNT,I alone remained of the twenty,-,1 of 20,Survival singularity (his slowness saved him),high
+S094,smith,19,DIST,clergyman directed him to a castle six leagues from there,bearing,~6 leagues,Distance to the strong castle,mid
+S095,smith,19,MOT-V,savage took him to a hut in a deserted valley... work bellows >8 days,down into valley,8 d,DOWN into valley = captivity; 8 days forced smithing,mid
+S097,smith,20,CNT,chief had already ten Spaniards with him,-,10,Spaniards already at the castle,mid
+S098,castle,20,DUR,"remained there three months, acting as a real savage",static,3 mo,3 months at MacClancy's (~mid-Oct to early-Jan),high
+S101,ethno,20,GEO,live among the mountains... huts made of straw,-,-,Upland straw-hut settlement pattern,mid
+S104,ethno,21,GEO,territory subject to inundation and marshy... extends forty leagues,-,~40 leagues,Marshy defended territory extent,mid
+S105,ethno,21,MOT-V,"raid at night, then withdraw to mountains with women and cattle",up (retreat),-,Raid-and-retreat-upland pattern,mid
+S106,gov,21,GEO,the great Governor... in the city of Duplin [Dublin],-,-,Fitzwilliam based in Dublin (admin pole),high
+S107,gov,21,MOT-H,went with seventeen hundred soldiers to search the coast,Dublin->NW coast,1700,Punitive force radiates NW from Dublin,high
+S108,gov,21,CNT,not much fewer than one thousand survivors wandering,-,~1000,Survivors at large across the NW,mid
+S109,gov,21,MOT-H,"marched along the coasts to where I was wrecked, then to MacClancy's",sweep,-,Sweep reaches Streedagh then Lough Melvin,high
+S110,siege,22,MOT-V,the savage decided to fly to the mountains,up,-,MacClancy retreats upland before the force,high
+S111,siege,22,CNT,"we, the nine Spaniards... would defend it to the death",-,9,Garrison of 9 holds the castle,high
+S112,siege,22,GEO,founded in a lake... more than a league wide... three or four leagues long... outlet to the sea,-,lake dims,Lake with sea outlet -> Lough Melvin (Drowes),mid
+S113,siege,22,ENV,with the rise of spring tides it is not possible to enter it,-,spring tide,TIDAL signal in the text - approach blocked at springs,mid
+S114,siege,22,DIST,"a league round the town... marshy, breast-deep",-,~1 league,Breast-deep marsh apron as defence,mid
+S116,siege,22,DIST,eighteen hundred men... a mile and a half from it,besiegers held off,1800 / 1.5 mi,Water holds 1800 besiegers at 1.5 mi,high
+S117,siege,22,ACT,hanged two Spaniards; demanded surrender by a trumpeter,-,-,Psychological siege pressure (Crawford: trumpeter),mid
+S118,siege,22,DUR,besieged for seventeen days... relieved by storms and great falls of snow,-,17 d + snow,17-day siege ended by snow (early winter),high
+S119,siege,22,MOT-H,Governor compelled to march back to Duplin,->Dublin,-,English withdraw to Dublin,high
+S120,depart,23,NAV,contented myself with a guide... embarkation for Scotland,goal set,-,Objective fixed: reach Scotland by sea,high
+S122,depart,23,TIME,"departed two hours before dawn, ten days after the Nativity, 1588; four soldiers",secret exit,~4 Jan 1589 / 5 men,Pre-dawn secret departure; party of five,high
+S123,depart,23,DUR,travelled by the mountains... at the end of twenty days' journey,NE traverse,20 d,20-day upland traverse across Ulster,high
+S124,depart,23,GEO,reached where Alonzo de Leyva... were lost,arrival,-,"La Girona site: Lacada Point / Giant's Causeway, Antrim",high
+S126,ocan,23,NAV,territory of Prince Ocan... vessels going to Scotland,->N coast,-,O'Cahan's country (Roe valley); Scotland ferry point,mid
+S127,ocan,23,TIME,the vessels had left two days before,-,-2 d,Misses the Scotland boats by 2 days,mid
+S129,ocan,23,STATE,in no manner could I stand upon it (leg),immobile,-,Mobility collapse from the leg wounds,high
+S130,ocan,23,MOT-V,women took me to little huts on the mountain... month and a half... cured me,up,~6 wk,Upland recovery ~6 weeks; leg heals,high
+S131,ocan,23,SOC,Ocan given his word to the Governor not to keep any Spaniard,-,-,Political constraint on refuge,mid
+S132,ocan,24,MOT-H,English marched off to invade a territory; Ocan went with them,English leave,-,Window opens when garrison + Ocan depart,mid
+S133,ocan,24,NAV,must go with them to the city of Dublin (prisoner),->Dublin,-,Dublin again = the prison destination,mid
+S134,ocan,24,MOT-H,"left in great haste, leaping banks... among thick brambles",flight,-,Flight through hedged/broken ground,high
+S135,bishop,24,GEO,a very large laguna... a herd of cows,->water,-,Large lake/marsh with cattle,mid
+S136,bishop,24,MOT-V,boys took cows up the mountain where fathers hid; two days,up,2 d,Upland refuge 2 days (danger->up again),mid
+S137,bishop,24,TIME,had to leave very early in the morning,dawn exit,-,Dawn departure under pursuit,mid
+S138,bishop,24,DIST,a bishop seven leagues off in a castle,bearing,~7 leagues,Distance to bishop's castle,mid
+S139,bishop,24,CNT,bishop had twelve Spaniards for passing to Scotland,-,12,12 Spaniards staged for the crossing,mid
+S140,bishop,24,DUR,six days I was with him... boat ordered,static,6 d,6-day halt; embarkation organised,mid
+S142,sea,25,MOT-H,"at dawn I went to sea in a wretched boat, 18 persons",->Scotland,18,Dawn embarkation; 18 aboard,high
+S143,sea,25,NAV,"wind contrary... run before it for Shetland, reached land at daylight",blown NE,-,Blown off course NE to Shetland overnight,mid
+S145,sea,25,DUR,in two days... left for Scotland... arrived in three days,->Scotland,2+3 d,Shetland wait then 3-day sail to Scotland,mid
+S146,scot,25,DUR,left more than six months as naked as when we arrived,static,~6 mo,~6 months stranded in Scotland; James VI unhelpful,high
+S148,scot,25,NAV,"Scotch merchant to ship them, five ducats each, to Flanders",deal,-,Evacuation arranged to Flanders,mid
+S150,dunkirk,26,TIME,Dutch waited at the bar of Dunkirk a month and a half,ambush,~6 wk,Ambush staged at Dunkirk bar,mid
+S151,dunkirk,26,NAV,"of four vessels, two escaped and grounded, went to pieces",wreck,2 of 4,2 of 4 ships wrecked at Dunkirk,mid
+S152,dunkirk,26,MOT-H,cast afloat on timbers... reached the shore in my shirt,->shore,-,Fourth near-drowning; floats ashore again,high
+S153,dunkirk,26,CNT,Dutch made pieces of two hundred and seventy Spaniards,-,270 dead,Massacre of a companion ship's survivors,mid
+S154,end,26,TIME,"From the City of Antwerp, 4th October, 1589",terminus,-,Terminal timestamp + place,high

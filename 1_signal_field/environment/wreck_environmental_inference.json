@@ -1,0 +1,179 @@
+[
+  {
+    "signal_id": "wr_w07023",
+    "historical_date_gregorian": "1588-09-21",
+    "location": {
+      "lat": 54.40964,
+      "lon": -8.54678
+    },
+    "day_night": {
+      "sunrise_utc": "1588-09-21T06:25:00.000",
+      "sunset_utc": "1588-09-21T18:30:00.000",
+      "daylight_hours": 12.08,
+      "method": "astropy_builtin_ephemeris_flat_horizon",
+      "confidence": 0.85,
+      "notes": "Flat sea-horizon sunrise/sunset, ~5 minute resolution; does not correct for atmospheric refraction or local terrain."
+    },
+    "moon_phase": {
+      "illumination_fraction": 0.0079,
+      "phase_name": "new_moon",
+      "moon_age_days": 0.84,
+      "waxing": true,
+      "method": "astropy_builtin_ephemeris",
+      "confidence": 0.95
+    },
+    "tidal_character": {
+      "tidal_type": "spring",
+      "spring_neap_index": 0.886,
+      "days_from_syzygy": 0.84,
+      "confidence": 0.75,
+      "notes": "Astronomical spring/neap character derived from Sun-Moon elongation. Does not model meteorological storm surge or absolute water height.",
+      "high_water_utc": [
+        "1588-09-21T05:42:30.000",
+        "1588-09-21T17:57:30.000"
+      ],
+      "low_water_utc": [
+        "1588-09-21T11:50:00.000"
+      ],
+      "lunitidal_interval_hours_assumed": 4.875,
+      "lunitidal_interval_range_hours": [
+        4.75,
+        5.0
+      ],
+      "lunitidal_interval_source": "User-provided reference: Sligo Port high-water lag ~4h45m-5h00m behind lunar transit.",
+      "timing_confidence": 0.6,
+      "timing_notes": "HW/LW times follow the Moon's local transits offset by a constant assumed port lag; see lunitidal_interval_source for where that lag came from. No harmonic constituents or absolute water height are modelled, and the lag is treated as constant rather than varying with spring/neap state."
+    },
+    "evidence_refs": [
+      {
+        "ref_type": "tau_version",
+        "ref_id": "wr_w07023",
+        "field_path": "provenance.source_properties.historical_date_gregorian",
+        "quoted_value": "1588-09-21"
+      }
+    ],
+    "calendar_note": "Date is treated as proleptic Gregorian. Spain had adopted the Gregorian calendar by 1588 and Armada-side accounts (e.g. Cuellar) use it; contemporary English/Irish records of the same era may use the Julian ('Old Style') calendar, roughly 10 days earlier -- if a source is explicitly Old Style, convert before using this module, since it shifts the moon phase by ~10 days and can flip the spring/neap classification.",
+    "confidence": 0.85,
+    "committed_by": "tidal_moon_inference_v1",
+    "committed_at": "2026-07-09T01:36:44.442965+00:00",
+    "supersedes": null
+  },
+  {
+    "signal_id": "wr_w07024",
+    "historical_date_gregorian": "1588-09-21",
+    "location": {
+      "lat": 54.4095,
+      "lon": -8.55417
+    },
+    "day_night": {
+      "sunrise_utc": "1588-09-21T06:25:00.000",
+      "sunset_utc": "1588-09-21T18:30:00.000",
+      "daylight_hours": 12.08,
+      "method": "astropy_builtin_ephemeris_flat_horizon",
+      "confidence": 0.85,
+      "notes": "Flat sea-horizon sunrise/sunset, ~5 minute resolution; does not correct for atmospheric refraction or local terrain."
+    },
+    "moon_phase": {
+      "illumination_fraction": 0.0079,
+      "phase_name": "new_moon",
+      "moon_age_days": 0.84,
+      "waxing": true,
+      "method": "astropy_builtin_ephemeris",
+      "confidence": 0.95
+    },
+    "tidal_character": {
+      "tidal_type": "spring",
+      "spring_neap_index": 0.886,
+      "days_from_syzygy": 0.84,
+      "confidence": 0.75,
+      "notes": "Astronomical spring/neap character derived from Sun-Moon elongation. Does not model meteorological storm surge or absolute water height.",
+      "high_water_utc": [
+        "1588-09-21T05:42:30.000",
+        "1588-09-21T17:57:30.000"
+      ],
+      "low_water_utc": [
+        "1588-09-21T11:50:00.000"
+      ],
+      "lunitidal_interval_hours_assumed": 4.875,
+      "lunitidal_interval_range_hours": [
+        4.75,
+        5.0
+      ],
+      "lunitidal_interval_source": "User-provided reference: Sligo Port high-water lag ~4h45m-5h00m behind lunar transit.",
+      "timing_confidence": 0.6,
+      "timing_notes": "HW/LW times follow the Moon's local transits offset by a constant assumed port lag; see lunitidal_interval_source for where that lag came from. No harmonic constituents or absolute water height are modelled, and the lag is treated as constant rather than varying with spring/neap state."
+    },
+    "evidence_refs": [
+      {
+        "ref_type": "tau_version",
+        "ref_id": "wr_w07024",
+        "field_path": "provenance.source_properties.historical_date_gregorian",
+        "quoted_value": "1588-09-21"
+      }
+    ],
+    "calendar_note": "Date is treated as proleptic Gregorian. Spain had adopted the Gregorian calendar by 1588 and Armada-side accounts (e.g. Cuellar) use it; contemporary English/Irish records of the same era may use the Julian ('Old Style') calendar, roughly 10 days earlier -- if a source is explicitly Old Style, convert before using this module, since it shifts the moon phase by ~10 days and can flip the spring/neap classification.",
+    "confidence": 0.85,
+    "committed_by": "tidal_moon_inference_v1",
+    "committed_at": "2026-07-09T01:36:45.039954+00:00",
+    "supersedes": null
+  },
+  {
+    "signal_id": "wr_w07052",
+    "historical_date_gregorian": "1588-09-21",
+    "location": {
+      "lat": 54.4085,
+      "lon": -8.55
+    },
+    "day_night": {
+      "sunrise_utc": "1588-09-21T06:25:00.000",
+      "sunset_utc": "1588-09-21T18:30:00.000",
+      "daylight_hours": 12.08,
+      "method": "astropy_builtin_ephemeris_flat_horizon",
+      "confidence": 0.85,
+      "notes": "Flat sea-horizon sunrise/sunset, ~5 minute resolution; does not correct for atmospheric refraction or local terrain."
+    },
+    "moon_phase": {
+      "illumination_fraction": 0.0079,
+      "phase_name": "new_moon",
+      "moon_age_days": 0.84,
+      "waxing": true,
+      "method": "astropy_builtin_ephemeris",
+      "confidence": 0.95
+    },
+    "tidal_character": {
+      "tidal_type": "spring",
+      "spring_neap_index": 0.886,
+      "days_from_syzygy": 0.84,
+      "confidence": 0.75,
+      "notes": "Astronomical spring/neap character derived from Sun-Moon elongation. Does not model meteorological storm surge or absolute water height.",
+      "high_water_utc": [
+        "1588-09-21T05:42:30.000",
+        "1588-09-21T17:57:30.000"
+      ],
+      "low_water_utc": [
+        "1588-09-21T11:50:00.000"
+      ],
+      "lunitidal_interval_hours_assumed": 4.875,
+      "lunitidal_interval_range_hours": [
+        4.75,
+        5.0
+      ],
+      "lunitidal_interval_source": "User-provided reference: Sligo Port high-water lag ~4h45m-5h00m behind lunar transit.",
+      "timing_confidence": 0.6,
+      "timing_notes": "HW/LW times follow the Moon's local transits offset by a constant assumed port lag; see lunitidal_interval_source for where that lag came from. No harmonic constituents or absolute water height are modelled, and the lag is treated as constant rather than varying with spring/neap state."
+    },
+    "evidence_refs": [
+      {
+        "ref_type": "tau_version",
+        "ref_id": "wr_w07052",
+        "field_path": "provenance.source_properties.historical_date_gregorian",
+        "quoted_value": "1588-09-21"
+      }
+    ],
+    "calendar_note": "Date is treated as proleptic Gregorian. Spain had adopted the Gregorian calendar by 1588 and Armada-side accounts (e.g. Cuellar) use it; contemporary English/Irish records of the same era may use the Julian ('Old Style') calendar, roughly 10 days earlier -- if a source is explicitly Old Style, convert before using this module, since it shifts the moon phase by ~10 days and can flip the spring/neap classification.",
+    "confidence": 0.85,
+    "committed_by": "tidal_moon_inference_v1",
+    "committed_at": "2026-07-09T01:36:45.638546+00:00",
+    "supersedes": null
+  }
+]
