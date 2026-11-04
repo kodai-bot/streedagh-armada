@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below."
+title: "Streedagh 1588: three Armada wrecks and a survivor's account as signal fields"
+authors:
+  - family-names: Foley
+    given-names: Dylan
+repository-code: "https://github.com/kodai-bot/streedagh-armada"
+license: MIT
+date-released: 2026-11-04
+keywords: [Spanish Armada, Streedagh, shipwreck archaeology, Cuéllar, archaeoastronomy, signal field, Ireland]
