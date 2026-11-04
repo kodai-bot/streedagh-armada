@@ -9,3 +9,5 @@ __pycache__/
 sources/
 papers/
 *.pdf
+# Blog and reference images: kept local; figures for this project are generated from the data into figures/
+images/
