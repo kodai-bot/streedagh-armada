@@ -10,6 +10,8 @@ letter. Structure is then derived from those signals on its own terms, and only 
 against what eyewitnesses said. Each claim carries a tag saying how it was reached (observed,
 derived, inferred or hypothesis), and observation is kept apart from interpretation.
 
+**Interactive:** [Cuéllar's nights](https://kodai-bot.github.io/streedagh/), the survivor's letter as a dated worldline, with every light he mentions tested against the moon.
+
 **Status: research in progress.** Numbers are working estimates with their basis stated; the superseded model is kept separately and should not be quoted.
 
 ## Three strands

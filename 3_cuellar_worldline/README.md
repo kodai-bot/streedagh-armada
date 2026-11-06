@@ -22,6 +22,8 @@ vector, magnitude and trust. The worldline is built from them in steps:
 
 Run: `make worldline sun_moon` from the project root. Results go to `output/`.
 
+See the results drawn out at [kodai-bot.github.io/streedagh](https://kodai-bot.github.io/streedagh/) (data bundled by `web_data.py`).
+
 ## Results so far
 
 **The night of the wreck was dark.** The ships broke up in daylight (sunrise 05:43, sunset 18:01
