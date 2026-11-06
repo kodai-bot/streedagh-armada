@@ -21,4 +21,4 @@ data for the web page). It also varies the number of castle levels to find the f
 1.5 m² per soldier, which the document does not tabulate. In the central case the document's
 floor rule (fore 2, aft 2 + a shortened third) reaches it once about 40% of a lower principal deck
 is added for 290 soldiers; single-level castles give 0.75 m². In the low case no configuration up to
-three levels fore and aft reaches it.
+three levels fore and aft reaches it. Explore it interactively at [Standing room](https://kodai-bot.github.io/streedagh/ships/).
