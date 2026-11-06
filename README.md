@@ -29,6 +29,7 @@ derived, inferred or hypothesis), and observation is kept apart from interpretat
 python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
 make worldline      # step 1: dated chain (seconds)
 make sun_moon       # step 2: sun and moon against the light signals (about a minute)
+make capacity       # stepped-castle capacity: recompute and check §26/§28
 ```
 
 ## Sources
