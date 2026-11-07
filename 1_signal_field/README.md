@@ -15,6 +15,13 @@
   unknown, so their geometry is null and the estimator skips the spatial term for them. Candidate
   mounting stations are kept as tagged hypotheses, never as evidence. Report:
   `output/juliana_guns_report.md`.
+- `site_record/` (`make site`): **the site record**, one bundle in the new signal schema
+  (`Signal_Pipeline/signal_schema`, v0.4), built by `build_site_record.py` from the CSVs in `data/` and
+  validated by the schema's own CLI. Design: `SITE_SIGNAL_DESIGN.md`. So far: the recovered guns, the
+  Lisbon muster, what the divers reported at Site 1 and how it lay, path events (cast in Genoa 1570;
+  to the seabed 21-26 Sep 1588), attributions, mounting-station hypotheses and the break-up prediction.
+  Positions are absent until recovery coordinates are found. The v3 store above stays as the
+  estimator's input until the site record replaces it.
 - `finds_study_plan.md`: the plan for the guns, rudder and anchor.
 - `SPEC_astro_tide_module.md`: spec for the astronomical and tidal module. The sun/moon half is now
   implemented in `../3_cuellar_worldline/sun_moon.py`; tides are not done yet.

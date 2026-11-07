@@ -1,0 +1,4278 @@
+{
+ "agents": [
+  {
+   "agent_id": "agt:pipeline.streedagh/sag",
+   "kind": "organisation",
+   "name": "Streedagh Armada Group (divers, 1985 discovery and recovery)"
+  },
+  {
+   "agent_id": "agt:pipeline.streedagh/nms",
+   "kind": "organisation",
+   "name": "National Monuments Service, Underwater Archaeology Unit (2015 recovery)"
+  },
+  {
+   "agent_id": "agt:pipeline.streedagh/muster-clerks",
+   "kind": "person",
+   "name": "clerks of the Lisbon muster, May 1588 (unnamed)"
+  },
+  {
+   "agent_id": "agt:pipeline.streedagh/paz-salas",
+   "kind": "organisation",
+   "name": "Pedro de Paz Salas, printer, Lisbon (1588 edition of the muster)"
+  },
+  {
+   "agent_id": "agt:pipeline.streedagh/martin",
+   "kind": "person",
+   "name": "Colin J. M. Martin"
+  },
+  {
+   "agent_id": "agt:pipeline.streedagh/ridella",
+   "kind": "person",
+   "name": "Renato Gianni Ridella and co-authors (2016)"
+  },
+  {
+   "agent_id": "agt:pipeline.streedagh/birch-mcelvogue",
+   "kind": "person",
+   "name": "Steven Birch and Daniel M. McElvogue"
+  },
+  {
+   "agent_id": "agt:pipeline.streedagh/mcelvogue",
+   "kind": "person",
+   "name": "Daniel M. McElvogue"
+  },
+  {
+   "agent_id": "agt:pipeline.streedagh/moore",
+   "kind": "person",
+   "name": "Fionnbarr Moore and co-authors (2015)"
+  },
+  {
+   "agent_id": "agt:pipeline.streedagh/dylan",
+   "kind": "person",
+   "name": "Dylan Foley"
+  },
+  {
+   "agent_id": "agt:pipeline.streedagh/v1",
+   "kind": "software",
+   "name": "build_site_record.py",
+   "version": "0.1"
+  },
+  {
+   "agent_id": "agt:pipeline.streedagh/estimator",
+   "kind": "software",
+   "name": "attribution_estimator.py v0.2",
+   "version": "0.1"
+  }
+ ],
+ "frames": [
+  {
+   "schema": "signal_schema/frame/0.3.0",
+   "frame_id": "frm:ITM",
+   "crs": "EPSG:2157",
+   "geographic": false,
+   "vertical_datum": "Malin Head OD",
+   "note": "Irish Transverse Mercator: the site frame (decision D7, 2026-11-07). No positions held yet."
+  }
+ ],
+ "acquisitions": [
+  {
+   "schema": "signal_schema/acquisition/0.3.0",
+   "acquisition_id": "acq:pipeline.streedagh/muster-1588",
+   "acquisition_class": "historical_observation",
+   "perturbation": "none",
+   "agents": [
+    {
+     "agent": "agt:pipeline.streedagh/muster-clerks",
+     "role": "observer"
+    }
+   ],
+   "method": "muster_list",
+   "epoch": {
+    "semantic": "time.epoch",
+    "value": "1588-05-09",
+    "calendar": "gregorian",
+    "basis": {
+     "kind": "stated",
+     "refs": [
+      "Martin 1984 p. 439"
+     ]
+    }
+   },
+   "footprint": {
+    "absent": {
+     "reason": "not_held"
+    }
+   },
+   "completeness": {
+    "blind_spots": "states ships, men, guns and stores as mustered; says nothing of gun types or positions"
+   },
+   "resolved": true,
+   "raw": []
+  },
+  {
+   "schema": "signal_schema/acquisition/0.3.0",
+   "acquisition_id": "acq:pipeline.streedagh/recovery-1985",
+   "acquisition_class": "historical_observation",
+   "perturbation": "removal",
+   "agents": [
+    {
+     "agent": "agt:pipeline.streedagh/sag",
+     "role": "operator"
+    }
+   ],
+   "method": "diver_recovery",
+   "epoch": {
+    "semantic": "time.epoch",
+    "value": 1985,
+    "calendar": "gregorian",
+    "basis": {
+     "kind": "stated",
+     "refs": [
+      "McElvogue 2002",
+      "Ridella et al. 2016 tab. 1"
+     ]
+    }
+   },
+   "footprint": {
+    "absent": {
+     "reason": "not_held"
+    }
+   },
+   "completeness": {
+    "blind_spots": "only what was exposed and lifted; recovery positions not held by this project"
+   },
+   "resolved": true,
+   "raw": [],
+   "actuation": {
+    "absent": {
+     "reason": "not_recorded",
+     "note": "how each gun was lifted is not in the held sources"
+    }
+   }
+  },
+  {
+   "schema": "signal_schema/acquisition/0.3.0",
+   "acquisition_id": "acq:pipeline.streedagh/recovery-2015",
+   "acquisition_class": "historical_observation",
+   "perturbation": "removal",
+   "agents": [
+    {
+     "agent": "agt:pipeline.streedagh/nms",
+     "role": "operator"
+    }
+   ],
+   "method": "diver_recovery",
+   "epoch": {
+    "semantic": "time.epoch",
+    "interval": [
+     "2015-07",
+     "2015-08"
+    ],
+    "calendar": "gregorian",
+    "basis": {
+     "kind": "stated",
+     "refs": [
+      "Ridella et al. 2016 fig. 14 caption: 'recovered in July-August 2015'"
+     ]
+    }
+   },
+   "footprint": {
+    "absent": {
+     "reason": "not_held"
+    }
+   },
+   "completeness": {
+    "blind_spots": "storm-exposed material only; recovery positions not held by this project"
+   },
+   "resolved": true,
+   "raw": [],
+   "actuation": {
+    "absent": {
+     "reason": "not_recorded",
+     "note": "how each gun was lifted is not in the held sources"
+    }
+   }
+  },
+  {
+   "schema": "signal_schema/acquisition/0.3.0",
+   "acquisition_id": "acq:pipeline.streedagh/site1-survey",
+   "acquisition_class": "historical_observation",
+   "perturbation": "none",
+   "agents": [
+    {
+     "agent": "agt:pipeline.streedagh/sag",
+     "role": "observer"
+    }
+   ],
+   "method": "diver_survey",
+   "epoch": {
+    "semantic": "time.epoch",
+    "interval": [
+     1985,
+     1998
+    ],
+    "calendar": "gregorian",
+    "basis": {
+     "kind": "stated",
+     "refs": [
+      "Birch & McElvogue 1999"
+     ]
+    }
+   },
+   "footprint": {
+    "absent": {
+     "reason": "not_held"
+    }
+   },
+   "completeness": {
+    "blind_spots": "what sand cover exposed in those seasons; reported as an interim summary"
+   },
+   "resolved": true,
+   "raw": []
+  }
+ ],
+ "catalogue_entries": [
+  {
+   "schema": "signal_schema/catalogue_entry/0.3.0",
+   "entry_id": "cat:paz-salas-1588/levant",
+   "catalogue": {
+    "designation": "La felicissima armada… (muster, Lisbon: Pedro de Paz Salas, 1588)",
+    "compiler": "agt:pipeline.streedagh/paz-salas",
+    "mandate": "printed edition of the fleet muster of 9 May 1588"
+   },
+   "role": "compiler",
+   "native_key": "Squadron of Levant",
+   "compilation_epoch": {
+    "value": 1588,
+    "calendar": "gregorian",
+    "basis": {
+     "kind": "stated"
+    }
+   },
+   "fields_as_published": {
+    "absent": {
+     "reason": "not_held"
+    }
+   },
+   "raw": [],
+   "source_acquisitions": [
+    "acq:pipeline.streedagh/muster-1588"
+   ],
+   "source_entries": [],
+   "fidelity": "printed within days of the 9 May muster (Martin 1984 p. 439)"
+  },
+  {
+   "schema": "signal_schema/catalogue_entry/0.3.0",
+   "entry_id": "cat:martin-1984/app4-p448",
+   "catalogue": {
+    "designation": "Martin, The Equipment and Fighting Potential of the Spanish Armada (PhD, St Andrews 1984), App. 4",
+    "compiler": "agt:pipeline.streedagh/martin",
+    "mandate": "doctoral thesis; appendix tabulating the Armada's order of battle"
+   },
+   "role": "compiler",
+   "native_key": "pp. 448-449",
+   "compilation_epoch": {
+    "value": 1984,
+    "calendar": "gregorian",
+    "basis": {
+     "kind": "stated"
+    }
+   },
+   "fields_as_published": {
+    "table": "Order of Battle, Squadron of Levant (rows 68-77)"
+   },
+   "raw": [
+    {
+     "sha256": "a0780bfb8d80dbd26c964c554171f294efd700c43bfca7ea34249be6c09b80f1",
+     "media_type": "application/pdf",
+     "kind": "publication",
+     "uri": "sources/ColinMartinPhDThesis.pdf"
+    }
+   ],
+   "source_acquisitions": [],
+   "source_entries": [
+    "cat:paz-salas-1588/levant"
+   ],
+   "fidelity": "based on the Paz Salas edition and Medina Sidonia's summary relación of 14 May 1588"
+  },
+  {
+   "schema": "signal_schema/catalogue_entry/0.3.0",
+   "entry_id": "cat:ridella-2016/tab1",
+   "catalogue": {
+    "designation": "Ridella et al., 'The Cadiz-Delta II wreck: the San Giorgio…', Archeologia Postmedievale 20 (2016), tab. 1",
+    "compiler": "agt:pipeline.streedagh/ridella",
+    "mandate": "journal article; catalogue of one founder's surviving guns"
+   },
+   "role": "compiler",
+   "native_key": "tab. 1",
+   "compilation_epoch": {
+    "value": 2016,
+    "calendar": "gregorian",
+    "basis": {
+     "kind": "stated"
+    }
+   },
+   "fields_as_published": {
+    "table": "Survived bronze guns cast by Dorino II Gioardi"
+   },
+   "raw": [
+    {
+     "sha256": "392021ca4496353dbbccfaca62c1130970afbe52d939a20e2e122b8ac8e81ced",
+     "media_type": "application/pdf",
+     "kind": "publication",
+     "uri": "sources/The_Cadiz-Delta_II_wreck_the_San_Giorgio.pdf"
+    }
+   ],
+   "source_acquisitions": [],
+   "source_entries": [
+    "cat:mcelvogue-2002",
+    "cat:moore-2015"
+   ]
+  },
+  {
+   "schema": "signal_schema/catalogue_entry/0.3.0",
+   "entry_id": "cat:mcelvogue-2002",
+   "catalogue": {
+    "designation": "McElvogue 2002 (1985 Streedagh recoveries)",
+    "compiler": "agt:pipeline.streedagh/mcelvogue",
+    "mandate": "publication of the 1985 recoveries"
+   },
+   "role": "compiler",
+   "native_key": "—",
+   "compilation_epoch": {
+    "value": 2002,
+    "calendar": "gregorian",
+    "basis": {
+     "kind": "stated"
+    }
+   },
+   "fields_as_published": {
+    "absent": {
+     "reason": "not_held"
+    }
+   },
+   "raw": [],
+   "source_acquisitions": [
+    "acq:pipeline.streedagh/recovery-1985"
+   ],
+   "source_entries": []
+  },
+  {
+   "schema": "signal_schema/catalogue_entry/0.3.0",
+   "entry_id": "cat:moore-2015",
+   "catalogue": {
+    "designation": "Moore et al. 2015 (2015 Streedagh recovery)",
+    "compiler": "agt:pipeline.streedagh/moore",
+    "mandate": "report of the 2015 recovery"
+   },
+   "role": "compiler",
+   "native_key": "—",
+   "compilation_epoch": {
+    "value": 2015,
+    "calendar": "gregorian",
+    "basis": {
+     "kind": "stated"
+    }
+   },
+   "fields_as_published": {
+    "absent": {
+     "reason": "not_held"
+    }
+   },
+   "raw": [],
+   "source_acquisitions": [
+    "acq:pipeline.streedagh/recovery-2015"
+   ],
+   "source_entries": []
+  },
+  {
+   "schema": "signal_schema/catalogue_entry/0.3.0",
+   "entry_id": "cat:birch-mcelvogue-1999",
+   "catalogue": {
+    "designation": "Birch & McElvogue, 'La Lavia, La Juliana and the Santa Maria de Vison…', IJNA 28.3 (1999) 265-276",
+    "compiler": "agt:pipeline.streedagh/birch-mcelvogue",
+    "mandate": "interim report on the three Streedagh wrecks"
+   },
+   "role": "compiler",
+   "native_key": "pp. 265-276",
+   "compilation_epoch": {
+    "value": 1999,
+    "calendar": "gregorian",
+    "basis": {
+     "kind": "stated"
+    }
+   },
+   "fields_as_published": {
+    "absent": {
+     "reason": "not_held"
+    }
+   },
+   "raw": [
+    {
+     "sha256": "5b6a87d9c7eda206a3a4f07f92b823d2bfd99abf09f4313717c96742db5046f1",
+     "media_type": "application/pdf",
+     "kind": "publication",
+     "uri": "sources/ArmadaWrecksStreedagh.pdf"
+    }
+   ],
+   "source_acquisitions": [
+    "acq:pipeline.streedagh/site1-survey"
+   ],
+   "source_entries": []
+  }
+ ],
+ "detections": [
+  {
+   "schema": "signal_schema/detection/0.3.0",
+   "detection_id": "det:pipeline.streedagh/recovery-1985#G-SEVERO",
+   "acquisition": "acq:pipeline.streedagh/recovery-1985",
+   "read_from": [
+    "cat:ridella-2016/tab1",
+    "cat:mcelvogue-2002"
+   ],
+   "detected": true,
+   "position": {
+    "absent": {
+     "reason": "not_held"
+    }
+   },
+   "quantities": [
+    {
+     "semantic": "phys.mass",
+     "value": 20.82,
+     "unit": {
+      "verbatim": "cantara"
+     },
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "weight mark cast on the gun, as read by the compiler"
+      ]
+     }
+    },
+    {
+     "semantic": "phys.mass",
+     "unit": "kg",
+     "basis": {
+      "kind": "derived",
+      "recipe": {
+       "name": "cantara_to_kg",
+       "version": "1",
+       "params": {
+        "kg_per_cantaro": 47.65
+       }
+      },
+      "refs": [
+       "Ridella et al. 2016 (Genoese cantaro calibrated on the same founders)"
+      ]
+     },
+     "value": 992.0
+    }
+   ],
+   "descriptors": [
+    {
+     "term": "relief",
+     "value": "St. Severo",
+     "note": "the figure as identified by the compiler"
+    },
+    {
+     "term": "inscription",
+     "value": "1570"
+    }
+   ],
+   "extension": {
+    "historical_observation": {
+     "verbatim": {
+      "text": "Heavy Saker | 1570 | C.ra 20.82 | Type C | St. Severo on the reinforce | 1985, wreck of La Juliana, Streedagh Strand | McElvogue 2002",
+      "language": "en",
+      "locator": "Ridella et al. 2016 tab. 1, row for this gun",
+      "note": "the table row as printed, columns joined with ' | '"
+     },
+     "observer_role": "compiler",
+     "hedges": []
+    }
+   }
+  },
+  {
+   "schema": "signal_schema/detection/0.3.0",
+   "detection_id": "det:pipeline.streedagh/recovery-2015#G-GBATTISTA",
+   "acquisition": "acq:pipeline.streedagh/recovery-2015",
+   "read_from": [
+    "cat:ridella-2016/tab1",
+    "cat:moore-2015"
+   ],
+   "detected": true,
+   "position": {
+    "absent": {
+     "reason": "not_held"
+    }
+   },
+   "quantities": [
+    {
+     "semantic": "phys.mass",
+     "absent": {
+      "reason": "not_stated_in_carrier"
+     },
+     "note": "weight mark partly illegible: '19.??' cantara"
+    },
+    {
+     "semantic": "phys.mass",
+     "unit": "kg",
+     "basis": {
+      "kind": "derived",
+      "recipe": {
+       "name": "cantara_to_kg",
+       "version": "1",
+       "params": {
+        "kg_per_cantaro": 47.65
+       }
+      },
+      "refs": [
+       "Ridella et al. 2016 (Genoese cantaro calibrated on the same founders)"
+      ]
+     },
+     "interval": [
+      905.0,
+      952.0
+     ]
+    }
+   ],
+   "descriptors": [
+    {
+     "term": "relief",
+     "value": "St. Giovanni Battista",
+     "note": "the figure as identified by the compiler"
+    },
+    {
+     "term": "inscription",
+     "value": "1570"
+    }
+   ],
+   "extension": {
+    "historical_observation": {
+     "verbatim": {
+      "text": "Heavy Saker | 1570 | C.ra 19.?? | Type C | St. Giovanni Battista on the reinforce | 2015, wreck of La Juliana, Streedagh Strand | Moore et al. 2015",
+      "language": "en",
+      "locator": "Ridella et al. 2016 tab. 1, row for this gun",
+      "note": "the table row as printed, columns joined with ' | '"
+     },
+     "observer_role": "compiler",
+     "hedges": [
+      "?"
+     ]
+    }
+   }
+  },
+  {
+   "schema": "signal_schema/detection/0.3.0",
+   "detection_id": "det:pipeline.streedagh/recovery-2015#G-MATRONA",
+   "acquisition": "acq:pipeline.streedagh/recovery-2015",
+   "read_from": [
+    "cat:ridella-2016/tab1",
+    "cat:moore-2015"
+   ],
+   "detected": true,
+   "position": {
+    "absent": {
+     "reason": "not_held"
+    }
+   },
+   "quantities": [
+    {
+     "semantic": "phys.mass",
+     "value": 11.12,
+     "unit": {
+      "verbatim": "cantara"
+     },
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "weight mark cast on the gun, as read by the compiler"
+      ]
+     }
+    },
+    {
+     "semantic": "phys.mass",
+     "unit": "kg",
+     "basis": {
+      "kind": "derived",
+      "recipe": {
+       "name": "cantara_to_kg",
+       "version": "1",
+       "params": {
+        "kg_per_cantaro": 47.65
+       }
+      },
+      "refs": [
+       "Ridella et al. 2016 (Genoese cantaro calibrated on the same founders)"
+      ]
+     },
+     "value": 530.0
+    }
+   ],
+   "descriptors": [
+    {
+     "term": "relief",
+     "value": "St. Matrona",
+     "note": "the figure as identified by the compiler"
+    },
+    {
+     "term": "inscription",
+     "value": "1570"
+    }
+   ],
+   "extension": {
+    "historical_observation": {
+     "verbatim": {
+      "text": "Heavy Falcon | 1570 | C.ra 11.12 | Type C | St. Matrona on the reinforce | 2015, wreck of La Juliana, Streedagh Strand | Moore et al. 2015",
+      "language": "en",
+      "locator": "Ridella et al. 2016 tab. 1, row for this gun",
+      "note": "the table row as printed, columns joined with ' | '"
+     },
+     "observer_role": "compiler",
+     "hedges": []
+    }
+   }
+  },
+  {
+   "schema": "signal_schema/detection/0.3.0",
+   "detection_id": "det:pipeline.streedagh/recovery-2015#G-ILARIA",
+   "acquisition": "acq:pipeline.streedagh/recovery-2015",
+   "read_from": [
+    "cat:ridella-2016/tab1",
+    "cat:moore-2015"
+   ],
+   "detected": true,
+   "position": {
+    "absent": {
+     "reason": "not_held"
+    }
+   },
+   "quantities": [
+    {
+     "semantic": "phys.mass",
+     "value": 10.74,
+     "unit": {
+      "verbatim": "cantara"
+     },
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "weight mark cast on the gun, as read by the compiler"
+      ]
+     }
+    },
+    {
+     "semantic": "phys.mass",
+     "unit": "kg",
+     "basis": {
+      "kind": "derived",
+      "recipe": {
+       "name": "cantara_to_kg",
+       "version": "1",
+       "params": {
+        "kg_per_cantaro": 47.65
+       }
+      },
+      "refs": [
+       "Ridella et al. 2016 (Genoese cantaro calibrated on the same founders)"
+      ]
+     },
+     "value": 512.0
+    }
+   ],
+   "descriptors": [
+    {
+     "term": "relief",
+     "value": "St. Ilaria",
+     "note": "the figure as identified by the compiler"
+    },
+    {
+     "term": "inscription",
+     "value": "1570"
+    }
+   ],
+   "extension": {
+    "historical_observation": {
+     "verbatim": {
+      "text": "Heavy Falcon | 1570 | C.ra 10.74 | Type C | St. Ilaria on the reinforce | 2015, wreck of La Juliana, Streedagh Strand | Moore et al. 2015",
+      "language": "en",
+      "locator": "Ridella et al. 2016 tab. 1, row for this gun",
+      "note": "the table row as printed, columns joined with ' | '"
+     },
+     "observer_role": "compiler",
+     "hedges": []
+    }
+   }
+  },
+  {
+   "schema": "signal_schema/detection/0.3.0",
+   "detection_id": "det:pipeline.streedagh/recovery-2015#G-SEBASTIANO",
+   "acquisition": "acq:pipeline.streedagh/recovery-2015",
+   "read_from": [
+    "cat:ridella-2016/tab1",
+    "cat:moore-2015"
+   ],
+   "detected": true,
+   "position": {
+    "absent": {
+     "reason": "not_held"
+    }
+   },
+   "quantities": [
+    {
+     "semantic": "phys.mass",
+     "value": 8.54,
+     "unit": {
+      "verbatim": "cantara"
+     },
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "weight mark cast on the gun, as read by the compiler"
+      ]
+     }
+    },
+    {
+     "semantic": "phys.mass",
+     "unit": "kg",
+     "basis": {
+      "kind": "derived",
+      "recipe": {
+       "name": "cantara_to_kg",
+       "version": "1",
+       "params": {
+        "kg_per_cantaro": 47.65
+       }
+      },
+      "refs": [
+       "Ridella et al. 2016 (Genoese cantaro calibrated on the same founders)"
+      ]
+     },
+     "value": 407.0
+    }
+   ],
+   "descriptors": [
+    {
+     "term": "relief",
+     "value": "St. Sebastiano",
+     "note": "the figure as identified by the compiler"
+    },
+    {
+     "term": "inscription",
+     "value": "1570"
+    }
+   ],
+   "extension": {
+    "historical_observation": {
+     "verbatim": {
+      "text": "Medium Falcon | 1570 | C.ra 8.54 | Type C | St. Sebastiano on the reinforce | 2015, wreck of La Juliana, Streedagh Strand | Moore et al. 2015",
+      "language": "en",
+      "locator": "Ridella et al. 2016 tab. 1, row for this gun",
+      "note": "the table row as printed, columns joined with ' | '"
+     },
+     "observer_role": "compiler",
+     "hedges": []
+    }
+   }
+  },
+  {
+   "schema": "signal_schema/detection/0.3.0",
+   "detection_id": "det:pipeline.streedagh/recovery-2015#G-ROCCO",
+   "acquisition": "acq:pipeline.streedagh/recovery-2015",
+   "read_from": [
+    "cat:ridella-2016/tab1",
+    "cat:moore-2015"
+   ],
+   "detected": true,
+   "position": {
+    "absent": {
+     "reason": "not_held"
+    }
+   },
+   "quantities": [
+    {
+     "semantic": "phys.mass",
+     "absent": {
+      "reason": "not_stated_in_carrier"
+     },
+     "note": "weight mark partly illegible: '?.74' cantara"
+    },
+    {
+     "semantic": "phys.mass",
+     "unit": "kg",
+     "basis": {
+      "kind": "derived",
+      "recipe": {
+       "name": "cantara_to_kg",
+       "version": "1",
+       "params": {
+        "kg_per_cantaro": 47.65
+       }
+      },
+      "refs": [
+       "Ridella et al. 2016 (Genoese cantaro calibrated on the same founders)"
+      ]
+     },
+     "interval": [
+      321.0,
+      416.0
+     ]
+    }
+   ],
+   "descriptors": [
+    {
+     "term": "relief",
+     "value": "St. Rocco",
+     "note": "the figure as identified by the compiler"
+    },
+    {
+     "term": "inscription",
+     "value": "1570"
+    }
+   ],
+   "extension": {
+    "historical_observation": {
+     "verbatim": {
+      "text": "Medium Falcon | 1570 | C.ra ?.74 | Type C | St. Rocco on the reinforce | 2015, wreck of La Juliana, Streedagh Strand | Moore et al. 2015",
+      "language": "en",
+      "locator": "Ridella et al. 2016 tab. 1, row for this gun",
+      "note": "the table row as printed, columns joined with ' | '"
+     },
+     "observer_role": "compiler",
+     "hedges": [
+      "?"
+     ]
+    }
+   }
+  },
+  {
+   "schema": "signal_schema/detection/0.3.0",
+   "detection_id": "det:pipeline.streedagh/recovery-2015#G-GIOVANNI",
+   "acquisition": "acq:pipeline.streedagh/recovery-2015",
+   "read_from": [
+    "cat:ridella-2016/tab1",
+    "cat:moore-2015"
+   ],
+   "detected": true,
+   "position": {
+    "absent": {
+     "reason": "not_held"
+    }
+   },
+   "quantities": [
+    {
+     "semantic": "phys.mass",
+     "value": 3.88,
+     "unit": {
+      "verbatim": "cantara"
+     },
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "weight mark cast on the gun, as read by the compiler"
+      ]
+     }
+    },
+    {
+     "semantic": "phys.mass",
+     "unit": "kg",
+     "basis": {
+      "kind": "derived",
+      "recipe": {
+       "name": "cantara_to_kg",
+       "version": "1",
+       "params": {
+        "kg_per_cantaro": 47.65
+       }
+      },
+      "refs": [
+       "Ridella et al. 2016 (Genoese cantaro calibrated on the same founders)"
+      ]
+     },
+     "value": 185.0
+    }
+   ],
+   "descriptors": [
+    {
+     "term": "relief",
+     "value": "St. Giovanni",
+     "note": "the figure as identified by the compiler"
+    },
+    {
+     "term": "inscription",
+     "value": "1570"
+    }
+   ],
+   "extension": {
+    "historical_observation": {
+     "verbatim": {
+      "text": "Falconet | 1570 | C.ra 3.88 | Type C | St. Giovanni on the reinforce | 2015, wreck of La Juliana, Streedagh Strand | Moore et al. 2015",
+      "language": "en",
+      "locator": "Ridella et al. 2016 tab. 1, row for this gun",
+      "note": "the table row as printed, columns joined with ' | '"
+     },
+     "observer_role": "compiler",
+     "hedges": []
+    }
+   }
+  },
+  {
+   "schema": "signal_schema/detection/0.3.0",
+   "detection_id": "det:pipeline.streedagh/recovery-1985#G-PETRIERE-F",
+   "acquisition": "acq:pipeline.streedagh/recovery-1985",
+   "read_from": [
+    "cat:ridella-2016/tab1",
+    "cat:mcelvogue-2002"
+   ],
+   "detected": true,
+   "position": {
+    "absent": {
+     "reason": "not_held"
+    }
+   },
+   "quantities": [
+    {
+     "semantic": "phys.mass",
+     "interval": [
+      475.0,
+      570.0
+     ],
+     "unit": "kg",
+     "basis": {
+      "kind": "inference",
+      "refs": [
+       "reconstruction v0.7 §29"
+      ],
+      "caveat": "no weight mark; estimate whose basis is still to be documented"
+     }
+    }
+   ],
+   "descriptors": [
+    {
+     "term": "relief",
+     "value": "undetermined female saint",
+     "note": "the figure as identified by the compiler"
+    }
+   ],
+   "extension": {
+    "historical_observation": {
+     "verbatim": {
+      "text": "Medium Petriere | 1570? | C.ra no mark | Type C | undetermined female saint on the reinforce | 1985, wreck of La Juliana, Streedagh Strand | McElvogue 2002",
+      "language": "en",
+      "locator": "Ridella et al. 2016 tab. 1, row for this gun",
+      "note": "the table row as printed, columns joined with ' | '"
+     },
+     "observer_role": "compiler",
+     "hedges": [
+      "?"
+     ]
+    }
+   }
+  },
+  {
+   "schema": "signal_schema/detection/0.3.0",
+   "detection_id": "det:pipeline.streedagh/recovery-1985#G-PETRIERE-2",
+   "acquisition": "acq:pipeline.streedagh/recovery-1985",
+   "read_from": [
+    "cat:ridella-2016/tab1",
+    "cat:mcelvogue-2002"
+   ],
+   "detected": true,
+   "position": {
+    "absent": {
+     "reason": "not_held"
+    }
+   },
+   "quantities": [
+    {
+     "semantic": "phys.mass",
+     "interval": [
+      475.0,
+      570.0
+     ],
+     "unit": "kg",
+     "basis": {
+      "kind": "inference",
+      "refs": [
+       "reconstruction v0.7 §29"
+      ],
+      "caveat": "no weight mark; estimate whose basis is still to be documented"
+     }
+    }
+   ],
+   "descriptors": [],
+   "extension": {
+    "historical_observation": {
+     "verbatim": {
+      "text": "Medium Petriere | 1570? | C.ra no mark | — | — on the reinforce | 1985, wreck of La Juliana, Streedagh Strand | McElvogue 2002",
+      "language": "en",
+      "locator": "Ridella et al. 2016 tab. 1, row for this gun",
+      "note": "the table row as printed, columns joined with ' | '"
+     },
+     "observer_role": "compiler",
+     "hedges": [
+      "?"
+     ]
+    }
+   }
+  },
+  {
+   "schema": "signal_schema/detection/0.3.0",
+   "detection_id": "det:pipeline.streedagh/muster-1588#row-68",
+   "acquisition": "acq:pipeline.streedagh/muster-1588",
+   "read_from": [
+    "cat:martin-1984/app4-p448"
+   ],
+   "detected": true,
+   "position": {
+    "absent": {
+     "reason": "not_applicable"
+    }
+   },
+   "quantities": [
+    {
+     "semantic": "doc.rating.stated",
+     "value": 1249,
+     "unit": {
+      "verbatim": "tons"
+     },
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'Tons'"
+      ]
+     }
+    },
+    {
+     "semantic": "doc.count.stated",
+     "value": 344,
+     "unit": "1",
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'Soldiers'"
+      ]
+     },
+     "note": "Soldiers"
+    },
+    {
+     "semantic": "doc.count.stated",
+     "value": 80,
+     "unit": "1",
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'Seamen'"
+      ]
+     },
+     "note": "Seamen"
+    },
+    {
+     "semantic": "doc.count.stated",
+     "value": 30,
+     "unit": "1",
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'Guns'"
+      ]
+     },
+     "note": "Guns"
+    },
+    {
+     "semantic": "doc.count.stated",
+     "value": 1500,
+     "unit": "1",
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'Shot'"
+      ]
+     },
+     "note": "Shot"
+    },
+    {
+     "semantic": "phys.mass",
+     "value": 35,
+     "unit": {
+      "verbatim": "quintales"
+     },
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'Powder (qtx)'"
+      ]
+     },
+     "note": "Powder"
+    },
+    {
+     "semantic": "phys.mass",
+     "value": 22,
+     "unit": {
+      "verbatim": "quintales"
+     },
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'Lead (qtx)'"
+      ]
+     },
+     "note": "Lead"
+    },
+    {
+     "semantic": "phys.mass",
+     "value": 18,
+     "unit": {
+      "verbatim": "quintales"
+     },
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'Match (qtx)'"
+      ]
+     },
+     "note": "Match"
+    }
+   ],
+   "descriptors": [],
+   "extension": {
+    "historical_observation": {
+     "verbatim": {
+      "text": "68 La Regazona (capitana) | 1249 | 344 | 80 | 30 | 1500 | 35 | 22 | 18 | 'Safe' list: at Corunna",
+      "language": "en",
+      "locator": "Martin 1984 App. 4 p. 448 (Lisbon muster 9 May 1588; Paz Salas ed.)"
+     },
+     "observer_role": "compiler",
+     "reported_target": {
+      "designation_verbatim": "La Regazona (capitana)"
+     },
+     "hedges": []
+    }
+   }
+  },
+  {
+   "schema": "signal_schema/detection/0.3.0",
+   "detection_id": "det:pipeline.streedagh/muster-1588#row-69",
+   "acquisition": "acq:pipeline.streedagh/muster-1588",
+   "read_from": [
+    "cat:martin-1984/app4-p448"
+   ],
+   "detected": true,
+   "position": {
+    "absent": {
+     "reason": "not_applicable"
+    }
+   },
+   "quantities": [
+    {
+     "semantic": "doc.rating.stated",
+     "value": 728,
+     "unit": {
+      "verbatim": "tons"
+     },
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'Tons'"
+      ]
+     }
+    },
+    {
+     "semantic": "doc.count.stated",
+     "value": 203,
+     "unit": "1",
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'Soldiers'"
+      ]
+     },
+     "note": "Soldiers"
+    },
+    {
+     "semantic": "doc.count.stated",
+     "value": 71,
+     "unit": "1",
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'Seamen'"
+      ]
+     },
+     "note": "Seamen"
+    },
+    {
+     "semantic": "doc.count.stated",
+     "value": 25,
+     "unit": "1",
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'Guns'"
+      ]
+     },
+     "note": "Guns"
+    },
+    {
+     "semantic": "doc.count.stated",
+     "value": 1250,
+     "unit": "1",
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'Shot'"
+      ]
+     },
+     "note": "Shot"
+    },
+    {
+     "semantic": "phys.mass",
+     "value": 39,
+     "unit": {
+      "verbatim": "quintales"
+     },
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'Powder (qtx)'"
+      ]
+     },
+     "note": "Powder"
+    },
+    {
+     "semantic": "phys.mass",
+     "value": 15,
+     "unit": {
+      "verbatim": "quintales"
+     },
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'Lead (qtx)'"
+      ]
+     },
+     "note": "Lead"
+    },
+    {
+     "semantic": "phys.mass",
+     "value": 12,
+     "unit": {
+      "verbatim": "quintales"
+     },
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'Match (qtx)'"
+      ]
+     },
+     "note": "Match"
+    }
+   ],
+   "descriptors": [],
+   "extension": {
+    "historical_observation": {
+     "verbatim": {
+      "text": "69 La Lavia (almiranta) | 728 | 203 | 71 | 25 | 1250 | 39 | 15 | 12 | 'Missing' list: X",
+      "language": "en",
+      "locator": "Martin 1984 App. 4 p. 448 (Lisbon muster 9 May 1588; Paz Salas ed.)"
+     },
+     "observer_role": "compiler",
+     "reported_target": {
+      "designation_verbatim": "La Lavia (almiranta)"
+     },
+     "hedges": []
+    }
+   }
+  },
+  {
+   "schema": "signal_schema/detection/0.3.0",
+   "detection_id": "det:pipeline.streedagh/muster-1588#row-70",
+   "acquisition": "acq:pipeline.streedagh/muster-1588",
+   "read_from": [
+    "cat:martin-1984/app4-p448"
+   ],
+   "detected": true,
+   "position": {
+    "absent": {
+     "reason": "not_applicable"
+    }
+   },
+   "quantities": [
+    {
+     "semantic": "doc.rating.stated",
+     "value": 820,
+     "unit": {
+      "verbatim": "tons"
+     },
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'Tons'"
+      ]
+     }
+    },
+    {
+     "semantic": "doc.count.stated",
+     "value": 335,
+     "unit": "1",
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'Soldiers'"
+      ]
+     },
+     "note": "Soldiers"
+    },
+    {
+     "semantic": "doc.count.stated",
+     "value": 84,
+     "unit": "1",
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'Seamen'"
+      ]
+     },
+     "note": "Seamen"
+    },
+    {
+     "semantic": "doc.count.stated",
+     "value": 35,
+     "unit": "1",
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'Guns'"
+      ]
+     },
+     "note": "Guns"
+    },
+    {
+     "semantic": "doc.count.stated",
+     "value": 1750,
+     "unit": "1",
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'Shot'"
+      ]
+     },
+     "note": "Shot"
+    },
+    {
+     "semantic": "phys.mass",
+     "value": 80,
+     "unit": {
+      "verbatim": "quintales"
+     },
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'Powder (qtx)'"
+      ]
+     },
+     "note": "Powder"
+    },
+    {
+     "semantic": "phys.mass",
+     "value": 19,
+     "unit": {
+      "verbatim": "quintales"
+     },
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'Lead (qtx)'"
+      ]
+     },
+     "note": "Lead"
+    },
+    {
+     "semantic": "phys.mass",
+     "value": 15,
+     "unit": {
+      "verbatim": "quintales"
+     },
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'Match (qtx)'"
+      ]
+     },
+     "note": "Match"
+    }
+   ],
+   "descriptors": [],
+   "extension": {
+    "historical_observation": {
+     "verbatim": {
+      "text": "70 La Rata Coronada | 820 | 335 | 84 | 35 | 1750 | 80 | 19 | 15 | 'Missing' list: X",
+      "language": "en",
+      "locator": "Martin 1984 App. 4 p. 448 (Lisbon muster 9 May 1588; Paz Salas ed.)"
+     },
+     "observer_role": "compiler",
+     "reported_target": {
+      "designation_verbatim": "La Rata Coronada"
+     },
+     "hedges": []
+    }
+   }
+  },
+  {
+   "schema": "signal_schema/detection/0.3.0",
+   "detection_id": "det:pipeline.streedagh/muster-1588#row-71",
+   "acquisition": "acq:pipeline.streedagh/muster-1588",
+   "read_from": [
+    "cat:martin-1984/app4-p448"
+   ],
+   "detected": true,
+   "position": {
+    "absent": {
+     "reason": "not_applicable"
+    }
+   },
+   "quantities": [
+    {
+     "semantic": "doc.rating.stated",
+     "value": 800,
+     "unit": {
+      "verbatim": "tons"
+     },
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'Tons'"
+      ]
+     }
+    },
+    {
+     "semantic": "doc.count.stated",
+     "value": 279,
+     "unit": "1",
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'Soldiers'"
+      ]
+     },
+     "note": "Soldiers"
+    },
+    {
+     "semantic": "doc.count.stated",
+     "value": 63,
+     "unit": "1",
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'Seamen'"
+      ]
+     },
+     "note": "Seamen"
+    },
+    {
+     "semantic": "doc.count.stated",
+     "value": 26,
+     "unit": "1",
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'Guns'"
+      ]
+     },
+     "note": "Guns"
+    },
+    {
+     "semantic": "doc.count.stated",
+     "value": 1300,
+     "unit": "1",
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'Shot'"
+      ]
+     },
+     "note": "Shot"
+    },
+    {
+     "semantic": "phys.mass",
+     "value": 69,
+     "unit": {
+      "verbatim": "quintales"
+     },
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'Powder (qtx)'"
+      ]
+     },
+     "note": "Powder"
+    },
+    {
+     "semantic": "phys.mass",
+     "value": 19,
+     "unit": {
+      "verbatim": "quintales"
+     },
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'Lead (qtx)'"
+      ]
+     },
+     "note": "Lead"
+    },
+    {
+     "semantic": "phys.mass",
+     "value": 18,
+     "unit": {
+      "verbatim": "quintales"
+     },
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'Match (qtx)'"
+      ]
+     },
+     "note": "Match"
+    }
+   ],
+   "descriptors": [],
+   "extension": {
+    "historical_observation": {
+     "verbatim": {
+      "text": "71 San Juan de Sicilia | 800 | 279 | 63 | 26 | 1300 | 69 | 19 | 18 | 'Missing' list: X",
+      "language": "en",
+      "locator": "Martin 1984 App. 4 p. 448 (Lisbon muster 9 May 1588; Paz Salas ed.)"
+     },
+     "observer_role": "compiler",
+     "reported_target": {
+      "designation_verbatim": "San Juan de Sicilia"
+     },
+     "hedges": []
+    }
+   }
+  },
+  {
+   "schema": "signal_schema/detection/0.3.0",
+   "detection_id": "det:pipeline.streedagh/muster-1588#row-72",
+   "acquisition": "acq:pipeline.streedagh/muster-1588",
+   "read_from": [
+    "cat:martin-1984/app4-p448"
+   ],
+   "detected": true,
+   "position": {
+    "absent": {
+     "reason": "not_applicable"
+    }
+   },
+   "quantities": [
+    {
+     "semantic": "doc.rating.stated",
+     "value": 1100,
+     "unit": {
+      "verbatim": "tons"
+     },
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'Tons'"
+      ]
+     }
+    },
+    {
+     "semantic": "doc.count.stated",
+     "value": 281,
+     "unit": "1",
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'Soldiers'"
+      ]
+     },
+     "note": "Soldiers"
+    },
+    {
+     "semantic": "doc.count.stated",
+     "value": 79,
+     "unit": "1",
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'Seamen'"
+      ]
+     },
+     "note": "Seamen"
+    },
+    {
+     "semantic": "doc.count.stated",
+     "value": 42,
+     "unit": "1",
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'Guns'"
+      ]
+     },
+     "note": "Guns"
+    },
+    {
+     "semantic": "doc.count.stated",
+     "value": 2100,
+     "unit": "1",
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'Shot'"
+      ]
+     },
+     "note": "Shot"
+    },
+    {
+     "semantic": "phys.mass",
+     "value": 125,
+     "unit": {
+      "verbatim": "quintales"
+     },
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'Powder (qtx)'"
+      ]
+     },
+     "note": "Powder"
+    },
+    {
+     "semantic": "phys.mass",
+     "value": 19,
+     "unit": {
+      "verbatim": "quintales"
+     },
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'Lead (qtx)'"
+      ]
+     },
+     "note": "Lead"
+    },
+    {
+     "semantic": "phys.mass",
+     "value": 16,
+     "unit": {
+      "verbatim": "quintales"
+     },
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'Match (qtx)'"
+      ]
+     },
+     "note": "Match"
+    }
+   ],
+   "descriptors": [],
+   "extension": {
+    "historical_observation": {
+     "verbatim": {
+      "text": "72 La Trinidad Valencera | 1100 | 281 | 79 | 42 | 2100 | 125 | 19 | 16 | 'Missing' list: X",
+      "language": "en",
+      "locator": "Martin 1984 App. 4 p. 448 (Lisbon muster 9 May 1588; Paz Salas ed.)"
+     },
+     "observer_role": "compiler",
+     "reported_target": {
+      "designation_verbatim": "La Trinidad Valencera"
+     },
+     "hedges": []
+    }
+   }
+  },
+  {
+   "schema": "signal_schema/detection/0.3.0",
+   "detection_id": "det:pipeline.streedagh/muster-1588#row-73",
+   "acquisition": "acq:pipeline.streedagh/muster-1588",
+   "read_from": [
+    "cat:martin-1984/app4-p448"
+   ],
+   "detected": true,
+   "position": {
+    "absent": {
+     "reason": "not_applicable"
+    }
+   },
+   "quantities": [
+    {
+     "semantic": "doc.rating.stated",
+     "value": 703,
+     "unit": {
+      "verbatim": "tons"
+     },
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'Tons'"
+      ]
+     }
+    },
+    {
+     "semantic": "doc.count.stated",
+     "value": 196,
+     "unit": "1",
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'Soldiers'"
+      ]
+     },
+     "note": "Soldiers"
+    },
+    {
+     "semantic": "doc.count.stated",
+     "value": 79,
+     "unit": "1",
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'Seamen'"
+      ]
+     },
+     "note": "Seamen"
+    },
+    {
+     "semantic": "doc.count.stated",
+     "value": 24,
+     "unit": "1",
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'Guns'"
+      ]
+     },
+     "note": "Guns"
+    },
+    {
+     "semantic": "doc.count.stated",
+     "value": 1200,
+     "unit": "1",
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'Shot'"
+      ]
+     },
+     "note": "Shot"
+    },
+    {
+     "semantic": "phys.mass",
+     "value": 46,
+     "unit": {
+      "verbatim": "quintales"
+     },
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'Powder (qtx)'"
+      ]
+     },
+     "note": "Powder"
+    },
+    {
+     "semantic": "phys.mass",
+     "value": 15,
+     "unit": {
+      "verbatim": "quintales"
+     },
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'Lead (qtx)'"
+      ]
+     },
+     "note": "Lead"
+    },
+    {
+     "semantic": "phys.mass",
+     "value": 11,
+     "unit": {
+      "verbatim": "quintales"
+     },
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'Match (qtx)'"
+      ]
+     },
+     "note": "Match"
+    }
+   ],
+   "descriptors": [],
+   "extension": {
+    "historical_observation": {
+     "verbatim": {
+      "text": "73 La Anunciada | 703 | 196 | 79 | 24 | 1200 | 46 | 15 | 11 | 'Missing' list: X",
+      "language": "en",
+      "locator": "Martin 1984 App. 4 p. 448 (Lisbon muster 9 May 1588; Paz Salas ed.)"
+     },
+     "observer_role": "compiler",
+     "reported_target": {
+      "designation_verbatim": "La Anunciada"
+     },
+     "hedges": []
+    }
+   }
+  },
+  {
+   "schema": "signal_schema/detection/0.3.0",
+   "detection_id": "det:pipeline.streedagh/muster-1588#row-74",
+   "acquisition": "acq:pipeline.streedagh/muster-1588",
+   "read_from": [
+    "cat:martin-1984/app4-p448"
+   ],
+   "detected": true,
+   "position": {
+    "absent": {
+     "reason": "not_applicable"
+    }
+   },
+   "quantities": [
+    {
+     "semantic": "doc.rating.stated",
+     "value": 834,
+     "unit": {
+      "verbatim": "tons"
+     },
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'Tons'"
+      ]
+     }
+    },
+    {
+     "semantic": "doc.count.stated",
+     "value": 274,
+     "unit": "1",
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'Soldiers'"
+      ]
+     },
+     "note": "Soldiers"
+    },
+    {
+     "semantic": "doc.count.stated",
+     "value": 81,
+     "unit": "1",
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'Seamen'"
+      ]
+     },
+     "note": "Seamen"
+    },
+    {
+     "semantic": "doc.count.stated",
+     "value": 26,
+     "unit": "1",
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'Guns'"
+      ]
+     },
+     "note": "Guns"
+    },
+    {
+     "semantic": "doc.count.stated",
+     "value": 1300,
+     "unit": "1",
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'Shot'"
+      ]
+     },
+     "note": "Shot"
+    },
+    {
+     "semantic": "phys.mass",
+     "value": 40,
+     "unit": {
+      "verbatim": "quintales"
+     },
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'Powder (qtx)'"
+      ]
+     },
+     "note": "Powder"
+    },
+    {
+     "semantic": "phys.mass",
+     "value": 17,
+     "unit": {
+      "verbatim": "quintales"
+     },
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'Lead (qtx)'"
+      ]
+     },
+     "note": "Lead"
+    },
+    {
+     "semantic": "phys.mass",
+     "value": 13,
+     "unit": {
+      "verbatim": "quintales"
+     },
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'Match (qtx)'"
+      ]
+     },
+     "note": "Match"
+    }
+   ],
+   "descriptors": [],
+   "extension": {
+    "historical_observation": {
+     "verbatim": {
+      "text": "74 San Nicolas Prodaneli | 834 | 274 | 81 | 26 | 1300 | 40 | 17 | 13 | 'Missing' list: X",
+      "language": "en",
+      "locator": "Martin 1984 App. 4 p. 448 (Lisbon muster 9 May 1588; Paz Salas ed.)"
+     },
+     "observer_role": "compiler",
+     "reported_target": {
+      "designation_verbatim": "San Nicolas Prodaneli"
+     },
+     "hedges": []
+    }
+   }
+  },
+  {
+   "schema": "signal_schema/detection/0.3.0",
+   "detection_id": "det:pipeline.streedagh/muster-1588#row-75",
+   "acquisition": "acq:pipeline.streedagh/muster-1588",
+   "read_from": [
+    "cat:martin-1984/app4-p448"
+   ],
+   "detected": true,
+   "position": {
+    "absent": {
+     "reason": "not_applicable"
+    }
+   },
+   "quantities": [
+    {
+     "semantic": "doc.rating.stated",
+     "value": 860,
+     "unit": {
+      "verbatim": "tons"
+     },
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'Tons'"
+      ]
+     }
+    },
+    {
+     "semantic": "doc.count.stated",
+     "value": 325,
+     "unit": "1",
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'Soldiers'"
+      ]
+     },
+     "note": "Soldiers"
+    },
+    {
+     "semantic": "doc.count.stated",
+     "value": 70,
+     "unit": "1",
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'Seamen'"
+      ]
+     },
+     "note": "Seamen"
+    },
+    {
+     "semantic": "doc.count.stated",
+     "value": 32,
+     "unit": "1",
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'Guns'"
+      ]
+     },
+     "note": "Guns"
+    },
+    {
+     "semantic": "doc.count.stated",
+     "value": 1600,
+     "unit": "1",
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'Shot'"
+      ]
+     },
+     "note": "Shot"
+    },
+    {
+     "semantic": "phys.mass",
+     "value": 67,
+     "unit": {
+      "verbatim": "quintales"
+     },
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'Powder (qtx)'"
+      ]
+     },
+     "note": "Powder"
+    },
+    {
+     "semantic": "phys.mass",
+     "value": 12,
+     "unit": {
+      "verbatim": "quintales"
+     },
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'Lead (qtx)'"
+      ]
+     },
+     "note": "Lead"
+    },
+    {
+     "semantic": "phys.mass",
+     "value": 12,
+     "unit": {
+      "verbatim": "quintales"
+     },
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'Match (qtx)'"
+      ]
+     },
+     "note": "Match"
+    }
+   ],
+   "descriptors": [],
+   "extension": {
+    "historical_observation": {
+     "verbatim": {
+      "text": "75 La Juliana | 860 | 325 | 70 | 32 | 1600 | 67 | 12 | 12 | 'Missing' list: X",
+      "language": "en",
+      "locator": "Martin 1984 App. 4 p. 448 (Lisbon muster 9 May 1588; Paz Salas ed.)"
+     },
+     "observer_role": "compiler",
+     "reported_target": {
+      "designation_verbatim": "La Juliana"
+     },
+     "hedges": []
+    }
+   }
+  },
+  {
+   "schema": "signal_schema/detection/0.3.0",
+   "detection_id": "det:pipeline.streedagh/muster-1588#row-76",
+   "acquisition": "acq:pipeline.streedagh/muster-1588",
+   "read_from": [
+    "cat:martin-1984/app4-p448"
+   ],
+   "detected": true,
+   "position": {
+    "absent": {
+     "reason": "not_applicable"
+    }
+   },
+   "quantities": [
+    {
+     "semantic": "doc.rating.stated",
+     "value": 666,
+     "unit": {
+      "verbatim": "tons"
+     },
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'Tons'"
+      ]
+     }
+    },
+    {
+     "semantic": "doc.count.stated",
+     "value": 236,
+     "unit": "1",
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'Soldiers'"
+      ]
+     },
+     "note": "Soldiers"
+    },
+    {
+     "semantic": "doc.count.stated",
+     "value": 71,
+     "unit": "1",
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'Seamen'"
+      ]
+     },
+     "note": "Seamen"
+    },
+    {
+     "semantic": "doc.count.stated",
+     "value": 18,
+     "unit": "1",
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'Guns'"
+      ]
+     },
+     "note": "Guns"
+    },
+    {
+     "semantic": "doc.count.stated",
+     "value": 900,
+     "unit": "1",
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'Shot'"
+      ]
+     },
+     "note": "Shot"
+    },
+    {
+     "semantic": "phys.mass",
+     "value": 32,
+     "unit": {
+      "verbatim": "quintales"
+     },
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'Powder (qtx)'"
+      ]
+     },
+     "note": "Powder"
+    },
+    {
+     "semantic": "phys.mass",
+     "value": 12,
+     "unit": {
+      "verbatim": "quintales"
+     },
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'Lead (qtx)'"
+      ]
+     },
+     "note": "Lead"
+    },
+    {
+     "semantic": "phys.mass",
+     "value": 10,
+     "unit": {
+      "verbatim": "quintales"
+     },
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'Match (qtx)'"
+      ]
+     },
+     "note": "Match"
+    }
+   ],
+   "descriptors": [],
+   "extension": {
+    "historical_observation": {
+     "verbatim": {
+      "text": "76 Santa Maria de Vison | 666 | 236 | 71 | 18 | 900 | 32 | 12 | 10 | 'Missing' list: X",
+      "language": "en",
+      "locator": "Martin 1984 App. 4 p. 449 (Lisbon muster 9 May 1588; Paz Salas ed.); v0.7 emends tons to 566"
+     },
+     "observer_role": "compiler",
+     "reported_target": {
+      "designation_verbatim": "Santa Maria de Vison"
+     },
+     "hedges": []
+    }
+   }
+  },
+  {
+   "schema": "signal_schema/detection/0.3.0",
+   "detection_id": "det:pipeline.streedagh/muster-1588#row-77",
+   "acquisition": "acq:pipeline.streedagh/muster-1588",
+   "read_from": [
+    "cat:martin-1984/app4-p448"
+   ],
+   "detected": true,
+   "position": {
+    "absent": {
+     "reason": "not_applicable"
+    }
+   },
+   "quantities": [
+    {
+     "semantic": "doc.rating.stated",
+     "value": 900,
+     "unit": {
+      "verbatim": "tons"
+     },
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'Tons'"
+      ]
+     }
+    },
+    {
+     "semantic": "doc.count.stated",
+     "value": 307,
+     "unit": "1",
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'Soldiers'"
+      ]
+     },
+     "note": "Soldiers"
+    },
+    {
+     "semantic": "doc.count.stated",
+     "value": 79,
+     "unit": "1",
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'Seamen'"
+      ]
+     },
+     "note": "Seamen"
+    },
+    {
+     "semantic": "doc.count.stated",
+     "value": 22,
+     "unit": "1",
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'Guns'"
+      ]
+     },
+     "note": "Guns"
+    },
+    {
+     "semantic": "doc.count.stated",
+     "value": 1100,
+     "unit": "1",
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'Shot'"
+      ]
+     },
+     "note": "Shot"
+    },
+    {
+     "semantic": "phys.mass",
+     "value": 41,
+     "unit": {
+      "verbatim": "quintales"
+     },
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'Powder (qtx)'"
+      ]
+     },
+     "note": "Powder"
+    },
+    {
+     "semantic": "phys.mass",
+     "value": 23,
+     "unit": {
+      "verbatim": "quintales"
+     },
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'Lead (qtx)'"
+      ]
+     },
+     "note": "Lead"
+    },
+    {
+     "semantic": "phys.mass",
+     "value": 18,
+     "unit": {
+      "verbatim": "quintales"
+     },
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'Match (qtx)'"
+      ]
+     },
+     "note": "Match"
+    }
+   ],
+   "descriptors": [],
+   "extension": {
+    "historical_observation": {
+     "verbatim": {
+      "text": "77 La Trinidad de Scala | 900 | 307 | 79 | 22 | 1100 | 41 | 23 | 18 | 'Safe' list: at Santander",
+      "language": "en",
+      "locator": "Martin 1984 App. 4 p. 449 (Lisbon muster 9 May 1588; Paz Salas ed.)"
+     },
+     "observer_role": "compiler",
+     "reported_target": {
+      "designation_verbatim": "La Trinidad de Scala"
+     },
+     "hedges": []
+    }
+   }
+  },
+  {
+   "schema": "signal_schema/detection/0.3.0",
+   "detection_id": "det:pipeline.streedagh/site1-survey#CONCRETION",
+   "acquisition": "acq:pipeline.streedagh/site1-survey",
+   "read_from": [
+    "cat:birch-mcelvogue-1999"
+   ],
+   "detected": true,
+   "position": {
+    "absent": {
+     "reason": "not_held"
+    }
+   },
+   "quantities": [],
+   "descriptors": [],
+   "extension": {
+    "historical_observation": {
+     "verbatim": {
+      "text": "Held within the concretions are iron and stone shot of varying calibre, and lead sheeting.",
+      "language": "en",
+      "locator": "Birch & McElvogue 1999 p. 271 (Site 1)"
+     },
+     "observer_role": "reporter",
+     "hedges": []
+    }
+   }
+  },
+  {
+   "schema": "signal_schema/detection/0.3.0",
+   "detection_id": "det:pipeline.streedagh/site1-survey#ANCHORS",
+   "acquisition": "acq:pipeline.streedagh/site1-survey",
+   "read_from": [
+    "cat:birch-mcelvogue-1999"
+   ],
+   "detected": true,
+   "position": {
+    "absent": {
+     "reason": "not_held"
+    }
+   },
+   "quantities": [],
+   "descriptors": [],
+   "extension": {
+    "historical_observation": {
+     "verbatim": {
+      "text": "Sitting on top of this concretion were three anchors and three bronze guns.",
+      "language": "en",
+      "locator": "Birch & McElvogue 1999 p. 271 (Site 1)"
+     },
+     "observer_role": "reporter",
+     "hedges": []
+    }
+   }
+  },
+  {
+   "schema": "signal_schema/detection/0.3.0",
+   "detection_id": "det:pipeline.streedagh/site1-survey#GUNS3",
+   "acquisition": "acq:pipeline.streedagh/recovery-1985",
+   "read_from": [
+    "cat:birch-mcelvogue-1999"
+   ],
+   "detected": true,
+   "position": {
+    "absent": {
+     "reason": "not_held"
+    }
+   },
+   "quantities": [],
+   "descriptors": [],
+   "extension": {
+    "historical_observation": {
+     "verbatim": {
+      "text": "Sitting on top of this concretion were three anchors and three bronze guns. The three guns have been lifted and are being conserved by the National Museum of Ireland.",
+      "language": "en",
+      "locator": "Birch & McElvogue 1999 p. 271 (Site 1)"
+     },
+     "observer_role": "reporter",
+     "hedges": []
+    }
+   }
+  },
+  {
+   "schema": "signal_schema/detection/0.3.0",
+   "detection_id": "det:pipeline.streedagh/site1-survey#RUDDER",
+   "acquisition": "acq:pipeline.streedagh/site1-survey",
+   "read_from": [
+    "cat:birch-mcelvogue-1999"
+   ],
+   "detected": true,
+   "position": {
+    "absent": {
+     "reason": "not_held"
+    }
+   },
+   "quantities": [],
+   "descriptors": [],
+   "extension": {
+    "historical_observation": {
+     "verbatim": {
+      "text": "At a later date the continued exportation of sand from the site uncovered the rudder of the vessel overlying another bronze gun with lifting dolphins (Fig. 6).",
+      "language": "en",
+      "locator": "Birch & McElvogue 1999 p. 271 (Site 1)"
+     },
+     "observer_role": "reporter",
+     "hedges": []
+    }
+   }
+  },
+  {
+   "schema": "signal_schema/detection/0.3.0",
+   "detection_id": "det:pipeline.streedagh/site1-survey#GUN-UNDER-RUDDER",
+   "acquisition": "acq:pipeline.streedagh/site1-survey",
+   "read_from": [
+    "cat:birch-mcelvogue-1999"
+   ],
+   "detected": true,
+   "position": {
+    "absent": {
+     "reason": "not_held"
+    }
+   },
+   "quantities": [],
+   "descriptors": [],
+   "extension": {
+    "historical_observation": {
+     "verbatim": {
+      "text": "…the rudder of the vessel overlying another bronze gun with lifting dolphins (Fig. 6).",
+      "language": "en",
+      "locator": "Birch & McElvogue 1999 p. 271 (Site 1)"
+     },
+     "observer_role": "reporter",
+     "hedges": []
+    }
+   }
+  },
+  {
+   "schema": "signal_schema/detection/0.3.0",
+   "detection_id": "det:pipeline.streedagh/site1-survey#WHEELS",
+   "acquisition": "acq:pipeline.streedagh/site1-survey",
+   "read_from": [
+    "cat:birch-mcelvogue-1999"
+   ],
+   "detected": true,
+   "position": {
+    "absent": {
+     "reason": "not_held"
+    }
+   },
+   "quantities": [],
+   "descriptors": [],
+   "extension": {
+    "historical_observation": {
+     "verbatim": {
+      "text": "A further four wooden spoked wheels, making a total of five, were also recorded.",
+      "language": "en",
+      "locator": "Birch & McElvogue 1999 p. 271 (Site 1)"
+     },
+     "observer_role": "reporter",
+     "hedges": []
+    }
+   }
+  }
+ ],
+ "relations": [
+  {
+   "schema": "signal_schema/detection_relation/0.3.0",
+   "relation_id": "rel:pipeline.streedagh/site1-1",
+   "a": "det:pipeline.streedagh/site1-survey#ANCHORS",
+   "b": "det:pipeline.streedagh/site1-survey#CONCRETION",
+   "type": "overlies",
+   "agent": "agt:pipeline.streedagh/sag",
+   "observed_at": "1985/1998",
+   "note": "as reported in Birch & McElvogue 1999 p. 271"
+  },
+  {
+   "schema": "signal_schema/detection_relation/0.3.0",
+   "relation_id": "rel:pipeline.streedagh/site1-2",
+   "a": "det:pipeline.streedagh/site1-survey#GUNS3",
+   "b": "det:pipeline.streedagh/site1-survey#CONCRETION",
+   "type": "overlies",
+   "agent": "agt:pipeline.streedagh/sag",
+   "observed_at": "1985/1998",
+   "note": "as reported in Birch & McElvogue 1999 p. 271"
+  },
+  {
+   "schema": "signal_schema/detection_relation/0.3.0",
+   "relation_id": "rel:pipeline.streedagh/site1-3",
+   "a": "det:pipeline.streedagh/site1-survey#RUDDER",
+   "b": "det:pipeline.streedagh/site1-survey#GUN-UNDER-RUDDER",
+   "type": "overlies",
+   "agent": "agt:pipeline.streedagh/sag",
+   "observed_at": "1985/1998",
+   "note": "as reported in Birch & McElvogue 1999 p. 271"
+  }
+ ],
+ "signals": [
+  {
+   "schema": "signal_schema/signal/0.3.0",
+   "signal_id": "sig:pipeline.streedagh/G-SEVERO",
+   "minted_by": "det:pipeline.streedagh/recovery-1985#G-SEVERO",
+   "direct_detections": [
+    "det:pipeline.streedagh/recovery-1985#G-SEVERO"
+   ]
+  },
+  {
+   "schema": "signal_schema/signal/0.3.0",
+   "signal_id": "sig:pipeline.streedagh/G-GBATTISTA",
+   "minted_by": "det:pipeline.streedagh/recovery-2015#G-GBATTISTA",
+   "direct_detections": [
+    "det:pipeline.streedagh/recovery-2015#G-GBATTISTA"
+   ]
+  },
+  {
+   "schema": "signal_schema/signal/0.3.0",
+   "signal_id": "sig:pipeline.streedagh/G-MATRONA",
+   "minted_by": "det:pipeline.streedagh/recovery-2015#G-MATRONA",
+   "direct_detections": [
+    "det:pipeline.streedagh/recovery-2015#G-MATRONA"
+   ]
+  },
+  {
+   "schema": "signal_schema/signal/0.3.0",
+   "signal_id": "sig:pipeline.streedagh/G-ILARIA",
+   "minted_by": "det:pipeline.streedagh/recovery-2015#G-ILARIA",
+   "direct_detections": [
+    "det:pipeline.streedagh/recovery-2015#G-ILARIA"
+   ]
+  },
+  {
+   "schema": "signal_schema/signal/0.3.0",
+   "signal_id": "sig:pipeline.streedagh/G-SEBASTIANO",
+   "minted_by": "det:pipeline.streedagh/recovery-2015#G-SEBASTIANO",
+   "direct_detections": [
+    "det:pipeline.streedagh/recovery-2015#G-SEBASTIANO"
+   ]
+  },
+  {
+   "schema": "signal_schema/signal/0.3.0",
+   "signal_id": "sig:pipeline.streedagh/G-ROCCO",
+   "minted_by": "det:pipeline.streedagh/recovery-2015#G-ROCCO",
+   "direct_detections": [
+    "det:pipeline.streedagh/recovery-2015#G-ROCCO"
+   ]
+  },
+  {
+   "schema": "signal_schema/signal/0.3.0",
+   "signal_id": "sig:pipeline.streedagh/G-GIOVANNI",
+   "minted_by": "det:pipeline.streedagh/recovery-2015#G-GIOVANNI",
+   "direct_detections": [
+    "det:pipeline.streedagh/recovery-2015#G-GIOVANNI"
+   ]
+  },
+  {
+   "schema": "signal_schema/signal/0.3.0",
+   "signal_id": "sig:pipeline.streedagh/G-PETRIERE-F",
+   "minted_by": "det:pipeline.streedagh/recovery-1985#G-PETRIERE-F",
+   "direct_detections": [
+    "det:pipeline.streedagh/recovery-1985#G-PETRIERE-F"
+   ]
+  },
+  {
+   "schema": "signal_schema/signal/0.3.0",
+   "signal_id": "sig:pipeline.streedagh/G-PETRIERE-2",
+   "minted_by": "det:pipeline.streedagh/recovery-1985#G-PETRIERE-2",
+   "direct_detections": [
+    "det:pipeline.streedagh/recovery-1985#G-PETRIERE-2"
+   ]
+  },
+  {
+   "schema": "signal_schema/signal/0.3.0",
+   "signal_id": "sig:pipeline.streedagh/site1-CONCRETION",
+   "minted_by": "det:pipeline.streedagh/site1-survey#CONCRETION",
+   "direct_detections": [
+    "det:pipeline.streedagh/site1-survey#CONCRETION"
+   ]
+  },
+  {
+   "schema": "signal_schema/signal/0.3.0",
+   "signal_id": "sig:pipeline.streedagh/site1-ANCHORS",
+   "minted_by": "det:pipeline.streedagh/site1-survey#ANCHORS",
+   "direct_detections": [
+    "det:pipeline.streedagh/site1-survey#ANCHORS"
+   ]
+  },
+  {
+   "schema": "signal_schema/signal/0.3.0",
+   "signal_id": "sig:pipeline.streedagh/site1-GUNS3",
+   "minted_by": "det:pipeline.streedagh/site1-survey#GUNS3",
+   "direct_detections": [
+    "det:pipeline.streedagh/site1-survey#GUNS3"
+   ]
+  },
+  {
+   "schema": "signal_schema/signal/0.3.0",
+   "signal_id": "sig:pipeline.streedagh/site1-RUDDER",
+   "minted_by": "det:pipeline.streedagh/site1-survey#RUDDER",
+   "direct_detections": [
+    "det:pipeline.streedagh/site1-survey#RUDDER"
+   ]
+  },
+  {
+   "schema": "signal_schema/signal/0.3.0",
+   "signal_id": "sig:pipeline.streedagh/site1-GUN-UNDER-RUDDER",
+   "minted_by": "det:pipeline.streedagh/site1-survey#GUN-UNDER-RUDDER",
+   "direct_detections": [
+    "det:pipeline.streedagh/site1-survey#GUN-UNDER-RUDDER"
+   ]
+  },
+  {
+   "schema": "signal_schema/signal/0.3.0",
+   "signal_id": "sig:pipeline.streedagh/site1-WHEELS",
+   "minted_by": "det:pipeline.streedagh/site1-survey#WHEELS",
+   "direct_detections": [
+    "det:pipeline.streedagh/site1-survey#WHEELS"
+   ]
+  }
+ ],
+ "inferences": [
+  {
+   "schema": "signal_schema/inference/0.3.0",
+   "inference_id": "inf:pipeline.streedagh/G-SEVERO/label-ridella",
+   "agent": "agt:pipeline.streedagh/ridella",
+   "kind": "label",
+   "subject": [
+    "sig:pipeline.streedagh/G-SEVERO"
+   ],
+   "statement": {
+    "type": "Heavy Saker",
+    "muzzle_mouldings": "Type C"
+   },
+   "label": "Heavy Saker",
+   "credence": {
+    "absent": {
+     "reason": "reported_claim"
+    }
+   },
+   "falsifier": {
+    "absent": {
+     "reason": "reported_claim"
+    }
+   },
+   "basis": [
+    "det:pipeline.streedagh/recovery-1985#G-SEVERO"
+   ]
+  },
+  {
+   "schema": "signal_schema/inference/0.3.0",
+   "inference_id": "inf:pipeline.streedagh/G-SEVERO/cast",
+   "agent": "agt:pipeline.streedagh/v1",
+   "kind": "path_event",
+   "subject": [
+    "sig:pipeline.streedagh/G-SEVERO"
+   ],
+   "statement": {
+    "signal": "sig:pipeline.streedagh/G-SEVERO",
+    "type": "inception",
+    "tau": {
+     "semantic": "time.tau",
+     "interval": [
+      428.9925,
+      429.9918
+     ],
+     "unit": "a"
+    },
+    "to": "Genoa (workshop of Dorino II Gioardi)",
+    "note": "casting; year read from the gun"
+   },
+   "credence": 0.95,
+   "falsifier": "the year on the gun is not its casting year (a recast or later inscription), or a founder other than Dorino is shown to have cast it",
+   "basis": [
+    "det:pipeline.streedagh/recovery-1985#G-SEVERO",
+    "cat:ridella-2016/tab1"
+   ]
+  },
+  {
+   "schema": "signal_schema/inference/0.3.0",
+   "inference_id": "inf:pipeline.streedagh/G-SEVERO/attr-dorino",
+   "agent": "agt:pipeline.streedagh/v1",
+   "kind": "attribution",
+   "subject": [
+    "sig:pipeline.streedagh/G-SEVERO"
+   ],
+   "statement": {
+    "signal": "sig:pipeline.streedagh/G-SEVERO",
+    "source": "src:dorino-gioardi-workshop",
+    "probability": 0.9
+   },
+   "credence": 0.9,
+   "falsifier": "the founder's mark on this gun is not Dorino's D, or the gun differs from his known work",
+   "basis": [
+    "det:pipeline.streedagh/recovery-1985#G-SEVERO",
+    "cat:ridella-2016/tab1"
+   ]
+  },
+  {
+   "schema": "signal_schema/inference/0.3.0",
+   "inference_id": "inf:pipeline.streedagh/G-SEVERO/attr-juliana",
+   "agent": "agt:pipeline.streedagh/estimator",
+   "kind": "attribution",
+   "subject": [
+    "sig:pipeline.streedagh/G-SEVERO"
+   ],
+   "statement": {
+    "signal": "sig:pipeline.streedagh/G-SEVERO",
+    "source": "src:ship-juliana",
+    "probability": 0.9994,
+    "note": "posterior from attribution_estimator.py over Juliana / Lavia / Vison / unknown"
+   },
+   "credence": 0.9994,
+   "falsifier": "a recovery position shown to lie at another wreck, or a weight mark matching another ship's record",
+   "basis": [
+    "det:pipeline.streedagh/recovery-1985#G-SEVERO"
+   ]
+  },
+  {
+   "schema": "signal_schema/inference/0.3.0",
+   "inference_id": "inf:pipeline.streedagh/G-SEVERO/wreck",
+   "agent": "agt:pipeline.streedagh/v1",
+   "kind": "path_event",
+   "subject": [
+    "sig:pipeline.streedagh/G-SEVERO"
+   ],
+   "statement": {
+    "signal": "sig:pipeline.streedagh/G-SEVERO",
+    "type": "displacement",
+    "tau": {
+     "semantic": "time.tau",
+     "interval": [
+      411.2567,
+      411.2704
+     ],
+     "unit": "a",
+     "note": "21-26 Sep 1588 Gregorian: the sources give 21 (project), 25 (Martin p. 110) and 26 (Ridella p. 27)"
+    },
+    "to": "seabed, Streedagh Strand",
+    "note": "the wreck: from the ship to the seabed"
+   },
+   "credence": 0.9994,
+   "falsifier": "the gun was not aboard La Juliana when she was wrecked",
+   "basis": [
+    "det:pipeline.streedagh/recovery-1985#G-SEVERO",
+    "inf:pipeline.streedagh/G-SEVERO/attr-juliana"
+   ]
+  },
+  {
+   "schema": "signal_schema/inference/0.3.0",
+   "inference_id": "inf:pipeline.streedagh/G-GBATTISTA/label-ridella",
+   "agent": "agt:pipeline.streedagh/ridella",
+   "kind": "label",
+   "subject": [
+    "sig:pipeline.streedagh/G-GBATTISTA"
+   ],
+   "statement": {
+    "type": "Heavy Saker",
+    "muzzle_mouldings": "Type C"
+   },
+   "label": "Heavy Saker",
+   "credence": {
+    "absent": {
+     "reason": "reported_claim"
+    }
+   },
+   "falsifier": {
+    "absent": {
+     "reason": "reported_claim"
+    }
+   },
+   "basis": [
+    "det:pipeline.streedagh/recovery-2015#G-GBATTISTA"
+   ]
+  },
+  {
+   "schema": "signal_schema/inference/0.3.0",
+   "inference_id": "inf:pipeline.streedagh/G-GBATTISTA/cast",
+   "agent": "agt:pipeline.streedagh/v1",
+   "kind": "path_event",
+   "subject": [
+    "sig:pipeline.streedagh/G-GBATTISTA"
+   ],
+   "statement": {
+    "signal": "sig:pipeline.streedagh/G-GBATTISTA",
+    "type": "inception",
+    "tau": {
+     "semantic": "time.tau",
+     "interval": [
+      428.9925,
+      429.9918
+     ],
+     "unit": "a"
+    },
+    "to": "Genoa (workshop of Dorino II Gioardi)",
+    "note": "casting; year read from the gun"
+   },
+   "credence": 0.95,
+   "falsifier": "the year on the gun is not its casting year (a recast or later inscription), or a founder other than Dorino is shown to have cast it",
+   "basis": [
+    "det:pipeline.streedagh/recovery-2015#G-GBATTISTA",
+    "cat:ridella-2016/tab1"
+   ]
+  },
+  {
+   "schema": "signal_schema/inference/0.3.0",
+   "inference_id": "inf:pipeline.streedagh/G-GBATTISTA/attr-dorino",
+   "agent": "agt:pipeline.streedagh/v1",
+   "kind": "attribution",
+   "subject": [
+    "sig:pipeline.streedagh/G-GBATTISTA"
+   ],
+   "statement": {
+    "signal": "sig:pipeline.streedagh/G-GBATTISTA",
+    "source": "src:dorino-gioardi-workshop",
+    "probability": 0.9
+   },
+   "credence": 0.9,
+   "falsifier": "the founder's mark on this gun is not Dorino's D, or the gun differs from his known work",
+   "basis": [
+    "det:pipeline.streedagh/recovery-2015#G-GBATTISTA",
+    "cat:ridella-2016/tab1"
+   ]
+  },
+  {
+   "schema": "signal_schema/inference/0.3.0",
+   "inference_id": "inf:pipeline.streedagh/G-GBATTISTA/attr-juliana",
+   "agent": "agt:pipeline.streedagh/estimator",
+   "kind": "attribution",
+   "subject": [
+    "sig:pipeline.streedagh/G-GBATTISTA"
+   ],
+   "statement": {
+    "signal": "sig:pipeline.streedagh/G-GBATTISTA",
+    "source": "src:ship-juliana",
+    "probability": 0.9895,
+    "note": "posterior from attribution_estimator.py over Juliana / Lavia / Vison / unknown"
+   },
+   "credence": 0.9895,
+   "falsifier": "a recovery position shown to lie at another wreck, or a weight mark matching another ship's record",
+   "basis": [
+    "det:pipeline.streedagh/recovery-2015#G-GBATTISTA"
+   ]
+  },
+  {
+   "schema": "signal_schema/inference/0.3.0",
+   "inference_id": "inf:pipeline.streedagh/G-GBATTISTA/wreck",
+   "agent": "agt:pipeline.streedagh/v1",
+   "kind": "path_event",
+   "subject": [
+    "sig:pipeline.streedagh/G-GBATTISTA"
+   ],
+   "statement": {
+    "signal": "sig:pipeline.streedagh/G-GBATTISTA",
+    "type": "displacement",
+    "tau": {
+     "semantic": "time.tau",
+     "interval": [
+      411.2567,
+      411.2704
+     ],
+     "unit": "a",
+     "note": "21-26 Sep 1588 Gregorian: the sources give 21 (project), 25 (Martin p. 110) and 26 (Ridella p. 27)"
+    },
+    "to": "seabed, Streedagh Strand",
+    "note": "the wreck: from the ship to the seabed"
+   },
+   "credence": 0.9895,
+   "falsifier": "the gun was not aboard La Juliana when she was wrecked",
+   "basis": [
+    "det:pipeline.streedagh/recovery-2015#G-GBATTISTA",
+    "inf:pipeline.streedagh/G-GBATTISTA/attr-juliana"
+   ]
+  },
+  {
+   "schema": "signal_schema/inference/0.3.0",
+   "inference_id": "inf:pipeline.streedagh/G-MATRONA/label-ridella",
+   "agent": "agt:pipeline.streedagh/ridella",
+   "kind": "label",
+   "subject": [
+    "sig:pipeline.streedagh/G-MATRONA"
+   ],
+   "statement": {
+    "type": "Heavy Falcon",
+    "muzzle_mouldings": "Type C"
+   },
+   "label": "Heavy Falcon",
+   "credence": {
+    "absent": {
+     "reason": "reported_claim"
+    }
+   },
+   "falsifier": {
+    "absent": {
+     "reason": "reported_claim"
+    }
+   },
+   "basis": [
+    "det:pipeline.streedagh/recovery-2015#G-MATRONA"
+   ]
+  },
+  {
+   "schema": "signal_schema/inference/0.3.0",
+   "inference_id": "inf:pipeline.streedagh/G-MATRONA/cast",
+   "agent": "agt:pipeline.streedagh/v1",
+   "kind": "path_event",
+   "subject": [
+    "sig:pipeline.streedagh/G-MATRONA"
+   ],
+   "statement": {
+    "signal": "sig:pipeline.streedagh/G-MATRONA",
+    "type": "inception",
+    "tau": {
+     "semantic": "time.tau",
+     "interval": [
+      428.9925,
+      429.9918
+     ],
+     "unit": "a"
+    },
+    "to": "Genoa (workshop of Dorino II Gioardi)",
+    "note": "casting; year read from the gun"
+   },
+   "credence": 0.95,
+   "falsifier": "the year on the gun is not its casting year (a recast or later inscription), or a founder other than Dorino is shown to have cast it",
+   "basis": [
+    "det:pipeline.streedagh/recovery-2015#G-MATRONA",
+    "cat:ridella-2016/tab1"
+   ]
+  },
+  {
+   "schema": "signal_schema/inference/0.3.0",
+   "inference_id": "inf:pipeline.streedagh/G-MATRONA/attr-dorino",
+   "agent": "agt:pipeline.streedagh/v1",
+   "kind": "attribution",
+   "subject": [
+    "sig:pipeline.streedagh/G-MATRONA"
+   ],
+   "statement": {
+    "signal": "sig:pipeline.streedagh/G-MATRONA",
+    "source": "src:dorino-gioardi-workshop",
+    "probability": 0.9
+   },
+   "credence": 0.9,
+   "falsifier": "the founder's mark on this gun is not Dorino's D, or the gun differs from his known work",
+   "basis": [
+    "det:pipeline.streedagh/recovery-2015#G-MATRONA",
+    "cat:ridella-2016/tab1"
+   ]
+  },
+  {
+   "schema": "signal_schema/inference/0.3.0",
+   "inference_id": "inf:pipeline.streedagh/G-MATRONA/attr-juliana",
+   "agent": "agt:pipeline.streedagh/estimator",
+   "kind": "attribution",
+   "subject": [
+    "sig:pipeline.streedagh/G-MATRONA"
+   ],
+   "statement": {
+    "signal": "sig:pipeline.streedagh/G-MATRONA",
+    "source": "src:ship-juliana",
+    "probability": 0.9995,
+    "note": "posterior from attribution_estimator.py over Juliana / Lavia / Vison / unknown"
+   },
+   "credence": 0.9995,
+   "falsifier": "a recovery position shown to lie at another wreck, or a weight mark matching another ship's record",
+   "basis": [
+    "det:pipeline.streedagh/recovery-2015#G-MATRONA"
+   ]
+  },
+  {
+   "schema": "signal_schema/inference/0.3.0",
+   "inference_id": "inf:pipeline.streedagh/G-MATRONA/wreck",
+   "agent": "agt:pipeline.streedagh/v1",
+   "kind": "path_event",
+   "subject": [
+    "sig:pipeline.streedagh/G-MATRONA"
+   ],
+   "statement": {
+    "signal": "sig:pipeline.streedagh/G-MATRONA",
+    "type": "displacement",
+    "tau": {
+     "semantic": "time.tau",
+     "interval": [
+      411.2567,
+      411.2704
+     ],
+     "unit": "a",
+     "note": "21-26 Sep 1588 Gregorian: the sources give 21 (project), 25 (Martin p. 110) and 26 (Ridella p. 27)"
+    },
+    "to": "seabed, Streedagh Strand",
+    "note": "the wreck: from the ship to the seabed"
+   },
+   "credence": 0.9995,
+   "falsifier": "the gun was not aboard La Juliana when she was wrecked",
+   "basis": [
+    "det:pipeline.streedagh/recovery-2015#G-MATRONA",
+    "inf:pipeline.streedagh/G-MATRONA/attr-juliana"
+   ]
+  },
+  {
+   "schema": "signal_schema/inference/0.3.0",
+   "inference_id": "inf:pipeline.streedagh/G-ILARIA/label-ridella",
+   "agent": "agt:pipeline.streedagh/ridella",
+   "kind": "label",
+   "subject": [
+    "sig:pipeline.streedagh/G-ILARIA"
+   ],
+   "statement": {
+    "type": "Heavy Falcon",
+    "muzzle_mouldings": "Type C"
+   },
+   "label": "Heavy Falcon",
+   "credence": {
+    "absent": {
+     "reason": "reported_claim"
+    }
+   },
+   "falsifier": {
+    "absent": {
+     "reason": "reported_claim"
+    }
+   },
+   "basis": [
+    "det:pipeline.streedagh/recovery-2015#G-ILARIA"
+   ]
+  },
+  {
+   "schema": "signal_schema/inference/0.3.0",
+   "inference_id": "inf:pipeline.streedagh/G-ILARIA/cast",
+   "agent": "agt:pipeline.streedagh/v1",
+   "kind": "path_event",
+   "subject": [
+    "sig:pipeline.streedagh/G-ILARIA"
+   ],
+   "statement": {
+    "signal": "sig:pipeline.streedagh/G-ILARIA",
+    "type": "inception",
+    "tau": {
+     "semantic": "time.tau",
+     "interval": [
+      428.9925,
+      429.9918
+     ],
+     "unit": "a"
+    },
+    "to": "Genoa (workshop of Dorino II Gioardi)",
+    "note": "casting; year read from the gun"
+   },
+   "credence": 0.95,
+   "falsifier": "the year on the gun is not its casting year (a recast or later inscription), or a founder other than Dorino is shown to have cast it",
+   "basis": [
+    "det:pipeline.streedagh/recovery-2015#G-ILARIA",
+    "cat:ridella-2016/tab1"
+   ]
+  },
+  {
+   "schema": "signal_schema/inference/0.3.0",
+   "inference_id": "inf:pipeline.streedagh/G-ILARIA/attr-dorino",
+   "agent": "agt:pipeline.streedagh/v1",
+   "kind": "attribution",
+   "subject": [
+    "sig:pipeline.streedagh/G-ILARIA"
+   ],
+   "statement": {
+    "signal": "sig:pipeline.streedagh/G-ILARIA",
+    "source": "src:dorino-gioardi-workshop",
+    "probability": 0.9
+   },
+   "credence": 0.9,
+   "falsifier": "the founder's mark on this gun is not Dorino's D, or the gun differs from his known work",
+   "basis": [
+    "det:pipeline.streedagh/recovery-2015#G-ILARIA",
+    "cat:ridella-2016/tab1"
+   ]
+  },
+  {
+   "schema": "signal_schema/inference/0.3.0",
+   "inference_id": "inf:pipeline.streedagh/G-ILARIA/attr-juliana",
+   "agent": "agt:pipeline.streedagh/estimator",
+   "kind": "attribution",
+   "subject": [
+    "sig:pipeline.streedagh/G-ILARIA"
+   ],
+   "statement": {
+    "signal": "sig:pipeline.streedagh/G-ILARIA",
+    "source": "src:ship-juliana",
+    "probability": 0.9994,
+    "note": "posterior from attribution_estimator.py over Juliana / Lavia / Vison / unknown"
+   },
+   "credence": 0.9994,
+   "falsifier": "a recovery position shown to lie at another wreck, or a weight mark matching another ship's record",
+   "basis": [
+    "det:pipeline.streedagh/recovery-2015#G-ILARIA"
+   ]
+  },
+  {
+   "schema": "signal_schema/inference/0.3.0",
+   "inference_id": "inf:pipeline.streedagh/G-ILARIA/wreck",
+   "agent": "agt:pipeline.streedagh/v1",
+   "kind": "path_event",
+   "subject": [
+    "sig:pipeline.streedagh/G-ILARIA"
+   ],
+   "statement": {
+    "signal": "sig:pipeline.streedagh/G-ILARIA",
+    "type": "displacement",
+    "tau": {
+     "semantic": "time.tau",
+     "interval": [
+      411.2567,
+      411.2704
+     ],
+     "unit": "a",
+     "note": "21-26 Sep 1588 Gregorian: the sources give 21 (project), 25 (Martin p. 110) and 26 (Ridella p. 27)"
+    },
+    "to": "seabed, Streedagh Strand",
+    "note": "the wreck: from the ship to the seabed"
+   },
+   "credence": 0.9994,
+   "falsifier": "the gun was not aboard La Juliana when she was wrecked",
+   "basis": [
+    "det:pipeline.streedagh/recovery-2015#G-ILARIA",
+    "inf:pipeline.streedagh/G-ILARIA/attr-juliana"
+   ]
+  },
+  {
+   "schema": "signal_schema/inference/0.3.0",
+   "inference_id": "inf:pipeline.streedagh/G-SEBASTIANO/label-ridella",
+   "agent": "agt:pipeline.streedagh/ridella",
+   "kind": "label",
+   "subject": [
+    "sig:pipeline.streedagh/G-SEBASTIANO"
+   ],
+   "statement": {
+    "type": "Medium Falcon",
+    "muzzle_mouldings": "Type C"
+   },
+   "label": "Medium Falcon",
+   "credence": {
+    "absent": {
+     "reason": "reported_claim"
+    }
+   },
+   "falsifier": {
+    "absent": {
+     "reason": "reported_claim"
+    }
+   },
+   "basis": [
+    "det:pipeline.streedagh/recovery-2015#G-SEBASTIANO"
+   ]
+  },
+  {
+   "schema": "signal_schema/inference/0.3.0",
+   "inference_id": "inf:pipeline.streedagh/G-SEBASTIANO/cast",
+   "agent": "agt:pipeline.streedagh/v1",
+   "kind": "path_event",
+   "subject": [
+    "sig:pipeline.streedagh/G-SEBASTIANO"
+   ],
+   "statement": {
+    "signal": "sig:pipeline.streedagh/G-SEBASTIANO",
+    "type": "inception",
+    "tau": {
+     "semantic": "time.tau",
+     "interval": [
+      428.9925,
+      429.9918
+     ],
+     "unit": "a"
+    },
+    "to": "Genoa (workshop of Dorino II Gioardi)",
+    "note": "casting; year read from the gun"
+   },
+   "credence": 0.95,
+   "falsifier": "the year on the gun is not its casting year (a recast or later inscription), or a founder other than Dorino is shown to have cast it",
+   "basis": [
+    "det:pipeline.streedagh/recovery-2015#G-SEBASTIANO",
+    "cat:ridella-2016/tab1"
+   ]
+  },
+  {
+   "schema": "signal_schema/inference/0.3.0",
+   "inference_id": "inf:pipeline.streedagh/G-SEBASTIANO/attr-dorino",
+   "agent": "agt:pipeline.streedagh/v1",
+   "kind": "attribution",
+   "subject": [
+    "sig:pipeline.streedagh/G-SEBASTIANO"
+   ],
+   "statement": {
+    "signal": "sig:pipeline.streedagh/G-SEBASTIANO",
+    "source": "src:dorino-gioardi-workshop",
+    "probability": 0.9
+   },
+   "credence": 0.9,
+   "falsifier": "the founder's mark on this gun is not Dorino's D, or the gun differs from his known work",
+   "basis": [
+    "det:pipeline.streedagh/recovery-2015#G-SEBASTIANO",
+    "cat:ridella-2016/tab1"
+   ]
+  },
+  {
+   "schema": "signal_schema/inference/0.3.0",
+   "inference_id": "inf:pipeline.streedagh/G-SEBASTIANO/attr-juliana",
+   "agent": "agt:pipeline.streedagh/estimator",
+   "kind": "attribution",
+   "subject": [
+    "sig:pipeline.streedagh/G-SEBASTIANO"
+   ],
+   "statement": {
+    "signal": "sig:pipeline.streedagh/G-SEBASTIANO",
+    "source": "src:ship-juliana",
+    "probability": 0.9994,
+    "note": "posterior from attribution_estimator.py over Juliana / Lavia / Vison / unknown"
+   },
+   "credence": 0.9994,
+   "falsifier": "a recovery position shown to lie at another wreck, or a weight mark matching another ship's record",
+   "basis": [
+    "det:pipeline.streedagh/recovery-2015#G-SEBASTIANO"
+   ]
+  },
+  {
+   "schema": "signal_schema/inference/0.3.0",
+   "inference_id": "inf:pipeline.streedagh/G-SEBASTIANO/wreck",
+   "agent": "agt:pipeline.streedagh/v1",
+   "kind": "path_event",
+   "subject": [
+    "sig:pipeline.streedagh/G-SEBASTIANO"
+   ],
+   "statement": {
+    "signal": "sig:pipeline.streedagh/G-SEBASTIANO",
+    "type": "displacement",
+    "tau": {
+     "semantic": "time.tau",
+     "interval": [
+      411.2567,
+      411.2704
+     ],
+     "unit": "a",
+     "note": "21-26 Sep 1588 Gregorian: the sources give 21 (project), 25 (Martin p. 110) and 26 (Ridella p. 27)"
+    },
+    "to": "seabed, Streedagh Strand",
+    "note": "the wreck: from the ship to the seabed"
+   },
+   "credence": 0.9994,
+   "falsifier": "the gun was not aboard La Juliana when she was wrecked",
+   "basis": [
+    "det:pipeline.streedagh/recovery-2015#G-SEBASTIANO",
+    "inf:pipeline.streedagh/G-SEBASTIANO/attr-juliana"
+   ]
+  },
+  {
+   "schema": "signal_schema/inference/0.3.0",
+   "inference_id": "inf:pipeline.streedagh/G-ROCCO/label-ridella",
+   "agent": "agt:pipeline.streedagh/ridella",
+   "kind": "label",
+   "subject": [
+    "sig:pipeline.streedagh/G-ROCCO"
+   ],
+   "statement": {
+    "type": "Medium Falcon",
+    "muzzle_mouldings": "Type C"
+   },
+   "label": "Medium Falcon",
+   "credence": {
+    "absent": {
+     "reason": "reported_claim"
+    }
+   },
+   "falsifier": {
+    "absent": {
+     "reason": "reported_claim"
+    }
+   },
+   "basis": [
+    "det:pipeline.streedagh/recovery-2015#G-ROCCO"
+   ]
+  },
+  {
+   "schema": "signal_schema/inference/0.3.0",
+   "inference_id": "inf:pipeline.streedagh/G-ROCCO/cast",
+   "agent": "agt:pipeline.streedagh/v1",
+   "kind": "path_event",
+   "subject": [
+    "sig:pipeline.streedagh/G-ROCCO"
+   ],
+   "statement": {
+    "signal": "sig:pipeline.streedagh/G-ROCCO",
+    "type": "inception",
+    "tau": {
+     "semantic": "time.tau",
+     "interval": [
+      428.9925,
+      429.9918
+     ],
+     "unit": "a"
+    },
+    "to": "Genoa (workshop of Dorino II Gioardi)",
+    "note": "casting; year read from the gun"
+   },
+   "credence": 0.95,
+   "falsifier": "the year on the gun is not its casting year (a recast or later inscription), or a founder other than Dorino is shown to have cast it",
+   "basis": [
+    "det:pipeline.streedagh/recovery-2015#G-ROCCO",
+    "cat:ridella-2016/tab1"
+   ]
+  },
+  {
+   "schema": "signal_schema/inference/0.3.0",
+   "inference_id": "inf:pipeline.streedagh/G-ROCCO/attr-dorino",
+   "agent": "agt:pipeline.streedagh/v1",
+   "kind": "attribution",
+   "subject": [
+    "sig:pipeline.streedagh/G-ROCCO"
+   ],
+   "statement": {
+    "signal": "sig:pipeline.streedagh/G-ROCCO",
+    "source": "src:dorino-gioardi-workshop",
+    "probability": 0.9
+   },
+   "credence": 0.9,
+   "falsifier": "the founder's mark on this gun is not Dorino's D, or the gun differs from his known work",
+   "basis": [
+    "det:pipeline.streedagh/recovery-2015#G-ROCCO",
+    "cat:ridella-2016/tab1"
+   ]
+  },
+  {
+   "schema": "signal_schema/inference/0.3.0",
+   "inference_id": "inf:pipeline.streedagh/G-ROCCO/attr-juliana",
+   "agent": "agt:pipeline.streedagh/estimator",
+   "kind": "attribution",
+   "subject": [
+    "sig:pipeline.streedagh/G-ROCCO"
+   ],
+   "statement": {
+    "signal": "sig:pipeline.streedagh/G-ROCCO",
+    "source": "src:ship-juliana",
+    "probability": 0.9895,
+    "note": "posterior from attribution_estimator.py over Juliana / Lavia / Vison / unknown"
+   },
+   "credence": 0.9895,
+   "falsifier": "a recovery position shown to lie at another wreck, or a weight mark matching another ship's record",
+   "basis": [
+    "det:pipeline.streedagh/recovery-2015#G-ROCCO"
+   ]
+  },
+  {
+   "schema": "signal_schema/inference/0.3.0",
+   "inference_id": "inf:pipeline.streedagh/G-ROCCO/wreck",
+   "agent": "agt:pipeline.streedagh/v1",
+   "kind": "path_event",
+   "subject": [
+    "sig:pipeline.streedagh/G-ROCCO"
+   ],
+   "statement": {
+    "signal": "sig:pipeline.streedagh/G-ROCCO",
+    "type": "displacement",
+    "tau": {
+     "semantic": "time.tau",
+     "interval": [
+      411.2567,
+      411.2704
+     ],
+     "unit": "a",
+     "note": "21-26 Sep 1588 Gregorian: the sources give 21 (project), 25 (Martin p. 110) and 26 (Ridella p. 27)"
+    },
+    "to": "seabed, Streedagh Strand",
+    "note": "the wreck: from the ship to the seabed"
+   },
+   "credence": 0.9895,
+   "falsifier": "the gun was not aboard La Juliana when she was wrecked",
+   "basis": [
+    "det:pipeline.streedagh/recovery-2015#G-ROCCO",
+    "inf:pipeline.streedagh/G-ROCCO/attr-juliana"
+   ]
+  },
+  {
+   "schema": "signal_schema/inference/0.3.0",
+   "inference_id": "inf:pipeline.streedagh/G-GIOVANNI/label-ridella",
+   "agent": "agt:pipeline.streedagh/ridella",
+   "kind": "label",
+   "subject": [
+    "sig:pipeline.streedagh/G-GIOVANNI"
+   ],
+   "statement": {
+    "type": "Falconet",
+    "muzzle_mouldings": "Type C"
+   },
+   "label": "Falconet",
+   "credence": {
+    "absent": {
+     "reason": "reported_claim"
+    }
+   },
+   "falsifier": {
+    "absent": {
+     "reason": "reported_claim"
+    }
+   },
+   "basis": [
+    "det:pipeline.streedagh/recovery-2015#G-GIOVANNI"
+   ]
+  },
+  {
+   "schema": "signal_schema/inference/0.3.0",
+   "inference_id": "inf:pipeline.streedagh/G-GIOVANNI/cast",
+   "agent": "agt:pipeline.streedagh/v1",
+   "kind": "path_event",
+   "subject": [
+    "sig:pipeline.streedagh/G-GIOVANNI"
+   ],
+   "statement": {
+    "signal": "sig:pipeline.streedagh/G-GIOVANNI",
+    "type": "inception",
+    "tau": {
+     "semantic": "time.tau",
+     "interval": [
+      428.9925,
+      429.9918
+     ],
+     "unit": "a"
+    },
+    "to": "Genoa (workshop of Dorino II Gioardi)",
+    "note": "casting; year read from the gun"
+   },
+   "credence": 0.95,
+   "falsifier": "the year on the gun is not its casting year (a recast or later inscription), or a founder other than Dorino is shown to have cast it",
+   "basis": [
+    "det:pipeline.streedagh/recovery-2015#G-GIOVANNI",
+    "cat:ridella-2016/tab1"
+   ]
+  },
+  {
+   "schema": "signal_schema/inference/0.3.0",
+   "inference_id": "inf:pipeline.streedagh/G-GIOVANNI/attr-dorino",
+   "agent": "agt:pipeline.streedagh/v1",
+   "kind": "attribution",
+   "subject": [
+    "sig:pipeline.streedagh/G-GIOVANNI"
+   ],
+   "statement": {
+    "signal": "sig:pipeline.streedagh/G-GIOVANNI",
+    "source": "src:dorino-gioardi-workshop",
+    "probability": 0.9
+   },
+   "credence": 0.9,
+   "falsifier": "the founder's mark on this gun is not Dorino's D, or the gun differs from his known work",
+   "basis": [
+    "det:pipeline.streedagh/recovery-2015#G-GIOVANNI",
+    "cat:ridella-2016/tab1"
+   ]
+  },
+  {
+   "schema": "signal_schema/inference/0.3.0",
+   "inference_id": "inf:pipeline.streedagh/G-GIOVANNI/attr-juliana",
+   "agent": "agt:pipeline.streedagh/estimator",
+   "kind": "attribution",
+   "subject": [
+    "sig:pipeline.streedagh/G-GIOVANNI"
+   ],
+   "statement": {
+    "signal": "sig:pipeline.streedagh/G-GIOVANNI",
+    "source": "src:ship-juliana",
+    "probability": 0.9994,
+    "note": "posterior from attribution_estimator.py over Juliana / Lavia / Vison / unknown"
+   },
+   "credence": 0.9994,
+   "falsifier": "a recovery position shown to lie at another wreck, or a weight mark matching another ship's record",
+   "basis": [
+    "det:pipeline.streedagh/recovery-2015#G-GIOVANNI"
+   ]
+  },
+  {
+   "schema": "signal_schema/inference/0.3.0",
+   "inference_id": "inf:pipeline.streedagh/G-GIOVANNI/wreck",
+   "agent": "agt:pipeline.streedagh/v1",
+   "kind": "path_event",
+   "subject": [
+    "sig:pipeline.streedagh/G-GIOVANNI"
+   ],
+   "statement": {
+    "signal": "sig:pipeline.streedagh/G-GIOVANNI",
+    "type": "displacement",
+    "tau": {
+     "semantic": "time.tau",
+     "interval": [
+      411.2567,
+      411.2704
+     ],
+     "unit": "a",
+     "note": "21-26 Sep 1588 Gregorian: the sources give 21 (project), 25 (Martin p. 110) and 26 (Ridella p. 27)"
+    },
+    "to": "seabed, Streedagh Strand",
+    "note": "the wreck: from the ship to the seabed"
+   },
+   "credence": 0.9994,
+   "falsifier": "the gun was not aboard La Juliana when she was wrecked",
+   "basis": [
+    "det:pipeline.streedagh/recovery-2015#G-GIOVANNI",
+    "inf:pipeline.streedagh/G-GIOVANNI/attr-juliana"
+   ]
+  },
+  {
+   "schema": "signal_schema/inference/0.3.0",
+   "inference_id": "inf:pipeline.streedagh/G-PETRIERE-F/label-ridella",
+   "agent": "agt:pipeline.streedagh/ridella",
+   "kind": "label",
+   "subject": [
+    "sig:pipeline.streedagh/G-PETRIERE-F"
+   ],
+   "statement": {
+    "type": "Medium Petriere",
+    "muzzle_mouldings": "Type C"
+   },
+   "label": "Medium Petriere",
+   "credence": {
+    "absent": {
+     "reason": "reported_claim"
+    }
+   },
+   "falsifier": {
+    "absent": {
+     "reason": "reported_claim"
+    }
+   },
+   "basis": [
+    "det:pipeline.streedagh/recovery-1985#G-PETRIERE-F"
+   ]
+  },
+  {
+   "schema": "signal_schema/inference/0.3.0",
+   "inference_id": "inf:pipeline.streedagh/G-PETRIERE-F/cast",
+   "agent": "agt:pipeline.streedagh/v1",
+   "kind": "path_event",
+   "subject": [
+    "sig:pipeline.streedagh/G-PETRIERE-F"
+   ],
+   "statement": {
+    "signal": "sig:pipeline.streedagh/G-PETRIERE-F",
+    "type": "inception",
+    "tau": {
+     "semantic": "time.tau",
+     "interval": [
+      428.9925,
+      429.9918
+     ],
+     "unit": "a"
+    },
+    "to": "Genoa (workshop of Dorino II Gioardi)",
+    "note": "casting; year assigned by the compiler, not read"
+   },
+   "credence": 0.6,
+   "falsifier": "the year on the gun is not its casting year (a recast or later inscription), or a founder other than Dorino is shown to have cast it",
+   "basis": [
+    "det:pipeline.streedagh/recovery-1985#G-PETRIERE-F",
+    "cat:ridella-2016/tab1"
+   ]
+  },
+  {
+   "schema": "signal_schema/inference/0.3.0",
+   "inference_id": "inf:pipeline.streedagh/G-PETRIERE-F/attr-dorino",
+   "agent": "agt:pipeline.streedagh/v1",
+   "kind": "attribution",
+   "subject": [
+    "sig:pipeline.streedagh/G-PETRIERE-F"
+   ],
+   "statement": {
+    "signal": "sig:pipeline.streedagh/G-PETRIERE-F",
+    "source": "src:dorino-gioardi-workshop",
+    "probability": 0.7
+   },
+   "credence": 0.7,
+   "falsifier": "the founder's mark on this gun is not Dorino's D, or the gun differs from his known work",
+   "basis": [
+    "det:pipeline.streedagh/recovery-1985#G-PETRIERE-F",
+    "cat:ridella-2016/tab1"
+   ]
+  },
+  {
+   "schema": "signal_schema/inference/0.3.0",
+   "inference_id": "inf:pipeline.streedagh/G-PETRIERE-F/attr-juliana",
+   "agent": "agt:pipeline.streedagh/estimator",
+   "kind": "attribution",
+   "subject": [
+    "sig:pipeline.streedagh/G-PETRIERE-F"
+   ],
+   "statement": {
+    "signal": "sig:pipeline.streedagh/G-PETRIERE-F",
+    "source": "src:ship-juliana",
+    "probability": 0.7102,
+    "note": "posterior from attribution_estimator.py over Juliana / Lavia / Vison / unknown"
+   },
+   "credence": 0.7102,
+   "falsifier": "a recovery position shown to lie at another wreck, or a weight mark matching another ship's record",
+   "basis": [
+    "det:pipeline.streedagh/recovery-1985#G-PETRIERE-F"
+   ]
+  },
+  {
+   "schema": "signal_schema/inference/0.3.0",
+   "inference_id": "inf:pipeline.streedagh/G-PETRIERE-F/wreck",
+   "agent": "agt:pipeline.streedagh/v1",
+   "kind": "path_event",
+   "subject": [
+    "sig:pipeline.streedagh/G-PETRIERE-F"
+   ],
+   "statement": {
+    "signal": "sig:pipeline.streedagh/G-PETRIERE-F",
+    "type": "displacement",
+    "tau": {
+     "semantic": "time.tau",
+     "interval": [
+      411.2567,
+      411.2704
+     ],
+     "unit": "a",
+     "note": "21-26 Sep 1588 Gregorian: the sources give 21 (project), 25 (Martin p. 110) and 26 (Ridella p. 27)"
+    },
+    "to": "seabed, Streedagh Strand",
+    "note": "the wreck: from the ship to the seabed"
+   },
+   "credence": 0.7102,
+   "falsifier": "the gun was not aboard La Juliana when she was wrecked",
+   "basis": [
+    "det:pipeline.streedagh/recovery-1985#G-PETRIERE-F",
+    "inf:pipeline.streedagh/G-PETRIERE-F/attr-juliana"
+   ]
+  },
+  {
+   "schema": "signal_schema/inference/0.3.0",
+   "inference_id": "inf:pipeline.streedagh/G-PETRIERE-2/label-ridella",
+   "agent": "agt:pipeline.streedagh/ridella",
+   "kind": "label",
+   "subject": [
+    "sig:pipeline.streedagh/G-PETRIERE-2"
+   ],
+   "statement": {
+    "type": "Medium Petriere",
+    "muzzle_mouldings": null
+   },
+   "label": "Medium Petriere",
+   "credence": {
+    "absent": {
+     "reason": "reported_claim"
+    }
+   },
+   "falsifier": {
+    "absent": {
+     "reason": "reported_claim"
+    }
+   },
+   "basis": [
+    "det:pipeline.streedagh/recovery-1985#G-PETRIERE-2"
+   ]
+  },
+  {
+   "schema": "signal_schema/inference/0.3.0",
+   "inference_id": "inf:pipeline.streedagh/G-PETRIERE-2/cast",
+   "agent": "agt:pipeline.streedagh/v1",
+   "kind": "path_event",
+   "subject": [
+    "sig:pipeline.streedagh/G-PETRIERE-2"
+   ],
+   "statement": {
+    "signal": "sig:pipeline.streedagh/G-PETRIERE-2",
+    "type": "inception",
+    "tau": {
+     "semantic": "time.tau",
+     "interval": [
+      428.9925,
+      429.9918
+     ],
+     "unit": "a"
+    },
+    "to": "Genoa (workshop of Dorino II Gioardi)",
+    "note": "casting; year assigned by the compiler, not read"
+   },
+   "credence": 0.6,
+   "falsifier": "the year on the gun is not its casting year (a recast or later inscription), or a founder other than Dorino is shown to have cast it",
+   "basis": [
+    "det:pipeline.streedagh/recovery-1985#G-PETRIERE-2",
+    "cat:ridella-2016/tab1"
+   ]
+  },
+  {
+   "schema": "signal_schema/inference/0.3.0",
+   "inference_id": "inf:pipeline.streedagh/G-PETRIERE-2/attr-dorino",
+   "agent": "agt:pipeline.streedagh/v1",
+   "kind": "attribution",
+   "subject": [
+    "sig:pipeline.streedagh/G-PETRIERE-2"
+   ],
+   "statement": {
+    "signal": "sig:pipeline.streedagh/G-PETRIERE-2",
+    "source": "src:dorino-gioardi-workshop",
+    "probability": 0.7
+   },
+   "credence": 0.7,
+   "falsifier": "the founder's mark on this gun is not Dorino's D, or the gun differs from his known work",
+   "basis": [
+    "det:pipeline.streedagh/recovery-1985#G-PETRIERE-2",
+    "cat:ridella-2016/tab1"
+   ]
+  },
+  {
+   "schema": "signal_schema/inference/0.3.0",
+   "inference_id": "inf:pipeline.streedagh/G-PETRIERE-2/attr-juliana",
+   "agent": "agt:pipeline.streedagh/estimator",
+   "kind": "attribution",
+   "subject": [
+    "sig:pipeline.streedagh/G-PETRIERE-2"
+   ],
+   "statement": {
+    "signal": "sig:pipeline.streedagh/G-PETRIERE-2",
+    "source": "src:ship-juliana",
+    "probability": 0.7102,
+    "note": "posterior from attribution_estimator.py over Juliana / Lavia / Vison / unknown"
+   },
+   "credence": 0.7102,
+   "falsifier": "a recovery position shown to lie at another wreck, or a weight mark matching another ship's record",
+   "basis": [
+    "det:pipeline.streedagh/recovery-1985#G-PETRIERE-2"
+   ]
+  },
+  {
+   "schema": "signal_schema/inference/0.3.0",
+   "inference_id": "inf:pipeline.streedagh/G-PETRIERE-2/wreck",
+   "agent": "agt:pipeline.streedagh/v1",
+   "kind": "path_event",
+   "subject": [
+    "sig:pipeline.streedagh/G-PETRIERE-2"
+   ],
+   "statement": {
+    "signal": "sig:pipeline.streedagh/G-PETRIERE-2",
+    "type": "displacement",
+    "tau": {
+     "semantic": "time.tau",
+     "interval": [
+      411.2567,
+      411.2704
+     ],
+     "unit": "a",
+     "note": "21-26 Sep 1588 Gregorian: the sources give 21 (project), 25 (Martin p. 110) and 26 (Ridella p. 27)"
+    },
+    "to": "seabed, Streedagh Strand",
+    "note": "the wreck: from the ship to the seabed"
+   },
+   "credence": 0.7102,
+   "falsifier": "the gun was not aboard La Juliana when she was wrecked",
+   "basis": [
+    "det:pipeline.streedagh/recovery-1985#G-PETRIERE-2",
+    "inf:pipeline.streedagh/G-PETRIERE-2/attr-juliana"
+   ]
+  },
+  {
+   "schema": "signal_schema/inference/0.3.0",
+   "inference_id": "inf:pipeline.streedagh/muster-row-69/attr",
+   "agent": "agt:pipeline.streedagh/v1",
+   "kind": "attribution",
+   "subject": [
+    "det:pipeline.streedagh/muster-1588#row-69"
+   ],
+   "statement": {
+    "detection": "det:pipeline.streedagh/muster-1588#row-69",
+    "source": "src:ship-lavia",
+    "probability": 0.95
+   },
+   "credence": 0.95,
+   "falsifier": "the muster names a different ship of the same name as the one wrecked at Streedagh",
+   "basis": [
+    "det:pipeline.streedagh/muster-1588#row-69",
+    "cat:birch-mcelvogue-1999"
+   ]
+  },
+  {
+   "schema": "signal_schema/inference/0.3.0",
+   "inference_id": "inf:pipeline.streedagh/muster-row-75/attr",
+   "agent": "agt:pipeline.streedagh/v1",
+   "kind": "attribution",
+   "subject": [
+    "det:pipeline.streedagh/muster-1588#row-75"
+   ],
+   "statement": {
+    "detection": "det:pipeline.streedagh/muster-1588#row-75",
+    "source": "src:ship-juliana",
+    "probability": 0.95
+   },
+   "credence": 0.95,
+   "falsifier": "the muster names a different ship of the same name as the one wrecked at Streedagh",
+   "basis": [
+    "det:pipeline.streedagh/muster-1588#row-75",
+    "cat:birch-mcelvogue-1999"
+   ]
+  },
+  {
+   "schema": "signal_schema/inference/0.3.0",
+   "inference_id": "inf:pipeline.streedagh/muster-row-76/attr",
+   "agent": "agt:pipeline.streedagh/v1",
+   "kind": "attribution",
+   "subject": [
+    "det:pipeline.streedagh/muster-1588#row-76"
+   ],
+   "statement": {
+    "detection": "det:pipeline.streedagh/muster-1588#row-76",
+    "source": "src:ship-vison",
+    "probability": 0.95
+   },
+   "credence": 0.95,
+   "falsifier": "the muster names a different ship of the same name as the one wrecked at Streedagh",
+   "basis": [
+    "det:pipeline.streedagh/muster-1588#row-76",
+    "cat:birch-mcelvogue-1999"
+   ]
+  },
+  {
+   "schema": "signal_schema/inference/0.3.0",
+   "inference_id": "inf:pipeline.streedagh/site1-GUNS3/ident",
+   "agent": "agt:pipeline.streedagh/v1",
+   "kind": "identification",
+   "subject": [
+    "sig:pipeline.streedagh/site1-GUNS3",
+    "sig:pipeline.streedagh/G-SEVERO",
+    "sig:pipeline.streedagh/G-PETRIERE-F",
+    "sig:pipeline.streedagh/G-PETRIERE-2"
+   ],
+   "statement": {
+    "same_as": [
+     "sig:pipeline.streedagh/G-SEVERO",
+     "sig:pipeline.streedagh/G-PETRIERE-F",
+     "sig:pipeline.streedagh/G-PETRIERE-2"
+    ],
+    "probability": 0.85,
+    "note": "the three guns on the concretion 'have been lifted'; Ridella's tab. 1 has three 1985 lifts"
+   },
+   "credence": 0.85,
+   "falsifier": "a 1985 recovery record listing different guns from the concretion",
+   "basis": [
+    "det:pipeline.streedagh/site1-survey#GUNS3",
+    "cat:ridella-2016/tab1"
+   ]
+  },
+  {
+   "schema": "signal_schema/inference/0.3.0",
+   "inference_id": "inf:pipeline.streedagh/G-SEVERO/station",
+   "agent": "agt:pipeline.streedagh/dylan",
+   "kind": "explanation",
+   "subject": [
+    "sig:pipeline.streedagh/G-SEVERO"
+   ],
+   "statement": {
+    "alternatives": [
+     "lower deck",
+     "main deck"
+    ],
+    "residue": "which of these, and fore or aft: needs the castle model and positions",
+    "frame": "ship frame (along the keel, across the beam, height above keel); kept inside this inference (D7)",
+    "rule": "Martin 1984 p. 195: gun weight high above the centre of buoyancy limits a ship"
+   },
+   "credence": 0.5,
+   "falsifier": "a contemporary armament plan placing this class of gun elsewhere",
+   "basis": [
+    "inf:pipeline.streedagh/G-SEVERO/label-ridella"
+   ]
+  },
+  {
+   "schema": "signal_schema/inference/0.3.0",
+   "inference_id": "inf:pipeline.streedagh/G-GBATTISTA/station",
+   "agent": "agt:pipeline.streedagh/dylan",
+   "kind": "explanation",
+   "subject": [
+    "sig:pipeline.streedagh/G-GBATTISTA"
+   ],
+   "statement": {
+    "alternatives": [
+     "lower deck",
+     "main deck"
+    ],
+    "residue": "which of these, and fore or aft: needs the castle model and positions",
+    "frame": "ship frame (along the keel, across the beam, height above keel); kept inside this inference (D7)",
+    "rule": "Martin 1984 p. 195: gun weight high above the centre of buoyancy limits a ship"
+   },
+   "credence": 0.5,
+   "falsifier": "a contemporary armament plan placing this class of gun elsewhere",
+   "basis": [
+    "inf:pipeline.streedagh/G-GBATTISTA/label-ridella"
+   ]
+  },
+  {
+   "schema": "signal_schema/inference/0.3.0",
+   "inference_id": "inf:pipeline.streedagh/G-MATRONA/station",
+   "agent": "agt:pipeline.streedagh/dylan",
+   "kind": "explanation",
+   "subject": [
+    "sig:pipeline.streedagh/G-MATRONA"
+   ],
+   "statement": {
+    "alternatives": [
+     "main deck",
+     "castle deck 1"
+    ],
+    "residue": "which of these, and fore or aft: needs the castle model and positions",
+    "frame": "ship frame (along the keel, across the beam, height above keel); kept inside this inference (D7)",
+    "rule": "general; weak"
+   },
+   "credence": 0.5,
+   "falsifier": "a contemporary armament plan placing this class of gun elsewhere",
+   "basis": [
+    "inf:pipeline.streedagh/G-MATRONA/label-ridella"
+   ]
+  },
+  {
+   "schema": "signal_schema/inference/0.3.0",
+   "inference_id": "inf:pipeline.streedagh/G-ILARIA/station",
+   "agent": "agt:pipeline.streedagh/dylan",
+   "kind": "explanation",
+   "subject": [
+    "sig:pipeline.streedagh/G-ILARIA"
+   ],
+   "statement": {
+    "alternatives": [
+     "main deck",
+     "castle deck 1"
+    ],
+    "residue": "which of these, and fore or aft: needs the castle model and positions",
+    "frame": "ship frame (along the keel, across the beam, height above keel); kept inside this inference (D7)",
+    "rule": "general; weak"
+   },
+   "credence": 0.5,
+   "falsifier": "a contemporary armament plan placing this class of gun elsewhere",
+   "basis": [
+    "inf:pipeline.streedagh/G-ILARIA/label-ridella"
+   ]
+  },
+  {
+   "schema": "signal_schema/inference/0.3.0",
+   "inference_id": "inf:pipeline.streedagh/G-SEBASTIANO/station",
+   "agent": "agt:pipeline.streedagh/dylan",
+   "kind": "explanation",
+   "subject": [
+    "sig:pipeline.streedagh/G-SEBASTIANO"
+   ],
+   "statement": {
+    "alternatives": [
+     "main deck",
+     "castle deck 1"
+    ],
+    "residue": "which of these, and fore or aft: needs the castle model and positions",
+    "frame": "ship frame (along the keel, across the beam, height above keel); kept inside this inference (D7)",
+    "rule": "general; weak"
+   },
+   "credence": 0.5,
+   "falsifier": "a contemporary armament plan placing this class of gun elsewhere",
+   "basis": [
+    "inf:pipeline.streedagh/G-SEBASTIANO/label-ridella"
+   ]
+  },
+  {
+   "schema": "signal_schema/inference/0.3.0",
+   "inference_id": "inf:pipeline.streedagh/G-ROCCO/station",
+   "agent": "agt:pipeline.streedagh/dylan",
+   "kind": "explanation",
+   "subject": [
+    "sig:pipeline.streedagh/G-ROCCO"
+   ],
+   "statement": {
+    "alternatives": [
+     "main deck",
+     "castle deck 1"
+    ],
+    "residue": "which of these, and fore or aft: needs the castle model and positions",
+    "frame": "ship frame (along the keel, across the beam, height above keel); kept inside this inference (D7)",
+    "rule": "general; weak"
+   },
+   "credence": 0.5,
+   "falsifier": "a contemporary armament plan placing this class of gun elsewhere",
+   "basis": [
+    "inf:pipeline.streedagh/G-ROCCO/label-ridella"
+   ]
+  },
+  {
+   "schema": "signal_schema/inference/0.3.0",
+   "inference_id": "inf:pipeline.streedagh/G-GIOVANNI/station",
+   "agent": "agt:pipeline.streedagh/dylan",
+   "kind": "explanation",
+   "subject": [
+    "sig:pipeline.streedagh/G-GIOVANNI"
+   ],
+   "statement": {
+    "alternatives": [
+     "castle deck 1",
+     "castle deck 2+"
+    ],
+    "residue": "which of these, and fore or aft: needs the castle model and positions",
+    "frame": "ship frame (along the keel, across the beam, height above keel); kept inside this inference (D7)",
+    "rule": "Martin 1984 p. 298 (said of swivel guns; applied by analogy)"
+   },
+   "credence": 0.5,
+   "falsifier": "a contemporary armament plan placing this class of gun elsewhere",
+   "basis": [
+    "inf:pipeline.streedagh/G-GIOVANNI/label-ridella"
+   ]
+  },
+  {
+   "schema": "signal_schema/inference/0.3.0",
+   "inference_id": "inf:pipeline.streedagh/G-PETRIERE-F/station",
+   "agent": "agt:pipeline.streedagh/dylan",
+   "kind": "explanation",
+   "subject": [
+    "sig:pipeline.streedagh/G-PETRIERE-F"
+   ],
+   "statement": {
+    "alternatives": [
+     "lower deck",
+     "main deck"
+    ],
+    "residue": "which of these, and fore or aft: needs the castle model and positions",
+    "frame": "ship frame (along the keel, across the beam, height above keel); kept inside this inference (D7)",
+    "rule": "Ridella et al. 2016 p. 29: petrieri 'very probably placed in the lower deck'"
+   },
+   "credence": 0.5,
+   "falsifier": "a contemporary armament plan placing this class of gun elsewhere",
+   "basis": [
+    "inf:pipeline.streedagh/G-PETRIERE-F/label-ridella"
+   ]
+  },
+  {
+   "schema": "signal_schema/inference/0.3.0",
+   "inference_id": "inf:pipeline.streedagh/G-PETRIERE-2/station",
+   "agent": "agt:pipeline.streedagh/dylan",
+   "kind": "explanation",
+   "subject": [
+    "sig:pipeline.streedagh/G-PETRIERE-2"
+   ],
+   "statement": {
+    "alternatives": [
+     "lower deck",
+     "main deck"
+    ],
+    "residue": "which of these, and fore or aft: needs the castle model and positions",
+    "frame": "ship frame (along the keel, across the beam, height above keel); kept inside this inference (D7)",
+    "rule": "Ridella et al. 2016 p. 29: petrieri 'very probably placed in the lower deck'"
+   },
+   "credence": 0.5,
+   "falsifier": "a contemporary armament plan placing this class of gun elsewhere",
+   "basis": [
+    "inf:pipeline.streedagh/G-PETRIERE-2/label-ridella"
+   ]
+  },
+  {
+   "schema": "signal_schema/inference/0.3.0",
+   "inference_id": "inf:pipeline.streedagh/breakup/prediction-inshore",
+   "agent": "agt:pipeline.streedagh/dylan",
+   "kind": "prediction",
+   "subject": [
+    "sig:pipeline.streedagh/G-SEVERO",
+    "sig:pipeline.streedagh/G-GBATTISTA",
+    "sig:pipeline.streedagh/G-MATRONA",
+    "sig:pipeline.streedagh/G-ILARIA",
+    "sig:pipeline.streedagh/G-SEBASTIANO",
+    "sig:pipeline.streedagh/G-ROCCO",
+    "sig:pipeline.streedagh/G-GIOVANNI",
+    "sig:pipeline.streedagh/G-PETRIERE-F",
+    "sig:pipeline.streedagh/G-PETRIERE-2"
+   ],
+   "statement": {
+    "observable": "signed distance inshore of each wreck's keel line, in the site frame (frm:ITM), for every recovered gun with a recovery position",
+    "expected": "distance inshore increases with mounting height (rank correlation > 0): castle pieces inshore, heavy low pieces near the keel and ballast",
+    "stated_before": "2026-11-07; no recovery positions held when stated"
+   },
+   "credence": 0.55,
+   "falsifier": "light guns lie seaward of the keel line, or show no relation to mounting height",
+   "basis": [
+    "note:pipeline.streedagh/dylan-breakup-2026-11-07"
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "schema": "signal_schema/source/0.3.0",
+   "source_id": "src:ship-juliana",
+   "kind": "object",
+   "designations": [
+    {
+     "name": "La Juliana",
+     "from": "cat:martin-1984/app4-p448"
+    }
+   ],
+   "support": [
+    "inf:pipeline.streedagh/G-SEVERO/attr-juliana",
+    "inf:pipeline.streedagh/G-GBATTISTA/attr-juliana",
+    "inf:pipeline.streedagh/G-MATRONA/attr-juliana",
+    "inf:pipeline.streedagh/G-ILARIA/attr-juliana",
+    "inf:pipeline.streedagh/G-SEBASTIANO/attr-juliana",
+    "inf:pipeline.streedagh/G-ROCCO/attr-juliana",
+    "inf:pipeline.streedagh/G-GIOVANNI/attr-juliana",
+    "inf:pipeline.streedagh/G-PETRIERE-F/attr-juliana",
+    "inf:pipeline.streedagh/G-PETRIERE-2/attr-juliana",
+    "inf:pipeline.streedagh/muster-row-75/attr"
+   ],
+   "recipe": {
+    "name": "attribution_chain",
+    "version": "0.1"
+   },
+   "created_by": "inf:pipeline.streedagh/G-SEVERO/attr-juliana",
+   "status": "candidate"
+  },
+  {
+   "schema": "signal_schema/source/0.3.0",
+   "source_id": "src:ship-lavia",
+   "kind": "object",
+   "designations": [
+    {
+     "name": "La Lavia",
+     "from": "cat:martin-1984/app4-p448"
+    }
+   ],
+   "support": [
+    "inf:pipeline.streedagh/muster-row-69/attr"
+   ],
+   "recipe": {
+    "name": "attribution_chain",
+    "version": "0.1"
+   },
+   "created_by": "inf:pipeline.streedagh/muster-row-69/attr",
+   "status": "candidate"
+  },
+  {
+   "schema": "signal_schema/source/0.3.0",
+   "source_id": "src:ship-vison",
+   "kind": "object",
+   "designations": [
+    {
+     "name": "Santa Maria de Vison",
+     "from": "cat:martin-1984/app4-p448"
+    }
+   ],
+   "support": [
+    "inf:pipeline.streedagh/muster-row-76/attr"
+   ],
+   "recipe": {
+    "name": "attribution_chain",
+    "version": "0.1"
+   },
+   "created_by": "inf:pipeline.streedagh/muster-row-76/attr",
+   "status": "candidate"
+  },
+  {
+   "schema": "signal_schema/source/0.3.0",
+   "source_id": "src:dorino-gioardi-workshop",
+   "kind": "agent",
+   "designations": [
+    {
+     "name": "Dorino II Gioardi, gunfounder, Genoa (1519-1587)",
+     "from": "cat:ridella-2016/tab1"
+    }
+   ],
+   "support": [
+    "inf:pipeline.streedagh/G-SEVERO/attr-dorino",
+    "inf:pipeline.streedagh/G-GBATTISTA/attr-dorino",
+    "inf:pipeline.streedagh/G-MATRONA/attr-dorino",
+    "inf:pipeline.streedagh/G-ILARIA/attr-dorino",
+    "inf:pipeline.streedagh/G-SEBASTIANO/attr-dorino",
+    "inf:pipeline.streedagh/G-ROCCO/attr-dorino",
+    "inf:pipeline.streedagh/G-GIOVANNI/attr-dorino",
+    "inf:pipeline.streedagh/G-PETRIERE-F/attr-dorino",
+    "inf:pipeline.streedagh/G-PETRIERE-2/attr-dorino"
+   ],
+   "recipe": {
+    "name": "attribution_chain",
+    "version": "0.1"
+   },
+   "created_by": "inf:pipeline.streedagh/G-SEVERO/attr-dorino",
+   "status": "candidate"
+  },
+  {
+   "schema": "signal_schema/source/0.3.0",
+   "source_id": "src:streedagh-breakup-1588",
+   "kind": "event",
+   "designations": [
+    {
+     "name": "the wreck and break-up of the three ships at Streedagh, Sept 1588",
+     "from": "cat:birch-mcelvogue-1999"
+    }
+   ],
+   "support": [
+    "inf:pipeline.streedagh/breakup/prediction-inshore"
+   ],
+   "recipe": {
+    "name": "breakup_sequence",
+    "version": "0.1",
+    "params": {
+     "stages": [
+      "at anchor",
+      "anchors fail",
+      "driven onto the outer bar",
+      "heel shoreward",
+      "castles collapse",
+      "release sorted by density",
+      "burial"
+     ]
+    }
+   },
+   "created_by": "inf:pipeline.streedagh/breakup/prediction-inshore",
+   "status": "candidate",
+   "note": "stages from site assessment v2 (L2, Part II) and Dylan's hypothesis of 2026-11-07"
+  }
+ ],
+ "field_notes": [
+  {
+   "schema": "signal_schema/field_note/0.3.0",
+   "note_id": "note:pipeline.streedagh/dylan-breakup-2026-11-07",
+   "agent": "agt:pipeline.streedagh/dylan",
+   "created_at": "2026-11-07",
+   "about": [
+    "src:streedagh-breakup-1588",
+    "inf:pipeline.streedagh/breakup/prediction-inshore"
+   ],
+   "language": "en",
+   "text": "a guess from cuellars description is the ships are pushed into the heavy surf on a breaker line probably a parallel sandbar (we infer  this is likely as the beach itself is a large parallel sand bar creating a large lagoon, unusual topography in ireland even. the ships lean an break up rapidly and heavy guns would possibly accelrate this as the high castles collapse -- we might hypotheseis the highest mounted swivels might be found inshore from the keel - just a hypothesis but something to test"
+  }
+ ]
+}
