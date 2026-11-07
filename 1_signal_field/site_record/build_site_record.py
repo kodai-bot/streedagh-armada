@@ -12,7 +12,7 @@ script. Design: ../SITE_SIGNAL_DESIGN.md. Validate with the schema's own CLI:
 What goes in: the recovered guns, the Lisbon muster, the observed relations at Site 1,
 Cuéllar's letter (125 coded passages, from ../../3_cuellar_worldline/data/), the
 reconstruction's inputs (the six ships measured in 1588, the Levant gun list, the units),
-layer 1 of the seabed mass budget (../output/mass_budget.json, from seabed_mass_budget.py)
+layers 1 and 2 of the seabed mass budget (../output/mass_budget.json, from seabed_mass_budget.py)
 and the inferences built on them. The magnetometry comes next.
 Positions are absent: none are held yet.
 
@@ -712,6 +712,36 @@ def reconstruction_inputs(B):
                      "falsifier": "a full inventory above the 95th percentile, or a record that guns or munitions were "
                                   "taken off the ship between the May muster and the wreck",
                      "basis": basis})
+
+    # layer 2: the whole ship, to the seabed and to the strand
+    L2 = budget["layer2"]
+    for ship, d in L2["ships"].items():
+        if ship == "Combined":
+            continue
+        code = {"Juliana": "75", "Lavia": "69", "Vison": "76"}[ship]
+        dims = f"inf:{P}/juliana/dimensions" if ship == "Juliana" else f"det:{P}/ratings-1588#{code}"
+        t2 = lambda k: {"semantic": "phys.mass", "value": d[k]["median"],
+                        "interval": [d[k]["p05"], d[k]["p95"]], "unit": "t",
+                               "basis": {"kind": "derived", "recipe": {"name": "seabed_mass_budget.layer2", "version": "0.1",
+                                                                       "params": {"seed": budget["seed"], "draws": budget["draws"]}}}}
+        infs.append({**hdr("inference"), "inference_id": f"inf:{P}/mass-budget/layer2-{ship.lower()}", "agent": A["budget"],
+                     "kind": "prediction", "subject": [BUDGET_SRC[ship]],
+                     "statement": {"observable": f"mass of {ship}'s wreck on the seabed (ballast mound, lower hull, metal, "
+                                                 "guns and cargo), once the site is surveyed; and her ballast mound alone",
+                                   "expected": {"to_seabed": t2("to_seabed"), "to_strand": t2("to_strand"),
+                                                "on_board_excl_people": t2("on_board_excl_people"),
+                                                "ballast": t2("ballast"), "hull_timber_aboard": t2("hull_timber")},
+                                   "stated_before": "2026-11-07; no ballast mound or timber extent measured at Streedagh",
+                                   "priors": L2["priors"], "constants": L2["constants"],
+                                   "sources_cited": "Martin 1984 pp. 115-116, 130, 139, 150, 174, 217, 349-350, 409, 506",
+                                   "check": {"may_loading_over_laden": d["may_over_full"],
+                                             "draught_laden_m": d["draught_full_m"], "draught_wreck_day_m": d["draught_day_m"]},
+                                   "note": "median with 5-95% interval; people excluded (war grave); layer 1 included"},
+                     "credence": 0.4,
+                     "falsifier": "a measured ballast mound outside the 5-95% range, or lower-hull timber extent "
+                                  "implying a seabed mass outside it; or an issue list showing cargo beyond 60 t",
+                     "basis": [dims, f"inf:{P}/mass-budget/layer1-{ship.lower()}", f"det:{P}/muster-1588#row-{code}",
+                               f"inf:{P}/ratings/formula-check"]})
 
 
 def main():

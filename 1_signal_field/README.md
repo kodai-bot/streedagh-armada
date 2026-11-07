@@ -18,9 +18,12 @@
 - `seabed_mass_budget.py` (`make mass`): what went to the bottom on the wreck day, layer by layer.
   Layer 1, done: ordnance and munitions per ship from the muster counts times sourced units (libra
   460 g, quintal 46 kg; shot calibres from the Sicilian ships' gun list, `data/levant_guns_1587.csv`;
-  Juliana's weight-marked guns), with the Channel expenditure as stated priors. Layer 2, next: hull,
-  ballast, stores and cargo from the measured dimensions (`data/ship_ratings_1588.csv`, AGS GA 223/28
-  via Martin 1984 App. 11), which the script converts and checks against Martin's rating formula.
+  Juliana's weight-marked guns), with the Channel expenditure as stated priors. Layer 2: the whole
+  ship. A hull-form model on the measured dimensions (`data/ship_ratings_1588.csv`, AGS GA 223/28 via
+  Martin 1984 App. 11; Juliana from the v0.7 envelope) gives the laden displacement; the wreck-day
+  load is built up from the hull, ballast (scaled from the Rosa's mound, Martin p. 150), what was left
+  of the rations (pp. 349-350), arms and siege cargo; each part is split into seabed and strand.
+  Checked by putting the May loading back aboard. Ranks which priors drive the answer.
   Report: `output/mass_budget_report.md`. The ~601 t in the site assessment v2 (L3.2) comes from the
   superseded v1 tonnage-to-mass chain and should not be quoted.
 - `site_record/` (`make site`): **the site record**, one bundle in the new signal schema
@@ -31,7 +34,7 @@
   and Cuéllar's letter: 125 coded passages, each with its verbatim span in Crawford's translation
   (`../3_cuellar_worldline/data/cuellar_spans.csv`), the coding as label inferences, and the 31
   worldline nodes as dated event sources; the six ships measured in 1588 with metric conversions and
-  the rating-formula check; the Sicilian gun list; layer 1 of the mass budget as per-ship predictions.
+  the rating-formula check; the Sicilian gun list; layers 1 and 2 of the mass budget as per-ship predictions.
   Positions are absent until recovery coordinates are found. The v3 store above stays as the
   estimator's input until the site record replaces it.
 - `finds_study_plan.md`: the plan for the guns, rudder and anchor.

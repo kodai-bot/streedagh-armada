@@ -7,9 +7,13 @@ Layer 1 (this script, now): ORDNANCE AND MUNITIONS, per ship and combined: guns,
 lead and match. It is built from stated counts (the Lisbon muster, 9 May 1588) times unit
 masses that are themselves sourced, with every assumption a named prior.
 
-Layer 2 (next): HULL, BALLAST, STORES AND CARGO, from the measured dimensions (AGS GA 223/28
-via Martin 1984 App. 11), which this script already converts and checks. Those terms are the
-bulk of the mass and need a hull-form model, so they are not estimated here.
+Layer 2: THE WHOLE SHIP, from the measured dimensions (AGS GA 223/28 via Martin 1984 App. 11;
+Juliana from the v0.7 §28.2 envelope). A hull-form model gives the displacement on the day;
+the ballast is scaled from the Santa Maria de la Rosa's excavated mound; the stores come from
+Medina Sidonia's ration scale; the people are taken out (the site is a war grave, and the dead
+are not counted as mass). What is left of the displacement after the named loads is split into
+hull, rig and metal, and the residue is reported, not hidden. Last, each part is divided into
+what went to the seabed that day and what floated to the strand (Cuellar's timber-covered beach).
 
 Why not the earlier figure (~601 t durable, site assessment v2 L3.2)? It came from the v1
 model, which went from wartime toneladas to displacement. v0.7 §2 retires that chain:
@@ -23,10 +27,21 @@ Sources (page numbers are Martin's own; scan markers sit at the top of each page
   Martin 1984 p. 371      Trinidad de Escala [77], 22 guns: 35 + 21 + 38 shots fired on
                           2, 4 and 8 August 1588
   Martin 1984 App. 4      Lisbon muster: guns, shot, powder, lead, match per ship
-  Martin 1984 App. 11     the six ships' measured dimensions and ratings (p. 411)
+  Martin 1984 App. 11     the six ships' measured dimensions and ratings (p. 411); what the
+                          three measures are (p. 409)
+  Martin 1984 p. 130      La Trinidad Valencera's normal draught "in the order of four metres"
+  Martin 1984 p. 139      Santa Maria de la Rosa, 945 tons
+  Martin 1984 p. 150      the Rosa's ballast mound, 30 x 12 m, 0.75 m deep: "about 90 tonnes"
+  Martin 1984 p. 174      Girona's draught about 4.5 m
+  Martin 1984 p. 217      San Juan de Sicilia's 28 ft rudder: draught about 20 ft
+  Martin 1984 pp. 349-50  the daily ration (Instructions to Shipmasters, Lisbon, 21 April 1588)
   Ridella et al. 2016     Juliana's recovered guns by weight mark (juliana_guns.csv)
 
 Writes output/mass_budget_report.md and output/mass_budget.json.
+
+Every prior is drawn once per draw and shared by the three ships (one shipbuilding tradition,
+one squadron, one storm): the open questions are systematic, so the combined interval must not
+narrow by averaging three independent errors.
 """
 
 import csv
@@ -61,6 +76,150 @@ PRIORS = {
                          "16-19 lb medios canones and the recovered sample is the light, accessible tier. "
                          "Drawn once per draw and shared by all three ships (systematic, not per gun)"),
 }
+
+# ── layer 2 ───────────────────────────────────────────────────────────────────
+RHO_SEA = 1.025                  # t/m3
+AZUMBRE_L = 2.016                # Castilian azumbre in litres: the standard metrological equivalence, not from Martin
+CUARTILLO_L = AZUMBRE_L / 4
+ROSA_TONELADAS = 945             # Martin p. 139
+ROSA_BALLAST_T = 90.0            # Martin p. 150: mound 30 x 12 m, 0.75 m deep, "about 90 tonnes" in air
+WAR_FIFTH = 1.2                  # toneladas = machos + one fifth (App. 11; verified in ratings_check)
+MACHOS = {"Juliana": 860 / WAR_FIFTH, "Lavia": 607.125, "Vison": 472.0}   # Juliana: v0.7 §26, 716.7 derived
+# siege train and army stores carried as cargo, tonnes (lo, hi). Valencera's issue of May 1588 (Martin pp. 115-116):
+# 3 battery cannon on sea carriages, 6 field-carriage sets and limbers, 190 quintals of powder (8.7 t), 400 iron
+# balls of 40 libras (7.4 t), platforms, hoists, wheel parts: some 30-50 t. Juliana's five 1.5 m spoked wheels show
+# she carried part of the train (site assessment v2 §2), so her floor is above zero.
+CARGO_T = {"Juliana": (10.0, 60.0), "Lavia": (0.0, 60.0), "Vison": (0.0, 60.0)}
+CAPACITY = os.path.join(HERE, "..", "2_reconstruction", "output", "capacity.json")
+
+# (distribution, params, basis). All HYPOTHESIS except where a page is cited as the constraint.
+PRIORS2 = {
+    "lwl_over_esloria": ("uniform", (0.815, 0.95), "esloria is the main-deck length from stem to sternpost (Martin "
+                         "p. 409). The waterline lies between that and the keel, which Martin takes as 53/65 of the "
+                         "esloria for Lavia, after Veitia Linage's 700-ton galleon (App. 1 n. 5, p. 506)"),
+    "bwl_over_manga": ("uniform", (1.00, 1.08), "manga is the beam taken internally at midships (p. 409); add frames "
+                       "and planking on both sides, less any narrowing at the waterline"),
+    "normal_draught_over_puntal": ("uniform", (0.65, 0.95), "the draught fully laden. Puntal runs from under the main deck to the bottom of the hold "
+                            "(p. 409). Martin's draughts: Valencera about 4 m normal (p. 130), Girona about 4.5 m "
+                            "(p. 174), San Juan de Sicilia about 20 ft from her 28 ft rudder (p. 217). For Lavia's "
+                            "6.18 m puntal this range gives 4.0-5.9 m"),
+    "block_coeff": ("uniform", (0.45, 0.62), "full-bodied Mediterranean merchant hulls; no lines survive. The rating "
+                    "formula's own (M/2) x 0.97 treats the hold as 0.485 of its box: a hint, not evidence"),
+    "lightship_frac": ("uniform", (0.35, 0.55), "hull, rig, ground tackle and fittings as a share of the fully laden "
+                       "displacement. No surviving figure for these hulls: the leading open question (see drivers)"),
+    "rig_share": ("uniform", (0.08, 0.15), "masts, yards, sails and cordage as a share of the lightship"),
+    "metal_share": ("uniform", (0.04, 0.10), "iron in the lightship: bolts and fastenings (these Levant hulls were "
+                    "iron-fastened, Martin p. 217), anchors, chain-plates, galley ironwork"),
+    "ballast_scale": ("uniform", (0.6, 1.5), "multiplies the Rosa's 90 t (p. 150) at 945 toneladas (p. 139), scaled "
+                      "by machos as a volume proxy. Wide: the mound is what survived, and ballasting varied"),
+    "cargo_u": ("uniform", (0.0, 1.0), "position in each ship's cargo range (CARGO_T), shared: siege train and "
+                "army stores beyond the ship's own munitions"),
+    "liquid_days": ("uniform", (0.0, 15.0), "days of wine and water left. Six months' rations at Lisbon, replenished "
+                    "at Corunna, 50% wastage allowed; it was the unintended voyage home without water that caused "
+                    "the privations (p. 349). The ships had put in to the Irish coast"),
+    "solid_days": ("uniform", (10.0, 60.0), "days of biscuit, meat, fish, cheese, pulses, oil left (same basis)"),
+    "cask_tare": ("uniform", (0.10, 0.25), "cask mass as a share of the liquid it holds (Valencera's restored pipa "
+                  "held about 591 l, p. 351)"),
+    "person_t": ("uniform", (0.060, 0.075), "one person with clothing, in tonnes. In the displacement, not in the "
+                 "seabed mass"),
+    "arms_kg_per_soldier": ("uniform", (6.0, 14.0), "arquebus or musket, morion, sword, bandolier, share of pikes"),
+    "timber_retained": ("uniform", (0.25, 0.60), "share of hull timber that stayed on the seabed: the lower hull under "
+                        "the ballast (anchors and guns lie over the Site 1 concretion; the rudder over a gun), while "
+                        "castles, decks and upper works broke up and drove ashore (Cuellar's strand of timber)"),
+    "rig_retained": ("uniform", (0.10, 0.50), "masts and spars float; wet cordage and sails partly sink with the wreck"),
+    "stores_retained": ("uniform", (0.20, 0.80), "full casks sit near neutral buoyancy; biscuit dissolves"),
+    "cargo_retained": ("uniform", (0.50, 1.00), "siege cargo is mostly dense (battery guns, shot, ironwork); the "
+                       "wheels, planks and baulks float"),
+}
+
+# daily ration, Martin pp. 349-350: 1 1/2 libras biscuit; 1/3 azumbre wine; 3 cuartillos water; plus on set days
+# 6 onzas bacon + 2 rice, 6 cheese + 3 beans, 6 fish, 1 1/2 oil + 1/4 cuartillo vinegar. Averaged over the week
+# the extras come to about 0.2 kg a day (onza = libra / 16).
+ONZA_KG = LIBRA_KG / 16
+LIQUID_KG_DAY = (AZUMBRE_L / 3 + 3 * CUARTILLO_L) * 1.0                       # wine + water, ~2.18 kg
+SOLID_KG_DAY = 1.5 * LIBRA_KG + ONZA_KG * (2 * (6 + 2) + 2 * (6 + 3) + 1 * 6 + 2 * 1.5) / 7   # ~0.86 kg
+
+
+def draw2(rng, k):
+    dist, prm, _ = PRIORS2[k]
+    return rng.uniform(*prm, N)
+
+
+def dims_m(ship, rng_u):
+    """(esloria, manga, puntal) in metres. Lavia and Vison measured; Juliana inside the v0.7 §28.2 envelope,
+    one shared position per draw so the three dimensions scale together."""
+    if ship == "Juliana":
+        env = json.load(open(CAPACITY, encoding="utf-8"))["juliana"]["envelope"]
+        lo, hi = np.array(env["low"]), np.array(env["high"])
+        return [lo[i] + rng_u * (hi[i] - lo[i]) for i in range(3)]
+    name = {"Lavia": "La Lavia Beneziana", "Vison": "Santa Maria de Vison"}[ship]
+    r = next(r for r in read("ship_ratings_1588.csv") if r["ship"] == name)
+    return [np.full(N, float(r[k]) * CODO_M) for k in ("esloria_codos", "manga_codos", "puntal_codos")]
+
+
+def ranks(x):
+    r = np.empty(N)
+    r[np.argsort(x)] = np.arange(N)
+    return r
+
+
+def layer2(rng, muster, l1):
+    P = {k: draw2(rng, k) for k in PRIORS2}
+    u_jul = rng.uniform(0, 1, N)
+    out, tot, raw = {}, {}, {}
+    for ship, r in muster.items():
+        E, M, D = dims_m(ship, u_jul)
+        lwl, bwl = E * P["lwl_over_esloria"], M * P["bwl_over_manga"]
+        t_per_m = RHO_SEA * P["block_coeff"] * lwl * bwl           # tonnes per metre of draught (prismatic)
+        T_full = D * P["normal_draught_over_puntal"]
+        full = t_per_m * T_full                                    # fully laden displacement
+        light = full * P["lightship_frac"]                         # the hull is fixed; loads vary
+        rig, metal = light * P["rig_share"], light * P["metal_share"]
+        timber = light - rig - metal
+        men = int(r["soldiers"]) + int(r["seamen"])
+        people = men * P["person_t"]
+        ordn = l1[ship]["total"]
+        ballast = ROSA_BALLAST_T * MACHOS[ship] / (ROSA_TONELADAS / WAR_FIFTH) * P["ballast_scale"]
+        stores = men * (P["liquid_days"] * LIQUID_KG_DAY * (1 + P["cask_tare"]) + P["solid_days"] * SOLID_KG_DAY) / 1000
+        arms = int(r["soldiers"]) * P["arms_kg_per_soldier"] / 1000
+        lo, hi = CARGO_T[ship]
+        cargo = lo + P["cargo_u"] * (hi - lo)
+        on_board = light + ordn + ballast + stores + arms + cargo   # everything but the people
+        day = on_board + people                                    # displacement on the wreck day
+        T_day = day / t_per_m
+        # check: the loading at the May muster (six months' rations, Martin p. 349; munitions as mustered)
+        may = (light + l1[ship]["mustered"] + ballast + arms + cargo + people
+               + men * 180 * (LIQUID_KG_DAY * (1 + P["cask_tare"]) + SOLID_KG_DAY) / 1000)
+        seabed = (ordn + ballast + arms + metal + cargo * P["cargo_retained"] + timber * P["timber_retained"]
+                  + rig * P["rig_retained"] + stores * P["stores_retained"])
+        parts = {"displacement_full": full, "displacement_day": day, "draught_full_m": T_full,
+                 "draught_day_m": T_day, "people": people, "on_board_excl_people": on_board,
+                 "ordnance_munitions": ordn, "ballast": ballast, "stores": stores, "personal_arms": arms,
+                 "cargo": cargo, "hull_timber": timber, "rig": rig, "metal_fittings_anchors": metal,
+                 "to_seabed": seabed, "to_strand": on_board - seabed, "displacement_may": may}
+        out[ship] = {k: q(v) for k, v in parts.items()}
+        out[ship]["may_over_full"] = {k: round(v / 1000, 3) for k, v in q(may / full * 1000).items()}
+        out[ship]["overladen_frac"] = round(float((day > full).mean()), 3)
+        out[ship]["seabed_share_of_on_board"] = q(seabed / on_board * 1000)
+        out[ship]["seabed_share_of_on_board"] = {k: round(v / 1000, 3) for k, v in out[ship]["seabed_share_of_on_board"].items()}
+        out[ship]["men"] = men
+        out[ship]["dims_m_median"] = [round(float(np.median(x)), 2) for x in (E, M, D)]
+        for k, v in parts.items():
+            if not k.startswith("draught"):
+                tot[k] = tot.get(k, 0) + v
+        raw[ship] = seabed
+    out["Combined"] = {k: q(v) for k, v in tot.items()}
+    # which priors drive the combined seabed mass: Spearman rank correlation
+    rs = ranks(tot["to_seabed"])
+    drivers = {k: round(float(np.corrcoef(ranks(v), rs)[0, 1]), 3) for k, v in P.items()}
+    drivers["juliana_envelope_position"] = round(float(np.corrcoef(ranks(u_jul), rs)[0, 1]), 3)
+    drivers = dict(sorted(drivers.items(), key=lambda kv: -abs(kv[1])))
+    return {"ships": out, "drivers": drivers,
+            "constants": {"rho_sea": RHO_SEA, "azumbre_l": AZUMBRE_L, "rosa_toneladas": ROSA_TONELADAS,
+                          "rosa_ballast_t": ROSA_BALLAST_T, "machos": {k: round(v, 1) for k, v in MACHOS.items()},
+                          "liquid_kg_day": round(LIQUID_KG_DAY, 3), "solid_kg_day": round(SOLID_KG_DAY, 3)},
+            "priors": {k: {"dist": v[0], "params": v[1], "basis": v[2]} for k, v in PRIORS2.items()}}
+
 
 
 def read(name):
@@ -111,7 +270,7 @@ def main():
     a, m, b = PRIORS["unitemised_gun_t"][0]
     gun_mean_t = rng.triangular(a, m, b, N)   # shared by all three ships: one squadron, one open question
 
-    out, tot = {}, {}
+    out, tot, arrays = {}, {}, {}
     for ship, r in muster.items():
         guns_n, shot_n = int(r["guns"]), int(r["shot"])
         if ship == "Juliana":
@@ -131,6 +290,8 @@ def main():
         # what can survive 400 years in sand: bronze/iron guns, iron and stone shot, lead
         parts["durable"] = guns + shot + lead
         out[ship] = {k: q(v) for k, v in parts.items()}
+        arrays[ship] = dict(parts, mustered=guns + shot_n * shot_kg / 1000
+                            + (int(r["powder_qtx"]) + int(r["lead_qtx"]) + int(r["match_qtx"])) * QUINTAL_KG / 1000)
         out[ship]["as_mustered"] = {"guns": guns_n, "shot": shot_n, "powder_t": round(int(r["powder_qtx"]) * QUINTAL_KG / 1000, 2),
                                     "lead_t": round(int(r["lead_qtx"]) * QUINTAL_KG / 1000, 2),
                                     "match_t": round(int(r["match_qtx"]) * QUINTAL_KG / 1000, 2),
@@ -139,12 +300,13 @@ def main():
             tot[k] = tot.get(k, 0) + v
     out["Combined"] = {k: q(v) for k, v in tot.items()}
 
-    result = {"layer": "1: ordnance and munitions", "seed": SEED, "draws": N,
+    l2 = layer2(rng, muster, arrays)
+    result = {"layer": "1: ordnance and munitions; 2: the whole ship", "seed": SEED, "draws": N,
               "units": {"libra_kg": LIBRA_KG, "quintal_kg": QUINTAL_KG, "codo_m": CODO_M},
               "shot_mean_kg": q(shot_kg * 1000) | {"guns_in_list": n_listed},
               "stone_shot_mass_frac": q(stone_frac * 1000),
               "priors": {k: {"params": v[0], "basis": v[1]} for k, v in PRIORS.items()},
-              "ships": out, "ratings": ratings_check()}
+              "ships": out, "ratings": ratings_check(), "layer2": l2}
     # q() works in tonnes; the two lines above re-scale kg and fractions so the same helper rounds them
     for k in ("shot_mean_kg", "stone_shot_mass_frac"):
         for s in ("median", "p05", "p95"):
@@ -157,11 +319,21 @@ def main():
     c = out["Combined"]
     print(f"layer 1 (ordnance + munitions), combined: {c['total']['median']} t [{c['total']['p05']}-{c['total']['p95']}]; "
           f"durable {c['durable']['median']} t")
+    c2 = l2["ships"]["Combined"]
+    print(f"layer 2 (whole ship), combined to seabed: {c2['to_seabed']['median']} t [{c2['to_seabed']['p05']}-"
+          f"{c2['to_seabed']['p95']}]; on board excl. people {c2['on_board_excl_people']['median']} t")
+    for s_, d in l2["ships"].items():
+        if s_ == "Combined":
+            continue
+        print(f"  {s_:8s} full {d['displacement_full']['median']:6.0f}  day {d['displacement_day']['median']:6.0f}  "
+              f"T {d['draught_full_m']['median']:.1f}->{d['draught_day_m']['median']:.1f} m  light {d['hull_timber']['median']+d['rig']['median']+d['metal_fittings_anchors']['median']:5.0f}  "
+              f"seabed {d['to_seabed']['median']:5.0f} [{d['to_seabed']['p05']:.0f}-{d['to_seabed']['p95']:.0f}]  overladen {d['overladen_frac']:.1%}  May/full {d['may_over_full']['median']:.2f} [{d['may_over_full']['p05']:.2f}-{d['may_over_full']['p95']:.2f}]")
+    print("  drivers:", list(l2["drivers"].items())[:6])
 
 
 def report(R):
     f = lambda d: f"{d['median']:.1f} [{d['p05']:.1f}–{d['p95']:.1f}]"
-    L = ["# What went to the bottom: layer 1, ordnance and munitions", "",
+    L = ["# What went to the bottom at Streedagh", "", "## Layer 1: ordnance and munitions", "",
          "Generated by `seabed_mass_budget.py`. Tonnes, median [5th–95th percentile], "
          f"{R['draws']:,} draws, seed {R['seed']}.", "",
          "The muster of 9 May 1588 counts each ship's guns, shot, powder, lead and match. Counts become "
@@ -190,8 +362,7 @@ def report(R):
         L.append(f"| {k} | {p['params']} | {p['basis']} |")
     L += ["", "## Not in this layer", "",
           "Hull timber, ballast, anchors and ground tackle, rig, provisions and water, the soldiers' "
-          "personal arms, and cargo (Juliana's siege-carriage wheels). These are most of the mass. They "
-          "need a hull model built from the measured dimensions below, not from the toneladas.", "",
+          "personal arms, and cargo (Juliana's siege-carriage wheels): layer 2, below.", "",
           "The people are not counted as mass. The muster lists 976 soldiers and seamen on the three ships "
           "in May; Cuéllar says more than a thousand drowned, and the Lord Deputy reported 1,100 bodies "
           "counted along the strand (Martin p. 111). The site is a war grave.", "",
@@ -211,6 +382,72 @@ def report(R):
           "estimate inherits the misfit. The toneladas are the "
           "machos plus one fifth everywhere except Visón, whose 666 Martin emends to 566. Juliana is not "
           "in this document, so her dimensions stay inferred (reconstruction v0.7 §28.2).", ""]
+    return "\n".join(L) + report2(R["layer2"], f)
+
+
+def report2(R2, f):
+    S = R2["ships"]
+    c = S["Combined"]
+    L = ["", "# Layer 2: the whole ship", "",
+         f"**To the seabed on the wreck day, the three ships together: {f(c['to_seabed'])} t.** Of "
+         f"{f(c['on_board_excl_people'])} t aboard (people excluded), the rest, {f(c['to_strand'])} t, was "
+         "mostly timber, rig and casks that broke away and drove onto the strand.", "",
+         "How it is built. The measured dimensions (Lavia, Visón) or the v0.7 envelope (Juliana) give, through "
+         "a hull-form model, the displacement fully laden. The hull itself (lightship) is a share of that. On the "
+         "wreck day the ship carried the lightship plus named loads, each from a source: layer 1's ordnance; "
+         "ballast scaled from the Rosa's excavated mound (Martin p. 150); what was left of the stores, on Medina "
+         "Sidonia's ration scale (pp. 349-350); the soldiers' arms; siege cargo (Valencera's issue list, "
+         "pp. 115-116; Juliana's five carriage wheels). The draught on the day is then derived, not assumed. "
+         "Each part is split into what stayed on the seabed and what floated off.", "",
+         "| Ship | hull timber | rig | metal & anchors | ballast | ordnance (L1) | stores | arms | cargo | "
+         "**on board** | **to seabed** | to strand |", "|---|---|---|---|---|---|---|---|---|---|---|---|"]
+    for s, d in S.items():
+        b = "**" if s == "Combined" else ""
+        L.append(f"| {b}{s}{b} | {f(d['hull_timber'])} | {f(d['rig'])} | {f(d['metal_fittings_anchors'])} | "
+                 f"{f(d['ballast'])} | {f(d['ordnance_munitions'])} | {f(d['stores'])} | {f(d['personal_arms'])} | "
+                 f"{f(d['cargo'])} | **{f(d['on_board_excl_people'])}** | **{f(d['to_seabed'])}** | {f(d['to_strand'])} |")
+    L += ["", "The people are not in these figures. Their mass is in the displacement "
+          f"({f(c['people'])} t for the {sum(S[k]['men'] for k in S if k != 'Combined')} mustered in May) "
+          "and nowhere else.", "",
+          "## Checks", "",
+          "| Ship | dims used, m (esloria, manga, puntal) | laden displacement | laden draught m | wreck-day "
+          "displacement | wreck-day draught m | May loading / laden | overladen draws |",
+          "|---|---|---|---|---|---|---|---|"]
+    for s, d in S.items():
+        if s == "Combined":
+            continue
+        m = d["may_over_full"]
+        L.append(f"| {s} | {', '.join(str(x) for x in d['dims_m_median'])} | {f(d['displacement_full'])} | "
+                 f"{f(d['draught_full_m'])} | {f(d['displacement_day'])} | {f(d['draught_day_m'])} | "
+                 f"{m['median']:.2f} [{m['p05']:.2f}–{m['p95']:.2f}] | {d['overladen_frac']:.1%} |")
+    L += ["", "The consistency check is the May column. Put the May loading back aboard (six months' rations, "
+          "Martin p. 349; munitions as mustered) and the ships come out close to the laden displacement that the "
+          "hull model gives from their dimensions. The rations and the hull were not fitted to each other, so this "
+          "is a real test of the priors, though not an independent one (both use lightship_frac). On the wreck "
+          "day, with the stores mostly gone, they ride about a metre and a half above that line: light, with tall "
+          "castles, the windage condition of v0.7 §9 near a lee shore.", "",
+          "## What drives the answer", "",
+          "Spearman rank correlation of each prior with the combined seabed mass:", "",
+          "| prior | rho |", "|---|---|"]
+    for k, v in R2["drivers"].items():
+        L.append(f"| {k} | {v:+.2f} |")
+    L += ["", "So the seabed figure is mostly a question about the hull: how much of it stayed (timber_retained) "
+          "and how heavy it was (lightship_frac), then the ballast. Each has a field test:", "",
+          "- **Timber extent and depth** at Sites 1-3 (probing, sub-bottom profiling): how much lower hull lies "
+          "under the ballast.",
+          "- **The ballast mounds** themselves, measured as Martin measured the Rosa's (area x depth x packing).",
+          "- **The Streedagh rudder's length**, read as Martin read the Tobermory rudder (p. 217): the laden draught.",
+          "- **Issue lists for Juliana, Lavia and Visón** like the Valencera's (AGS), for the cargo.", "",
+          "## Priors (HYPOTHESIS unless a page is cited as the constraint)", "",
+          f"Constants: seawater {R2['constants']['rho_sea']} t/m³; azumbre {R2['constants']['azumbre_l']} l "
+          "(standard Castilian equivalence; not from Martin); ration "
+          f"{R2['constants']['liquid_kg_day']} kg of wine and water and {R2['constants']['solid_kg_day']} kg of "
+          f"food a day; machos used for scaling the ballast {R2['constants']['machos']}.", "",
+          "| Prior | values | basis |", "|---|---|---|"]
+    for k, p in R2["priors"].items():
+        L.append(f"| {k} | {p['dist']} {p['params']} | {p['basis']} |")
+    L += ["", "Every prior is drawn once per draw and shared by the three ships, so the combined interval does "
+          "not narrow by averaging.", ""]
     return "\n".join(L)
 
 

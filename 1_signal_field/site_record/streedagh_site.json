@@ -15164,6 +15164,909 @@
     "det:pipeline.streedagh/sicily-guns-1587#list",
     "inf:pipeline.streedagh/sicily-guns/representative"
    ]
+  },
+  {
+   "schema": "signal_schema/inference/0.3.0",
+   "inference_id": "inf:pipeline.streedagh/mass-budget/layer2-lavia",
+   "agent": "agt:pipeline.streedagh/budget",
+   "kind": "prediction",
+   "subject": [
+    "src:ship-lavia"
+   ],
+   "statement": {
+    "observable": "mass of Lavia's wreck on the seabed (ballast mound, lower hull, metal, guns and cargo), once the site is surveyed; and her ballast mound alone",
+    "expected": {
+     "to_seabed": {
+      "semantic": "phys.mass",
+      "value": 280.05,
+      "interval": [
+       209.6,
+       369.22
+      ],
+      "unit": "t",
+      "basis": {
+       "kind": "derived",
+       "recipe": {
+        "name": "seabed_mass_budget.layer2",
+        "version": "0.1",
+        "params": {
+         "seed": 20261107,
+         "draws": 100000
+        }
+       }
+      }
+     },
+     "to_strand": {
+      "semantic": "phys.mass",
+      "value": 198.25,
+      "interval": [
+       132.72,
+       291.1
+      ],
+      "unit": "t",
+      "basis": {
+       "kind": "derived",
+       "recipe": {
+        "name": "seabed_mass_budget.layer2",
+        "version": "0.1",
+        "params": {
+         "seed": 20261107,
+         "draws": 100000
+        }
+       }
+      }
+     },
+     "on_board_excl_people": {
+      "semantic": "phys.mass",
+      "value": 481.73,
+      "interval": [
+       374.59,
+       616.04
+      ],
+      "unit": "t",
+      "basis": {
+       "kind": "derived",
+       "recipe": {
+        "name": "seabed_mass_budget.layer2",
+        "version": "0.1",
+        "params": {
+         "seed": 20261107,
+         "draws": 100000
+        }
+       }
+      }
+     },
+     "ballast": {
+      "semantic": "phys.mass",
+      "value": 72.85,
+      "interval": [
+       44.77,
+       100.92
+      ],
+      "unit": "t",
+      "basis": {
+       "kind": "derived",
+       "recipe": {
+        "name": "seabed_mass_budget.layer2",
+        "version": "0.1",
+        "params": {
+         "seed": 20261107,
+         "draws": 100000
+        }
+       }
+      }
+     },
+     "hull_timber_aboard": {
+      "semantic": "phys.mass",
+      "value": 275.72,
+      "interval": [
+       195.71,
+       382.6
+      ],
+      "unit": "t",
+      "basis": {
+       "kind": "derived",
+       "recipe": {
+        "name": "seabed_mass_budget.layer2",
+        "version": "0.1",
+        "params": {
+         "seed": 20261107,
+         "draws": 100000
+        }
+       }
+      }
+     }
+    },
+    "stated_before": "2026-11-07; no ballast mound or timber extent measured at Streedagh",
+    "priors": {
+     "lwl_over_esloria": {
+      "dist": "uniform",
+      "params": [
+       0.815,
+       0.95
+      ],
+      "basis": "esloria is the main-deck length from stem to sternpost (Martin p. 409). The waterline lies between that and the keel, which Martin takes as 53/65 of the esloria for Lavia, after Veitia Linage's 700-ton galleon (App. 1 n. 5, p. 506)"
+     },
+     "bwl_over_manga": {
+      "dist": "uniform",
+      "params": [
+       1.0,
+       1.08
+      ],
+      "basis": "manga is the beam taken internally at midships (p. 409); add frames and planking on both sides, less any narrowing at the waterline"
+     },
+     "normal_draught_over_puntal": {
+      "dist": "uniform",
+      "params": [
+       0.65,
+       0.95
+      ],
+      "basis": "the draught fully laden. Puntal runs from under the main deck to the bottom of the hold (p. 409). Martin's draughts: Valencera about 4 m normal (p. 130), Girona about 4.5 m (p. 174), San Juan de Sicilia about 20 ft from her 28 ft rudder (p. 217). For Lavia's 6.18 m puntal this range gives 4.0-5.9 m"
+     },
+     "block_coeff": {
+      "dist": "uniform",
+      "params": [
+       0.45,
+       0.62
+      ],
+      "basis": "full-bodied Mediterranean merchant hulls; no lines survive. The rating formula's own (M/2) x 0.97 treats the hold as 0.485 of its box: a hint, not evidence"
+     },
+     "lightship_frac": {
+      "dist": "uniform",
+      "params": [
+       0.35,
+       0.55
+      ],
+      "basis": "hull, rig, ground tackle and fittings as a share of the fully laden displacement. No surviving figure for these hulls: the leading open question (see drivers)"
+     },
+     "rig_share": {
+      "dist": "uniform",
+      "params": [
+       0.08,
+       0.15
+      ],
+      "basis": "masts, yards, sails and cordage as a share of the lightship"
+     },
+     "metal_share": {
+      "dist": "uniform",
+      "params": [
+       0.04,
+       0.1
+      ],
+      "basis": "iron in the lightship: bolts and fastenings (these Levant hulls were iron-fastened, Martin p. 217), anchors, chain-plates, galley ironwork"
+     },
+     "ballast_scale": {
+      "dist": "uniform",
+      "params": [
+       0.6,
+       1.5
+      ],
+      "basis": "multiplies the Rosa's 90 t (p. 150) at 945 toneladas (p. 139), scaled by machos as a volume proxy. Wide: the mound is what survived, and ballasting varied"
+     },
+     "cargo_u": {
+      "dist": "uniform",
+      "params": [
+       0.0,
+       1.0
+      ],
+      "basis": "position in each ship's cargo range (CARGO_T), shared: siege train and army stores beyond the ship's own munitions"
+     },
+     "liquid_days": {
+      "dist": "uniform",
+      "params": [
+       0.0,
+       15.0
+      ],
+      "basis": "days of wine and water left. Six months' rations at Lisbon, replenished at Corunna, 50% wastage allowed; it was the unintended voyage home without water that caused the privations (p. 349). The ships had put in to the Irish coast"
+     },
+     "solid_days": {
+      "dist": "uniform",
+      "params": [
+       10.0,
+       60.0
+      ],
+      "basis": "days of biscuit, meat, fish, cheese, pulses, oil left (same basis)"
+     },
+     "cask_tare": {
+      "dist": "uniform",
+      "params": [
+       0.1,
+       0.25
+      ],
+      "basis": "cask mass as a share of the liquid it holds (Valencera's restored pipa held about 591 l, p. 351)"
+     },
+     "person_t": {
+      "dist": "uniform",
+      "params": [
+       0.06,
+       0.075
+      ],
+      "basis": "one person with clothing, in tonnes. In the displacement, not in the seabed mass"
+     },
+     "arms_kg_per_soldier": {
+      "dist": "uniform",
+      "params": [
+       6.0,
+       14.0
+      ],
+      "basis": "arquebus or musket, morion, sword, bandolier, share of pikes"
+     },
+     "timber_retained": {
+      "dist": "uniform",
+      "params": [
+       0.25,
+       0.6
+      ],
+      "basis": "share of hull timber that stayed on the seabed: the lower hull under the ballast (anchors and guns lie over the Site 1 concretion; the rudder over a gun), while castles, decks and upper works broke up and drove ashore (Cuellar's strand of timber)"
+     },
+     "rig_retained": {
+      "dist": "uniform",
+      "params": [
+       0.1,
+       0.5
+      ],
+      "basis": "masts and spars float; wet cordage and sails partly sink with the wreck"
+     },
+     "stores_retained": {
+      "dist": "uniform",
+      "params": [
+       0.2,
+       0.8
+      ],
+      "basis": "full casks sit near neutral buoyancy; biscuit dissolves"
+     },
+     "cargo_retained": {
+      "dist": "uniform",
+      "params": [
+       0.5,
+       1.0
+      ],
+      "basis": "siege cargo is mostly dense (battery guns, shot, ironwork); the wheels, planks and baulks float"
+     }
+    },
+    "constants": {
+     "rho_sea": 1.025,
+     "azumbre_l": 2.016,
+     "rosa_toneladas": 945,
+     "rosa_ballast_t": 90.0,
+     "machos": {
+      "Juliana": 716.7,
+      "Lavia": 607.1,
+      "Vison": 472.0
+     },
+     "liquid_kg_day": 2.184,
+     "solid_kg_day": 0.867
+    },
+    "sources_cited": "Martin 1984 pp. 115-116, 130, 139, 150, 174, 217, 349-350, 409, 506",
+    "check": {
+     "may_loading_over_laden": {
+      "median": 0.872,
+      "p05": 0.727,
+      "p95": 1.037
+     },
+     "draught_laden_m": {
+      "median": 4.95,
+      "p05": 4.11,
+      "p95": 5.78
+     },
+     "draught_wreck_day_m": {
+      "median": 3.26,
+      "p05": 2.61,
+      "p95": 4.01
+     }
+    },
+    "note": "median with 5-95% interval; people excluded (war grave); layer 1 included"
+   },
+   "credence": 0.4,
+   "falsifier": "a measured ballast mound outside the 5-95% range, or lower-hull timber extent implying a seabed mass outside it; or an issue list showing cargo beyond 60 t",
+   "basis": [
+    "det:pipeline.streedagh/ratings-1588#69",
+    "inf:pipeline.streedagh/mass-budget/layer1-lavia",
+    "det:pipeline.streedagh/muster-1588#row-69",
+    "inf:pipeline.streedagh/ratings/formula-check"
+   ]
+  },
+  {
+   "schema": "signal_schema/inference/0.3.0",
+   "inference_id": "inf:pipeline.streedagh/mass-budget/layer2-juliana",
+   "agent": "agt:pipeline.streedagh/budget",
+   "kind": "prediction",
+   "subject": [
+    "src:ship-juliana"
+   ],
+   "statement": {
+    "observable": "mass of Juliana's wreck on the seabed (ballast mound, lower hull, metal, guns and cargo), once the site is surveyed; and her ballast mound alone",
+    "expected": {
+     "to_seabed": {
+      "semantic": "phys.mass",
+      "value": 324.15,
+      "interval": [
+       246.12,
+       424.32
+      ],
+      "unit": "t",
+      "basis": {
+       "kind": "derived",
+       "recipe": {
+        "name": "seabed_mass_budget.layer2",
+        "version": "0.1",
+        "params": {
+         "seed": 20261107,
+         "draws": 100000
+        }
+       }
+      }
+     },
+     "to_strand": {
+      "semantic": "phys.mass",
+      "value": 223.63,
+      "interval": [
+       150.1,
+       328.25
+      ],
+      "unit": "t",
+      "basis": {
+       "kind": "derived",
+       "recipe": {
+        "name": "seabed_mass_budget.layer2",
+        "version": "0.1",
+        "params": {
+         "seed": 20261107,
+         "draws": 100000
+        }
+       }
+      }
+     },
+     "on_board_excl_people": {
+      "semantic": "phys.mass",
+      "value": 551.68,
+      "interval": [
+       432.51,
+       702.32
+      ],
+      "unit": "t",
+      "basis": {
+       "kind": "derived",
+       "recipe": {
+        "name": "seabed_mass_budget.layer2",
+        "version": "0.1",
+        "params": {
+         "seed": 20261107,
+         "draws": 100000
+        }
+       }
+      }
+     },
+     "ballast": {
+      "semantic": "phys.mass",
+      "value": 85.99,
+      "interval": [
+       52.85,
+       119.13
+      ],
+      "unit": "t",
+      "basis": {
+       "kind": "derived",
+       "recipe": {
+        "name": "seabed_mass_budget.layer2",
+        "version": "0.1",
+        "params": {
+         "seed": 20261107,
+         "draws": 100000
+        }
+       }
+      }
+     },
+     "hull_timber_aboard": {
+      "semantic": "phys.mass",
+      "value": 307.35,
+      "interval": [
+       217.45,
+       428.25
+      ],
+      "unit": "t",
+      "basis": {
+       "kind": "derived",
+       "recipe": {
+        "name": "seabed_mass_budget.layer2",
+        "version": "0.1",
+        "params": {
+         "seed": 20261107,
+         "draws": 100000
+        }
+       }
+      }
+     }
+    },
+    "stated_before": "2026-11-07; no ballast mound or timber extent measured at Streedagh",
+    "priors": {
+     "lwl_over_esloria": {
+      "dist": "uniform",
+      "params": [
+       0.815,
+       0.95
+      ],
+      "basis": "esloria is the main-deck length from stem to sternpost (Martin p. 409). The waterline lies between that and the keel, which Martin takes as 53/65 of the esloria for Lavia, after Veitia Linage's 700-ton galleon (App. 1 n. 5, p. 506)"
+     },
+     "bwl_over_manga": {
+      "dist": "uniform",
+      "params": [
+       1.0,
+       1.08
+      ],
+      "basis": "manga is the beam taken internally at midships (p. 409); add frames and planking on both sides, less any narrowing at the waterline"
+     },
+     "normal_draught_over_puntal": {
+      "dist": "uniform",
+      "params": [
+       0.65,
+       0.95
+      ],
+      "basis": "the draught fully laden. Puntal runs from under the main deck to the bottom of the hold (p. 409). Martin's draughts: Valencera about 4 m normal (p. 130), Girona about 4.5 m (p. 174), San Juan de Sicilia about 20 ft from her 28 ft rudder (p. 217). For Lavia's 6.18 m puntal this range gives 4.0-5.9 m"
+     },
+     "block_coeff": {
+      "dist": "uniform",
+      "params": [
+       0.45,
+       0.62
+      ],
+      "basis": "full-bodied Mediterranean merchant hulls; no lines survive. The rating formula's own (M/2) x 0.97 treats the hold as 0.485 of its box: a hint, not evidence"
+     },
+     "lightship_frac": {
+      "dist": "uniform",
+      "params": [
+       0.35,
+       0.55
+      ],
+      "basis": "hull, rig, ground tackle and fittings as a share of the fully laden displacement. No surviving figure for these hulls: the leading open question (see drivers)"
+     },
+     "rig_share": {
+      "dist": "uniform",
+      "params": [
+       0.08,
+       0.15
+      ],
+      "basis": "masts, yards, sails and cordage as a share of the lightship"
+     },
+     "metal_share": {
+      "dist": "uniform",
+      "params": [
+       0.04,
+       0.1
+      ],
+      "basis": "iron in the lightship: bolts and fastenings (these Levant hulls were iron-fastened, Martin p. 217), anchors, chain-plates, galley ironwork"
+     },
+     "ballast_scale": {
+      "dist": "uniform",
+      "params": [
+       0.6,
+       1.5
+      ],
+      "basis": "multiplies the Rosa's 90 t (p. 150) at 945 toneladas (p. 139), scaled by machos as a volume proxy. Wide: the mound is what survived, and ballasting varied"
+     },
+     "cargo_u": {
+      "dist": "uniform",
+      "params": [
+       0.0,
+       1.0
+      ],
+      "basis": "position in each ship's cargo range (CARGO_T), shared: siege train and army stores beyond the ship's own munitions"
+     },
+     "liquid_days": {
+      "dist": "uniform",
+      "params": [
+       0.0,
+       15.0
+      ],
+      "basis": "days of wine and water left. Six months' rations at Lisbon, replenished at Corunna, 50% wastage allowed; it was the unintended voyage home without water that caused the privations (p. 349). The ships had put in to the Irish coast"
+     },
+     "solid_days": {
+      "dist": "uniform",
+      "params": [
+       10.0,
+       60.0
+      ],
+      "basis": "days of biscuit, meat, fish, cheese, pulses, oil left (same basis)"
+     },
+     "cask_tare": {
+      "dist": "uniform",
+      "params": [
+       0.1,
+       0.25
+      ],
+      "basis": "cask mass as a share of the liquid it holds (Valencera's restored pipa held about 591 l, p. 351)"
+     },
+     "person_t": {
+      "dist": "uniform",
+      "params": [
+       0.06,
+       0.075
+      ],
+      "basis": "one person with clothing, in tonnes. In the displacement, not in the seabed mass"
+     },
+     "arms_kg_per_soldier": {
+      "dist": "uniform",
+      "params": [
+       6.0,
+       14.0
+      ],
+      "basis": "arquebus or musket, morion, sword, bandolier, share of pikes"
+     },
+     "timber_retained": {
+      "dist": "uniform",
+      "params": [
+       0.25,
+       0.6
+      ],
+      "basis": "share of hull timber that stayed on the seabed: the lower hull under the ballast (anchors and guns lie over the Site 1 concretion; the rudder over a gun), while castles, decks and upper works broke up and drove ashore (Cuellar's strand of timber)"
+     },
+     "rig_retained": {
+      "dist": "uniform",
+      "params": [
+       0.1,
+       0.5
+      ],
+      "basis": "masts and spars float; wet cordage and sails partly sink with the wreck"
+     },
+     "stores_retained": {
+      "dist": "uniform",
+      "params": [
+       0.2,
+       0.8
+      ],
+      "basis": "full casks sit near neutral buoyancy; biscuit dissolves"
+     },
+     "cargo_retained": {
+      "dist": "uniform",
+      "params": [
+       0.5,
+       1.0
+      ],
+      "basis": "siege cargo is mostly dense (battery guns, shot, ironwork); the wheels, planks and baulks float"
+     }
+    },
+    "constants": {
+     "rho_sea": 1.025,
+     "azumbre_l": 2.016,
+     "rosa_toneladas": 945,
+     "rosa_ballast_t": 90.0,
+     "machos": {
+      "Juliana": 716.7,
+      "Lavia": 607.1,
+      "Vison": 472.0
+     },
+     "liquid_kg_day": 2.184,
+     "solid_kg_day": 0.867
+    },
+    "sources_cited": "Martin 1984 pp. 115-116, 130, 139, 150, 174, 217, 349-350, 409, 506",
+    "check": {
+     "may_loading_over_laden": {
+      "median": 0.956,
+      "p05": 0.798,
+      "p95": 1.143
+     },
+     "draught_laden_m": {
+      "median": 5.12,
+      "p05": 4.25,
+      "p95": 5.99
+     },
+     "draught_wreck_day_m": {
+      "median": 3.5,
+      "p05": 2.83,
+      "p95": 4.28
+     }
+    },
+    "note": "median with 5-95% interval; people excluded (war grave); layer 1 included"
+   },
+   "credence": 0.4,
+   "falsifier": "a measured ballast mound outside the 5-95% range, or lower-hull timber extent implying a seabed mass outside it; or an issue list showing cargo beyond 60 t",
+   "basis": [
+    "inf:pipeline.streedagh/juliana/dimensions",
+    "inf:pipeline.streedagh/mass-budget/layer1-juliana",
+    "det:pipeline.streedagh/muster-1588#row-75",
+    "inf:pipeline.streedagh/ratings/formula-check"
+   ]
+  },
+  {
+   "schema": "signal_schema/inference/0.3.0",
+   "inference_id": "inf:pipeline.streedagh/mass-budget/layer2-vison",
+   "agent": "agt:pipeline.streedagh/budget",
+   "kind": "prediction",
+   "subject": [
+    "src:ship-vison"
+   ],
+   "statement": {
+    "observable": "mass of Vison's wreck on the seabed (ballast mound, lower hull, metal, guns and cargo), once the site is surveyed; and her ballast mound alone",
+    "expected": {
+     "to_seabed": {
+      "semantic": "phys.mass",
+      "value": 222.11,
+      "interval": [
+       166.02,
+       291.56
+      ],
+      "unit": "t",
+      "basis": {
+       "kind": "derived",
+       "recipe": {
+        "name": "seabed_mass_budget.layer2",
+        "version": "0.1",
+        "params": {
+         "seed": 20261107,
+         "draws": 100000
+        }
+       }
+      }
+     },
+     "to_strand": {
+      "semantic": "phys.mass",
+      "value": 154.91,
+      "interval": [
+       104.26,
+       225.87
+      ],
+      "unit": "t",
+      "basis": {
+       "kind": "derived",
+       "recipe": {
+        "name": "seabed_mass_budget.layer2",
+        "version": "0.1",
+        "params": {
+         "seed": 20261107,
+         "draws": 100000
+        }
+       }
+      }
+     },
+     "on_board_excl_people": {
+      "semantic": "phys.mass",
+      "value": 379.64,
+      "interval": [
+       295.63,
+       483.13
+      ],
+      "unit": "t",
+      "basis": {
+       "kind": "derived",
+       "recipe": {
+        "name": "seabed_mass_budget.layer2",
+        "version": "0.1",
+        "params": {
+         "seed": 20261107,
+         "draws": 100000
+        }
+       }
+      }
+     },
+     "ballast": {
+      "semantic": "phys.mass",
+      "value": 56.63,
+      "interval": [
+       34.81,
+       78.46
+      ],
+      "unit": "t",
+      "basis": {
+       "kind": "derived",
+       "recipe": {
+        "name": "seabed_mass_budget.layer2",
+        "version": "0.1",
+        "params": {
+         "seed": 20261107,
+         "draws": 100000
+        }
+       }
+      }
+     },
+     "hull_timber_aboard": {
+      "semantic": "phys.mass",
+      "value": 209.43,
+      "interval": [
+       148.65,
+       290.62
+      ],
+      "unit": "t",
+      "basis": {
+       "kind": "derived",
+       "recipe": {
+        "name": "seabed_mass_budget.layer2",
+        "version": "0.1",
+        "params": {
+         "seed": 20261107,
+         "draws": 100000
+        }
+       }
+      }
+     }
+    },
+    "stated_before": "2026-11-07; no ballast mound or timber extent measured at Streedagh",
+    "priors": {
+     "lwl_over_esloria": {
+      "dist": "uniform",
+      "params": [
+       0.815,
+       0.95
+      ],
+      "basis": "esloria is the main-deck length from stem to sternpost (Martin p. 409). The waterline lies between that and the keel, which Martin takes as 53/65 of the esloria for Lavia, after Veitia Linage's 700-ton galleon (App. 1 n. 5, p. 506)"
+     },
+     "bwl_over_manga": {
+      "dist": "uniform",
+      "params": [
+       1.0,
+       1.08
+      ],
+      "basis": "manga is the beam taken internally at midships (p. 409); add frames and planking on both sides, less any narrowing at the waterline"
+     },
+     "normal_draught_over_puntal": {
+      "dist": "uniform",
+      "params": [
+       0.65,
+       0.95
+      ],
+      "basis": "the draught fully laden. Puntal runs from under the main deck to the bottom of the hold (p. 409). Martin's draughts: Valencera about 4 m normal (p. 130), Girona about 4.5 m (p. 174), San Juan de Sicilia about 20 ft from her 28 ft rudder (p. 217). For Lavia's 6.18 m puntal this range gives 4.0-5.9 m"
+     },
+     "block_coeff": {
+      "dist": "uniform",
+      "params": [
+       0.45,
+       0.62
+      ],
+      "basis": "full-bodied Mediterranean merchant hulls; no lines survive. The rating formula's own (M/2) x 0.97 treats the hold as 0.485 of its box: a hint, not evidence"
+     },
+     "lightship_frac": {
+      "dist": "uniform",
+      "params": [
+       0.35,
+       0.55
+      ],
+      "basis": "hull, rig, ground tackle and fittings as a share of the fully laden displacement. No surviving figure for these hulls: the leading open question (see drivers)"
+     },
+     "rig_share": {
+      "dist": "uniform",
+      "params": [
+       0.08,
+       0.15
+      ],
+      "basis": "masts, yards, sails and cordage as a share of the lightship"
+     },
+     "metal_share": {
+      "dist": "uniform",
+      "params": [
+       0.04,
+       0.1
+      ],
+      "basis": "iron in the lightship: bolts and fastenings (these Levant hulls were iron-fastened, Martin p. 217), anchors, chain-plates, galley ironwork"
+     },
+     "ballast_scale": {
+      "dist": "uniform",
+      "params": [
+       0.6,
+       1.5
+      ],
+      "basis": "multiplies the Rosa's 90 t (p. 150) at 945 toneladas (p. 139), scaled by machos as a volume proxy. Wide: the mound is what survived, and ballasting varied"
+     },
+     "cargo_u": {
+      "dist": "uniform",
+      "params": [
+       0.0,
+       1.0
+      ],
+      "basis": "position in each ship's cargo range (CARGO_T), shared: siege train and army stores beyond the ship's own munitions"
+     },
+     "liquid_days": {
+      "dist": "uniform",
+      "params": [
+       0.0,
+       15.0
+      ],
+      "basis": "days of wine and water left. Six months' rations at Lisbon, replenished at Corunna, 50% wastage allowed; it was the unintended voyage home without water that caused the privations (p. 349). The ships had put in to the Irish coast"
+     },
+     "solid_days": {
+      "dist": "uniform",
+      "params": [
+       10.0,
+       60.0
+      ],
+      "basis": "days of biscuit, meat, fish, cheese, pulses, oil left (same basis)"
+     },
+     "cask_tare": {
+      "dist": "uniform",
+      "params": [
+       0.1,
+       0.25
+      ],
+      "basis": "cask mass as a share of the liquid it holds (Valencera's restored pipa held about 591 l, p. 351)"
+     },
+     "person_t": {
+      "dist": "uniform",
+      "params": [
+       0.06,
+       0.075
+      ],
+      "basis": "one person with clothing, in tonnes. In the displacement, not in the seabed mass"
+     },
+     "arms_kg_per_soldier": {
+      "dist": "uniform",
+      "params": [
+       6.0,
+       14.0
+      ],
+      "basis": "arquebus or musket, morion, sword, bandolier, share of pikes"
+     },
+     "timber_retained": {
+      "dist": "uniform",
+      "params": [
+       0.25,
+       0.6
+      ],
+      "basis": "share of hull timber that stayed on the seabed: the lower hull under the ballast (anchors and guns lie over the Site 1 concretion; the rudder over a gun), while castles, decks and upper works broke up and drove ashore (Cuellar's strand of timber)"
+     },
+     "rig_retained": {
+      "dist": "uniform",
+      "params": [
+       0.1,
+       0.5
+      ],
+      "basis": "masts and spars float; wet cordage and sails partly sink with the wreck"
+     },
+     "stores_retained": {
+      "dist": "uniform",
+      "params": [
+       0.2,
+       0.8
+      ],
+      "basis": "full casks sit near neutral buoyancy; biscuit dissolves"
+     },
+     "cargo_retained": {
+      "dist": "uniform",
+      "params": [
+       0.5,
+       1.0
+      ],
+      "basis": "siege cargo is mostly dense (battery guns, shot, ironwork); the wheels, planks and baulks float"
+     }
+    },
+    "constants": {
+     "rho_sea": 1.025,
+     "azumbre_l": 2.016,
+     "rosa_toneladas": 945,
+     "rosa_ballast_t": 90.0,
+     "machos": {
+      "Juliana": 716.7,
+      "Lavia": 607.1,
+      "Vison": 472.0
+     },
+     "liquid_kg_day": 2.184,
+     "solid_kg_day": 0.867
+    },
+    "sources_cited": "Martin 1984 pp. 115-116, 130, 139, 150, 174, 217, 349-350, 409, 506",
+    "check": {
+     "may_loading_over_laden": {
+      "median": 1.004,
+      "p05": 0.837,
+      "p95": 1.204
+     },
+     "draught_laden_m": {
+      "median": 4.6,
+      "p05": 3.82,
+      "p95": 5.37
+     },
+     "draught_wreck_day_m": {
+      "median": 3.19,
+      "p05": 2.56,
+      "p95": 3.92
+     }
+    },
+    "note": "median with 5-95% interval; people excluded (war grave); layer 1 included"
+   },
+   "credence": 0.4,
+   "falsifier": "a measured ballast mound outside the 5-95% range, or lower-hull timber extent implying a seabed mass outside it; or an issue list showing cargo beyond 60 t",
+   "basis": [
+    "det:pipeline.streedagh/ratings-1588#76",
+    "inf:pipeline.streedagh/mass-budget/layer1-vison",
+    "det:pipeline.streedagh/muster-1588#row-76",
+    "inf:pipeline.streedagh/ratings/formula-check"
+   ]
   }
  ],
  "sources": [
