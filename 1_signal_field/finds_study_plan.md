@@ -55,7 +55,7 @@ The same paper records finds at the other two sites:
 - **Gun weight and height.** Martin explains the single-gun-deck galleon by the weight of guns "because of their height above the ship's centre of buoyancy" (p. 195). Heavy pieces go low; that is the general rule the mounting test needs.
 - **Soldiers per ton.** At the Lisbon muster, Portuguese two-deckers carried one soldier per 2.3 tons and the Castilian (single gun-deck) squadron one per 3.5 (p. 196).
   - **Juliana: 860 / 290–325 soldiers = 2.6–3.0 tons per soldier**, between the two. That is consistent with more accommodation than a single-deck galleon.
-  - Caveat: Martin's tons may not be the same unit as the 860 toneladas. To check.
+  - Martin's ratios are computed from the same Lisbon muster, where Juliana is 860 tons, so the units match.
 - **Seamen.** The Armada averaged one seaman per 7.5 tons (p. 393). **Juliana: 860 / 65–70 = 12–13 tons per seaman**, so she was thinly crewed even by Armada standards, and her soldiers would have worked the guns. Martin says the bulk of gun crews were soldiers.
 - **The five ships from Sicily gun list** (AGS GA 221/39, 26 Sept 1587) covers Valencera's group, not Juliana (she sailed from Barcelona).
 - **Another date.** Martin dates the Streedagh wrecking to 25 September (p. 110). Ridella gives 26 September; the project uses 21 September Gregorian. All three need reconciling against the sources.
@@ -78,6 +78,26 @@ The same paper records finds at the other two sites:
 | Reconstruction §29 | the same 9 |
 
 **Still to do:** itemise all 12, adding the three non-Dorino guns from Moore et al. 2015 and the NMS reports.
+
+## The muster (Martin 1984, App. 4, p. 448)
+
+La Juliana at the Lisbon muster, 9 May 1588: **860 tons, 325 soldiers, 70 seamen, 32 guns, 1,600 shot**,
+67 quintales of powder, 12 of lead, 12 of match. Lavia: 728 / 203 / 71 / 25 guns. Visón: 666 / 236 / 71 / 18
+guns (v0.7 emends her tons to 566). All three were issued 50 shot per gun. The Levant squadron rows are in
+`data/lisbon_muster_1588.csv` and now in the signal store (`make guns`).
+
+So **9 of her 32 guns are itemised, 12 of 32 recovered**, and 20 are unaccounted for. Of the three ships,
+Juliana was the most crowded: 2.65 tons per soldier, against 3.59 (Lavia), 2.82 (Visón) and 3.12 for the
+whole Levant squadron.
+
+## How the ships broke up (HYPOTHESIS, 2026-11-07)
+
+From Cuéllar's account of the ships driven ashore and broken within an hour, and Streedagh's topography:
+the beach is itself a large shore-parallel sand bar enclosing a lagoon, unusual in Ireland. The ships were
+probably driven onto an outer, shore-parallel bar in the breaker line, heeled shoreward, and broke up fast.
+Heavy guns high in the castles would have sped the collapse. **Prediction:** the highest-mounted pieces
+(swivels, falconets) lie inshore of the keel line, and heavy low pieces near the keel and ballast. The
+gun signals carry a `height_rank` for this test, once recovery positions are found.
 
 ## Other finds to include
 

@@ -9,6 +9,13 @@
   signal's probability of belonging to each candidate ship and writes
   `data/streedagh_store_v3_attributed.json` and `data/streedagh_view.geojson`. Re-running it
   reproduces the saved attributions exactly, except for the `committed_at` timestamps (July 2026).
+- `juliana_guns.py` (`make guns`): turns `data/juliana_guns.csv` (the nine recovered guns attributed
+  to Dorino II Gioardi; Ridella et al. 2016 tab. 1) and `data/lisbon_muster_1588.csv` (the Levant
+  squadron at the Lisbon muster; Martin 1984 App. 4) into signals in the store. Gun positions are
+  unknown, so their geometry is null and the estimator skips the spatial term for them. Candidate
+  mounting stations are kept as tagged hypotheses, never as evidence. Report:
+  `output/juliana_guns_report.md`.
+- `finds_study_plan.md`: the plan for the guns, rudder and anchor.
 - `SPEC_astro_tide_module.md`: spec for the astronomical and tidal module. The sun/moon half is now
   implemented in `../3_cuellar_worldline/sun_moon.py`; tides are not done yet.
 - `what-streedagh-still-holds-v2.md`: the public article.

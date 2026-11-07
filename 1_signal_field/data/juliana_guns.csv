@@ -1,0 +1,10 @@
+id,type,cast,cantara_mark,mass_kg_low,mass_kg_high,mass_basis,muzzle,saint,recovered,ref
+G-SEVERO,Heavy Saker,1570,20.82,992,992,weight mark x 47.65 kg,Type C,St. Severo,1985,McElvogue 2002
+G-GBATTISTA,Heavy Saker,1570,19.??,905,952,weight mark (19.00-19.99) x 47.65 kg,Type C,St. Giovanni Battista,2015,Moore et al. 2015
+G-MATRONA,Heavy Falcon,1570,11.12,530,530,weight mark x 47.65 kg,Type C,St. Matrona,2015,Moore et al. 2015
+G-ILARIA,Heavy Falcon,1570,10.74,512,512,weight mark x 47.65 kg,Type C,St. Ilaria,2015,Moore et al. 2015
+G-SEBASTIANO,Medium Falcon,1570,8.54,407,407,weight mark x 47.65 kg,Type C,St. Sebastiano,2015,Moore et al. 2015
+G-ROCCO,Medium Falcon,1570,?.74,321,416,weight mark (6.74-8.74) x 47.65 kg,Type C,St. Rocco,2015,Moore et al. 2015
+G-GIOVANNI,Falconet,1570,3.88,185,185,weight mark x 47.65 kg,Type C,St. Giovanni,2015,Moore et al. 2015
+G-PETRIERE-F,Medium Petriere,1570?,,475,570,estimate (reconstruction v0.7 §29; basis to document),Type C,undetermined female saint,1985,McElvogue 2002
+G-PETRIERE-2,Medium Petriere,1570?,,475,570,estimate (reconstruction v0.7 §29; basis to document),,,1985,McElvogue 2002

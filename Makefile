@@ -1,7 +1,7 @@
 # Armada / Streedagh. Python with numpy + astropy: python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
 PYTHON ?= .venv/bin/python
 
-.PHONY: worldline sun_moon capacity attribution all
+.PHONY: worldline sun_moon capacity guns attribution all
 
 all: worldline sun_moon capacity
 
@@ -16,6 +16,11 @@ sun_moon: worldline
 # Stepped-castle capacity: recompute and check the §26/§28 tables (seconds)
 capacity:
 	$(PYTHON) 2_reconstruction/stepped_castle_capacity.py
+
+# Juliana's recovered guns and the Lisbon muster as signals; then re-run attribution
+guns:
+	$(PYTHON) 1_signal_field/juliana_guns.py
+	$(PYTHON) 1_signal_field/attribution_estimator.py
 
 # Bayesian attribution of the v3 signal store; NOTE rewrites data/ with a new committed_at timestamp
 attribution:

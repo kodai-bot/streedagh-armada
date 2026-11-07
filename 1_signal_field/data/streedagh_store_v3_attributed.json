@@ -96,35 +96,37 @@
       },
       "provenance": [
         "McElvogue 2002",
-        "Ridella et al. 2016 Tab.1"
+        "Ridella et al. 2016 tab. 1"
       ],
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -8.6271,
-          54.4033
-        ]
-      },
+      "geometry": null,
+      "position": "unknown: recovery coordinates not in the project's sources",
       "phi": {
         "material": "bronze",
         "phi_quantitative": {
           "quantity": "mass_t",
-          "p05": 0.97,
-          "median": 0.99,
-          "p95": 1.01,
-          "distribution_basis": "measurement (20.82 cantara x 47.65)",
+          "p05": 0.992,
+          "median": 0.992,
+          "p95": 0.992,
+          "distribution_basis": "weight mark x 47.65 kg",
           "script_ref": "juliana_guns.py"
         }
+      },
+      "gun": {
+        "type": "Heavy Saker",
+        "muzzle": "Type C",
+        "saint": "St. Severo",
+        "cantara_mark": "20.82"
       },
       "components": [
         {
           "type": "founder_mark",
           "value": "Dorino_II_Gioardi",
-          "diagnostic_group": "casting_provenance"
+          "diagnostic_group": "casting_provenance",
+          "basis": "attribution in Ridella et al. 2016 tab. 1"
         },
         {
           "type": "casting_year",
-          "value": 1570,
+          "value": "1570",
           "diagnostic_group": "casting_provenance"
         },
         {
@@ -139,33 +141,49 @@
           "diagnostic_group": "individual_id"
         }
       ],
+      "hypotheses": [
+        {
+          "kind": "mounting_station",
+          "status": "HYPOTHESIS",
+          "candidates": [
+            "lower deck",
+            "main deck"
+          ],
+          "height_rank": [
+            0,
+            1
+          ],
+          "rule": "Heavy pieces (about 1 t) sit low: gun weight high above the centre of buoyancy limits what a ship can carry",
+          "rule_source": "Martin 1984, p. 195"
+        }
+      ],
       "entity_attributions": [
         {
           "entity_signal_id": "streedagh:ENT-JUL",
-          "confidence": 0.9999,
-          "basis": "bayesian component accumulation [spatial, casting_provenance, ship_programme:St_Severo, individual_id]; diagnostic-group correlation control",
-          "committed_at": "2026-07-03T22:58:41.281763Z",
+          "confidence": 0.9994,
+          "basis": "bayesian component accumulation [casting_provenance, ship_programme:St_Severo, individual_id]; diagnostic-group correlation control",
+          "committed_at": "2026-11-07T00:43:25.531145Z",
           "committed_by": "attribution_estimator/v0.2"
         },
         {
           "entity_signal_id": "streedagh:ENT-LAV",
-          "confidence": 0.0,
-          "basis": "bayesian component accumulation [spatial, casting_provenance, ship_programme:St_Severo, individual_id]; diagnostic-group correlation control",
-          "committed_at": "2026-07-03T22:58:41.281763Z",
+          "confidence": 0.0003,
+          "basis": "bayesian component accumulation [casting_provenance, ship_programme:St_Severo, individual_id]; diagnostic-group correlation control",
+          "committed_at": "2026-11-07T00:43:25.531145Z",
           "committed_by": "attribution_estimator/v0.2"
         },
         {
           "entity_signal_id": "streedagh:ENT-VIS",
-          "confidence": 0.0,
-          "basis": "bayesian component accumulation [spatial, casting_provenance, ship_programme:St_Severo, individual_id]; diagnostic-group correlation control",
-          "committed_at": "2026-07-03T22:58:41.281763Z",
+          "confidence": 0.0002,
+          "basis": "bayesian component accumulation [casting_provenance, ship_programme:St_Severo, individual_id]; diagnostic-group correlation control",
+          "committed_at": "2026-11-07T00:43:25.531145Z",
           "committed_by": "attribution_estimator/v0.2"
         },
         {
           "entity_signal_id": "streedagh:UNKNOWN",
-          "confidence": 0.0,
-          "basis": "bayesian component accumulation [spatial, casting_provenance, ship_programme:St_Severo, individual_id]; diagnostic-group correlation control",
-          "committed_at": "2026-07-03T22:58:41.281763Z",
+          "confidence": 0.0001,
+          "basis": "bayesian component accumulation [casting_provenance, ship_programme:St_Severo, individual_id]; diagnostic-group correlation control",
+          "committed_at": "2026-11-07T00:43:25.531145Z",
           "committed_by": "attribution_estimator/v0.2"
         }
       ]
@@ -180,35 +198,37 @@
       },
       "provenance": [
         "Moore et al. 2015",
-        "Ridella et al. 2016 Tab.1"
+        "Ridella et al. 2016 tab. 1"
       ],
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -8.6269,
-          54.4031
-        ]
-      },
+      "geometry": null,
+      "position": "unknown: recovery coordinates not in the project's sources",
       "phi": {
         "material": "bronze",
         "phi_quantitative": {
           "quantity": "mass_t",
-          "p05": 0.51,
+          "p05": 0.53,
           "median": 0.53,
-          "p95": 0.55,
-          "distribution_basis": "measurement (11.12 cantara x 47.65)",
+          "p95": 0.53,
+          "distribution_basis": "weight mark x 47.65 kg",
           "script_ref": "juliana_guns.py"
         }
+      },
+      "gun": {
+        "type": "Heavy Falcon",
+        "muzzle": "Type C",
+        "saint": "St. Matrona",
+        "cantara_mark": "11.12"
       },
       "components": [
         {
           "type": "founder_mark",
           "value": "Dorino_II_Gioardi",
-          "diagnostic_group": "casting_provenance"
+          "diagnostic_group": "casting_provenance",
+          "basis": "attribution in Ridella et al. 2016 tab. 1"
         },
         {
           "type": "casting_year",
-          "value": 1570,
+          "value": "1570",
           "diagnostic_group": "casting_provenance"
         },
         {
@@ -223,33 +243,49 @@
           "diagnostic_group": "individual_id"
         }
       ],
+      "hypotheses": [
+        {
+          "kind": "mounting_station",
+          "status": "HYPOTHESIS",
+          "candidates": [
+            "main deck",
+            "castle deck 1"
+          ],
+          "height_rank": [
+            1,
+            2
+          ],
+          "rule": "Light carriage guns (about 0.3-0.55 t) can be worked on the main deck or the lower castle decks",
+          "rule_source": "general; weak"
+        }
+      ],
       "entity_attributions": [
         {
           "entity_signal_id": "streedagh:ENT-JUL",
-          "confidence": 0.9999,
-          "basis": "bayesian component accumulation [spatial, casting_provenance, ship_programme:St_Matrona, individual_id]; diagnostic-group correlation control",
-          "committed_at": "2026-07-03T22:58:41.281997Z",
+          "confidence": 0.9995,
+          "basis": "bayesian component accumulation [casting_provenance, ship_programme:St_Matrona, individual_id]; diagnostic-group correlation control",
+          "committed_at": "2026-11-07T00:43:25.531266Z",
           "committed_by": "attribution_estimator/v0.2"
         },
         {
           "entity_signal_id": "streedagh:ENT-LAV",
-          "confidence": 0.0,
-          "basis": "bayesian component accumulation [spatial, casting_provenance, ship_programme:St_Matrona, individual_id]; diagnostic-group correlation control",
-          "committed_at": "2026-07-03T22:58:41.281997Z",
+          "confidence": 0.0002,
+          "basis": "bayesian component accumulation [casting_provenance, ship_programme:St_Matrona, individual_id]; diagnostic-group correlation control",
+          "committed_at": "2026-11-07T00:43:25.531266Z",
           "committed_by": "attribution_estimator/v0.2"
         },
         {
           "entity_signal_id": "streedagh:ENT-VIS",
-          "confidence": 0.0,
-          "basis": "bayesian component accumulation [spatial, casting_provenance, ship_programme:St_Matrona, individual_id]; diagnostic-group correlation control",
-          "committed_at": "2026-07-03T22:58:41.281997Z",
+          "confidence": 0.0001,
+          "basis": "bayesian component accumulation [casting_provenance, ship_programme:St_Matrona, individual_id]; diagnostic-group correlation control",
+          "committed_at": "2026-11-07T00:43:25.531266Z",
           "committed_by": "attribution_estimator/v0.2"
         },
         {
           "entity_signal_id": "streedagh:UNKNOWN",
-          "confidence": 0.0,
-          "basis": "bayesian component accumulation [spatial, casting_provenance, ship_programme:St_Matrona, individual_id]; diagnostic-group correlation control",
-          "committed_at": "2026-07-03T22:58:41.281997Z",
+          "confidence": 0.0001,
+          "basis": "bayesian component accumulation [casting_provenance, ship_programme:St_Matrona, individual_id]; diagnostic-group correlation control",
+          "committed_at": "2026-11-07T00:43:25.531266Z",
           "committed_by": "attribution_estimator/v0.2"
         }
       ]
@@ -291,28 +327,28 @@
           "entity_signal_id": "streedagh:ENT-JUL",
           "confidence": 0.7425,
           "basis": "bayesian component accumulation [spatial, casting_provenance]; diagnostic-group correlation control",
-          "committed_at": "2026-07-03T22:58:41.282038Z",
+          "committed_at": "2026-11-07T00:43:25.531355Z",
           "committed_by": "attribution_estimator/v0.2"
         },
         {
           "entity_signal_id": "streedagh:ENT-LAV",
           "confidence": 0.1706,
           "basis": "bayesian component accumulation [spatial, casting_provenance]; diagnostic-group correlation control",
-          "committed_at": "2026-07-03T22:58:41.282038Z",
+          "committed_at": "2026-11-07T00:43:25.531355Z",
           "committed_by": "attribution_estimator/v0.2"
         },
         {
           "entity_signal_id": "streedagh:ENT-VIS",
           "confidence": 0.07,
           "basis": "bayesian component accumulation [spatial, casting_provenance]; diagnostic-group correlation control",
-          "committed_at": "2026-07-03T22:58:41.282038Z",
+          "committed_at": "2026-11-07T00:43:25.531355Z",
           "committed_by": "attribution_estimator/v0.2"
         },
         {
           "entity_signal_id": "streedagh:UNKNOWN",
           "confidence": 0.017,
           "basis": "bayesian component accumulation [spatial, casting_provenance]; diagnostic-group correlation control",
-          "committed_at": "2026-07-03T22:58:41.282038Z",
+          "committed_at": "2026-11-07T00:43:25.531355Z",
           "committed_by": "attribution_estimator/v0.2"
         }
       ]
@@ -343,6 +379,785 @@
           "distribution_basis": "measurement",
           "script_ref": null
         }
+      },
+      "components": [],
+      "entity_attributions": []
+    },
+    {
+      "uari": "streedagh:SIG-G-GBATTISTA",
+      "level": "L0",
+      "acquisition_class": "direct_observation",
+      "acquisition": {
+        "method": "diver_recovery",
+        "date": "2015"
+      },
+      "provenance": [
+        "Moore et al. 2015",
+        "Ridella et al. 2016 tab. 1"
+      ],
+      "geometry": null,
+      "position": "unknown: recovery coordinates not in the project's sources",
+      "phi": {
+        "material": "bronze",
+        "phi_quantitative": {
+          "quantity": "mass_t",
+          "p05": 0.905,
+          "median": 0.928,
+          "p95": 0.952,
+          "distribution_basis": "weight mark (19.00-19.99) x 47.65 kg",
+          "script_ref": "juliana_guns.py"
+        }
+      },
+      "gun": {
+        "type": "Heavy Saker",
+        "muzzle": "Type C",
+        "saint": "St. Giovanni Battista",
+        "cantara_mark": "19.??"
+      },
+      "components": [
+        {
+          "type": "founder_mark",
+          "value": "Dorino_II_Gioardi",
+          "diagnostic_group": "casting_provenance",
+          "basis": "attribution in Ridella et al. 2016 tab. 1"
+        },
+        {
+          "type": "casting_year",
+          "value": "1570",
+          "diagnostic_group": "casting_provenance"
+        },
+        {
+          "type": "saint_relief",
+          "value": "St_Giovanni_Battista",
+          "diagnostic_group": "ship_programme"
+        }
+      ],
+      "hypotheses": [
+        {
+          "kind": "mounting_station",
+          "status": "HYPOTHESIS",
+          "candidates": [
+            "lower deck",
+            "main deck"
+          ],
+          "height_rank": [
+            0,
+            1
+          ],
+          "rule": "Heavy pieces (about 1 t) sit low: gun weight high above the centre of buoyancy limits what a ship can carry",
+          "rule_source": "Martin 1984, p. 195"
+        }
+      ],
+      "entity_attributions": [
+        {
+          "entity_signal_id": "streedagh:ENT-JUL",
+          "confidence": 0.9895,
+          "basis": "bayesian component accumulation [casting_provenance, ship_programme:St_Giovanni_Battista]; diagnostic-group correlation control",
+          "committed_at": "2026-11-07T00:43:25.531376Z",
+          "committed_by": "attribution_estimator/v0.2"
+        },
+        {
+          "entity_signal_id": "streedagh:ENT-LAV",
+          "confidence": 0.0051,
+          "basis": "bayesian component accumulation [casting_provenance, ship_programme:St_Giovanni_Battista]; diagnostic-group correlation control",
+          "committed_at": "2026-11-07T00:43:25.531376Z",
+          "committed_by": "attribution_estimator/v0.2"
+        },
+        {
+          "entity_signal_id": "streedagh:ENT-VIS",
+          "confidence": 0.0029,
+          "basis": "bayesian component accumulation [casting_provenance, ship_programme:St_Giovanni_Battista]; diagnostic-group correlation control",
+          "committed_at": "2026-11-07T00:43:25.531376Z",
+          "committed_by": "attribution_estimator/v0.2"
+        },
+        {
+          "entity_signal_id": "streedagh:UNKNOWN",
+          "confidence": 0.0025,
+          "basis": "bayesian component accumulation [casting_provenance, ship_programme:St_Giovanni_Battista]; diagnostic-group correlation control",
+          "committed_at": "2026-11-07T00:43:25.531376Z",
+          "committed_by": "attribution_estimator/v0.2"
+        }
+      ]
+    },
+    {
+      "uari": "streedagh:SIG-G-ILARIA",
+      "level": "L0",
+      "acquisition_class": "direct_observation",
+      "acquisition": {
+        "method": "diver_recovery",
+        "date": "2015"
+      },
+      "provenance": [
+        "Moore et al. 2015",
+        "Ridella et al. 2016 tab. 1"
+      ],
+      "geometry": null,
+      "position": "unknown: recovery coordinates not in the project's sources",
+      "phi": {
+        "material": "bronze",
+        "phi_quantitative": {
+          "quantity": "mass_t",
+          "p05": 0.512,
+          "median": 0.512,
+          "p95": 0.512,
+          "distribution_basis": "weight mark x 47.65 kg",
+          "script_ref": "juliana_guns.py"
+        }
+      },
+      "gun": {
+        "type": "Heavy Falcon",
+        "muzzle": "Type C",
+        "saint": "St. Ilaria",
+        "cantara_mark": "10.74"
+      },
+      "components": [
+        {
+          "type": "founder_mark",
+          "value": "Dorino_II_Gioardi",
+          "diagnostic_group": "casting_provenance",
+          "basis": "attribution in Ridella et al. 2016 tab. 1"
+        },
+        {
+          "type": "casting_year",
+          "value": "1570",
+          "diagnostic_group": "casting_provenance"
+        },
+        {
+          "type": "saint_relief",
+          "value": "St_Ilaria",
+          "diagnostic_group": "ship_programme"
+        },
+        {
+          "type": "weight_mark",
+          "value": 10.74,
+          "matches_juliana_record": true,
+          "diagnostic_group": "individual_id"
+        }
+      ],
+      "hypotheses": [
+        {
+          "kind": "mounting_station",
+          "status": "HYPOTHESIS",
+          "candidates": [
+            "main deck",
+            "castle deck 1"
+          ],
+          "height_rank": [
+            1,
+            2
+          ],
+          "rule": "Light carriage guns (about 0.3-0.55 t) can be worked on the main deck or the lower castle decks",
+          "rule_source": "general; weak"
+        }
+      ],
+      "entity_attributions": [
+        {
+          "entity_signal_id": "streedagh:ENT-JUL",
+          "confidence": 0.9994,
+          "basis": "bayesian component accumulation [casting_provenance, ship_programme:St_Ilaria, individual_id]; diagnostic-group correlation control",
+          "committed_at": "2026-11-07T00:43:25.531399Z",
+          "committed_by": "attribution_estimator/v0.2"
+        },
+        {
+          "entity_signal_id": "streedagh:ENT-LAV",
+          "confidence": 0.0003,
+          "basis": "bayesian component accumulation [casting_provenance, ship_programme:St_Ilaria, individual_id]; diagnostic-group correlation control",
+          "committed_at": "2026-11-07T00:43:25.531399Z",
+          "committed_by": "attribution_estimator/v0.2"
+        },
+        {
+          "entity_signal_id": "streedagh:ENT-VIS",
+          "confidence": 0.0002,
+          "basis": "bayesian component accumulation [casting_provenance, ship_programme:St_Ilaria, individual_id]; diagnostic-group correlation control",
+          "committed_at": "2026-11-07T00:43:25.531399Z",
+          "committed_by": "attribution_estimator/v0.2"
+        },
+        {
+          "entity_signal_id": "streedagh:UNKNOWN",
+          "confidence": 0.0001,
+          "basis": "bayesian component accumulation [casting_provenance, ship_programme:St_Ilaria, individual_id]; diagnostic-group correlation control",
+          "committed_at": "2026-11-07T00:43:25.531399Z",
+          "committed_by": "attribution_estimator/v0.2"
+        }
+      ]
+    },
+    {
+      "uari": "streedagh:SIG-G-SEBASTIANO",
+      "level": "L0",
+      "acquisition_class": "direct_observation",
+      "acquisition": {
+        "method": "diver_recovery",
+        "date": "2015"
+      },
+      "provenance": [
+        "Moore et al. 2015",
+        "Ridella et al. 2016 tab. 1"
+      ],
+      "geometry": null,
+      "position": "unknown: recovery coordinates not in the project's sources",
+      "phi": {
+        "material": "bronze",
+        "phi_quantitative": {
+          "quantity": "mass_t",
+          "p05": 0.407,
+          "median": 0.407,
+          "p95": 0.407,
+          "distribution_basis": "weight mark x 47.65 kg",
+          "script_ref": "juliana_guns.py"
+        }
+      },
+      "gun": {
+        "type": "Medium Falcon",
+        "muzzle": "Type C",
+        "saint": "St. Sebastiano",
+        "cantara_mark": "8.54"
+      },
+      "components": [
+        {
+          "type": "founder_mark",
+          "value": "Dorino_II_Gioardi",
+          "diagnostic_group": "casting_provenance",
+          "basis": "attribution in Ridella et al. 2016 tab. 1"
+        },
+        {
+          "type": "casting_year",
+          "value": "1570",
+          "diagnostic_group": "casting_provenance"
+        },
+        {
+          "type": "saint_relief",
+          "value": "St_Sebastiano",
+          "diagnostic_group": "ship_programme"
+        },
+        {
+          "type": "weight_mark",
+          "value": 8.54,
+          "matches_juliana_record": true,
+          "diagnostic_group": "individual_id"
+        }
+      ],
+      "hypotheses": [
+        {
+          "kind": "mounting_station",
+          "status": "HYPOTHESIS",
+          "candidates": [
+            "main deck",
+            "castle deck 1"
+          ],
+          "height_rank": [
+            1,
+            2
+          ],
+          "rule": "Light carriage guns (about 0.3-0.55 t) can be worked on the main deck or the lower castle decks",
+          "rule_source": "general; weak"
+        }
+      ],
+      "entity_attributions": [
+        {
+          "entity_signal_id": "streedagh:ENT-JUL",
+          "confidence": 0.9994,
+          "basis": "bayesian component accumulation [casting_provenance, ship_programme:St_Sebastiano, individual_id]; diagnostic-group correlation control",
+          "committed_at": "2026-11-07T00:43:25.531418Z",
+          "committed_by": "attribution_estimator/v0.2"
+        },
+        {
+          "entity_signal_id": "streedagh:ENT-LAV",
+          "confidence": 0.0003,
+          "basis": "bayesian component accumulation [casting_provenance, ship_programme:St_Sebastiano, individual_id]; diagnostic-group correlation control",
+          "committed_at": "2026-11-07T00:43:25.531418Z",
+          "committed_by": "attribution_estimator/v0.2"
+        },
+        {
+          "entity_signal_id": "streedagh:ENT-VIS",
+          "confidence": 0.0002,
+          "basis": "bayesian component accumulation [casting_provenance, ship_programme:St_Sebastiano, individual_id]; diagnostic-group correlation control",
+          "committed_at": "2026-11-07T00:43:25.531418Z",
+          "committed_by": "attribution_estimator/v0.2"
+        },
+        {
+          "entity_signal_id": "streedagh:UNKNOWN",
+          "confidence": 0.0001,
+          "basis": "bayesian component accumulation [casting_provenance, ship_programme:St_Sebastiano, individual_id]; diagnostic-group correlation control",
+          "committed_at": "2026-11-07T00:43:25.531418Z",
+          "committed_by": "attribution_estimator/v0.2"
+        }
+      ]
+    },
+    {
+      "uari": "streedagh:SIG-G-ROCCO",
+      "level": "L0",
+      "acquisition_class": "direct_observation",
+      "acquisition": {
+        "method": "diver_recovery",
+        "date": "2015"
+      },
+      "provenance": [
+        "Moore et al. 2015",
+        "Ridella et al. 2016 tab. 1"
+      ],
+      "geometry": null,
+      "position": "unknown: recovery coordinates not in the project's sources",
+      "phi": {
+        "material": "bronze",
+        "phi_quantitative": {
+          "quantity": "mass_t",
+          "p05": 0.321,
+          "median": 0.368,
+          "p95": 0.416,
+          "distribution_basis": "weight mark (6.74-8.74) x 47.65 kg",
+          "script_ref": "juliana_guns.py"
+        }
+      },
+      "gun": {
+        "type": "Medium Falcon",
+        "muzzle": "Type C",
+        "saint": "St. Rocco",
+        "cantara_mark": "?.74"
+      },
+      "components": [
+        {
+          "type": "founder_mark",
+          "value": "Dorino_II_Gioardi",
+          "diagnostic_group": "casting_provenance",
+          "basis": "attribution in Ridella et al. 2016 tab. 1"
+        },
+        {
+          "type": "casting_year",
+          "value": "1570",
+          "diagnostic_group": "casting_provenance"
+        },
+        {
+          "type": "saint_relief",
+          "value": "St_Rocco",
+          "diagnostic_group": "ship_programme"
+        }
+      ],
+      "hypotheses": [
+        {
+          "kind": "mounting_station",
+          "status": "HYPOTHESIS",
+          "candidates": [
+            "main deck",
+            "castle deck 1"
+          ],
+          "height_rank": [
+            1,
+            2
+          ],
+          "rule": "Light carriage guns (about 0.3-0.55 t) can be worked on the main deck or the lower castle decks",
+          "rule_source": "general; weak"
+        }
+      ],
+      "entity_attributions": [
+        {
+          "entity_signal_id": "streedagh:ENT-JUL",
+          "confidence": 0.9895,
+          "basis": "bayesian component accumulation [casting_provenance, ship_programme:St_Rocco]; diagnostic-group correlation control",
+          "committed_at": "2026-11-07T00:43:25.531434Z",
+          "committed_by": "attribution_estimator/v0.2"
+        },
+        {
+          "entity_signal_id": "streedagh:ENT-LAV",
+          "confidence": 0.0051,
+          "basis": "bayesian component accumulation [casting_provenance, ship_programme:St_Rocco]; diagnostic-group correlation control",
+          "committed_at": "2026-11-07T00:43:25.531434Z",
+          "committed_by": "attribution_estimator/v0.2"
+        },
+        {
+          "entity_signal_id": "streedagh:ENT-VIS",
+          "confidence": 0.0029,
+          "basis": "bayesian component accumulation [casting_provenance, ship_programme:St_Rocco]; diagnostic-group correlation control",
+          "committed_at": "2026-11-07T00:43:25.531434Z",
+          "committed_by": "attribution_estimator/v0.2"
+        },
+        {
+          "entity_signal_id": "streedagh:UNKNOWN",
+          "confidence": 0.0025,
+          "basis": "bayesian component accumulation [casting_provenance, ship_programme:St_Rocco]; diagnostic-group correlation control",
+          "committed_at": "2026-11-07T00:43:25.531434Z",
+          "committed_by": "attribution_estimator/v0.2"
+        }
+      ]
+    },
+    {
+      "uari": "streedagh:SIG-G-GIOVANNI",
+      "level": "L0",
+      "acquisition_class": "direct_observation",
+      "acquisition": {
+        "method": "diver_recovery",
+        "date": "2015"
+      },
+      "provenance": [
+        "Moore et al. 2015",
+        "Ridella et al. 2016 tab. 1"
+      ],
+      "geometry": null,
+      "position": "unknown: recovery coordinates not in the project's sources",
+      "phi": {
+        "material": "bronze",
+        "phi_quantitative": {
+          "quantity": "mass_t",
+          "p05": 0.185,
+          "median": 0.185,
+          "p95": 0.185,
+          "distribution_basis": "weight mark x 47.65 kg",
+          "script_ref": "juliana_guns.py"
+        }
+      },
+      "gun": {
+        "type": "Falconet",
+        "muzzle": "Type C",
+        "saint": "St. Giovanni",
+        "cantara_mark": "3.88"
+      },
+      "components": [
+        {
+          "type": "founder_mark",
+          "value": "Dorino_II_Gioardi",
+          "diagnostic_group": "casting_provenance",
+          "basis": "attribution in Ridella et al. 2016 tab. 1"
+        },
+        {
+          "type": "casting_year",
+          "value": "1570",
+          "diagnostic_group": "casting_provenance"
+        },
+        {
+          "type": "saint_relief",
+          "value": "St_Giovanni",
+          "diagnostic_group": "ship_programme"
+        },
+        {
+          "type": "weight_mark",
+          "value": 3.88,
+          "matches_juliana_record": true,
+          "diagnostic_group": "individual_id"
+        }
+      ],
+      "hypotheses": [
+        {
+          "kind": "mounting_station",
+          "status": "HYPOTHESIS",
+          "candidates": [
+            "castle deck 1",
+            "castle deck 2+"
+          ],
+          "height_rank": [
+            2,
+            3
+          ],
+          "rule": "Small anti-personnel pieces go on the castleworks, to fire down on boarders in the waist",
+          "rule_source": "Martin 1984, p. 298 (said of swivel guns; applied here by analogy)"
+        }
+      ],
+      "entity_attributions": [
+        {
+          "entity_signal_id": "streedagh:ENT-JUL",
+          "confidence": 0.9994,
+          "basis": "bayesian component accumulation [casting_provenance, ship_programme:St_Giovanni, individual_id]; diagnostic-group correlation control",
+          "committed_at": "2026-11-07T00:43:25.531454Z",
+          "committed_by": "attribution_estimator/v0.2"
+        },
+        {
+          "entity_signal_id": "streedagh:ENT-LAV",
+          "confidence": 0.0003,
+          "basis": "bayesian component accumulation [casting_provenance, ship_programme:St_Giovanni, individual_id]; diagnostic-group correlation control",
+          "committed_at": "2026-11-07T00:43:25.531454Z",
+          "committed_by": "attribution_estimator/v0.2"
+        },
+        {
+          "entity_signal_id": "streedagh:ENT-VIS",
+          "confidence": 0.0002,
+          "basis": "bayesian component accumulation [casting_provenance, ship_programme:St_Giovanni, individual_id]; diagnostic-group correlation control",
+          "committed_at": "2026-11-07T00:43:25.531454Z",
+          "committed_by": "attribution_estimator/v0.2"
+        },
+        {
+          "entity_signal_id": "streedagh:UNKNOWN",
+          "confidence": 0.0001,
+          "basis": "bayesian component accumulation [casting_provenance, ship_programme:St_Giovanni, individual_id]; diagnostic-group correlation control",
+          "committed_at": "2026-11-07T00:43:25.531454Z",
+          "committed_by": "attribution_estimator/v0.2"
+        }
+      ]
+    },
+    {
+      "uari": "streedagh:SIG-G-PETRIERE-F",
+      "level": "L0",
+      "acquisition_class": "direct_observation",
+      "acquisition": {
+        "method": "diver_recovery",
+        "date": "1985"
+      },
+      "provenance": [
+        "McElvogue 2002",
+        "Ridella et al. 2016 tab. 1"
+      ],
+      "geometry": null,
+      "position": "unknown: recovery coordinates not in the project's sources",
+      "phi": {
+        "material": "bronze",
+        "phi_quantitative": {
+          "quantity": "mass_t",
+          "p05": 0.475,
+          "median": 0.522,
+          "p95": 0.57,
+          "distribution_basis": "estimate (reconstruction v0.7 \u00a729; basis to document)",
+          "script_ref": "juliana_guns.py"
+        }
+      },
+      "gun": {
+        "type": "Medium Petriere",
+        "muzzle": "Type C",
+        "saint": "undetermined female saint",
+        "cantara_mark": null
+      },
+      "components": [
+        {
+          "type": "founder_mark",
+          "value": "Dorino_II_Gioardi",
+          "diagnostic_group": "casting_provenance",
+          "basis": "attribution in Ridella et al. 2016 tab. 1"
+        },
+        {
+          "type": "casting_year",
+          "value": "1570?",
+          "diagnostic_group": "casting_provenance"
+        }
+      ],
+      "hypotheses": [
+        {
+          "kind": "mounting_station",
+          "status": "HYPOTHESIS",
+          "candidates": [
+            "lower deck",
+            "main deck"
+          ],
+          "height_rank": [
+            0,
+            1
+          ],
+          "rule": "Petrieri were 'very probably placed in the lower deck, firing through the gun ports'",
+          "rule_source": "Ridella et al. 2016, p. 29 (San Giorgio wreck)"
+        }
+      ],
+      "entity_attributions": [
+        {
+          "entity_signal_id": "streedagh:ENT-JUL",
+          "confidence": 0.7102,
+          "basis": "bayesian component accumulation [casting_provenance]; diagnostic-group correlation control",
+          "committed_at": "2026-11-07T00:43:25.531469Z",
+          "committed_by": "attribution_estimator/v0.2"
+        },
+        {
+          "entity_signal_id": "streedagh:ENT-LAV",
+          "confidence": 0.1632,
+          "basis": "bayesian component accumulation [casting_provenance]; diagnostic-group correlation control",
+          "committed_at": "2026-11-07T00:43:25.531469Z",
+          "committed_by": "attribution_estimator/v0.2"
+        },
+        {
+          "entity_signal_id": "streedagh:ENT-VIS",
+          "confidence": 0.094,
+          "basis": "bayesian component accumulation [casting_provenance]; diagnostic-group correlation control",
+          "committed_at": "2026-11-07T00:43:25.531469Z",
+          "committed_by": "attribution_estimator/v0.2"
+        },
+        {
+          "entity_signal_id": "streedagh:UNKNOWN",
+          "confidence": 0.0326,
+          "basis": "bayesian component accumulation [casting_provenance]; diagnostic-group correlation control",
+          "committed_at": "2026-11-07T00:43:25.531469Z",
+          "committed_by": "attribution_estimator/v0.2"
+        }
+      ]
+    },
+    {
+      "uari": "streedagh:SIG-G-PETRIERE-2",
+      "level": "L0",
+      "acquisition_class": "direct_observation",
+      "acquisition": {
+        "method": "diver_recovery",
+        "date": "1985"
+      },
+      "provenance": [
+        "McElvogue 2002",
+        "Ridella et al. 2016 tab. 1"
+      ],
+      "geometry": null,
+      "position": "unknown: recovery coordinates not in the project's sources",
+      "phi": {
+        "material": "bronze",
+        "phi_quantitative": {
+          "quantity": "mass_t",
+          "p05": 0.475,
+          "median": 0.522,
+          "p95": 0.57,
+          "distribution_basis": "estimate (reconstruction v0.7 \u00a729; basis to document)",
+          "script_ref": "juliana_guns.py"
+        }
+      },
+      "gun": {
+        "type": "Medium Petriere",
+        "muzzle": null,
+        "saint": null,
+        "cantara_mark": null
+      },
+      "components": [
+        {
+          "type": "founder_mark",
+          "value": "Dorino_II_Gioardi",
+          "diagnostic_group": "casting_provenance",
+          "basis": "attribution in Ridella et al. 2016 tab. 1"
+        },
+        {
+          "type": "casting_year",
+          "value": "1570?",
+          "diagnostic_group": "casting_provenance"
+        }
+      ],
+      "hypotheses": [
+        {
+          "kind": "mounting_station",
+          "status": "HYPOTHESIS",
+          "candidates": [
+            "lower deck",
+            "main deck"
+          ],
+          "height_rank": [
+            0,
+            1
+          ],
+          "rule": "Petrieri were 'very probably placed in the lower deck, firing through the gun ports'",
+          "rule_source": "Ridella et al. 2016, p. 29 (San Giorgio wreck)"
+        }
+      ],
+      "entity_attributions": [
+        {
+          "entity_signal_id": "streedagh:ENT-JUL",
+          "confidence": 0.7102,
+          "basis": "bayesian component accumulation [casting_provenance]; diagnostic-group correlation control",
+          "committed_at": "2026-11-07T00:43:25.531485Z",
+          "committed_by": "attribution_estimator/v0.2"
+        },
+        {
+          "entity_signal_id": "streedagh:ENT-LAV",
+          "confidence": 0.1632,
+          "basis": "bayesian component accumulation [casting_provenance]; diagnostic-group correlation control",
+          "committed_at": "2026-11-07T00:43:25.531485Z",
+          "committed_by": "attribution_estimator/v0.2"
+        },
+        {
+          "entity_signal_id": "streedagh:ENT-VIS",
+          "confidence": 0.094,
+          "basis": "bayesian component accumulation [casting_provenance]; diagnostic-group correlation control",
+          "committed_at": "2026-11-07T00:43:25.531485Z",
+          "committed_by": "attribution_estimator/v0.2"
+        },
+        {
+          "entity_signal_id": "streedagh:UNKNOWN",
+          "confidence": 0.0326,
+          "basis": "bayesian component accumulation [casting_provenance]; diagnostic-group correlation control",
+          "committed_at": "2026-11-07T00:43:25.531485Z",
+          "committed_by": "attribution_estimator/v0.2"
+        }
+      ]
+    },
+    {
+      "uari": "streedagh:DOC-MUSTER-LAV",
+      "level": "L2",
+      "acquisition_class": "documentary",
+      "acquisition": {
+        "method": "muster_list",
+        "date": "1588-05-09"
+      },
+      "provenance": [
+        "Martin 1984 App. 4 p. 448 (Lisbon muster 9 May 1588; Paz Salas ed.)"
+      ],
+      "geometry": null,
+      "about": "streedagh:ENT-LAV",
+      "record": {
+        "tons": 728,
+        "soldiers": 203,
+        "seamen": 71,
+        "guns": 25,
+        "shot": 1250,
+        "powder_qtx": 39,
+        "lead_qtx": 15,
+        "match_qtx": 12,
+        "missing_list": true
+      },
+      "derived": {
+        "status": "DERIVED",
+        "tons_per_soldier": 3.59,
+        "tons_per_seaman": 10.25,
+        "shot_per_gun": 50.0
+      },
+      "components": [],
+      "entity_attributions": []
+    },
+    {
+      "uari": "streedagh:DOC-MUSTER-JUL",
+      "level": "L2",
+      "acquisition_class": "documentary",
+      "acquisition": {
+        "method": "muster_list",
+        "date": "1588-05-09"
+      },
+      "provenance": [
+        "Martin 1984 App. 4 p. 448 (Lisbon muster 9 May 1588; Paz Salas ed.)"
+      ],
+      "geometry": null,
+      "about": "streedagh:ENT-JUL",
+      "record": {
+        "tons": 860,
+        "soldiers": 325,
+        "seamen": 70,
+        "guns": 32,
+        "shot": 1600,
+        "powder_qtx": 67,
+        "lead_qtx": 12,
+        "match_qtx": 12,
+        "missing_list": true
+      },
+      "derived": {
+        "status": "DERIVED",
+        "tons_per_soldier": 2.65,
+        "tons_per_seaman": 12.29,
+        "shot_per_gun": 50.0
+      },
+      "components": [],
+      "entity_attributions": []
+    },
+    {
+      "uari": "streedagh:DOC-MUSTER-VIS",
+      "level": "L2",
+      "acquisition_class": "documentary",
+      "acquisition": {
+        "method": "muster_list",
+        "date": "1588-05-09"
+      },
+      "provenance": [
+        "Martin 1984 App. 4 p. 449 (Lisbon muster 9 May 1588; Paz Salas ed.); v0.7 emends tons to 566"
+      ],
+      "geometry": null,
+      "about": "streedagh:ENT-VIS",
+      "record": {
+        "tons": 666,
+        "soldiers": 236,
+        "seamen": 71,
+        "guns": 18,
+        "shot": 900,
+        "powder_qtx": 32,
+        "lead_qtx": 12,
+        "match_qtx": 10,
+        "missing_list": true
+      },
+      "derived": {
+        "status": "DERIVED",
+        "tons_per_soldier": 2.82,
+        "tons_per_seaman": 9.38,
+        "shot_per_gun": 50.0
       },
       "components": [],
       "entity_attributions": []

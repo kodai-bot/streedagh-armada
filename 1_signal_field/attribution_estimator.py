@@ -53,14 +53,15 @@ def groups(components):
     return g
 
 def estimate(sig, loci, verbose=False):
-    lon, lat = sig["geometry"]["coordinates"]
-    dist = {e: hav(lon, lat, loci[e][0], loci[e][1]) for e in loci}
     post = prior(); used = []
     def show(step):
         if verbose: print(f"    {step:34s} " + "  ".join(f"{e[:4]}={post[e]:.3f}" for e in ENTITIES))
     if verbose: print(f"  {sig['uari']}")
     show("prior (armament-weighted)")
-    post = apply(post, lik_position(dist)); used.append("spatial"); show("+ spatial position")
+    if sig.get("geometry"):                            # position unknown -> no spatial term
+        lon, lat = sig["geometry"]["coordinates"]
+        dist = {e: hav(lon, lat, loci[e][0], loci[e][1]) for e in loci}
+        post = apply(post, lik_position(dist)); used.append("spatial"); show("+ spatial position")
     g = groups(sig.get("components", []))
     if "casting_provenance" in g:                      # founder_mark + casting_year combined ONCE
         post = apply(post, lik_casting_provenance()); used.append("casting_provenance"); show("+ casting provenance (grouped)")
@@ -80,6 +81,8 @@ def entity_attributions(post, used):
 def geojson_view(store, path):
     feats = []
     for s in store["signals"]:
+        if not s.get("geometry"):
+            continue
         top = None
         if s.get("entity_attributions"):
             best = max(s["entity_attributions"], key=lambda a: a["confidence"])

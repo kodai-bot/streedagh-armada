@@ -54,44 +54,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -8.6271,
-          54.4033
-        ]
-      },
-      "properties": {
-        "uari": "streedagh:SIG-G-SEVERO",
-        "level": "L0",
-        "acquisition_class": "direct_observation",
-        "top_attribution": {
-          "entity": "Juliana",
-          "confidence": 0.9999
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -8.6269,
-          54.4031
-        ]
-      },
-      "properties": {
-        "uari": "streedagh:SIG-G-MATRONA",
-        "level": "L0",
-        "acquisition_class": "direct_observation",
-        "top_attribution": {
-          "entity": "Juliana",
-          "confidence": 0.9999
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -8.6295,
           54.4016
         ]
