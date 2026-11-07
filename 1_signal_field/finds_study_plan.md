@@ -46,7 +46,27 @@ The same paper records finds at the other two sites:
 - **Site 2 (Visón):** a bronze breech-loading esmeril with the arms of Philip II. It is not a Juliana gun, and could be how some counts reach 13.
 - **Site 3 (Lavia):** two gun carriages with their guns, one with a bronze medio sacre still in place.
 
-**Not yet read for this:** Colin Martin's thesis (`sources/ColinMartinPhDThesis.pdf`, 60 MB), and McElvogue 1998 on a 16th-century rudder assemblage (*IJNA* 27.1), a comparison for the Streedagh rudder.
+**Martin 1984**, *The Equipment and Fighting Potential of the Spanish Armada* (PhD, St Andrews; `sources/ColinMartinPhDThesis.pdf`). It was written before the Streedagh wrecks were found (1985), so it has nothing on Juliana's guns. The useful parts are where gun types were mounted on ships like her.
+
+- **Levant merchant ships** (Venetian nave type, like La Trinidad Valencera and La Juliana): "a high and broad hull reinforced with wales and riders; substantial castleworks fore and aft; … and an armament designed to ward off all but the most sustained and powerful attack" (p. 213). That supports the stepped-castle reconstruction independently.
+- **Swivel guns and stone-throwers** (pedreros, falconetes pedreros, versos) were anti-personnel weapons. "Mounted on the castleworks fore and aft they could be applied in a defensive role by bringing enfilading fire down on boarders crowded in the ship's own waist" (p. 299). Martin also quotes Hawkins: "fowlers and great bases in the cage works and murderers in the cobridge heads".
+  - Ridella et al. 2016 (p. 29), however, place the larger muzzle-loading petrieri "very probably … in the lower deck, firing through the gun ports", as found on the San Giorgio.
+  - The two sources are about different weapons: breech-loading swivels up high, heavier petrieri low.
+- **Gun weight and height.** Martin explains the single-gun-deck galleon by the weight of guns "because of their height above the ship's centre of buoyancy" (p. 196). Heavy pieces go low; that is the general rule the mounting test needs.
+- **Soldiers per ton.** At the Lisbon muster, Portuguese two-deckers carried one soldier per 2.3 tons and the Castilian (single gun-deck) squadron one per 3.5 (p. 197).
+  - **Juliana: 860 / 290–325 soldiers = 2.6–3.0 tons per soldier**, between the two. That is consistent with more accommodation than a single-deck galleon.
+  - Caveat: Martin's tons may not be the same unit as the 860 toneladas. To check.
+- **Seamen.** The Armada averaged one seaman per 7.5 tons (p. 466). **Juliana: 860 / 65–70 = 12–13 tons per seaman**, so she was thinly crewed even by Armada standards, and her soldiers would have worked the guns. Martin says the bulk of gun crews were soldiers.
+- **The five ships from Sicily gun list** (AGS GA 221/39, 26 Sept 1587) covers Valencera's group, not Juliana (she sailed from Barcelona).
+- **Another date.** Martin dates the Streedagh wrecking to 25 September (p. 111). Ridella gives 26 September; the project uses 21 September Gregorian. All three need reconciling against the sources.
+
+**Positional data** for the recovered guns, which the §29.1 test needs, is not in any local source. Places to look:
+
+- the site plans in Birch & McElvogue 1999 (Fig. 1–2) and Birch 1998;
+- Moore et al. 2015 and the National Monuments Service underwater unit's 2015 survey records;
+- the 1985 recovery records (McElvogue 2002).
+
+**Not yet read for this:** McElvogue 1998 on a 16th-century rudder assemblage (*IJNA* 27.1), a comparison for the Streedagh rudder.
 
 ### The count
 
