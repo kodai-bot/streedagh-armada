@@ -10,8 +10,10 @@ script. Design: ../SITE_SIGNAL_DESIGN.md. Validate with the schema's own CLI:
         ../../Archaeology/Armada/1_signal_field/site_record/streedagh_site.json
 
 What goes in: the recovered guns, the Lisbon muster, the observed relations at Site 1,
-Cuéllar's letter (125 coded passages, from ../../3_cuellar_worldline/data/) and the
-inferences built on them. The reconstruction's inputs and the magnetometry come next.
+Cuéllar's letter (125 coded passages, from ../../3_cuellar_worldline/data/), the
+reconstruction's inputs (the six ships measured in 1588, the Levant gun list, the units),
+layer 1 of the seabed mass budget (../output/mass_budget.json, from seabed_mass_budget.py)
+and the inferences built on them. The magnetometry comes next.
 Positions are absent: none are held yet.
 
 Records follow the schema's rules: detections hold only what was observed or stated
@@ -82,7 +84,10 @@ AGENTS = [
     ("crawford", "person", "Robert Crawford (translator, 1897)"),
     ("exclassics", "organisation", "The Ex-classics Project (digital edition, 2021)"),
     ("dylan", "person", "Dylan Foley"),
+    ("crown-measurers", "organisation", "officials who measured and rated the requisitioned ships, 1588 (unnamed)"),
+    ("sicily-clerks", "organisation", "officials who listed the guns of the five ships from Sicily, Sept 1587 (unnamed)"),
     ("v1", "software", "build_site_record.py"),
+    ("budget", "software", "seabed_mass_budget.py"),
     ("estimator", "software", "attribution_estimator.py v0.2"),
 ]
 A = {k: f"agt:{P}/{k}" for k, _, _ in AGENTS}
@@ -378,6 +383,7 @@ def build():
                  "basis": [f"note:{P}/dylan-breakup-2026-11-07"]})
 
     cuellar(B)
+    reconstruction_inputs(B)
 
     # ── sources ──────────────────────────────────────────────────────────────
     def supports(src):
@@ -537,6 +543,175 @@ def cuellar(B):
                      "statement": {"detection": det_of[sid], "source": "src:ship-lavia", "probability": p, "note": why},
                      "credence": p, "falsifier": "a muster or relación placing Cuéllar or the Judge Advocate in another ship",
                      "basis": [det_of[sid], "cat:martin-1984/app4-p448"]})
+
+
+# ── reconstruction inputs and the seabed mass budget, layer 1 ────────────────
+CODO_M = 33 / 48 * 0.8359
+LIBRA_KG = 0.460
+RATED_SHIP = {"La Lavia Beneziana": "src:ship-lavia", "Santa Maria de Vison": "src:ship-vison"}
+BUDGET_SRC = {"Juliana": "src:ship-juliana", "Lavia": "src:ship-lavia", "Vison": "src:ship-vison"}
+
+
+def reconstruction_inputs(B):
+    acq, cats, dets, infs = B["acquisitions"], B["catalogue_entries"], B["detections"], B["inferences"]
+    ratings = read("ship_ratings_1588.csv")
+    levant = read("levant_guns_1587.csv")
+    budget = json.load(open(os.path.join(os.path.dirname(HERE), "output", "mass_budget.json"), encoding="utf-8"))
+
+    a_rate, a_guns = f"acq:{P}/ratings-1588", f"acq:{P}/sicily-guns-1587"
+    for key, agent, method, epoch, blind in (
+            ("ratings-1588", "crown-measurers", "tonnage_measurement",
+             {"value": 1588, "calendar": "gregorian", "basis": stated(["Martin 1984 p. 410: 'the 1588 calculations'"])},
+             "six requisitioned ships only; Juliana is not among them; the rating formula is implied, not stated"),
+            ("sicily-guns-1587", "sicily-clerks", "ordnance_inventory",
+             {"value": "1587-09-26", "calendar": "gregorian", "basis": stated(["Martin 1984 p. 114 n. 4: AGS GA 221/39, 26 September 1587"])},
+             "the five ships' guns as a whole; not broken down by ship")):
+        acq.append({**hdr("acquisition"), "acquisition_id": f"acq:{P}/{key}", "acquisition_class": "historical_observation",
+                    "perturbation": "none", "agents": [{"agent": A[agent], "role": "observer"}], "method": method,
+                    "epoch": {"semantic": "time.epoch", **epoch}, "footprint": {"absent": {"reason": "not_applicable"}},
+                    "completeness": {"blind_spots": blind}, "resolved": True, "raw": []})
+    cats += [
+        cat("ags/ga-223-28", "Archivo General de Simancas, Guerra Antigua 223/28", "crown-measurers", "compiler",
+            "GA 223/28", 1588, {"absent": {"reason": "not_held"}}, "the measuring and rating of six requisitioned ships",
+            src_acq=[a_rate]),
+        cat("martin-1984/app11-p411", "Martin 1984, App. 11 'Spanish and English tonnage measurements'", "martin",
+            "compiler", "p. 411 (table), pp. 408-412", 1984, {"table": "ship | manga | puntal | esloria (codos) | toneles machos | toneladas"},
+            "doctoral thesis; appendix transcribing and checking the 1588 tonnage figures", held="martin",
+            src_entries=["cat:ags/ga-223-28"],
+            fidelity="values transcribed with their fractions; Martin's own recalculations printed in brackets"),
+        cat("ags/ga-221-39", "Archivo General de Simancas, Guerra Antigua 221/39", "sicily-clerks", "compiler",
+            "GA 221/39", 1587, {"absent": {"reason": "not_held"}}, "summary of the guns aboard the five ships from Sicily",
+            src_acq=[a_guns]),
+        cat("martin-1984/p114", "Martin 1984, ch. on La Trinidad Valencera, pp. 114-115", "martin", "compiler", "pp. 114-115",
+            1984, {"list": "count | metal | class | calibre in libras"}, "doctoral thesis; the Sicilian ships' gun list as printed",
+            held="martin", src_entries=["cat:ags/ga-221-39"]),
+    ]
+
+    # the six ships as measured
+    for r in ratings:
+        key = r["muster_no"]
+        det = f"det:{P}/ratings-1588#{key}"
+        length = lambda col, word: {"semantic": "doc.length.stated", "value": float(r[col + "_codos"]),
+                                    "unit": {"verbatim": "codos"}, "basis": stated([f"column '{word} (codos)'"]),
+                                    "note": f"{word}, as written: {r[col + '_verbatim']}"}
+        metres = lambda col, word: {"semantic": "doc.length.stated", "value": round(float(r[col + "_codos"]) * CODO_M, 3),
+                                    "unit": "m", "note": f"{word} in metres",
+                                    "basis": {"kind": "derived", "recipe": {"name": "codo_to_m", "version": "1",
+                                              "params": {"m_per_codo": CODO_M, "rule": "codo = 33/48 vara; vara = 835.9 mm"}},
+                                              "refs": ["Martin 1984 p. 409 and n. 3 (Veitia Linage; 1587 Simancas palma of 209 mm)",
+                                                       "reconstruction v0.7 §27-28 (Martin's printed 547.7 mm is an arithmetic slip)"]}}
+        q = [length("esloria", "esloria"), length("manga", "manga"), length("puntal", "puntal"),
+             metres("esloria", "esloria"), metres("manga", "manga"), metres("puntal", "puntal"),
+             {"semantic": "doc.rating.stated", "value": float(r["machos"]), "unit": {"verbatim": "toneles machos"},
+              "basis": stated(["column 'toneles machos'"]), "note": f"as written: {r['machos_verbatim']}"},
+             {"semantic": "doc.rating.stated", "value": float(r["toneladas"]), "unit": {"verbatim": "toneladas"},
+              "basis": stated(["column 'toneladas'"]), "note": f"as written: {r['toneladas_verbatim']}"}]
+        dets.append({**hdr("detection"), "detection_id": det, "acquisition": a_rate,
+                     "read_from": ["cat:martin-1984/app11-p411"], "detected": True,
+                     "position": {"absent": {"reason": "not_applicable"}}, "quantities": q, "descriptors": [],
+                     "extension": {"historical_observation": {
+                         "verbatim": {"text": f"{r['ship']} | {r['manga_verbatim']} | {r['puntal_verbatim']} | {r['esloria_verbatim']} | "
+                                              f"{r['machos_verbatim']} ({r['martin_calc_machos']}) | {r['toneladas_verbatim']} ({r['martin_calc_toneladas']})",
+                                      "language": "en", "locator": "Martin 1984 App. 11 p. 411",
+                                      "note": "the table row as printed; bracketed figures are Martin's recalculations, not the 1588 document's"},
+                         "observer_role": "compiler", "reported_target": {"designation_verbatim": r["ship"]}, "hedges": []}}})
+        if r["ship"] in RATED_SHIP:
+            infs.append({**hdr("inference"), "inference_id": f"inf:{P}/ratings-row-{key}/attr", "agent": A["v1"],
+                         "kind": "attribution", "subject": [det],
+                         "statement": {"detection": det, "source": RATED_SHIP[r["ship"]], "probability": 0.95},
+                         "credence": 0.95, "falsifier": "the measured ship is another of the same name",
+                         "basis": [det, "cat:martin-1984/app11-p411"]})
+        if r["note"]:
+            infs.append({**hdr("inference"), "inference_id": f"inf:{P}/ratings-row-{key}/emend", "agent": A["martin"],
+                         "kind": "label", "subject": [det], "label": "emendation: 666 toneladas should be 566",
+                         "statement": {"stated": 666, "read_as": 566, "why": "472 machos plus one fifth is 566.4", "note": r["note"]},
+                         "credence": {"absent": {"reason": "reported_claim"}}, "falsifier": {"absent": {"reason": "reported_claim"}},
+                         "basis": [det]})
+    rate_dets = [f"det:{P}/ratings-1588#{r['muster_no']}" for r in ratings]
+    infs.append({**hdr("inference"), "inference_id": f"inf:{P}/ratings/formula-martin", "agent": A["martin"],
+                 "kind": "explanation", "subject": rate_dets,
+                 "statement": {"alternatives": ["machos = (manga / 2) x puntal x esloria x (1 - 0.03) / 8; toneladas = machos x 1.2",
+                                                "the 1590 Casa de Contratacion formula, with 5% deducted instead of 3%"],
+                               "residue": "Regazona and San Nicolas do not fit; 'sloppy arithmetic' or 'more fundamental errors'",
+                               "note": "Martin 1984 pp. 409-412"},
+                 "credence": {"absent": {"reason": "reported_claim"}}, "falsifier": {"absent": {"reason": "reported_claim"}},
+                 "basis": rate_dets})
+    chk = {r["ship"]: r for r in budget["ratings"]}
+    infs.append({**hdr("inference"), "inference_id": f"inf:{P}/ratings/formula-check", "agent": A["budget"],
+                 "kind": "explanation", "subject": rate_dets,
+                 "statement": {"alternatives": ["the 'three percent' formula is the 1588 rule"],
+                               "residue": {s: f"{c['diff_pct']:+}%" for s, c in chk.items()},
+                               "note": "recomputed from the measured dimensions; matches Martin's bracketed figures in every row. "
+                                       "Fits Lavia and Anunciada to 0.1%, Vison 2.4%, Florencia 3.9%; Regazona +19.7% and San Nicolas "
+                                       "+9.3% do not fit, so a Juliana estimate interpolated from Regazona's stated machos inherits that misfit"},
+                 "credence": 0.85, "falsifier": "a 1588 rating document stating a different formula that fits all six rows",
+                 "basis": rate_dets + [f"inf:{P}/ratings/formula-martin"]})
+
+    # Juliana's dimensions: not measured anywhere held; three estimates (reconstruction v0.7 §28.2)
+    cap = json.load(open(os.path.join(os.path.dirname(os.path.dirname(HERE)), "2_reconstruction", "output", "capacity.json"),
+                         encoding="utf-8"))["juliana"]
+    infs.append({**hdr("inference"), "inference_id": f"inf:{P}/juliana/dimensions", "agent": A["dylan"],
+                 "kind": "explanation", "subject": ["src:ship-juliana"],
+                 "statement": {"alternatives": [{"method": k, "esloria_manga_puntal_m": [round(x, 2) for x in v["m"]],
+                                                 "codos": [round(x, 2) for x in v["codos"]]} for k, v in cap["methods"].items()],
+                               "residue": "Juliana's own measurements are not in any held source; 716.7 machos is 860 / 1.2",
+                               "frame": "historical measured body (esloria, manga, puntal), not modern LOA x beam x depth",
+                               "note": "the interpolation uses Regazona's stated 1079 machos, which the formula check shows is 20% high"},
+                 "credence": 0.5, "falsifier": "Juliana's measurement record found, outside the 30.1-31.0 m esloria envelope",
+                 "basis": [f"det:{P}/ratings-1588#69", f"det:{P}/ratings-1588#68", f"det:{P}/ratings-1588#76",
+                           f"det:{P}/muster-1588#row-75", f"inf:{P}/ratings/formula-check"]})
+
+    # the Levant gun list
+    gl = f"det:{P}/sicily-guns-1587#list"
+    dets.append({**hdr("detection"), "detection_id": gl, "acquisition": a_guns, "read_from": ["cat:martin-1984/p114"],
+                 "detected": True, "position": {"absent": {"reason": "not_applicable"}},
+                 "quantities": [{"semantic": "doc.count.stated", "value": int(g["count"]), "unit": "1",
+                                 "basis": stated([f"line '{g['metal']} {g['class']}'"]),
+                                 "note": f"{g['metal']} {g['class']}, {g['calibre_lb_lo']}-{g['calibre_lb_hi']} libras ({g['shot']} shot)"}
+                                for g in levant],
+                 "descriptors": [],
+                 "extension": {"historical_observation": {
+                     "verbatim": {"text": "; ".join(f"{g['count']} {g['metal']} {g['class']}, "
+                                                   + (f"{g['calibre_lb_lo']}-{g['calibre_lb_hi']}" if g["calibre_lb_lo"] != g["calibre_lb_hi"] else g["calibre_lb_lo"])
+                                                   + "-lb" for g in levant),
+                                  "language": "en", "locator": "Martin 1984 pp. 114-115",
+                                  "note": "Martin's English rendering of the list; '(stone)' is his note on the falconetes pedreros; "
+                                          "stone or iron shot for the other classes is the builder's reading of the class names"},
+                     "observer_role": "compiler", "hedges": []}}})
+    # 'Levant' here = the five ships from Sicily; Juliana, Lavia and Vison are not shown to be among them
+    infs.append({**hdr("inference"), "inference_id": f"inf:{P}/sicily-guns/representative", "agent": A["dylan"],
+                 "kind": "explanation", "subject": [gl],
+                 "statement": {"alternatives": ["the five Sicilian ships' calibre mix stands for the Streedagh ships' guns"],
+                               "residue": "the list is not broken down by ship; whether Juliana, Lavia or Vison were among the five is not shown",
+                               "note": "used only for the mean shot mass in the mass budget"},
+                 "credence": 0.6, "falsifier": "a per-ship inventory for Juliana, Lavia or Vison with a markedly different calibre mix",
+                 "basis": [gl]})
+
+    # layer 1 of the mass budget: a prediction per ship, stated before any whole-site survey
+    for ship, d in budget["ships"].items():
+        if ship == "Combined":
+            continue
+        src = BUDGET_SRC[ship]
+        code = {"Juliana": "75", "Lavia": "69", "Vison": "76"}[ship]
+        basis = [f"det:{P}/muster-1588#row-{code}", gl, f"inf:{P}/sicily-guns/representative"]
+        if ship == "Juliana":
+            basis += [f"det:{P}/recovery-{g['recovered']}#{g['id']}" for g in read("juliana_guns.csv")]
+        t = lambda k: {"semantic": "phys.mass", "value": d[k]["median"], "interval": [d[k]["p05"], d[k]["p95"]], "unit": "t",
+                       "basis": {"kind": "derived", "recipe": {"name": "seabed_mass_budget.layer1", "version": "0.1",
+                                                               "params": {"seed": budget["seed"], "draws": budget["draws"]}}}}
+        infs.append({**hdr("inference"), "inference_id": f"inf:{P}/mass-budget/layer1-{ship.lower()}", "agent": A["budget"],
+                     "kind": "prediction", "subject": [src],
+                     "statement": {"observable": f"mass of guns, great shot and lead from {ship}'s wreck, once the site is fully surveyed",
+                                   "expected": {"ordnance_and_munitions_to_seabed": t("total"), "durable_guns_shot_lead": t("durable"),
+                                                "guns": t("guns"), "shot": t("shot"), "powder": t("powder"),
+                                                "lead": t("lead"), "match": t("match")},
+                                   "stated_before": "2026-11-07; no whole-site inventory exists",
+                                   "priors": budget["priors"],
+                                   "note": "median with 5-95% interval; layer 1 only (hull, ballast, stores and cargo not included)"},
+                     "credence": 0.6,
+                     "falsifier": "a full inventory above the 95th percentile, or a record that guns or munitions were "
+                                  "taken off the ship between the May muster and the wreck",
+                     "basis": basis})
 
 
 def main():

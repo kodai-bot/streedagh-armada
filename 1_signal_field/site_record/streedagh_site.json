@@ -71,9 +71,25 @@
    "name": "Dylan Foley"
   },
   {
+   "agent_id": "agt:pipeline.streedagh/crown-measurers",
+   "kind": "organisation",
+   "name": "officials who measured and rated the requisitioned ships, 1588 (unnamed)"
+  },
+  {
+   "agent_id": "agt:pipeline.streedagh/sicily-clerks",
+   "kind": "organisation",
+   "name": "officials who listed the guns of the five ships from Sicily, Sept 1587 (unnamed)"
+  },
+  {
    "agent_id": "agt:pipeline.streedagh/v1",
    "kind": "software",
    "name": "build_site_record.py",
+   "version": "0.1"
+  },
+  {
+   "agent_id": "agt:pipeline.streedagh/budget",
+   "kind": "software",
+   "name": "seabed_mass_budget.py",
    "version": "0.1"
   },
   {
@@ -283,6 +299,74 @@
    "resolved": true,
    "raw": [],
    "note": "the letter itself (Spanish) is reached through Duro's edition and Crawford's translation"
+  },
+  {
+   "schema": "signal_schema/acquisition/0.3.0",
+   "acquisition_id": "acq:pipeline.streedagh/ratings-1588",
+   "acquisition_class": "historical_observation",
+   "perturbation": "none",
+   "agents": [
+    {
+     "agent": "agt:pipeline.streedagh/crown-measurers",
+     "role": "observer"
+    }
+   ],
+   "method": "tonnage_measurement",
+   "epoch": {
+    "semantic": "time.epoch",
+    "value": 1588,
+    "calendar": "gregorian",
+    "basis": {
+     "kind": "stated",
+     "refs": [
+      "Martin 1984 p. 410: 'the 1588 calculations'"
+     ]
+    }
+   },
+   "footprint": {
+    "absent": {
+     "reason": "not_applicable"
+    }
+   },
+   "completeness": {
+    "blind_spots": "six requisitioned ships only; Juliana is not among them; the rating formula is implied, not stated"
+   },
+   "resolved": true,
+   "raw": []
+  },
+  {
+   "schema": "signal_schema/acquisition/0.3.0",
+   "acquisition_id": "acq:pipeline.streedagh/sicily-guns-1587",
+   "acquisition_class": "historical_observation",
+   "perturbation": "none",
+   "agents": [
+    {
+     "agent": "agt:pipeline.streedagh/sicily-clerks",
+     "role": "observer"
+    }
+   ],
+   "method": "ordnance_inventory",
+   "epoch": {
+    "semantic": "time.epoch",
+    "value": "1587-09-26",
+    "calendar": "gregorian",
+    "basis": {
+     "kind": "stated",
+     "refs": [
+      "Martin 1984 p. 114 n. 4: AGS GA 221/39, 26 September 1587"
+     ]
+    }
+   },
+   "footprint": {
+    "absent": {
+     "reason": "not_applicable"
+    }
+   },
+   "completeness": {
+    "blind_spots": "the five ships' guns as a whole; not broken down by ship"
+   },
+   "resolved": true,
+   "raw": []
   }
  ],
  "catalogue_entries": [
@@ -535,6 +619,129 @@
     "cat:duro-1885/cuellar"
    ],
    "fidelity": "literal translation (translator's preface, 1897); page numbers are the Ex-classics edition's"
+  },
+  {
+   "schema": "signal_schema/catalogue_entry/0.3.0",
+   "entry_id": "cat:ags/ga-223-28",
+   "catalogue": {
+    "designation": "Archivo General de Simancas, Guerra Antigua 223/28",
+    "compiler": "agt:pipeline.streedagh/crown-measurers",
+    "mandate": "the measuring and rating of six requisitioned ships"
+   },
+   "role": "compiler",
+   "native_key": "GA 223/28",
+   "compilation_epoch": {
+    "value": 1588,
+    "calendar": "gregorian",
+    "basis": {
+     "kind": "stated"
+    }
+   },
+   "fields_as_published": {
+    "absent": {
+     "reason": "not_held"
+    }
+   },
+   "raw": [],
+   "source_acquisitions": [
+    "acq:pipeline.streedagh/ratings-1588"
+   ],
+   "source_entries": []
+  },
+  {
+   "schema": "signal_schema/catalogue_entry/0.3.0",
+   "entry_id": "cat:martin-1984/app11-p411",
+   "catalogue": {
+    "designation": "Martin 1984, App. 11 'Spanish and English tonnage measurements'",
+    "compiler": "agt:pipeline.streedagh/martin",
+    "mandate": "doctoral thesis; appendix transcribing and checking the 1588 tonnage figures"
+   },
+   "role": "compiler",
+   "native_key": "p. 411 (table), pp. 408-412",
+   "compilation_epoch": {
+    "value": 1984,
+    "calendar": "gregorian",
+    "basis": {
+     "kind": "stated"
+    }
+   },
+   "fields_as_published": {
+    "table": "ship | manga | puntal | esloria (codos) | toneles machos | toneladas"
+   },
+   "raw": [
+    {
+     "sha256": "a0780bfb8d80dbd26c964c554171f294efd700c43bfca7ea34249be6c09b80f1",
+     "media_type": "application/pdf",
+     "kind": "publication",
+     "uri": "sources/ColinMartinPhDThesis.pdf"
+    }
+   ],
+   "source_acquisitions": [],
+   "source_entries": [
+    "cat:ags/ga-223-28"
+   ],
+   "fidelity": "values transcribed with their fractions; Martin's own recalculations printed in brackets"
+  },
+  {
+   "schema": "signal_schema/catalogue_entry/0.3.0",
+   "entry_id": "cat:ags/ga-221-39",
+   "catalogue": {
+    "designation": "Archivo General de Simancas, Guerra Antigua 221/39",
+    "compiler": "agt:pipeline.streedagh/sicily-clerks",
+    "mandate": "summary of the guns aboard the five ships from Sicily"
+   },
+   "role": "compiler",
+   "native_key": "GA 221/39",
+   "compilation_epoch": {
+    "value": 1587,
+    "calendar": "gregorian",
+    "basis": {
+     "kind": "stated"
+    }
+   },
+   "fields_as_published": {
+    "absent": {
+     "reason": "not_held"
+    }
+   },
+   "raw": [],
+   "source_acquisitions": [
+    "acq:pipeline.streedagh/sicily-guns-1587"
+   ],
+   "source_entries": []
+  },
+  {
+   "schema": "signal_schema/catalogue_entry/0.3.0",
+   "entry_id": "cat:martin-1984/p114",
+   "catalogue": {
+    "designation": "Martin 1984, ch. on La Trinidad Valencera, pp. 114-115",
+    "compiler": "agt:pipeline.streedagh/martin",
+    "mandate": "doctoral thesis; the Sicilian ships' gun list as printed"
+   },
+   "role": "compiler",
+   "native_key": "pp. 114-115",
+   "compilation_epoch": {
+    "value": 1984,
+    "calendar": "gregorian",
+    "basis": {
+     "kind": "stated"
+    }
+   },
+   "fields_as_published": {
+    "list": "count | metal | class | calibre in libras"
+   },
+   "raw": [
+    {
+     "sha256": "a0780bfb8d80dbd26c964c554171f294efd700c43bfca7ea34249be6c09b80f1",
+     "media_type": "application/pdf",
+     "kind": "publication",
+     "uri": "sources/ColinMartinPhDThesis.pdf"
+    }
+   ],
+   "source_acquisitions": [],
+   "source_entries": [
+    "cat:ags/ga-221-39"
+   ]
   }
  ],
  "detections": [
@@ -6209,6 +6416,1157 @@
       "note": "Crawford's English, not Cuéllar's Spanish; running page headers removed"
      },
      "observer_role": "eyewitness",
+     "hedges": []
+    }
+   }
+  },
+  {
+   "schema": "signal_schema/detection/0.3.0",
+   "detection_id": "det:pipeline.streedagh/ratings-1588#74",
+   "acquisition": "acq:pipeline.streedagh/ratings-1588",
+   "read_from": [
+    "cat:martin-1984/app11-p411"
+   ],
+   "detected": true,
+   "position": {
+    "absent": {
+     "reason": "not_applicable"
+    }
+   },
+   "quantities": [
+    {
+     "semantic": "doc.length.stated",
+     "value": 53.0,
+     "unit": {
+      "verbatim": "codos"
+     },
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'esloria (codos)'"
+      ]
+     },
+     "note": "esloria, as written: 53"
+    },
+    {
+     "semantic": "doc.length.stated",
+     "value": 18.0,
+     "unit": {
+      "verbatim": "codos"
+     },
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'manga (codos)'"
+      ]
+     },
+     "note": "manga, as written: 18"
+    },
+    {
+     "semantic": "doc.length.stated",
+     "value": 11.0,
+     "unit": {
+      "verbatim": "codos"
+     },
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'puntal (codos)'"
+      ]
+     },
+     "note": "puntal, as written: 11"
+    },
+    {
+     "semantic": "doc.length.stated",
+     "value": 30.458,
+     "unit": "m",
+     "note": "esloria in metres",
+     "basis": {
+      "kind": "derived",
+      "recipe": {
+       "name": "codo_to_m",
+       "version": "1",
+       "params": {
+        "m_per_codo": 0.57468125,
+        "rule": "codo = 33/48 vara; vara = 835.9 mm"
+       }
+      },
+      "refs": [
+       "Martin 1984 p. 409 and n. 3 (Veitia Linage; 1587 Simancas palma of 209 mm)",
+       "reconstruction v0.7 §27-28 (Martin's printed 547.7 mm is an arithmetic slip)"
+      ]
+     }
+    },
+    {
+     "semantic": "doc.length.stated",
+     "value": 10.344,
+     "unit": "m",
+     "note": "manga in metres",
+     "basis": {
+      "kind": "derived",
+      "recipe": {
+       "name": "codo_to_m",
+       "version": "1",
+       "params": {
+        "m_per_codo": 0.57468125,
+        "rule": "codo = 33/48 vara; vara = 835.9 mm"
+       }
+      },
+      "refs": [
+       "Martin 1984 p. 409 and n. 3 (Veitia Linage; 1587 Simancas palma of 209 mm)",
+       "reconstruction v0.7 §27-28 (Martin's printed 547.7 mm is an arithmetic slip)"
+      ]
+     }
+    },
+    {
+     "semantic": "doc.length.stated",
+     "value": 6.321,
+     "unit": "m",
+     "note": "puntal in metres",
+     "basis": {
+      "kind": "derived",
+      "recipe": {
+       "name": "codo_to_m",
+       "version": "1",
+       "params": {
+        "m_per_codo": 0.57468125,
+        "rule": "codo = 33/48 vara; vara = 835.9 mm"
+       }
+      },
+      "refs": [
+       "Martin 1984 p. 409 and n. 3 (Veitia Linage; 1587 Simancas palma of 209 mm)",
+       "reconstruction v0.7 §27-28 (Martin's printed 547.7 mm is an arithmetic slip)"
+      ]
+     }
+    },
+    {
+     "semantic": "doc.rating.stated",
+     "value": 695.625,
+     "unit": {
+      "verbatim": "toneles machos"
+     },
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'toneles machos'"
+      ]
+     },
+     "note": "as written: 695 5/8"
+    },
+    {
+     "semantic": "doc.rating.stated",
+     "value": 834.625,
+     "unit": {
+      "verbatim": "toneladas"
+     },
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'toneladas'"
+      ]
+     },
+     "note": "as written: 834 5/8"
+    }
+   ],
+   "descriptors": [],
+   "extension": {
+    "historical_observation": {
+     "verbatim": {
+      "text": "Nave de Marino Prodanela (San Nicolas) | 18 | 11 | 53 | 695 5/8 (636) | 834 5/8 (763)",
+      "language": "en",
+      "locator": "Martin 1984 App. 11 p. 411",
+      "note": "the table row as printed; bracketed figures are Martin's recalculations, not the 1588 document's"
+     },
+     "observer_role": "compiler",
+     "reported_target": {
+      "designation_verbatim": "Nave de Marino Prodanela (San Nicolas)"
+     },
+     "hedges": []
+    }
+   }
+  },
+  {
+   "schema": "signal_schema/detection/0.3.0",
+   "detection_id": "det:pipeline.streedagh/ratings-1588#73",
+   "acquisition": "acq:pipeline.streedagh/ratings-1588",
+   "read_from": [
+    "cat:martin-1984/app11-p411"
+   ],
+   "detected": true,
+   "position": {
+    "absent": {
+     "reason": "not_applicable"
+    }
+   },
+   "quantities": [
+    {
+     "semantic": "doc.length.stated",
+     "value": 48.0,
+     "unit": {
+      "verbatim": "codos"
+     },
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'esloria (codos)'"
+      ]
+     },
+     "note": "esloria, as written: 48"
+    },
+    {
+     "semantic": "doc.length.stated",
+     "value": 17.5,
+     "unit": {
+      "verbatim": "codos"
+     },
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'manga (codos)'"
+      ]
+     },
+     "note": "manga, as written: 17 1/2"
+    },
+    {
+     "semantic": "doc.length.stated",
+     "value": 11.5,
+     "unit": {
+      "verbatim": "codos"
+     },
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'puntal (codos)'"
+      ]
+     },
+     "note": "puntal, as written: 11 1/2"
+    },
+    {
+     "semantic": "doc.length.stated",
+     "value": 27.585,
+     "unit": "m",
+     "note": "esloria in metres",
+     "basis": {
+      "kind": "derived",
+      "recipe": {
+       "name": "codo_to_m",
+       "version": "1",
+       "params": {
+        "m_per_codo": 0.57468125,
+        "rule": "codo = 33/48 vara; vara = 835.9 mm"
+       }
+      },
+      "refs": [
+       "Martin 1984 p. 409 and n. 3 (Veitia Linage; 1587 Simancas palma of 209 mm)",
+       "reconstruction v0.7 §27-28 (Martin's printed 547.7 mm is an arithmetic slip)"
+      ]
+     }
+    },
+    {
+     "semantic": "doc.length.stated",
+     "value": 10.057,
+     "unit": "m",
+     "note": "manga in metres",
+     "basis": {
+      "kind": "derived",
+      "recipe": {
+       "name": "codo_to_m",
+       "version": "1",
+       "params": {
+        "m_per_codo": 0.57468125,
+        "rule": "codo = 33/48 vara; vara = 835.9 mm"
+       }
+      },
+      "refs": [
+       "Martin 1984 p. 409 and n. 3 (Veitia Linage; 1587 Simancas palma of 209 mm)",
+       "reconstruction v0.7 §27-28 (Martin's printed 547.7 mm is an arithmetic slip)"
+      ]
+     }
+    },
+    {
+     "semantic": "doc.length.stated",
+     "value": 6.609,
+     "unit": "m",
+     "note": "puntal in metres",
+     "basis": {
+      "kind": "derived",
+      "recipe": {
+       "name": "codo_to_m",
+       "version": "1",
+       "params": {
+        "m_per_codo": 0.57468125,
+        "rule": "codo = 33/48 vara; vara = 835.9 mm"
+       }
+      },
+      "refs": [
+       "Martin 1984 p. 409 and n. 3 (Veitia Linage; 1587 Simancas palma of 209 mm)",
+       "reconstruction v0.7 §27-28 (Martin's printed 547.7 mm is an arithmetic slip)"
+      ]
+     }
+    },
+    {
+     "semantic": "doc.rating.stated",
+     "value": 586.375,
+     "unit": {
+      "verbatim": "toneles machos"
+     },
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'toneles machos'"
+      ]
+     },
+     "note": "as written: 586 3/8"
+    },
+    {
+     "semantic": "doc.rating.stated",
+     "value": 703.5,
+     "unit": {
+      "verbatim": "toneladas"
+     },
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'toneladas'"
+      ]
+     },
+     "note": "as written: 703 1/2"
+    }
+   ],
+   "descriptors": [],
+   "extension": {
+    "historical_observation": {
+     "verbatim": {
+      "text": "Nave de Stefano Deoliste (Anunciada) | 17 1/2 | 11 1/2 | 48 | 586 3/8 (586) | 703 1/2 (703)",
+      "language": "en",
+      "locator": "Martin 1984 App. 11 p. 411",
+      "note": "the table row as printed; bracketed figures are Martin's recalculations, not the 1588 document's"
+     },
+     "observer_role": "compiler",
+     "reported_target": {
+      "designation_verbatim": "Nave de Stefano Deoliste (Anunciada)"
+     },
+     "hedges": []
+    }
+   }
+  },
+  {
+   "schema": "signal_schema/detection/0.3.0",
+   "detection_id": "det:pipeline.streedagh/ratings-1588#76",
+   "acquisition": "acq:pipeline.streedagh/ratings-1588",
+   "read_from": [
+    "cat:martin-1984/app11-p411"
+   ],
+   "detected": true,
+   "position": {
+    "absent": {
+     "reason": "not_applicable"
+    }
+   },
+   "quantities": [
+    {
+     "semantic": "doc.length.stated",
+     "value": 47.5,
+     "unit": {
+      "verbatim": "codos"
+     },
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'esloria (codos)'"
+      ]
+     },
+     "note": "esloria, as written: 47 1/2"
+    },
+    {
+     "semantic": "doc.length.stated",
+     "value": 16.0,
+     "unit": {
+      "verbatim": "codos"
+     },
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'manga (codos)'"
+      ]
+     },
+     "note": "manga, as written: 16"
+    },
+    {
+     "semantic": "doc.length.stated",
+     "value": 10.0,
+     "unit": {
+      "verbatim": "codos"
+     },
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'puntal (codos)'"
+      ]
+     },
+     "note": "puntal, as written: 10"
+    },
+    {
+     "semantic": "doc.length.stated",
+     "value": 27.297,
+     "unit": "m",
+     "note": "esloria in metres",
+     "basis": {
+      "kind": "derived",
+      "recipe": {
+       "name": "codo_to_m",
+       "version": "1",
+       "params": {
+        "m_per_codo": 0.57468125,
+        "rule": "codo = 33/48 vara; vara = 835.9 mm"
+       }
+      },
+      "refs": [
+       "Martin 1984 p. 409 and n. 3 (Veitia Linage; 1587 Simancas palma of 209 mm)",
+       "reconstruction v0.7 §27-28 (Martin's printed 547.7 mm is an arithmetic slip)"
+      ]
+     }
+    },
+    {
+     "semantic": "doc.length.stated",
+     "value": 9.195,
+     "unit": "m",
+     "note": "manga in metres",
+     "basis": {
+      "kind": "derived",
+      "recipe": {
+       "name": "codo_to_m",
+       "version": "1",
+       "params": {
+        "m_per_codo": 0.57468125,
+        "rule": "codo = 33/48 vara; vara = 835.9 mm"
+       }
+      },
+      "refs": [
+       "Martin 1984 p. 409 and n. 3 (Veitia Linage; 1587 Simancas palma of 209 mm)",
+       "reconstruction v0.7 §27-28 (Martin's printed 547.7 mm is an arithmetic slip)"
+      ]
+     }
+    },
+    {
+     "semantic": "doc.length.stated",
+     "value": 5.747,
+     "unit": "m",
+     "note": "puntal in metres",
+     "basis": {
+      "kind": "derived",
+      "recipe": {
+       "name": "codo_to_m",
+       "version": "1",
+       "params": {
+        "m_per_codo": 0.57468125,
+        "rule": "codo = 33/48 vara; vara = 835.9 mm"
+       }
+      },
+      "refs": [
+       "Martin 1984 p. 409 and n. 3 (Veitia Linage; 1587 Simancas palma of 209 mm)",
+       "reconstruction v0.7 §27-28 (Martin's printed 547.7 mm is an arithmetic slip)"
+      ]
+     }
+    },
+    {
+     "semantic": "doc.rating.stated",
+     "value": 472.0,
+     "unit": {
+      "verbatim": "toneles machos"
+     },
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'toneles machos'"
+      ]
+     },
+     "note": "as written: 472"
+    },
+    {
+     "semantic": "doc.rating.stated",
+     "value": 666.0,
+     "unit": {
+      "verbatim": "toneladas"
+     },
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'toneladas'"
+      ]
+     },
+     "note": "as written: 666*"
+    }
+   ],
+   "descriptors": [],
+   "extension": {
+    "historical_observation": {
+     "verbatim": {
+      "text": "Santa Maria de Vison | 16 | 10 | 47 1/2 | 472 (461) | 666* (553)",
+      "language": "en",
+      "locator": "Martin 1984 App. 11 p. 411",
+      "note": "the table row as printed; bracketed figures are Martin's recalculations, not the 1588 document's"
+     },
+     "observer_role": "compiler",
+     "reported_target": {
+      "designation_verbatim": "Santa Maria de Vison"
+     },
+     "hedges": []
+    }
+   }
+  },
+  {
+   "schema": "signal_schema/detection/0.3.0",
+   "detection_id": "det:pipeline.streedagh/ratings-1588#8",
+   "acquisition": "acq:pipeline.streedagh/ratings-1588",
+   "read_from": [
+    "cat:martin-1984/app11-p411"
+   ],
+   "detected": true,
+   "position": {
+    "absent": {
+     "reason": "not_applicable"
+    }
+   },
+   "quantities": [
+    {
+     "semantic": "doc.length.stated",
+     "value": 68.0,
+     "unit": {
+      "verbatim": "codos"
+     },
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'esloria (codos)'"
+      ]
+     },
+     "note": "esloria, as written: 68"
+    },
+    {
+     "semantic": "doc.length.stated",
+     "value": 17.0,
+     "unit": {
+      "verbatim": "codos"
+     },
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'manga (codos)'"
+      ]
+     },
+     "note": "manga, as written: 17"
+    },
+    {
+     "semantic": "doc.length.stated",
+     "value": 11.0,
+     "unit": {
+      "verbatim": "codos"
+     },
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'puntal (codos)'"
+      ]
+     },
+     "note": "puntal, as written: 11"
+    },
+    {
+     "semantic": "doc.length.stated",
+     "value": 39.078,
+     "unit": "m",
+     "note": "esloria in metres",
+     "basis": {
+      "kind": "derived",
+      "recipe": {
+       "name": "codo_to_m",
+       "version": "1",
+       "params": {
+        "m_per_codo": 0.57468125,
+        "rule": "codo = 33/48 vara; vara = 835.9 mm"
+       }
+      },
+      "refs": [
+       "Martin 1984 p. 409 and n. 3 (Veitia Linage; 1587 Simancas palma of 209 mm)",
+       "reconstruction v0.7 §27-28 (Martin's printed 547.7 mm is an arithmetic slip)"
+      ]
+     }
+    },
+    {
+     "semantic": "doc.length.stated",
+     "value": 9.77,
+     "unit": "m",
+     "note": "manga in metres",
+     "basis": {
+      "kind": "derived",
+      "recipe": {
+       "name": "codo_to_m",
+       "version": "1",
+       "params": {
+        "m_per_codo": 0.57468125,
+        "rule": "codo = 33/48 vara; vara = 835.9 mm"
+       }
+      },
+      "refs": [
+       "Martin 1984 p. 409 and n. 3 (Veitia Linage; 1587 Simancas palma of 209 mm)",
+       "reconstruction v0.7 §27-28 (Martin's printed 547.7 mm is an arithmetic slip)"
+      ]
+     }
+    },
+    {
+     "semantic": "doc.length.stated",
+     "value": 6.321,
+     "unit": "m",
+     "note": "puntal in metres",
+     "basis": {
+      "kind": "derived",
+      "recipe": {
+       "name": "codo_to_m",
+       "version": "1",
+       "params": {
+        "m_per_codo": 0.57468125,
+        "rule": "codo = 33/48 vara; vara = 835.9 mm"
+       }
+      },
+      "refs": [
+       "Martin 1984 p. 409 and n. 3 (Veitia Linage; 1587 Simancas palma of 209 mm)",
+       "reconstruction v0.7 §27-28 (Martin's printed 547.7 mm is an arithmetic slip)"
+      ]
+     }
+    },
+    {
+     "semantic": "doc.rating.stated",
+     "value": 801.0,
+     "unit": {
+      "verbatim": "toneles machos"
+     },
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'toneles machos'"
+      ]
+     },
+     "note": "as written: 801"
+    },
+    {
+     "semantic": "doc.rating.stated",
+     "value": 961.0,
+     "unit": {
+      "verbatim": "toneladas"
+     },
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'toneladas'"
+      ]
+     },
+     "note": "as written: 961"
+    }
+   ],
+   "descriptors": [],
+   "extension": {
+    "historical_observation": {
+     "verbatim": {
+      "text": "El Galeon del Duque (Florencia) | 17 | 11 | 68 | 801 (771) | 961 (925)",
+      "language": "en",
+      "locator": "Martin 1984 App. 11 p. 411",
+      "note": "the table row as printed; bracketed figures are Martin's recalculations, not the 1588 document's"
+     },
+     "observer_role": "compiler",
+     "reported_target": {
+      "designation_verbatim": "El Galeon del Duque (Florencia)"
+     },
+     "hedges": []
+    }
+   }
+  },
+  {
+   "schema": "signal_schema/detection/0.3.0",
+   "detection_id": "det:pipeline.streedagh/ratings-1588#68",
+   "acquisition": "acq:pipeline.streedagh/ratings-1588",
+   "read_from": [
+    "cat:martin-1984/app11-p411"
+   ],
+   "detected": true,
+   "position": {
+    "absent": {
+     "reason": "not_applicable"
+    }
+   },
+   "quantities": [
+    {
+     "semantic": "doc.length.stated",
+     "value": 59.0,
+     "unit": {
+      "verbatim": "codos"
+     },
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'esloria (codos)'"
+      ]
+     },
+     "note": "esloria, as written: 59"
+    },
+    {
+     "semantic": "doc.length.stated",
+     "value": 21.0,
+     "unit": {
+      "verbatim": "codos"
+     },
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'manga (codos)'"
+      ]
+     },
+     "note": "manga, as written: 21"
+    },
+    {
+     "semantic": "doc.length.stated",
+     "value": 12.0,
+     "unit": {
+      "verbatim": "codos"
+     },
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'puntal (codos)'"
+      ]
+     },
+     "note": "puntal, as written: 12"
+    },
+    {
+     "semantic": "doc.length.stated",
+     "value": 33.906,
+     "unit": "m",
+     "note": "esloria in metres",
+     "basis": {
+      "kind": "derived",
+      "recipe": {
+       "name": "codo_to_m",
+       "version": "1",
+       "params": {
+        "m_per_codo": 0.57468125,
+        "rule": "codo = 33/48 vara; vara = 835.9 mm"
+       }
+      },
+      "refs": [
+       "Martin 1984 p. 409 and n. 3 (Veitia Linage; 1587 Simancas palma of 209 mm)",
+       "reconstruction v0.7 §27-28 (Martin's printed 547.7 mm is an arithmetic slip)"
+      ]
+     }
+    },
+    {
+     "semantic": "doc.length.stated",
+     "value": 12.068,
+     "unit": "m",
+     "note": "manga in metres",
+     "basis": {
+      "kind": "derived",
+      "recipe": {
+       "name": "codo_to_m",
+       "version": "1",
+       "params": {
+        "m_per_codo": 0.57468125,
+        "rule": "codo = 33/48 vara; vara = 835.9 mm"
+       }
+      },
+      "refs": [
+       "Martin 1984 p. 409 and n. 3 (Veitia Linage; 1587 Simancas palma of 209 mm)",
+       "reconstruction v0.7 §27-28 (Martin's printed 547.7 mm is an arithmetic slip)"
+      ]
+     }
+    },
+    {
+     "semantic": "doc.length.stated",
+     "value": 6.896,
+     "unit": "m",
+     "note": "puntal in metres",
+     "basis": {
+      "kind": "derived",
+      "recipe": {
+       "name": "codo_to_m",
+       "version": "1",
+       "params": {
+        "m_per_codo": 0.57468125,
+        "rule": "codo = 33/48 vara; vara = 835.9 mm"
+       }
+      },
+      "refs": [
+       "Martin 1984 p. 409 and n. 3 (Veitia Linage; 1587 Simancas palma of 209 mm)",
+       "reconstruction v0.7 §27-28 (Martin's printed 547.7 mm is an arithmetic slip)"
+      ]
+     }
+    },
+    {
+     "semantic": "doc.rating.stated",
+     "value": 1079.0,
+     "unit": {
+      "verbatim": "toneles machos"
+     },
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'toneles machos'"
+      ]
+     },
+     "note": "as written: 1079"
+    },
+    {
+     "semantic": "doc.rating.stated",
+     "value": 1294.0,
+     "unit": {
+      "verbatim": "toneladas"
+     },
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'toneladas'"
+      ]
+     },
+     "note": "as written: 1294"
+    }
+   ],
+   "descriptors": [],
+   "extension": {
+    "historical_observation": {
+     "verbatim": {
+      "text": "La Regazona Beneziana | 21 | 12 | 59 | 1079 (901) | 1294 (1081)",
+      "language": "en",
+      "locator": "Martin 1984 App. 11 p. 411",
+      "note": "the table row as printed; bracketed figures are Martin's recalculations, not the 1588 document's"
+     },
+     "observer_role": "compiler",
+     "reported_target": {
+      "designation_verbatim": "La Regazona Beneziana"
+     },
+     "hedges": []
+    }
+   }
+  },
+  {
+   "schema": "signal_schema/detection/0.3.0",
+   "detection_id": "det:pipeline.streedagh/ratings-1588#69",
+   "acquisition": "acq:pipeline.streedagh/ratings-1588",
+   "read_from": [
+    "cat:martin-1984/app11-p411"
+   ],
+   "detected": true,
+   "position": {
+    "absent": {
+     "reason": "not_applicable"
+    }
+   },
+   "quantities": [
+    {
+     "semantic": "doc.length.stated",
+     "value": 51.0,
+     "unit": {
+      "verbatim": "codos"
+     },
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'esloria (codos)'"
+      ]
+     },
+     "note": "esloria, as written: 51"
+    },
+    {
+     "semantic": "doc.length.stated",
+     "value": 18.25,
+     "unit": {
+      "verbatim": "codos"
+     },
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'manga (codos)'"
+      ]
+     },
+     "note": "manga, as written: 18 1/4"
+    },
+    {
+     "semantic": "doc.length.stated",
+     "value": 10.75,
+     "unit": {
+      "verbatim": "codos"
+     },
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'puntal (codos)'"
+      ]
+     },
+     "note": "puntal, as written: 10 3/4"
+    },
+    {
+     "semantic": "doc.length.stated",
+     "value": 29.309,
+     "unit": "m",
+     "note": "esloria in metres",
+     "basis": {
+      "kind": "derived",
+      "recipe": {
+       "name": "codo_to_m",
+       "version": "1",
+       "params": {
+        "m_per_codo": 0.57468125,
+        "rule": "codo = 33/48 vara; vara = 835.9 mm"
+       }
+      },
+      "refs": [
+       "Martin 1984 p. 409 and n. 3 (Veitia Linage; 1587 Simancas palma of 209 mm)",
+       "reconstruction v0.7 §27-28 (Martin's printed 547.7 mm is an arithmetic slip)"
+      ]
+     }
+    },
+    {
+     "semantic": "doc.length.stated",
+     "value": 10.488,
+     "unit": "m",
+     "note": "manga in metres",
+     "basis": {
+      "kind": "derived",
+      "recipe": {
+       "name": "codo_to_m",
+       "version": "1",
+       "params": {
+        "m_per_codo": 0.57468125,
+        "rule": "codo = 33/48 vara; vara = 835.9 mm"
+       }
+      },
+      "refs": [
+       "Martin 1984 p. 409 and n. 3 (Veitia Linage; 1587 Simancas palma of 209 mm)",
+       "reconstruction v0.7 §27-28 (Martin's printed 547.7 mm is an arithmetic slip)"
+      ]
+     }
+    },
+    {
+     "semantic": "doc.length.stated",
+     "value": 6.178,
+     "unit": "m",
+     "note": "puntal in metres",
+     "basis": {
+      "kind": "derived",
+      "recipe": {
+       "name": "codo_to_m",
+       "version": "1",
+       "params": {
+        "m_per_codo": 0.57468125,
+        "rule": "codo = 33/48 vara; vara = 835.9 mm"
+       }
+      },
+      "refs": [
+       "Martin 1984 p. 409 and n. 3 (Veitia Linage; 1587 Simancas palma of 209 mm)",
+       "reconstruction v0.7 §27-28 (Martin's printed 547.7 mm is an arithmetic slip)"
+      ]
+     }
+    },
+    {
+     "semantic": "doc.rating.stated",
+     "value": 607.125,
+     "unit": {
+      "verbatim": "toneles machos"
+     },
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'toneles machos'"
+      ]
+     },
+     "note": "as written: 607 1/8"
+    },
+    {
+     "semantic": "doc.rating.stated",
+     "value": 728.5,
+     "unit": {
+      "verbatim": "toneladas"
+     },
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "column 'toneladas'"
+      ]
+     },
+     "note": "as written: 728 1/2"
+    }
+   ],
+   "descriptors": [],
+   "extension": {
+    "historical_observation": {
+     "verbatim": {
+      "text": "La Lavia Beneziana | 18 1/4 | 10 3/4 | 51 | 607 1/8 (607) | 728 1/2 (728)",
+      "language": "en",
+      "locator": "Martin 1984 App. 11 p. 411",
+      "note": "the table row as printed; bracketed figures are Martin's recalculations, not the 1588 document's"
+     },
+     "observer_role": "compiler",
+     "reported_target": {
+      "designation_verbatim": "La Lavia Beneziana"
+     },
+     "hedges": []
+    }
+   }
+  },
+  {
+   "schema": "signal_schema/detection/0.3.0",
+   "detection_id": "det:pipeline.streedagh/sicily-guns-1587#list",
+   "acquisition": "acq:pipeline.streedagh/sicily-guns-1587",
+   "read_from": [
+    "cat:martin-1984/p114"
+   ],
+   "detected": true,
+   "position": {
+    "absent": {
+     "reason": "not_applicable"
+    }
+   },
+   "quantities": [
+    {
+     "semantic": "doc.count.stated",
+     "value": 9,
+     "unit": "1",
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "line 'bronze medios canones'"
+      ]
+     },
+     "note": "bronze medios canones, 16-19 libras (iron shot)"
+    },
+    {
+     "semantic": "doc.count.stated",
+     "value": 7,
+     "unit": "1",
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "line 'bronze medias culebrinas'"
+      ]
+     },
+     "note": "bronze medias culebrinas, 12-14 libras (iron shot)"
+    },
+    {
+     "semantic": "doc.count.stated",
+     "value": 31,
+     "unit": "1",
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "line 'bronze medios canones pedreros'"
+      ]
+     },
+     "note": "bronze medios canones pedreros, 10-16 libras (stone shot)"
+    },
+    {
+     "semantic": "doc.count.stated",
+     "value": 29,
+     "unit": "1",
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "line 'bronze sacres'"
+      ]
+     },
+     "note": "bronze sacres, 7-12 libras (iron shot)"
+    },
+    {
+     "semantic": "doc.count.stated",
+     "value": 31,
+     "unit": "1",
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "line 'bronze falconetes pedreros'"
+      ]
+     },
+     "note": "bronze falconetes pedreros, 3-4 libras (stone shot)"
+    },
+    {
+     "semantic": "doc.count.stated",
+     "value": 13,
+     "unit": "1",
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "line 'bronze falconetes'"
+      ]
+     },
+     "note": "bronze falconetes, 2-3 libras (iron shot)"
+    },
+    {
+     "semantic": "doc.count.stated",
+     "value": 6,
+     "unit": "1",
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "line 'bronze versos'"
+      ]
+     },
+     "note": "bronze versos, 3-3 libras (iron shot)"
+    },
+    {
+     "semantic": "doc.count.stated",
+     "value": 116,
+     "unit": "1",
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "line 'iron cast iron pieces'"
+      ]
+     },
+     "note": "iron cast iron pieces, 3-12 libras (iron shot)"
+    },
+    {
+     "semantic": "doc.count.stated",
+     "value": 14,
+     "unit": "1",
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "line 'iron pedreros'"
+      ]
+     },
+     "note": "iron pedreros, 12-14 libras (stone shot)"
+    },
+    {
+     "semantic": "doc.count.stated",
+     "value": 3,
+     "unit": "1",
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "line 'iron falcones'"
+      ]
+     },
+     "note": "iron falcones, 3-3 libras (iron shot)"
+    },
+    {
+     "semantic": "doc.count.stated",
+     "value": 12,
+     "unit": "1",
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "line 'iron versos'"
+      ]
+     },
+     "note": "iron versos, 2-2 libras (iron shot)"
+    }
+   ],
+   "descriptors": [],
+   "extension": {
+    "historical_observation": {
+     "verbatim": {
+      "text": "9 bronze medios canones, 16-19-lb; 7 bronze medias culebrinas, 12-14-lb; 31 bronze medios canones pedreros, 10-16-lb; 29 bronze sacres, 7-12-lb; 31 bronze falconetes pedreros, 3-4-lb; 13 bronze falconetes, 2-3-lb; 6 bronze versos, 3-lb; 116 iron cast iron pieces, 3-12-lb; 14 iron pedreros, 12-14-lb; 3 iron falcones, 3-lb; 12 iron versos, 2-lb",
+      "language": "en",
+      "locator": "Martin 1984 pp. 114-115",
+      "note": "Martin's English rendering of the list; '(stone)' is his note on the falconetes pedreros; stone or iron shot for the other classes is the builder's reading of the class names"
+     },
+     "observer_role": "compiler",
      "hedges": []
     }
    }
@@ -12961,6 +14319,851 @@
     "det:pipeline.streedagh/cuellar-letter-1589#S013",
     "cat:martin-1984/app4-p448"
    ]
+  },
+  {
+   "schema": "signal_schema/inference/0.3.0",
+   "inference_id": "inf:pipeline.streedagh/ratings-row-76/attr",
+   "agent": "agt:pipeline.streedagh/v1",
+   "kind": "attribution",
+   "subject": [
+    "det:pipeline.streedagh/ratings-1588#76"
+   ],
+   "statement": {
+    "detection": "det:pipeline.streedagh/ratings-1588#76",
+    "source": "src:ship-vison",
+    "probability": 0.95
+   },
+   "credence": 0.95,
+   "falsifier": "the measured ship is another of the same name",
+   "basis": [
+    "det:pipeline.streedagh/ratings-1588#76",
+    "cat:martin-1984/app11-p411"
+   ]
+  },
+  {
+   "schema": "signal_schema/inference/0.3.0",
+   "inference_id": "inf:pipeline.streedagh/ratings-row-76/emend",
+   "agent": "agt:pipeline.streedagh/martin",
+   "kind": "label",
+   "subject": [
+    "det:pipeline.streedagh/ratings-1588#76"
+   ],
+   "label": "emendation: 666 toneladas should be 566",
+   "statement": {
+    "stated": 666,
+    "read_as": 566,
+    "why": "472 machos plus one fifth is 566.4",
+    "note": "Martin's footnote: '* This figure should surely be 566.'"
+   },
+   "credence": {
+    "absent": {
+     "reason": "reported_claim"
+    }
+   },
+   "falsifier": {
+    "absent": {
+     "reason": "reported_claim"
+    }
+   },
+   "basis": [
+    "det:pipeline.streedagh/ratings-1588#76"
+   ]
+  },
+  {
+   "schema": "signal_schema/inference/0.3.0",
+   "inference_id": "inf:pipeline.streedagh/ratings-row-69/attr",
+   "agent": "agt:pipeline.streedagh/v1",
+   "kind": "attribution",
+   "subject": [
+    "det:pipeline.streedagh/ratings-1588#69"
+   ],
+   "statement": {
+    "detection": "det:pipeline.streedagh/ratings-1588#69",
+    "source": "src:ship-lavia",
+    "probability": 0.95
+   },
+   "credence": 0.95,
+   "falsifier": "the measured ship is another of the same name",
+   "basis": [
+    "det:pipeline.streedagh/ratings-1588#69",
+    "cat:martin-1984/app11-p411"
+   ]
+  },
+  {
+   "schema": "signal_schema/inference/0.3.0",
+   "inference_id": "inf:pipeline.streedagh/ratings/formula-martin",
+   "agent": "agt:pipeline.streedagh/martin",
+   "kind": "explanation",
+   "subject": [
+    "det:pipeline.streedagh/ratings-1588#74",
+    "det:pipeline.streedagh/ratings-1588#73",
+    "det:pipeline.streedagh/ratings-1588#76",
+    "det:pipeline.streedagh/ratings-1588#8",
+    "det:pipeline.streedagh/ratings-1588#68",
+    "det:pipeline.streedagh/ratings-1588#69"
+   ],
+   "statement": {
+    "alternatives": [
+     "machos = (manga / 2) x puntal x esloria x (1 - 0.03) / 8; toneladas = machos x 1.2",
+     "the 1590 Casa de Contratacion formula, with 5% deducted instead of 3%"
+    ],
+    "residue": "Regazona and San Nicolas do not fit; 'sloppy arithmetic' or 'more fundamental errors'",
+    "note": "Martin 1984 pp. 409-412"
+   },
+   "credence": {
+    "absent": {
+     "reason": "reported_claim"
+    }
+   },
+   "falsifier": {
+    "absent": {
+     "reason": "reported_claim"
+    }
+   },
+   "basis": [
+    "det:pipeline.streedagh/ratings-1588#74",
+    "det:pipeline.streedagh/ratings-1588#73",
+    "det:pipeline.streedagh/ratings-1588#76",
+    "det:pipeline.streedagh/ratings-1588#8",
+    "det:pipeline.streedagh/ratings-1588#68",
+    "det:pipeline.streedagh/ratings-1588#69"
+   ]
+  },
+  {
+   "schema": "signal_schema/inference/0.3.0",
+   "inference_id": "inf:pipeline.streedagh/ratings/formula-check",
+   "agent": "agt:pipeline.streedagh/budget",
+   "kind": "explanation",
+   "subject": [
+    "det:pipeline.streedagh/ratings-1588#74",
+    "det:pipeline.streedagh/ratings-1588#73",
+    "det:pipeline.streedagh/ratings-1588#76",
+    "det:pipeline.streedagh/ratings-1588#8",
+    "det:pipeline.streedagh/ratings-1588#68",
+    "det:pipeline.streedagh/ratings-1588#69"
+   ],
+   "statement": {
+    "alternatives": [
+     "the 'three percent' formula is the 1588 rule"
+    ],
+    "residue": {
+     "Nave de Marino Prodanela (San Nicolas)": "+9.3%",
+     "Nave de Stefano Deoliste (Anunciada)": "+0.1%",
+     "Santa Maria de Vison": "+2.4%",
+     "El Galeon del Duque (Florencia)": "+3.9%",
+     "La Regazona Beneziana": "+19.7%",
+     "La Lavia Beneziana": "+0.1%"
+    },
+    "note": "recomputed from the measured dimensions; matches Martin's bracketed figures in every row. Fits Lavia and Anunciada to 0.1%, Vison 2.4%, Florencia 3.9%; Regazona +19.7% and San Nicolas +9.3% do not fit, so a Juliana estimate interpolated from Regazona's stated machos inherits that misfit"
+   },
+   "credence": 0.85,
+   "falsifier": "a 1588 rating document stating a different formula that fits all six rows",
+   "basis": [
+    "det:pipeline.streedagh/ratings-1588#74",
+    "det:pipeline.streedagh/ratings-1588#73",
+    "det:pipeline.streedagh/ratings-1588#76",
+    "det:pipeline.streedagh/ratings-1588#8",
+    "det:pipeline.streedagh/ratings-1588#68",
+    "det:pipeline.streedagh/ratings-1588#69",
+    "inf:pipeline.streedagh/ratings/formula-martin"
+   ]
+  },
+  {
+   "schema": "signal_schema/inference/0.3.0",
+   "inference_id": "inf:pipeline.streedagh/juliana/dimensions",
+   "agent": "agt:pipeline.streedagh/dylan",
+   "kind": "explanation",
+   "subject": [
+    "src:ship-juliana"
+   ],
+   "statement": {
+    "alternatives": [
+     {
+      "method": "interpolation",
+      "esloria_manga_puntal_m": [
+       30.38,
+       10.86,
+       6.34
+      ],
+      "codos": [
+       52.86,
+       18.89,
+       11.04
+      ]
+     },
+     {
+      "method": "ols",
+      "esloria_manga_puntal_m": [
+       30.14,
+       10.57,
+       6.27
+      ],
+      "codos": [
+       52.45,
+       18.4,
+       10.91
+      ]
+     },
+     {
+      "method": "cube_root",
+      "esloria_manga_puntal_m": [
+       30.98,
+       11.08,
+       6.53
+      ],
+      "codos": [
+       53.9,
+       19.29,
+       11.36
+      ]
+     }
+    ],
+    "residue": "Juliana's own measurements are not in any held source; 716.7 machos is 860 / 1.2",
+    "frame": "historical measured body (esloria, manga, puntal), not modern LOA x beam x depth",
+    "note": "the interpolation uses Regazona's stated 1079 machos, which the formula check shows is 20% high"
+   },
+   "credence": 0.5,
+   "falsifier": "Juliana's measurement record found, outside the 30.1-31.0 m esloria envelope",
+   "basis": [
+    "det:pipeline.streedagh/ratings-1588#69",
+    "det:pipeline.streedagh/ratings-1588#68",
+    "det:pipeline.streedagh/ratings-1588#76",
+    "det:pipeline.streedagh/muster-1588#row-75",
+    "inf:pipeline.streedagh/ratings/formula-check"
+   ]
+  },
+  {
+   "schema": "signal_schema/inference/0.3.0",
+   "inference_id": "inf:pipeline.streedagh/sicily-guns/representative",
+   "agent": "agt:pipeline.streedagh/dylan",
+   "kind": "explanation",
+   "subject": [
+    "det:pipeline.streedagh/sicily-guns-1587#list"
+   ],
+   "statement": {
+    "alternatives": [
+     "the five Sicilian ships' calibre mix stands for the Streedagh ships' guns"
+    ],
+    "residue": "the list is not broken down by ship; whether Juliana, Lavia or Vison were among the five is not shown",
+    "note": "used only for the mean shot mass in the mass budget"
+   },
+   "credence": 0.6,
+   "falsifier": "a per-ship inventory for Juliana, Lavia or Vison with a markedly different calibre mix",
+   "basis": [
+    "det:pipeline.streedagh/sicily-guns-1587#list"
+   ]
+  },
+  {
+   "schema": "signal_schema/inference/0.3.0",
+   "inference_id": "inf:pipeline.streedagh/mass-budget/layer1-lavia",
+   "agent": "agt:pipeline.streedagh/budget",
+   "kind": "prediction",
+   "subject": [
+    "src:ship-lavia"
+   ],
+   "statement": {
+    "observable": "mass of guns, great shot and lead from Lavia's wreck, once the site is fully surveyed",
+    "expected": {
+     "ordnance_and_munitions_to_seabed": {
+      "semantic": "phys.mass",
+      "value": 23.33,
+      "interval": [
+       17.45,
+       32.38
+      ],
+      "unit": "t",
+      "basis": {
+       "kind": "derived",
+       "recipe": {
+        "name": "seabed_mass_budget.layer1",
+        "version": "0.1",
+        "params": {
+         "seed": 20261107,
+         "draws": 100000
+        }
+       }
+      }
+     },
+     "durable_guns_shot_lead": {
+      "semantic": "phys.mass",
+      "value": 21.52,
+      "interval": [
+       15.64,
+       30.55
+      ],
+      "unit": "t",
+      "basis": {
+       "kind": "derived",
+       "recipe": {
+        "name": "seabed_mass_budget.layer1",
+        "version": "0.1",
+        "params": {
+         "seed": 20261107,
+         "draws": 100000
+        }
+       }
+      }
+     },
+     "guns": {
+      "semantic": "phys.mass",
+      "value": 16.84,
+      "interval": [
+       11.04,
+       25.86
+      ],
+      "unit": "t",
+      "basis": {
+       "kind": "derived",
+       "recipe": {
+        "name": "seabed_mass_budget.layer1",
+        "version": "0.1",
+        "params": {
+         "seed": 20261107,
+         "draws": 100000
+        }
+       }
+      }
+     },
+     "shot": {
+      "semantic": "phys.mass",
+      "value": 4.06,
+      "interval": [
+       3.1,
+       5.12
+      ],
+      "unit": "t",
+      "basis": {
+       "kind": "derived",
+       "recipe": {
+        "name": "seabed_mass_budget.layer1",
+        "version": "0.1",
+        "params": {
+         "seed": 20261107,
+         "draws": 100000
+        }
+       }
+      }
+     },
+     "powder": {
+      "semantic": "phys.mass",
+      "value": 1.39,
+      "interval": [
+       1.11,
+       1.67
+      ],
+      "unit": "t",
+      "basis": {
+       "kind": "derived",
+       "recipe": {
+        "name": "seabed_mass_budget.layer1",
+        "version": "0.1",
+        "params": {
+         "seed": 20261107,
+         "draws": 100000
+        }
+       }
+      }
+     },
+     "lead": {
+      "semantic": "phys.mass",
+      "value": 0.59,
+      "interval": [
+       0.49,
+       0.68
+      ],
+      "unit": "t",
+      "basis": {
+       "kind": "derived",
+       "recipe": {
+        "name": "seabed_mass_budget.layer1",
+        "version": "0.1",
+        "params": {
+         "seed": 20261107,
+         "draws": 100000
+        }
+       }
+      }
+     },
+     "match": {
+      "semantic": "phys.mass",
+      "value": 0.43,
+      "interval": [
+       0.34,
+       0.51
+      ],
+      "unit": "t",
+      "basis": {
+       "kind": "derived",
+       "recipe": {
+        "name": "seabed_mass_budget.layer1",
+        "version": "0.1",
+        "params": {
+         "seed": 20261107,
+         "draws": 100000
+        }
+       }
+      }
+     }
+    },
+    "stated_before": "2026-11-07; no whole-site inventory exists",
+    "priors": {
+     "shot_fired_frac": {
+      "params": [
+       0.03,
+       0.2
+      ],
+      "basis": "uniform. Trinidad de Escala, a Levanter of 22 guns, fired 94 shots in three actions (Martin p. 371): 94 / (22 x 50) = 8.5% of a 50-per-gun issue. Widened for actions not recorded"
+     },
+     "powder_used_frac": {
+      "params": [
+       0.05,
+       0.4
+      ],
+      "basis": "uniform. Powder also fed the arquebuses and muskets, so it went faster than great shot; no ship's record of it is held"
+     },
+     "lead_used_frac": {
+      "params": [
+       0.0,
+       0.3
+      ],
+      "basis": "uniform. Lead was cast into small-arms bullets as needed"
+     },
+     "match_used_frac": {
+      "params": [
+       0.05,
+       0.4
+      ],
+      "basis": "uniform. Match burns whenever guns or arquebuses stand ready"
+     },
+     "unitemised_gun_t": {
+      "params": [
+       0.35,
+       0.55,
+       1.2
+      ],
+      "basis": "triangular (min, mode, max) tonnes per gun not itemised. Mode = mean of Juliana's nine recovered guns (0.55 t); max widened because the Levant list includes 16-19 lb medios canones and the recovered sample is the light, accessible tier. Drawn once per draw and shared by all three ships (systematic, not per gun)"
+     }
+    },
+    "note": "median with 5-95% interval; layer 1 only (hull, ballast, stores and cargo not included)"
+   },
+   "credence": 0.6,
+   "falsifier": "a full inventory above the 95th percentile, or a record that guns or munitions were taken off the ship between the May muster and the wreck",
+   "basis": [
+    "det:pipeline.streedagh/muster-1588#row-69",
+    "det:pipeline.streedagh/sicily-guns-1587#list",
+    "inf:pipeline.streedagh/sicily-guns/representative"
+   ]
+  },
+  {
+   "schema": "signal_schema/inference/0.3.0",
+   "inference_id": "inf:pipeline.streedagh/mass-budget/layer1-juliana",
+   "agent": "agt:pipeline.streedagh/budget",
+   "kind": "prediction",
+   "subject": [
+    "src:ship-juliana"
+   ],
+   "statement": {
+    "observable": "mass of guns, great shot and lead from Juliana's wreck, once the site is fully surveyed",
+    "expected": {
+     "ordnance_and_munitions_to_seabed": {
+      "semantic": "phys.mass",
+      "value": 28.99,
+      "interval": [
+       23.47,
+       37.36
+      ],
+      "unit": "t",
+      "basis": {
+       "kind": "derived",
+       "recipe": {
+        "name": "seabed_mass_budget.layer1",
+        "version": "0.1",
+        "params": {
+         "seed": 20261107,
+         "draws": 100000
+        }
+       }
+      }
+     },
+     "durable_guns_shot_lead": {
+      "semantic": "phys.mass",
+      "value": 26.17,
+      "interval": [
+       20.67,
+       34.52
+      ],
+      "unit": "t",
+      "basis": {
+       "kind": "derived",
+       "recipe": {
+        "name": "seabed_mass_budget.layer1",
+        "version": "0.1",
+        "params": {
+         "seed": 20261107,
+         "draws": 100000
+        }
+       }
+      }
+     },
+     "guns": {
+      "semantic": "phys.mass",
+      "value": 20.47,
+      "interval": [
+       15.13,
+       28.75
+      ],
+      "unit": "t",
+      "basis": {
+       "kind": "derived",
+       "recipe": {
+        "name": "seabed_mass_budget.layer1",
+        "version": "0.1",
+        "params": {
+         "seed": 20261107,
+         "draws": 100000
+        }
+       }
+      }
+     },
+     "shot": {
+      "semantic": "phys.mass",
+      "value": 5.2,
+      "interval": [
+       3.97,
+       6.55
+      ],
+      "unit": "t",
+      "basis": {
+       "kind": "derived",
+       "recipe": {
+        "name": "seabed_mass_budget.layer1",
+        "version": "0.1",
+        "params": {
+         "seed": 20261107,
+         "draws": 100000
+        }
+       }
+      }
+     },
+     "powder": {
+      "semantic": "phys.mass",
+      "value": 2.39,
+      "interval": [
+       1.9,
+       2.87
+      ],
+      "unit": "t",
+      "basis": {
+       "kind": "derived",
+       "recipe": {
+        "name": "seabed_mass_budget.layer1",
+        "version": "0.1",
+        "params": {
+         "seed": 20261107,
+         "draws": 100000
+        }
+       }
+      }
+     },
+     "lead": {
+      "semantic": "phys.mass",
+      "value": 0.47,
+      "interval": [
+       0.39,
+       0.54
+      ],
+      "unit": "t",
+      "basis": {
+       "kind": "derived",
+       "recipe": {
+        "name": "seabed_mass_budget.layer1",
+        "version": "0.1",
+        "params": {
+         "seed": 20261107,
+         "draws": 100000
+        }
+       }
+      }
+     },
+     "match": {
+      "semantic": "phys.mass",
+      "value": 0.43,
+      "interval": [
+       0.34,
+       0.51
+      ],
+      "unit": "t",
+      "basis": {
+       "kind": "derived",
+       "recipe": {
+        "name": "seabed_mass_budget.layer1",
+        "version": "0.1",
+        "params": {
+         "seed": 20261107,
+         "draws": 100000
+        }
+       }
+      }
+     }
+    },
+    "stated_before": "2026-11-07; no whole-site inventory exists",
+    "priors": {
+     "shot_fired_frac": {
+      "params": [
+       0.03,
+       0.2
+      ],
+      "basis": "uniform. Trinidad de Escala, a Levanter of 22 guns, fired 94 shots in three actions (Martin p. 371): 94 / (22 x 50) = 8.5% of a 50-per-gun issue. Widened for actions not recorded"
+     },
+     "powder_used_frac": {
+      "params": [
+       0.05,
+       0.4
+      ],
+      "basis": "uniform. Powder also fed the arquebuses and muskets, so it went faster than great shot; no ship's record of it is held"
+     },
+     "lead_used_frac": {
+      "params": [
+       0.0,
+       0.3
+      ],
+      "basis": "uniform. Lead was cast into small-arms bullets as needed"
+     },
+     "match_used_frac": {
+      "params": [
+       0.05,
+       0.4
+      ],
+      "basis": "uniform. Match burns whenever guns or arquebuses stand ready"
+     },
+     "unitemised_gun_t": {
+      "params": [
+       0.35,
+       0.55,
+       1.2
+      ],
+      "basis": "triangular (min, mode, max) tonnes per gun not itemised. Mode = mean of Juliana's nine recovered guns (0.55 t); max widened because the Levant list includes 16-19 lb medios canones and the recovered sample is the light, accessible tier. Drawn once per draw and shared by all three ships (systematic, not per gun)"
+     }
+    },
+    "note": "median with 5-95% interval; layer 1 only (hull, ballast, stores and cargo not included)"
+   },
+   "credence": 0.6,
+   "falsifier": "a full inventory above the 95th percentile, or a record that guns or munitions were taken off the ship between the May muster and the wreck",
+   "basis": [
+    "det:pipeline.streedagh/muster-1588#row-75",
+    "det:pipeline.streedagh/sicily-guns-1587#list",
+    "inf:pipeline.streedagh/sicily-guns/representative",
+    "det:pipeline.streedagh/recovery-1985#G-SEVERO",
+    "det:pipeline.streedagh/recovery-2015#G-GBATTISTA",
+    "det:pipeline.streedagh/recovery-2015#G-MATRONA",
+    "det:pipeline.streedagh/recovery-2015#G-ILARIA",
+    "det:pipeline.streedagh/recovery-2015#G-SEBASTIANO",
+    "det:pipeline.streedagh/recovery-2015#G-ROCCO",
+    "det:pipeline.streedagh/recovery-2015#G-GIOVANNI",
+    "det:pipeline.streedagh/recovery-1985#G-PETRIERE-F",
+    "det:pipeline.streedagh/recovery-1985#G-PETRIERE-2"
+   ]
+  },
+  {
+   "schema": "signal_schema/inference/0.3.0",
+   "inference_id": "inf:pipeline.streedagh/mass-budget/layer1-vison",
+   "agent": "agt:pipeline.streedagh/budget",
+   "kind": "prediction",
+   "subject": [
+    "src:ship-vison"
+   ],
+   "statement": {
+    "observable": "mass of guns, great shot and lead from Vison's wreck, once the site is fully surveyed",
+    "expected": {
+     "ordnance_and_munitions_to_seabed": {
+      "semantic": "phys.mass",
+      "value": 17.04,
+      "interval": [
+       12.79,
+       23.54
+      ],
+      "unit": "t",
+      "basis": {
+       "kind": "derived",
+       "recipe": {
+        "name": "seabed_mass_budget.layer1",
+        "version": "0.1",
+        "params": {
+         "seed": 20261107,
+         "draws": 100000
+        }
+       }
+      }
+     },
+     "durable_guns_shot_lead": {
+      "semantic": "phys.mass",
+      "value": 15.54,
+      "interval": [
+       11.31,
+       22.04
+      ],
+      "unit": "t",
+      "basis": {
+       "kind": "derived",
+       "recipe": {
+        "name": "seabed_mass_budget.layer1",
+        "version": "0.1",
+        "params": {
+         "seed": 20261107,
+         "draws": 100000
+        }
+       }
+      }
+     },
+     "guns": {
+      "semantic": "phys.mass",
+      "value": 12.13,
+      "interval": [
+       7.95,
+       18.62
+      ],
+      "unit": "t",
+      "basis": {
+       "kind": "derived",
+       "recipe": {
+        "name": "seabed_mass_budget.layer1",
+        "version": "0.1",
+        "params": {
+         "seed": 20261107,
+         "draws": 100000
+        }
+       }
+      }
+     },
+     "shot": {
+      "semantic": "phys.mass",
+      "value": 2.93,
+      "interval": [
+       2.23,
+       3.68
+      ],
+      "unit": "t",
+      "basis": {
+       "kind": "derived",
+       "recipe": {
+        "name": "seabed_mass_budget.layer1",
+        "version": "0.1",
+        "params": {
+         "seed": 20261107,
+         "draws": 100000
+        }
+       }
+      }
+     },
+     "powder": {
+      "semantic": "phys.mass",
+      "value": 1.14,
+      "interval": [
+       0.91,
+       1.37
+      ],
+      "unit": "t",
+      "basis": {
+       "kind": "derived",
+       "recipe": {
+        "name": "seabed_mass_budget.layer1",
+        "version": "0.1",
+        "params": {
+         "seed": 20261107,
+         "draws": 100000
+        }
+       }
+      }
+     },
+     "lead": {
+      "semantic": "phys.mass",
+      "value": 0.47,
+      "interval": [
+       0.39,
+       0.54
+      ],
+      "unit": "t",
+      "basis": {
+       "kind": "derived",
+       "recipe": {
+        "name": "seabed_mass_budget.layer1",
+        "version": "0.1",
+        "params": {
+         "seed": 20261107,
+         "draws": 100000
+        }
+       }
+      }
+     },
+     "match": {
+      "semantic": "phys.mass",
+      "value": 0.36,
+      "interval": [
+       0.28,
+       0.43
+      ],
+      "unit": "t",
+      "basis": {
+       "kind": "derived",
+       "recipe": {
+        "name": "seabed_mass_budget.layer1",
+        "version": "0.1",
+        "params": {
+         "seed": 20261107,
+         "draws": 100000
+        }
+       }
+      }
+     }
+    },
+    "stated_before": "2026-11-07; no whole-site inventory exists",
+    "priors": {
+     "shot_fired_frac": {
+      "params": [
+       0.03,
+       0.2
+      ],
+      "basis": "uniform. Trinidad de Escala, a Levanter of 22 guns, fired 94 shots in three actions (Martin p. 371): 94 / (22 x 50) = 8.5% of a 50-per-gun issue. Widened for actions not recorded"
+     },
+     "powder_used_frac": {
+      "params": [
+       0.05,
+       0.4
+      ],
+      "basis": "uniform. Powder also fed the arquebuses and muskets, so it went faster than great shot; no ship's record of it is held"
+     },
+     "lead_used_frac": {
+      "params": [
+       0.0,
+       0.3
+      ],
+      "basis": "uniform. Lead was cast into small-arms bullets as needed"
+     },
+     "match_used_frac": {
+      "params": [
+       0.05,
+       0.4
+      ],
+      "basis": "uniform. Match burns whenever guns or arquebuses stand ready"
+     },
+     "unitemised_gun_t": {
+      "params": [
+       0.35,
+       0.55,
+       1.2
+      ],
+      "basis": "triangular (min, mode, max) tonnes per gun not itemised. Mode = mean of Juliana's nine recovered guns (0.55 t); max widened because the Levant list includes 16-19 lb medios canones and the recovered sample is the light, accessible tier. Drawn once per draw and shared by all three ships (systematic, not per gun)"
+     }
+    },
+    "note": "median with 5-95% interval; layer 1 only (hull, ballast, stores and cargo not included)"
+   },
+   "credence": 0.6,
+   "falsifier": "a full inventory above the 95th percentile, or a record that guns or munitions were taken off the ship between the May muster and the wreck",
+   "basis": [
+    "det:pipeline.streedagh/muster-1588#row-76",
+    "det:pipeline.streedagh/sicily-guns-1587#list",
+    "inf:pipeline.streedagh/sicily-guns/representative"
+   ]
   }
  ],
  "sources": [
@@ -13868,7 +16071,8 @@
    "support": [
     "inf:pipeline.streedagh/muster-row-69/attr",
     "inf:pipeline.streedagh/cuellar/S010/ship",
-    "inf:pipeline.streedagh/cuellar/S013/ship"
+    "inf:pipeline.streedagh/cuellar/S013/ship",
+    "inf:pipeline.streedagh/ratings-row-69/attr"
    ],
    "recipe": {
     "name": "attribution_chain",
@@ -13888,7 +16092,8 @@
     }
    ],
    "support": [
-    "inf:pipeline.streedagh/muster-row-76/attr"
+    "inf:pipeline.streedagh/muster-row-76/attr",
+    "inf:pipeline.streedagh/ratings-row-76/attr"
    ],
    "recipe": {
     "name": "attribution_chain",

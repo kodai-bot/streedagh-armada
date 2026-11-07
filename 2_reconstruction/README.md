@@ -11,7 +11,12 @@ two or three stepped decks fore and aft can (§26, §28). That conclusion is rea
 iconography or the eyewitnesses. It is then compared with them (§18–§23, §29–§34).
 
 Open points recorded in the text: the recovery year of some guns differs between §29 and its
-sources; §26.8 lists the metrology to verify before publication.
+sources; §26.8 lists the metrology to verify before publication. Found since v0.7: the §26.1
+dimensions are AGS GA 223/28, printed in Martin 1984 App. 11 p. 411 (with the fractions: Lavia
+manga 18¼, puntal 10¾, 607⅛ machos, 728½ toneladas); the 666→566 emendation for Visón is Martin's
+own footnote; and Martin's "three percent" formula, machos = (manga/2)·puntal·esloria·0.97/8,
+reproduces Lavia and Anunciada exactly but Regazona's stated 1079 machos is 20% above it, which
+bears on the §28.2 interpolation. See `1_signal_field/output/mass_budget_report.md`.
 
 `stepped_castle_capacity.py` (`make capacity`) recomputes the capacity argument from its stated
 inputs: the codo, the comparator ships in metres, the three estimates of Juliana's dimensions, the

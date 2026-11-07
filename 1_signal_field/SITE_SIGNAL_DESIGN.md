@@ -1,6 +1,6 @@
 # Streedagh as a site signal record: design pass
 
-Status: design, 2026-11-07. Built so far: guns, muster, Site 1 relations, Cuéllar's 125 (see `site_record/`). Target schema: `Signal_Pipeline/signal_schema` (v0.4
+Status: design, 2026-11-07. Built so far: guns, muster, Site 1 relations, Cuéllar's 125, reconstruction inputs and mass budget layer 1 (see `site_record/`). Target schema: `Signal_Pipeline/signal_schema` (v0.4
 prototype); its `docs/DESIGN.md` is the canonical design and this note only maps Streedagh onto it.
 Related: `robotics/senchas/docs/geometry.md` (the building-scale geometry), the legacy
 `LIFECYCLE_VECTOR_DESIGN.md` (March 2026) and `SignalObjectV3_Design.md` (from this site, July 2026).
@@ -65,7 +65,7 @@ never mix them with site-frame coordinates. Open question 2 below.
 | **Lisbon muster, 9 May 1588** | `Acquisition` (historical observation, epoch 1588-05-09, observer: the muster clerks) → one `Detection` per ship row (tons, soldiers, seamen, guns, shot, powder…) with verbatim values | The printed copies are `CatalogueEntry` records: the Paz Salas Lisbon edition (1588), and Martin 1984 App. 4 copying it. |
 | **Cuéllar's letter, 4 Oct 1589** | `Acquisition` (historical observation, epoch 1589-10-04, observer: Cuéllar) → one `Detection` per coded passage (the 125 signals), verbatim span mandatory | Crawford's translation is a `CatalogueEntry`. The times *inside* the letter (the nights, "we awaited the rising of the moon") are `reported_time`, verbatim; dating them is the worldline's inference. |
 | **Dorino's 1569 price note** for Francisco Reul of Barcelona (ASGe, NA, f. 1873) | historical observation, epoch 1569-08-26, read from Ridella et al. 2016 | Evidence for the commissioning path event. |
-| **Ship dimensions and ratings** (§26.1) | historical observations from their archival source, once §26.8 identifies it | The codo and every metric conversion are derived Quantities with recipes; the capacity tables are inferences. |
+| **Ship dimensions and ratings** (§26.1) | historical observations from their archival source: AGS GA 223/28, printed in Martin 1984 App. 11 p. 411 (found 2026-11-07) | The codo and every metric conversion are derived Quantities with recipes; the capacity tables are inferences. |
 | **Gun identity** | one `Signal` per gun, minted by its first detection | The 1985 sighting and the lift are the same trace: direct attachment. |
 | **Where the guns came from** | `path_event` inferences: inception (cast, Genoa, 1570); displacements (to Barcelona; to Lisbon; to Streedagh, 21 Sep 1588; lifted, 1985/2015; museum) | This is the "vector back to the source", as an inference chain with probabilities. |
 | **Which ship** | `attribution` inference: gun → `src:ship-juliana` with p (today's estimator output) | Replaces the v3 `entity_attributions` list. |

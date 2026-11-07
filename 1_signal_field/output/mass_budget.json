@@ -1,0 +1,307 @@
+{
+ "layer": "1: ordnance and munitions",
+ "seed": 20261107,
+ "draws": 100000,
+ "units": {
+  "libra_kg": 0.46,
+  "quintal_kg": 46.0,
+  "codo_m": 0.57468125
+ },
+ "shot_mean_kg": {
+  "median": 3.686,
+  "p05": 2.864,
+  "p95": 4.505,
+  "guns_in_list": 271
+ },
+ "stone_shot_mass_frac": {
+  "median": 0.319,
+  "p05": 0.254,
+  "p95": 0.414
+ },
+ "priors": {
+  "shot_fired_frac": {
+   "params": [
+    0.03,
+    0.2
+   ],
+   "basis": "uniform. Trinidad de Escala, a Levanter of 22 guns, fired 94 shots in three actions (Martin p. 371): 94 / (22 x 50) = 8.5% of a 50-per-gun issue. Widened for actions not recorded"
+  },
+  "powder_used_frac": {
+   "params": [
+    0.05,
+    0.4
+   ],
+   "basis": "uniform. Powder also fed the arquebuses and muskets, so it went faster than great shot; no ship's record of it is held"
+  },
+  "lead_used_frac": {
+   "params": [
+    0.0,
+    0.3
+   ],
+   "basis": "uniform. Lead was cast into small-arms bullets as needed"
+  },
+  "match_used_frac": {
+   "params": [
+    0.05,
+    0.4
+   ],
+   "basis": "uniform. Match burns whenever guns or arquebuses stand ready"
+  },
+  "unitemised_gun_t": {
+   "params": [
+    0.35,
+    0.55,
+    1.2
+   ],
+   "basis": "triangular (min, mode, max) tonnes per gun not itemised. Mode = mean of Juliana's nine recovered guns (0.55 t); max widened because the Levant list includes 16-19 lb medios canones and the recovered sample is the light, accessible tier. Drawn once per draw and shared by all three ships (systematic, not per gun)"
+  }
+ },
+ "ships": {
+  "Lavia": {
+   "guns": {
+    "median": 16.84,
+    "p05": 11.04,
+    "p95": 25.86
+   },
+   "shot": {
+    "median": 4.06,
+    "p05": 3.1,
+    "p95": 5.12
+   },
+   "powder": {
+    "median": 1.39,
+    "p05": 1.11,
+    "p95": 1.67
+   },
+   "lead": {
+    "median": 0.59,
+    "p05": 0.49,
+    "p95": 0.68
+   },
+   "match": {
+    "median": 0.43,
+    "p05": 0.34,
+    "p95": 0.51
+   },
+   "total": {
+    "median": 23.33,
+    "p05": 17.45,
+    "p95": 32.38
+   },
+   "durable": {
+    "median": 21.52,
+    "p05": 15.64,
+    "p95": 30.55
+   },
+   "as_mustered": {
+    "guns": 25,
+    "shot": 1250,
+    "powder_t": 1.79,
+    "lead_t": 0.69,
+    "match_t": 0.55,
+    "guns_itemised": 0
+   }
+  },
+  "Juliana": {
+   "guns": {
+    "median": 20.47,
+    "p05": 15.13,
+    "p95": 28.75
+   },
+   "shot": {
+    "median": 5.2,
+    "p05": 3.97,
+    "p95": 6.55
+   },
+   "powder": {
+    "median": 2.39,
+    "p05": 1.9,
+    "p95": 2.87
+   },
+   "lead": {
+    "median": 0.47,
+    "p05": 0.39,
+    "p95": 0.54
+   },
+   "match": {
+    "median": 0.43,
+    "p05": 0.34,
+    "p95": 0.51
+   },
+   "total": {
+    "median": 28.99,
+    "p05": 23.47,
+    "p95": 37.36
+   },
+   "durable": {
+    "median": 26.17,
+    "p05": 20.67,
+    "p95": 34.52
+   },
+   "as_mustered": {
+    "guns": 32,
+    "shot": 1600,
+    "powder_t": 3.08,
+    "lead_t": 0.55,
+    "match_t": 0.55,
+    "guns_itemised": 9
+   }
+  },
+  "Vison": {
+   "guns": {
+    "median": 12.13,
+    "p05": 7.95,
+    "p95": 18.62
+   },
+   "shot": {
+    "median": 2.93,
+    "p05": 2.23,
+    "p95": 3.68
+   },
+   "powder": {
+    "median": 1.14,
+    "p05": 0.91,
+    "p95": 1.37
+   },
+   "lead": {
+    "median": 0.47,
+    "p05": 0.39,
+    "p95": 0.54
+   },
+   "match": {
+    "median": 0.36,
+    "p05": 0.28,
+    "p95": 0.43
+   },
+   "total": {
+    "median": 17.04,
+    "p05": 12.79,
+    "p95": 23.54
+   },
+   "durable": {
+    "median": 15.54,
+    "p05": 11.31,
+    "p95": 22.04
+   },
+   "as_mustered": {
+    "guns": 18,
+    "shot": 900,
+    "powder_t": 1.47,
+    "lead_t": 0.55,
+    "match_t": 0.46,
+    "guns_itemised": 0
+   }
+  },
+  "Combined": {
+   "guns": {
+    "median": 49.43,
+    "p05": 34.12,
+    "p95": 73.23
+   },
+   "shot": {
+    "median": 12.22,
+    "p05": 9.43,
+    "p95": 15.09
+   },
+   "powder": {
+    "median": 4.93,
+    "p05": 4.28,
+    "p95": 5.56
+   },
+   "lead": {
+    "median": 1.53,
+    "p05": 1.38,
+    "p95": 1.67
+   },
+   "match": {
+    "median": 1.21,
+    "p05": 1.06,
+    "p95": 1.36
+   },
+   "total": {
+    "median": 69.38,
+    "p05": 53.77,
+    "p95": 93.25
+   },
+   "durable": {
+    "median": 63.23,
+    "p05": 47.65,
+    "p95": 87.11
+   }
+  }
+ },
+ "ratings": [
+  {
+   "ship": "Nave de Marino Prodanela (San Nicolas)",
+   "manga_m": 10.34,
+   "puntal_m": 6.32,
+   "esloria_m": 30.46,
+   "machos_stated": 695.625,
+   "machos_calc": 636.2,
+   "martin_calc": 636,
+   "diff_pct": 9.3,
+   "toneladas_stated": 834.625,
+   "toneladas_over_machos": 1.2
+  },
+  {
+   "ship": "Nave de Stefano Deoliste (Anunciada)",
+   "manga_m": 10.06,
+   "puntal_m": 6.61,
+   "esloria_m": 27.58,
+   "machos_stated": 586.375,
+   "machos_calc": 585.6,
+   "martin_calc": 586,
+   "diff_pct": 0.1,
+   "toneladas_stated": 703.5,
+   "toneladas_over_machos": 1.2
+  },
+  {
+   "ship": "Santa Maria de Vison",
+   "manga_m": 9.19,
+   "puntal_m": 5.75,
+   "esloria_m": 27.3,
+   "machos_stated": 472.0,
+   "machos_calc": 460.8,
+   "martin_calc": 461,
+   "diff_pct": 2.4,
+   "toneladas_stated": 666.0,
+   "toneladas_over_machos": 1.411
+  },
+  {
+   "ship": "El Galeon del Duque (Florencia)",
+   "manga_m": 9.77,
+   "puntal_m": 6.32,
+   "esloria_m": 39.08,
+   "machos_stated": 801.0,
+   "machos_calc": 770.9,
+   "martin_calc": 771,
+   "diff_pct": 3.9,
+   "toneladas_stated": 961.0,
+   "toneladas_over_machos": 1.2
+  },
+  {
+   "ship": "La Regazona Beneziana",
+   "manga_m": 12.07,
+   "puntal_m": 6.9,
+   "esloria_m": 33.91,
+   "machos_stated": 1079.0,
+   "machos_calc": 901.4,
+   "martin_calc": 901,
+   "diff_pct": 19.7,
+   "toneladas_stated": 1294.0,
+   "toneladas_over_machos": 1.199
+  },
+  {
+   "ship": "La Lavia Beneziana",
+   "manga_m": 10.49,
+   "puntal_m": 6.18,
+   "esloria_m": 29.31,
+   "machos_stated": 607.125,
+   "machos_calc": 606.6,
+   "martin_calc": 607,
+   "diff_pct": 0.1,
+   "toneladas_stated": 728.5,
+   "toneladas_over_machos": 1.2
+  }
+ ]
+}

@@ -1,7 +1,7 @@
 # Armada / Streedagh. Python with numpy + astropy: python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
 PYTHON ?= .venv/bin/python
 
-.PHONY: worldline sun_moon capacity guns site attribution all
+.PHONY: worldline sun_moon capacity guns mass site attribution all
 
 all: worldline sun_moon capacity
 
@@ -21,6 +21,10 @@ capacity:
 guns:
 	$(PYTHON) 1_signal_field/juliana_guns.py
 	$(PYTHON) 1_signal_field/attribution_estimator.py
+
+# What went to the bottom: layer 1, ordnance and munitions (seconds)
+mass:
+	$(PYTHON) 1_signal_field/seabed_mass_budget.py
 
 # The site record: one signal_schema v0.4 bundle (JSON), validated by the schema's CLI
 SCHEMA ?= ../../Signal_Pipeline/signal_schema
