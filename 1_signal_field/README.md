@@ -34,7 +34,8 @@
   and Cuéllar's letter: 125 coded passages, each with its verbatim span in Crawford's translation
   (`../3_cuellar_worldline/data/cuellar_spans.csv`), the coding as label inferences, and the 31
   worldline nodes as dated event sources; the six ships measured in 1588 with metric conversions and
-  the rating-formula check; the Sicilian gun list; layers 1 and 2 of the mass budget as per-ship predictions.
+  the rating-formula check; the Sicilian gun list; layers 1 and 2 of the mass budget as per-ship predictions; the 1985
+  magnetometer spreads (`data/magnetometry_1985.csv`) with the test of spread area against iron mass.
   Positions are absent until recovery coordinates are found. The v3 store above stays as the
   estimator's input until the site record replaces it.
 - `finds_study_plan.md`: the plan for the guns, rudder and anchor.

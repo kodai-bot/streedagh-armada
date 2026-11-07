@@ -392,6 +392,11 @@
      "p05": 550.21,
      "p95": 791.65
     },
+    "ferrous_to_seabed": {
+     "median": 38.5,
+     "p05": 25.47,
+     "p95": 55.44
+    },
     "may_over_full": {
      "median": 0.872,
      "p05": 0.727,
@@ -495,6 +500,11 @@
      "median": 804.37,
      "p05": 685.59,
      "p95": 955.69
+    },
+    "ferrous_to_seabed": {
+     "median": 44.22,
+     "p05": 30.38,
+     "p95": 62.65
     },
     "may_over_full": {
      "median": 0.956,
@@ -600,6 +610,11 @@
      "p05": 491.89,
      "p95": 679.44
     },
+    "ferrous_to_seabed": {
+     "median": 30.37,
+     "p05": 19.66,
+     "p95": 44.11
+    },
     "may_over_full": {
      "median": 1.004,
      "p05": 0.837,
@@ -693,6 +708,11 @@
      "median": 2037.33,
      "p05": 1729.23,
      "p95": 2424.7
+    },
+    "ferrous_to_seabed": {
+     "median": 113.11,
+     "p05": 75.76,
+     "p95": 161.96
     }
    }
   },
@@ -716,6 +736,24 @@
    "arms_kg_per_soldier": 0.009,
    "person_t": 0.006,
    "cask_tare": 0.004
+  },
+  "priors_ferrous": {
+   "iron_gun_mass_share": {
+    "dist": "uniform",
+    "params": [
+     0.2,
+     0.5
+    ],
+    "basis": "share of gun mass in cast or wrought iron. The Sicilian ships' list is 145 iron pieces of 271 (Martin pp. 114-115), but mostly the light classes; Juliana's nine recovered guns are all bronze"
+   },
+   "cargo_iron_share": {
+    "dist": "uniform",
+    "params": [
+     0.15,
+     0.4
+    ],
+    "basis": "iron in the siege cargo: the Valencera's issue included 400 iron balls of 40 libras (7.4 t) besides wheel irons and fittings, beside bronze battery guns (pp. 115-116)"
+   }
   },
   "constants": {
    "rho_sea": 1.025,

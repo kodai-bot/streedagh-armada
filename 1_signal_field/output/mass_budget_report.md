@@ -81,6 +81,24 @@ The people are not in these figures. Their mass is in the displacement (65.9 [59
 
 The consistency check is the May column. Put the May loading back aboard (six months' rations, Martin p. 349; munitions as mustered) and the ships come out close to the laden displacement that the hull model gives from their dimensions. The rations and the hull were not fitted to each other, so this is a real test of the priors, though not an independent one (both use lightship_frac). On the wreck day, with the stores mostly gone, they ride about a metre and a half above that line: light, with tall castles, the windage condition of v0.7 §9 near a lee shore.
 
+## Iron on the seabed (for the magnetometry)
+
+Ferrous mass to the seabed: iron guns, iron shot, metal fittings and anchors, iron in the siege cargo. Two extra priors (below), drawn from a separate generator so the figures above do not move.
+
+| Ship | ferrous to seabed, t |
+|---|---|
+| Lavia | 38.5 [25.5–55.4] |
+| Juliana | 44.2 [30.4–62.6] |
+| Vison | 30.4 [19.7–44.1] |
+| Combined | 113.1 [75.8–162.0] |
+
+Birch & McElvogue's magnetometer spreads (165 x 40, 15 x 10, 270 x 72 m) differ in area by a factor of about 130 where these masses differ by 1.5, so the spreads cannot be read as iron mass; see the site record, `inf:...magnetometry/spread-vs-mass`.
+
+| Prior | values | basis |
+|---|---|---|
+| iron_gun_mass_share | uniform (0.2, 0.5) | share of gun mass in cast or wrought iron. The Sicilian ships' list is 145 iron pieces of 271 (Martin pp. 114-115), but mostly the light classes; Juliana's nine recovered guns are all bronze |
+| cargo_iron_share | uniform (0.15, 0.4) | iron in the siege cargo: the Valencera's issue included 400 iron balls of 40 libras (7.4 t) besides wheel irons and fittings, beside bronze battery guns (pp. 115-116) |
+
 ## What drives the answer
 
 Spearman rank correlation of each prior with the combined seabed mass:

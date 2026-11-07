@@ -1,6 +1,6 @@
 # Streedagh as a site signal record: design pass
 
-Status: design, 2026-11-07. Built so far: guns, muster, Site 1 relations, Cuéllar's 125, reconstruction inputs and mass budget layers 1-2 (see `site_record/`). Target schema: `Signal_Pipeline/signal_schema` (v0.4
+Status: design, 2026-11-07. Built so far: guns, muster, Site 1 relations, Cuéllar's 125, reconstruction inputs, mass budget layers 1-2 and magnetometry (see `site_record/`). Target schema: `Signal_Pipeline/signal_schema` (v0.4
 prototype); its `docs/DESIGN.md` is the canonical design and this note only maps Streedagh onto it.
 Related: `robotics/senchas/docs/geometry.md` (the building-scale geometry), the legacy
 `LIFECYCLE_VECTOR_DESIGN.md` (March 2026) and `SignalObjectV3_Design.md` (from this site, July 2026).
@@ -61,7 +61,7 @@ never mix them with site-frame coordinates. Open question 2 below.
 | What each gun carries | on its detection: weight mark **verbatim** ("20.82", "19.??"), mass as a derived Quantity (× 47.65 kg, with recipe), descriptors: relief saint, founder's D, muzzle Type C, casting year as marked | "Heavy saker", "falcon", "petriere" are **class words**: `label` inferences by the compiler (Ridella), not detection fields. |
 | Gun position | `position: {absent: {reason: "not in the project's sources"}}` | Fills in later from survey records without changing anything else. |
 | **Observed relations** | `DetectionRelation`: the rudder *overlies* a bronze gun; three anchors and three guns *overlie* the concretion (Birch & McElvogue 1999) | These are seen, not inferred, and they are evidence for the break-up. |
-| **Magnetometry** (Birch & McElvogue 1999) | `Acquisition` (remote sensing) → `Detection` with extent geometry (165 × 40 m, 270 × 72 m, 15 × 10 m) | Positions are placeholders today; they stay flagged until real ones exist. |
+| **Magnetometry** (Birch & McElvogue 1999) | Built as a `historical_observation` of the 1985 search (only the report is held, no readings, so the remote_sensing extension's product chain cannot be filled) → one `Detection` per spread with its extents, depths and offsets as stated quantities; one signal each | Positions absent (sketch map only). A calibrated re-survey would be a true `remote_sensing` acquisition. |
 | **Lisbon muster, 9 May 1588** | `Acquisition` (historical observation, epoch 1588-05-09, observer: the muster clerks) → one `Detection` per ship row (tons, soldiers, seamen, guns, shot, powder…) with verbatim values | The printed copies are `CatalogueEntry` records: the Paz Salas Lisbon edition (1588), and Martin 1984 App. 4 copying it. |
 | **Cuéllar's letter, 4 Oct 1589** | `Acquisition` (historical observation, epoch 1589-10-04, observer: Cuéllar) → one `Detection` per coded passage (the 125 signals), verbatim span mandatory | Crawford's translation is a `CatalogueEntry`. The times *inside* the letter (the nights, "we awaited the rising of the moon") are `reported_time`, verbatim; dating them is the worldline's inference. |
 | **Dorino's 1569 price note** for Francisco Reul of Barcelona (ASGe, NA, f. 1873) | historical observation, epoch 1569-08-26, read from Ridella et al. 2016 | Evidence for the commissioning path event. |

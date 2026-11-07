@@ -367,6 +367,47 @@
    },
    "resolved": true,
    "raw": []
+  },
+  {
+   "schema": "signal_schema/acquisition/0.3.0",
+   "acquisition_id": "acq:pipeline.streedagh/magnetometer-1985",
+   "acquisition_class": "historical_observation",
+   "perturbation": "none",
+   "agents": [
+    {
+     "agent": "agt:pipeline.streedagh/sag",
+     "role": "operator"
+    }
+   ],
+   "method": "marine_proton_magnetometer_search",
+   "epoch": {
+    "semantic": "time.epoch",
+    "interval": [
+     "1985-04-30",
+     "1998"
+    ],
+    "calendar": "gregorian",
+    "basis": {
+     "kind": "stated",
+     "refs": [
+      "Birch & McElvogue 1999 p. 265: first readings 30 April, three sites by 3 May 1985",
+      "p. 267: a later 'full magnetometer survey' (publication forthcoming)"
+     ]
+    },
+    "note": "the report does not say whether the extents come from the 1985 search or the later survey"
+   },
+   "footprint": {
+    "absent": {
+     "reason": "not_held",
+     "note": "a search lane 'along the 5 m depth mark' (p. 265)"
+    }
+   },
+   "completeness": {
+    "blind_spots": "ferrous metal only: bronze guns, ballast stone, timber and lead show only where they lie with iron; a search lane along the 5 m depth mark, so material well inshore or offshore of it may be missed; extents are of the readings, not of the wrecks; sand cover (over 1 m at Site 1) weakens the signal; no amplitudes, line spacing or sensor height published; positions only on a sketch map (Fig. 1c)"
+   },
+   "resolved": true,
+   "raw": [],
+   "note": "three inflatables with Decca navigators, depth sounders and proton magnetometers (p. 265)"
   }
  ],
  "catalogue_entries": [
@@ -742,6 +783,34 @@
    "source_entries": [
     "cat:ags/ga-221-39"
    ]
+  },
+  {
+   "schema": "signal_schema/catalogue_entry/0.3.0",
+   "entry_id": "cat:birch-forthcoming/magnetometer",
+   "catalogue": {
+    "designation": "the 'full magnetometer survey' of the Streedagh sites (announced as 'publication forthcoming', Birch & McElvogue 1999 p. 267)",
+    "compiler": "agt:pipeline.streedagh/birch-mcelvogue",
+    "mandate": "survey report announced in 1999; not found by this project (reconstruction v0.7 open task 5)"
+   },
+   "role": "compiler",
+   "native_key": "—",
+   "compilation_epoch": {
+    "value": 1999,
+    "calendar": "gregorian",
+    "basis": {
+     "kind": "stated"
+    }
+   },
+   "fields_as_published": {
+    "absent": {
+     "reason": "not_held"
+    }
+   },
+   "raw": [],
+   "source_acquisitions": [
+    "acq:pipeline.streedagh/magnetometer-1985"
+   ],
+   "source_entries": []
   }
  ],
  "detections": [
@@ -7570,6 +7639,292 @@
      "hedges": []
     }
    }
+  },
+  {
+   "schema": "signal_schema/detection/0.3.0",
+   "detection_id": "det:pipeline.streedagh/magnetometer-1985#SITE1",
+   "acquisition": "acq:pipeline.streedagh/magnetometer-1985",
+   "read_from": [
+    "cat:birch-mcelvogue-1999"
+   ],
+   "detected": true,
+   "position": {
+    "absent": {
+     "reason": "not_held",
+     "note": "drawn on Fig. 1c, not georeferenced; the relative offsets are in the quantities"
+    }
+   },
+   "quantities": [
+    {
+     "semantic": "arch.size.length",
+     "value": 165.0,
+     "unit": "m",
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "Birch & McElvogue 1999 p. 270"
+      ]
+     },
+     "note": "extent of the magnetometer readings, longer side"
+    },
+    {
+     "semantic": "arch.size.width",
+     "value": 40.0,
+     "unit": "m",
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "Birch & McElvogue 1999 p. 270"
+      ]
+     },
+     "note": "extent of the magnetometer readings, shorter side"
+    },
+    {
+     "semantic": "doc.length.stated",
+     "value": 3.8,
+     "unit": "m",
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "Birch & McElvogue 1999 p. 270"
+      ]
+     },
+     "note": "water depth, least (varies with tide and sand)"
+    },
+    {
+     "semantic": "doc.length.stated",
+     "value": 5.2,
+     "unit": "m",
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "Birch & McElvogue 1999 p. 270"
+      ]
+     },
+     "note": "water depth, greatest (varies with tide and sand)"
+    },
+    {
+     "semantic": "doc.length.stated",
+     "value": 0.8,
+     "unit": "m",
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "Birch & McElvogue 1999 p. 270"
+      ]
+     },
+     "note": "sand overburden, greatest measured, above the highest known part of the wreck"
+    },
+    {
+     "semantic": "doc.length.stated",
+     "value": 1.2,
+     "unit": "m",
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "Birch & McElvogue 1999 p. 270"
+      ]
+     },
+     "note": "depth of the lowest known point (a wrought iron anchor) below that highest point"
+    }
+   ],
+   "descriptors": [],
+   "extension": {
+    "historical_observation": {
+     "verbatim": {
+      "text": "Site 1 is situated almost in the centre of the Strand, and is the closest inshore. The site is represented by a distinct pattern of magnetometer readings covering an area 165 by 40 m, suggesting a wide scatter of ferrous remains (Fig. 1c). Due to its exposed position the site is the most dynamic of the three. Its depth varies between 3.8 and 5.2 m depending on the state of the tide and sand accretion (all depths are mean averages for the centres of the sites as indicated by magnetometer readings). Sand overburden has reached a maximum measured depth of 0.8 m above the highest known part of the wreck and at its lowest point is 1.2 m below the same point, represented by a wrought iron anchor.",
+      "language": "en",
+      "locator": "Birch & McElvogue 1999 p. 270",
+      "note": "OCR slips corrected (5-2, 0\"8, 1\"2, 3\"8, Monitoripg, lc)"
+     },
+     "observer_role": "reporter",
+     "hedges": []
+    }
+   }
+  },
+  {
+   "schema": "signal_schema/detection/0.3.0",
+   "detection_id": "det:pipeline.streedagh/magnetometer-1985#SITE2",
+   "acquisition": "acq:pipeline.streedagh/magnetometer-1985",
+   "read_from": [
+    "cat:birch-mcelvogue-1999"
+   ],
+   "detected": true,
+   "position": {
+    "absent": {
+     "reason": "not_held",
+     "note": "drawn on Fig. 1c, not georeferenced; the relative offsets are in the quantities"
+    }
+   },
+   "quantities": [
+    {
+     "semantic": "arch.size.length",
+     "value": 15.0,
+     "unit": "m",
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "Birch & McElvogue 1999 p. 271"
+      ]
+     },
+     "note": "extent of the magnetometer readings, longer side"
+    },
+    {
+     "semantic": "arch.size.width",
+     "value": 10.0,
+     "unit": "m",
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "Birch & McElvogue 1999 p. 271"
+      ]
+     },
+     "note": "extent of the magnetometer readings, shorter side"
+    },
+    {
+     "semantic": "doc.length.stated",
+     "value": 3.5,
+     "unit": "m",
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "Birch & McElvogue 1999 p. 271"
+      ]
+     },
+     "note": "water depth, least (varies with tide and sand)"
+    },
+    {
+     "semantic": "doc.length.stated",
+     "value": 5.0,
+     "unit": "m",
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "Birch & McElvogue 1999 p. 271"
+      ]
+     },
+     "note": "water depth, greatest (varies with tide and sand)"
+    },
+    {
+     "semantic": "pos.distance.stated",
+     "value": 390.0,
+     "unit": "m",
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "Birch & McElvogue 1999 p. 271"
+      ]
+     },
+     "note": "distance south-west from Site 1"
+    }
+   ],
+   "descriptors": [],
+   "extension": {
+    "historical_observation": {
+     "verbatim": {
+      "text": "Site 2. South-west of La Juliana's location, some 390 m distant, a smaller group of readings constitutes Site 2. It covers an area 15 by 10 m of high intensity magnetometer readings. The depth varies between 3.5 and 5.0 m.",
+      "language": "en",
+      "locator": "Birch & McElvogue 1999 p. 271",
+      "note": "OCR slips corrected (5-2, 0\"8, 1\"2, 3\"8, Monitoripg, lc)"
+     },
+     "observer_role": "reporter",
+     "hedges": [
+      "some"
+     ]
+    }
+   }
+  },
+  {
+   "schema": "signal_schema/detection/0.3.0",
+   "detection_id": "det:pipeline.streedagh/magnetometer-1985#SITE3",
+   "acquisition": "acq:pipeline.streedagh/magnetometer-1985",
+   "read_from": [
+    "cat:birch-mcelvogue-1999"
+   ],
+   "detected": true,
+   "position": {
+    "absent": {
+     "reason": "not_held",
+     "note": "drawn on Fig. 1c, not georeferenced; the relative offsets are in the quantities"
+    }
+   },
+   "quantities": [
+    {
+     "semantic": "arch.size.length",
+     "value": 270.0,
+     "unit": "m",
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "Birch & McElvogue 1999 p. 271"
+      ]
+     },
+     "note": "extent of the magnetometer readings, longer side"
+    },
+    {
+     "semantic": "arch.size.width",
+     "value": 72.0,
+     "unit": "m",
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "Birch & McElvogue 1999 p. 271"
+      ]
+     },
+     "note": "extent of the magnetometer readings, shorter side"
+    },
+    {
+     "semantic": "doc.length.stated",
+     "value": 3.8,
+     "unit": "m",
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "Birch & McElvogue 1999 p. 271"
+      ]
+     },
+     "note": "water depth, least (varies with tide and sand)"
+    },
+    {
+     "semantic": "doc.length.stated",
+     "value": 5.0,
+     "unit": "m",
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "Birch & McElvogue 1999 p. 271"
+      ]
+     },
+     "note": "water depth, greatest (varies with tide and sand)"
+    },
+    {
+     "semantic": "pos.distance.stated",
+     "value": 20.0,
+     "unit": "m",
+     "basis": {
+      "kind": "stated",
+      "refs": [
+       "Birch & McElvogue 1999 p. 271"
+      ]
+     },
+     "note": "distance south-west from Site 2"
+    }
+   ],
+   "descriptors": [],
+   "extension": {
+    "historical_observation": {
+     "verbatim": {
+      "text": "Site 3. 20 m south-west from Site 2 is the largest group of readings, covering some 270 m by 72 m. The depth of water recorded on the site varies between 3.8 and 5.0 m depending on the state of the tide and the sand overburden. Monitoring of the sites indicates that Site 3 is where the maximum sand accretion occurs; this being influenced by Streedagh Point which acts as barrier to south-west wind generated swell.",
+      "language": "en",
+      "locator": "Birch & McElvogue 1999 p. 271",
+      "note": "OCR slips corrected (5-2, 0\"8, 1\"2, 3\"8, Monitoripg, lc)"
+     },
+     "observer_role": "reporter",
+     "hedges": [
+      "some"
+     ]
+    }
+   }
   }
  ],
  "relations": [
@@ -7602,6 +7957,66 @@
    "agent": "agt:pipeline.streedagh/sag",
    "observed_at": "1985/1998",
    "note": "as reported in Birch & McElvogue 1999 p. 271"
+  },
+  {
+   "schema": "signal_schema/detection_relation/0.3.0",
+   "relation_id": "rel:pipeline.streedagh/mag-site1-1",
+   "a": "det:pipeline.streedagh/site1-survey#CONCRETION",
+   "b": "det:pipeline.streedagh/magnetometer-1985#SITE1",
+   "type": "within",
+   "agent": "agt:pipeline.streedagh/birch-mcelvogue",
+   "observed_at": "1985/1998",
+   "note": "reported under 'La Juliana (Site 1)', Birch & McElvogue 1999 p. 271"
+  },
+  {
+   "schema": "signal_schema/detection_relation/0.3.0",
+   "relation_id": "rel:pipeline.streedagh/mag-site1-2",
+   "a": "det:pipeline.streedagh/site1-survey#ANCHORS",
+   "b": "det:pipeline.streedagh/magnetometer-1985#SITE1",
+   "type": "within",
+   "agent": "agt:pipeline.streedagh/birch-mcelvogue",
+   "observed_at": "1985/1998",
+   "note": "reported under 'La Juliana (Site 1)', Birch & McElvogue 1999 p. 271"
+  },
+  {
+   "schema": "signal_schema/detection_relation/0.3.0",
+   "relation_id": "rel:pipeline.streedagh/mag-site1-3",
+   "a": "det:pipeline.streedagh/site1-survey#GUNS3",
+   "b": "det:pipeline.streedagh/magnetometer-1985#SITE1",
+   "type": "within",
+   "agent": "agt:pipeline.streedagh/birch-mcelvogue",
+   "observed_at": "1985/1998",
+   "note": "reported under 'La Juliana (Site 1)', Birch & McElvogue 1999 p. 271"
+  },
+  {
+   "schema": "signal_schema/detection_relation/0.3.0",
+   "relation_id": "rel:pipeline.streedagh/mag-site1-4",
+   "a": "det:pipeline.streedagh/site1-survey#RUDDER",
+   "b": "det:pipeline.streedagh/magnetometer-1985#SITE1",
+   "type": "within",
+   "agent": "agt:pipeline.streedagh/birch-mcelvogue",
+   "observed_at": "1985/1998",
+   "note": "reported under 'La Juliana (Site 1)', Birch & McElvogue 1999 p. 271"
+  },
+  {
+   "schema": "signal_schema/detection_relation/0.3.0",
+   "relation_id": "rel:pipeline.streedagh/mag-site1-5",
+   "a": "det:pipeline.streedagh/site1-survey#GUN-UNDER-RUDDER",
+   "b": "det:pipeline.streedagh/magnetometer-1985#SITE1",
+   "type": "within",
+   "agent": "agt:pipeline.streedagh/birch-mcelvogue",
+   "observed_at": "1985/1998",
+   "note": "reported under 'La Juliana (Site 1)', Birch & McElvogue 1999 p. 271"
+  },
+  {
+   "schema": "signal_schema/detection_relation/0.3.0",
+   "relation_id": "rel:pipeline.streedagh/mag-site1-6",
+   "a": "det:pipeline.streedagh/site1-survey#WHEELS",
+   "b": "det:pipeline.streedagh/magnetometer-1985#SITE1",
+   "type": "within",
+   "agent": "agt:pipeline.streedagh/birch-mcelvogue",
+   "observed_at": "1985/1998",
+   "note": "reported under 'La Juliana (Site 1)', Birch & McElvogue 1999 p. 271"
   }
  ],
  "signals": [
@@ -7723,6 +8138,30 @@
    "minted_by": "det:pipeline.streedagh/site1-survey#WHEELS",
    "direct_detections": [
     "det:pipeline.streedagh/site1-survey#WHEELS"
+   ]
+  },
+  {
+   "schema": "signal_schema/signal/0.3.0",
+   "signal_id": "sig:pipeline.streedagh/mag-SITE1",
+   "minted_by": "det:pipeline.streedagh/magnetometer-1985#SITE1",
+   "direct_detections": [
+    "det:pipeline.streedagh/magnetometer-1985#SITE1"
+   ]
+  },
+  {
+   "schema": "signal_schema/signal/0.3.0",
+   "signal_id": "sig:pipeline.streedagh/mag-SITE2",
+   "minted_by": "det:pipeline.streedagh/magnetometer-1985#SITE2",
+   "direct_detections": [
+    "det:pipeline.streedagh/magnetometer-1985#SITE2"
+   ]
+  },
+  {
+   "schema": "signal_schema/signal/0.3.0",
+   "signal_id": "sig:pipeline.streedagh/mag-SITE3",
+   "minted_by": "det:pipeline.streedagh/magnetometer-1985#SITE3",
+   "direct_detections": [
+    "det:pipeline.streedagh/magnetometer-1985#SITE3"
    ]
   }
  ],
@@ -15275,6 +15714,26 @@
         }
        }
       }
+     },
+     "ferrous_to_seabed": {
+      "semantic": "phys.mass",
+      "value": 38.5,
+      "interval": [
+       25.47,
+       55.44
+      ],
+      "unit": "t",
+      "basis": {
+       "kind": "derived",
+       "recipe": {
+        "name": "seabed_mass_budget.layer2",
+        "version": "0.1",
+        "params": {
+         "seed": 20261107,
+         "draws": 100000
+        }
+       }
+      }
      }
     },
     "stated_before": "2026-11-07; no ballast mound or timber extent measured at Streedagh",
@@ -15563,6 +16022,26 @@
       "interval": [
        217.45,
        428.25
+      ],
+      "unit": "t",
+      "basis": {
+       "kind": "derived",
+       "recipe": {
+        "name": "seabed_mass_budget.layer2",
+        "version": "0.1",
+        "params": {
+         "seed": 20261107,
+         "draws": 100000
+        }
+       }
+      }
+     },
+     "ferrous_to_seabed": {
+      "semantic": "phys.mass",
+      "value": 44.22,
+      "interval": [
+       30.38,
+       62.65
       ],
       "unit": "t",
       "basis": {
@@ -15877,6 +16356,26 @@
         }
        }
       }
+     },
+     "ferrous_to_seabed": {
+      "semantic": "phys.mass",
+      "value": 30.37,
+      "interval": [
+       19.66,
+       44.11
+      ],
+      "unit": "t",
+      "basis": {
+       "kind": "derived",
+       "recipe": {
+        "name": "seabed_mass_budget.layer2",
+        "version": "0.1",
+        "params": {
+         "seed": 20261107,
+         "draws": 100000
+        }
+       }
+      }
      }
     },
     "stated_before": "2026-11-07; no ballast mound or timber extent measured at Streedagh",
@@ -16066,6 +16565,320 @@
     "inf:pipeline.streedagh/mass-budget/layer1-vison",
     "det:pipeline.streedagh/muster-1588#row-76",
     "inf:pipeline.streedagh/ratings/formula-check"
+   ]
+  },
+  {
+   "schema": "signal_schema/inference/0.3.0",
+   "inference_id": "inf:pipeline.streedagh/mag-SITE1/label-birch",
+   "agent": "agt:pipeline.streedagh/birch-mcelvogue",
+   "kind": "label",
+   "subject": [
+    "sig:pipeline.streedagh/mag-SITE1"
+   ],
+   "statement": {
+    "heading": "La Juliana (Site 1)"
+   },
+   "label": "La Juliana",
+   "credence": {
+    "absent": {
+     "reason": "reported_claim"
+    }
+   },
+   "falsifier": {
+    "absent": {
+     "reason": "reported_claim"
+    }
+   },
+   "basis": [
+    "det:pipeline.streedagh/magnetometer-1985#SITE1",
+    "cat:birch-mcelvogue-1999"
+   ]
+  },
+  {
+   "schema": "signal_schema/inference/0.3.0",
+   "inference_id": "inf:pipeline.streedagh/mag-SITE1/attr-juliana",
+   "agent": "agt:pipeline.streedagh/dylan",
+   "kind": "attribution",
+   "subject": [
+    "sig:pipeline.streedagh/mag-SITE1"
+   ],
+   "statement": {
+    "signal": "sig:pipeline.streedagh/mag-SITE1",
+    "source": "src:ship-juliana",
+    "probability": 0.8,
+    "note": "site assessment v2 L3.1; the remainder is unattributed"
+   },
+   "credence": 0.8,
+   "falsifier": "a find with a legible ship identity at this site naming another ship",
+   "basis": [
+    "det:pipeline.streedagh/magnetometer-1985#SITE1",
+    "inf:pipeline.streedagh/mag-SITE1/label-birch"
+   ]
+  },
+  {
+   "schema": "signal_schema/inference/0.3.0",
+   "inference_id": "inf:pipeline.streedagh/mag-SITE1/attr-vison",
+   "agent": "agt:pipeline.streedagh/dylan",
+   "kind": "attribution",
+   "subject": [
+    "sig:pipeline.streedagh/mag-SITE1"
+   ],
+   "statement": {
+    "signal": "sig:pipeline.streedagh/mag-SITE1",
+    "source": "src:ship-vison",
+    "probability": 0.05,
+    "note": "site assessment v2 L3.1; the remainder is unattributed"
+   },
+   "credence": 0.05,
+   "falsifier": "a find with a legible ship identity at this site naming another ship",
+   "basis": [
+    "det:pipeline.streedagh/magnetometer-1985#SITE1",
+    "inf:pipeline.streedagh/mag-SITE1/label-birch"
+   ]
+  },
+  {
+   "schema": "signal_schema/inference/0.3.0",
+   "inference_id": "inf:pipeline.streedagh/mag-SITE2/label-birch",
+   "agent": "agt:pipeline.streedagh/birch-mcelvogue",
+   "kind": "label",
+   "subject": [
+    "sig:pipeline.streedagh/mag-SITE2"
+   ],
+   "statement": {
+    "heading": "Santa Maria de Vison (Site 2)"
+   },
+   "label": "Santa Maria de Vison",
+   "credence": {
+    "absent": {
+     "reason": "reported_claim"
+    }
+   },
+   "falsifier": {
+    "absent": {
+     "reason": "reported_claim"
+    }
+   },
+   "basis": [
+    "det:pipeline.streedagh/magnetometer-1985#SITE2",
+    "cat:birch-mcelvogue-1999"
+   ]
+  },
+  {
+   "schema": "signal_schema/inference/0.3.0",
+   "inference_id": "inf:pipeline.streedagh/mag-SITE2/attr-vison",
+   "agent": "agt:pipeline.streedagh/dylan",
+   "kind": "attribution",
+   "subject": [
+    "sig:pipeline.streedagh/mag-SITE2"
+   ],
+   "statement": {
+    "signal": "sig:pipeline.streedagh/mag-SITE2",
+    "source": "src:ship-vison",
+    "probability": 0.65,
+    "note": "site assessment v2 L3.1; the remainder is unattributed"
+   },
+   "credence": 0.65,
+   "falsifier": "a find with a legible ship identity at this site naming another ship",
+   "basis": [
+    "det:pipeline.streedagh/magnetometer-1985#SITE2",
+    "inf:pipeline.streedagh/mag-SITE2/label-birch"
+   ]
+  },
+  {
+   "schema": "signal_schema/inference/0.3.0",
+   "inference_id": "inf:pipeline.streedagh/mag-SITE3/label-birch",
+   "agent": "agt:pipeline.streedagh/birch-mcelvogue",
+   "kind": "label",
+   "subject": [
+    "sig:pipeline.streedagh/mag-SITE3"
+   ],
+   "statement": {
+    "heading": "La Lavia (Site 3)"
+   },
+   "label": "La Lavia",
+   "credence": {
+    "absent": {
+     "reason": "reported_claim"
+    }
+   },
+   "falsifier": {
+    "absent": {
+     "reason": "reported_claim"
+    }
+   },
+   "basis": [
+    "det:pipeline.streedagh/magnetometer-1985#SITE3",
+    "cat:birch-mcelvogue-1999"
+   ]
+  },
+  {
+   "schema": "signal_schema/inference/0.3.0",
+   "inference_id": "inf:pipeline.streedagh/mag-SITE3/attr-lavia",
+   "agent": "agt:pipeline.streedagh/dylan",
+   "kind": "attribution",
+   "subject": [
+    "sig:pipeline.streedagh/mag-SITE3"
+   ],
+   "statement": {
+    "signal": "sig:pipeline.streedagh/mag-SITE3",
+    "source": "src:ship-lavia",
+    "probability": 0.72,
+    "note": "site assessment v2 L3.1; the remainder is unattributed"
+   },
+   "credence": 0.72,
+   "falsifier": "a find with a legible ship identity at this site naming another ship",
+   "basis": [
+    "det:pipeline.streedagh/magnetometer-1985#SITE3",
+    "inf:pipeline.streedagh/mag-SITE3/label-birch"
+   ]
+  },
+  {
+   "schema": "signal_schema/inference/0.3.0",
+   "inference_id": "inf:pipeline.streedagh/mag-SITE3/attr-juliana",
+   "agent": "agt:pipeline.streedagh/dylan",
+   "kind": "attribution",
+   "subject": [
+    "sig:pipeline.streedagh/mag-SITE3"
+   ],
+   "statement": {
+    "signal": "sig:pipeline.streedagh/mag-SITE3",
+    "source": "src:ship-juliana",
+    "probability": 0.05,
+    "note": "site assessment v2 L3.1; the remainder is unattributed"
+   },
+   "credence": 0.05,
+   "falsifier": "a find with a legible ship identity at this site naming another ship",
+   "basis": [
+    "det:pipeline.streedagh/magnetometer-1985#SITE3",
+    "inf:pipeline.streedagh/mag-SITE3/label-birch"
+   ]
+  },
+  {
+   "schema": "signal_schema/inference/0.3.0",
+   "inference_id": "inf:pipeline.streedagh/magnetometry/spread-vs-mass",
+   "agent": "agt:pipeline.streedagh/budget",
+   "kind": "explanation",
+   "subject": [
+    "sig:pipeline.streedagh/mag-SITE1",
+    "sig:pipeline.streedagh/mag-SITE2",
+    "sig:pipeline.streedagh/mag-SITE3"
+   ],
+   "statement": {
+    "finding": "the spreads differ in area by a factor of 130, the expected ferrous masses by a factor of 1.5: spread area does not measure iron mass",
+    "comparison": {
+     "SITE1": {
+      "spread_m2": 6600.0,
+      "ship_by_heading": "Juliana",
+      "ferrous_t_median": 44.22,
+      "ferrous_t_interval": [
+       30.38,
+       62.65
+      ],
+      "kg_per_m2_if_all_in_spread": 6.7
+     },
+     "SITE2": {
+      "spread_m2": 150.0,
+      "ship_by_heading": "Vison",
+      "ferrous_t_median": 30.37,
+      "ferrous_t_interval": [
+       19.66,
+       44.11
+      ],
+      "kg_per_m2_if_all_in_spread": 202.5
+     },
+     "SITE3": {
+      "spread_m2": 19440.0,
+      "ship_by_heading": "Lavia",
+      "ferrous_t_median": 38.5,
+      "ferrous_t_interval": [
+       25.47,
+       55.44
+      ],
+      "kg_per_m2_if_all_in_spread": 2.0
+     }
+    },
+    "alternatives": [
+     "dispersal: material spread along the shore by different amounts at each site",
+     "survey: different coverage, line spacing or sensor height at each site",
+     "grouping: Site 2 lies 20 m from Site 3, so they may be one scatter split in two, or Site 3 may hold material from more than one ship",
+     "burial: sand cover differs (greatest at Site 3)"
+    ],
+    "residue": "no amplitudes, sensor heights or georeferenced plot are held; the earlier claim that the spreads 'match' a modelled ~76 t of iron (site assessment v1) had no basis and is withdrawn",
+    "units_note": "ferrous_to_seabed from seabed_mass_budget.py layer 2: iron guns, iron shot, metal fittings and anchors, iron in the siege cargo"
+   },
+   "credence": 0.8,
+   "falsifier": "a calibrated re-survey showing anomaly strength scaling with spread area",
+   "basis": [
+    "det:pipeline.streedagh/magnetometer-1985#SITE1",
+    "det:pipeline.streedagh/magnetometer-1985#SITE2",
+    "det:pipeline.streedagh/magnetometer-1985#SITE3",
+    "inf:pipeline.streedagh/mass-budget/layer2-juliana",
+    "inf:pipeline.streedagh/mass-budget/layer2-vison",
+    "inf:pipeline.streedagh/mass-budget/layer2-lavia"
+   ]
+  },
+  {
+   "schema": "signal_schema/inference/0.3.0",
+   "inference_id": "inf:pipeline.streedagh/magnetometry/resurvey-prediction",
+   "agent": "agt:pipeline.streedagh/budget",
+   "kind": "prediction",
+   "subject": [
+    "sig:pipeline.streedagh/mag-SITE1",
+    "sig:pipeline.streedagh/mag-SITE2",
+    "sig:pipeline.streedagh/mag-SITE3"
+   ],
+   "statement": {
+    "observable": "ferrous mass at Sites 1-3 from a calibrated re-survey (total-field amplitudes, sensor altitude, positions in frm:ITM) inverted for magnetic moment",
+    "expected": {
+     "combined": {
+      "semantic": "phys.mass",
+      "value": 113.11,
+      "interval": [
+       75.76,
+       161.96
+      ],
+      "unit": "t",
+      "basis": {
+       "kind": "derived",
+       "recipe": {
+        "name": "seabed_mass_budget.layer2.ferrous",
+        "version": "0.1"
+       }
+      }
+     },
+     "per_site": {
+      "SITE1": 44.22,
+      "SITE2": 30.37,
+      "SITE3": 38.5
+     }
+    },
+    "stated_before": "2026-11-07; no calibrated magnetometer data held",
+    "priors": {
+     "iron_gun_mass_share": {
+      "dist": "uniform",
+      "params": [
+       0.2,
+       0.5
+      ],
+      "basis": "share of gun mass in cast or wrought iron. The Sicilian ships' list is 145 iron pieces of 271 (Martin pp. 114-115), but mostly the light classes; Juliana's nine recovered guns are all bronze"
+     },
+     "cargo_iron_share": {
+      "dist": "uniform",
+      "params": [
+       0.15,
+       0.4
+      ],
+      "basis": "iron in the siege cargo: the Valencera's issue included 400 iron balls of 40 libras (7.4 t) besides wheel irons and fittings, beside bronze battery guns (pp. 115-116)"
+     }
+    },
+    "note": "per-site values assume Birch & McElvogue's site-ship headings"
+   },
+   "credence": 0.4,
+   "falsifier": "a calibrated re-survey giving combined ferrous mass outside the 5-95% range",
+   "basis": [
+    "inf:pipeline.streedagh/mass-budget/layer2-juliana",
+    "inf:pipeline.streedagh/mass-budget/layer2-vison",
+    "inf:pipeline.streedagh/mass-budget/layer2-lavia"
    ]
   }
  ],
@@ -16952,7 +17765,9 @@
     "inf:pipeline.streedagh/G-GIOVANNI/attr-juliana",
     "inf:pipeline.streedagh/G-PETRIERE-F/attr-juliana",
     "inf:pipeline.streedagh/G-PETRIERE-2/attr-juliana",
-    "inf:pipeline.streedagh/muster-row-75/attr"
+    "inf:pipeline.streedagh/muster-row-75/attr",
+    "inf:pipeline.streedagh/mag-SITE1/attr-juliana",
+    "inf:pipeline.streedagh/mag-SITE3/attr-juliana"
    ],
    "recipe": {
     "name": "attribution_chain",
@@ -16975,7 +17790,8 @@
     "inf:pipeline.streedagh/muster-row-69/attr",
     "inf:pipeline.streedagh/cuellar/S010/ship",
     "inf:pipeline.streedagh/cuellar/S013/ship",
-    "inf:pipeline.streedagh/ratings-row-69/attr"
+    "inf:pipeline.streedagh/ratings-row-69/attr",
+    "inf:pipeline.streedagh/mag-SITE3/attr-lavia"
    ],
    "recipe": {
     "name": "attribution_chain",
@@ -16996,7 +17812,9 @@
    ],
    "support": [
     "inf:pipeline.streedagh/muster-row-76/attr",
-    "inf:pipeline.streedagh/ratings-row-76/attr"
+    "inf:pipeline.streedagh/ratings-row-76/attr",
+    "inf:pipeline.streedagh/mag-SITE1/attr-vison",
+    "inf:pipeline.streedagh/mag-SITE2/attr-vison"
    ],
    "recipe": {
     "name": "attribution_chain",

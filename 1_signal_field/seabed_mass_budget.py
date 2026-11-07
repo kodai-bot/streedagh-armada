@@ -163,8 +163,21 @@ def ranks(x):
     return r
 
 
-def layer2(rng, muster, l1):
+# ferrous mass on the seabed (for the magnetometry comparison). Drawn from a separate generator so that
+# adding it leaves every layer 1 and layer 2 figure above unchanged.
+PRIORS_FE = {
+    "iron_gun_mass_share": ((0.20, 0.50), "share of gun mass in cast or wrought iron. The Sicilian ships' list is 145 "
+                            "iron pieces of 271 (Martin pp. 114-115), but mostly the light classes; Juliana's nine "
+                            "recovered guns are all bronze"),
+    "cargo_iron_share": ((0.15, 0.40), "iron in the siege cargo: the Valencera's issue included 400 iron balls of 40 "
+                         "libras (7.4 t) besides wheel irons and fittings, beside bronze battery guns (pp. 115-116)"),
+}
+
+
+def layer2(rng, muster, l1, stone_frac):
     P = {k: draw2(rng, k) for k in PRIORS2}
+    rfe = np.random.default_rng(SEED + 1)
+    PF = {k: rfe.uniform(*v[0], N) for k, v in PRIORS_FE.items()}
     u_jul = rng.uniform(0, 1, N)
     out, tot, raw = {}, {}, {}
     for ship, r in muster.items():
@@ -192,11 +205,15 @@ def layer2(rng, muster, l1):
                + men * 180 * (LIQUID_KG_DAY * (1 + P["cask_tare"]) + SOLID_KG_DAY) / 1000)
         seabed = (ordn + ballast + arms + metal + cargo * P["cargo_retained"] + timber * P["timber_retained"]
                   + rig * P["rig_retained"] + stores * P["stores_retained"])
+        g, sh = l1[ship]["guns"], l1[ship]["shot"]
+        ferrous = (g * PF["iron_gun_mass_share"] + sh * (1 - stone_frac) + metal
+                   + cargo * P["cargo_retained"] * PF["cargo_iron_share"])
         parts = {"displacement_full": full, "displacement_day": day, "draught_full_m": T_full,
                  "draught_day_m": T_day, "people": people, "on_board_excl_people": on_board,
                  "ordnance_munitions": ordn, "ballast": ballast, "stores": stores, "personal_arms": arms,
                  "cargo": cargo, "hull_timber": timber, "rig": rig, "metal_fittings_anchors": metal,
-                 "to_seabed": seabed, "to_strand": on_board - seabed, "displacement_may": may}
+                 "to_seabed": seabed, "to_strand": on_board - seabed, "displacement_may": may,
+                 "ferrous_to_seabed": ferrous}
         out[ship] = {k: q(v) for k, v in parts.items()}
         out[ship]["may_over_full"] = {k: round(v / 1000, 3) for k, v in q(may / full * 1000).items()}
         out[ship]["overladen_frac"] = round(float((day > full).mean()), 3)
@@ -215,6 +232,7 @@ def layer2(rng, muster, l1):
     drivers["juliana_envelope_position"] = round(float(np.corrcoef(ranks(u_jul), rs)[0, 1]), 3)
     drivers = dict(sorted(drivers.items(), key=lambda kv: -abs(kv[1])))
     return {"ships": out, "drivers": drivers,
+            "priors_ferrous": {k: {"dist": "uniform", "params": v[0], "basis": v[1]} for k, v in PRIORS_FE.items()},
             "constants": {"rho_sea": RHO_SEA, "azumbre_l": AZUMBRE_L, "rosa_toneladas": ROSA_TONELADAS,
                           "rosa_ballast_t": ROSA_BALLAST_T, "machos": {k: round(v, 1) for k, v in MACHOS.items()},
                           "liquid_kg_day": round(LIQUID_KG_DAY, 3), "solid_kg_day": round(SOLID_KG_DAY, 3)},
@@ -300,7 +318,7 @@ def main():
             tot[k] = tot.get(k, 0) + v
     out["Combined"] = {k: q(v) for k, v in tot.items()}
 
-    l2 = layer2(rng, muster, arrays)
+    l2 = layer2(rng, muster, arrays, stone_frac)
     result = {"layer": "1: ordnance and munitions; 2: the whole ship", "seed": SEED, "draws": N,
               "units": {"libra_kg": LIBRA_KG, "quintal_kg": QUINTAL_KG, "codo_m": CODO_M},
               "shot_mean_kg": q(shot_kg * 1000) | {"guns_in_list": n_listed},
@@ -426,6 +444,16 @@ def report2(R2, f):
           "is a real test of the priors, though not an independent one (both use lightship_frac). On the wreck "
           "day, with the stores mostly gone, they ride about a metre and a half above that line: light, with tall "
           "castles, the windage condition of v0.7 §9 near a lee shore.", "",
+          "## Iron on the seabed (for the magnetometry)", "",
+          "Ferrous mass to the seabed: iron guns, iron shot, metal fittings and anchors, iron in the siege cargo. "
+          "Two extra priors (below), drawn from a separate generator so the figures above do not move.", "",
+          "| Ship | ferrous to seabed, t |", "|---|---|"] + [
+          f"| {s} | {f(d['ferrous_to_seabed'])} |" for s, d in S.items()] + ["",
+          "Birch & McElvogue's magnetometer spreads (165 x 40, 15 x 10, 270 x 72 m) differ in area by a factor of "
+          "about 130 where these masses differ by 1.5, so the spreads cannot be read as iron mass; see the site "
+          "record, `inf:...magnetometry/spread-vs-mass`.", "",
+          "| Prior | values | basis |", "|---|---|---|"] + [
+          f"| {k} | uniform {p['params']} | {p['basis']} |" for k, p in R2["priors_ferrous"].items()] + ["",
           "## What drives the answer", "",
           "Spearman rank correlation of each prior with the combined seabed mass:", "",
           "| prior | rho |", "|---|---|"]

@@ -13,7 +13,7 @@ What goes in: the recovered guns, the Lisbon muster, the observed relations at S
 Cuéllar's letter (125 coded passages, from ../../3_cuellar_worldline/data/), the
 reconstruction's inputs (the six ships measured in 1588, the Levant gun list, the units),
 layers 1 and 2 of the seabed mass budget (../output/mass_budget.json, from seabed_mass_budget.py)
-and the inferences built on them. The magnetometry comes next.
+and the inferences built on them, and the 1985 magnetometer spreads.
 Positions are absent: none are held yet.
 
 Records follow the schema's rules: detections hold only what was observed or stated
@@ -384,6 +384,7 @@ def build():
 
     cuellar(B)
     reconstruction_inputs(B)
+    magnetometry(B)
 
     # ── sources ──────────────────────────────────────────────────────────────
     def supports(src):
@@ -730,7 +731,8 @@ def reconstruction_inputs(B):
                                                  "guns and cargo), once the site is surveyed; and her ballast mound alone",
                                    "expected": {"to_seabed": t2("to_seabed"), "to_strand": t2("to_strand"),
                                                 "on_board_excl_people": t2("on_board_excl_people"),
-                                                "ballast": t2("ballast"), "hull_timber_aboard": t2("hull_timber")},
+                                                "ballast": t2("ballast"), "hull_timber_aboard": t2("hull_timber"),
+                                                "ferrous_to_seabed": t2("ferrous_to_seabed")},
                                    "stated_before": "2026-11-07; no ballast mound or timber extent measured at Streedagh",
                                    "priors": L2["priors"], "constants": L2["constants"],
                                    "sources_cited": "Martin 1984 pp. 115-116, 130, 139, 150, 174, 217, 349-350, 409, 506",
@@ -742,6 +744,136 @@ def reconstruction_inputs(B):
                                   "implying a seabed mass outside it; or an issue list showing cargo beyond 60 t",
                      "basis": [dims, f"inf:{P}/mass-budget/layer1-{ship.lower()}", f"det:{P}/muster-1588#row-{code}",
                                f"inf:{P}/ratings/formula-check"]})
+
+
+# ── the 1985 magnetometer search (Birch & McElvogue 1999) ────────────────────
+# Reached through the interim report only: no readings, amplitudes, line spacing, sensor height or
+# georeferenced plot are held, so this is a historical observation of a remote-sensing act (the
+# remote_sensing extension needs a product chain we do not have). The spreads are physical traces
+# (ferrous remains on the seabed), so each mints a signal.
+MAG_ATTR = {"SITE1": [("src:ship-juliana", 0.80), ("src:ship-vison", 0.05)],
+            "SITE2": [("src:ship-vison", 0.65)],
+            "SITE3": [("src:ship-lavia", 0.72), ("src:ship-juliana", 0.05)]}
+MAG_SHIP = {"SITE1": "Juliana", "SITE2": "Vison", "SITE3": "Lavia"}   # Birch & McElvogue's headings
+SHIP_NAME = {"Juliana": "La Juliana", "Vison": "Santa Maria de Vison", "Lavia": "La Lavia"}
+
+
+def magnetometry(B):
+    acq, cats, dets, sigs, infs = (B["acquisitions"], B["catalogue_entries"], B["detections"],
+                                   B["signals"], B["inferences"])
+    a = f"acq:{P}/magnetometer-1985"
+    acq.append({**hdr("acquisition"), "acquisition_id": a, "acquisition_class": "historical_observation",
+                "perturbation": "none", "agents": [{"agent": A["sag"], "role": "operator"}],
+                "method": "marine_proton_magnetometer_search",
+                "epoch": {"semantic": "time.epoch", "interval": ["1985-04-30", "1998"], "calendar": "gregorian",
+                          "basis": stated(["Birch & McElvogue 1999 p. 265: first readings 30 April, three sites by 3 May 1985",
+                                           "p. 267: a later 'full magnetometer survey' (publication forthcoming)"]),
+                          "note": "the report does not say whether the extents come from the 1985 search or the later survey"},
+                "footprint": {"absent": {"reason": "not_held", "note": "a search lane 'along the 5 m depth mark' (p. 265)"}},
+                "completeness": {"blind_spots": (
+                    "ferrous metal only: bronze guns, ballast stone, timber and lead show only where they lie with iron; "
+                    "a search lane along the 5 m depth mark, so material well inshore or offshore of it may be missed; "
+                    "extents are of the readings, not of the wrecks; sand cover (over 1 m at Site 1) weakens the signal; "
+                    "no amplitudes, line spacing or sensor height published; positions only on a sketch map (Fig. 1c)")},
+                "resolved": True, "raw": [],
+                "note": "three inflatables with Decca navigators, depth sounders and proton magnetometers (p. 265)"})
+    cats.append(cat("birch-forthcoming/magnetometer", "the 'full magnetometer survey' of the Streedagh sites "
+                    "(announced as 'publication forthcoming', Birch & McElvogue 1999 p. 267)", "birch-mcelvogue",
+                    "compiler", "—", 1999, {"absent": {"reason": "not_held"}},
+                    "survey report announced in 1999; not found by this project (reconstruction v0.7 open task 5)",
+                    src_acq=[a]))
+    m = lambda v, sem, note, ref: {"semantic": sem, "value": float(v), "unit": "m", "basis": stated([ref]), "note": note}
+    det_of = {}
+    for r in read("magnetometry_1985.csv"):
+        k, ref = r["site"], r["locator"]
+        det = f"det:{P}/magnetometer-1985#{k}"
+        det_of[k] = det
+        q = [m(r["length_m"], "arch.size.length", "extent of the magnetometer readings, longer side", ref),
+             m(r["width_m"], "arch.size.width", "extent of the magnetometer readings, shorter side", ref),
+             m(r["depth_lo_m"], "doc.length.stated", "water depth, least (varies with tide and sand)", ref),
+             m(r["depth_hi_m"], "doc.length.stated", "water depth, greatest (varies with tide and sand)", ref)]
+        if r["offset_from"]:
+            q.append(m(r["offset_m"], "pos.distance.stated",
+                       f"distance {r['offset_bearing']} from {r['offset_from'].replace('SITE', 'Site ')}", ref))
+        if k == "SITE1":
+            q += [m(0.8, "doc.length.stated", "sand overburden, greatest measured, above the highest known part of the wreck", ref),
+                  m(1.2, "doc.length.stated", "depth of the lowest known point (a wrought iron anchor) below that highest point", ref)]
+        dets.append({**hdr("detection"), "detection_id": det, "acquisition": a, "read_from": ["cat:birch-mcelvogue-1999"],
+                     "detected": True,
+                     "position": {"absent": {"reason": "not_held", "note": "drawn on Fig. 1c, not georeferenced; "
+                                             "the relative offsets are in the quantities"}},
+                     "quantities": q, "descriptors": [],
+                     "extension": {"historical_observation": {
+                         "verbatim": {"text": r["verbatim"], "language": "en", "locator": ref,
+                                      "note": "OCR slips corrected (5-2, 0\"8, 1\"2, 3\"8, Monitoripg, lc)"},
+                         "observer_role": "reporter", "hedges": ["some"] if "some " in r["verbatim"] else []}}})
+        sig = f"sig:{P}/mag-{k}"
+        sigs.append({**hdr("signal"), "signal_id": sig, "minted_by": det, "direct_detections": [det]})
+        ship = MAG_SHIP[k]
+        infs.append({**hdr("inference"), "inference_id": f"inf:{P}/mag-{k}/label-birch", "agent": A["birch-mcelvogue"],
+                     "kind": "label", "subject": [sig], "statement": {"heading": f"{SHIP_NAME[ship]} ({k.replace('SITE', 'Site ')})"},
+                     "label": SHIP_NAME[ship], "credence": {"absent": {"reason": "reported_claim"}},
+                     "falsifier": {"absent": {"reason": "reported_claim"}}, "basis": [det, "cat:birch-mcelvogue-1999"]})
+        for src, pr in MAG_ATTR[k]:
+            infs.append({**hdr("inference"), "inference_id": f"inf:{P}/mag-{k}/attr-{src.split('-')[-1]}",
+                         "agent": A["dylan"], "kind": "attribution", "subject": [sig],
+                         "statement": {"signal": sig, "source": src, "probability": pr,
+                                       "note": "site assessment v2 L3.1; the remainder is unattributed"},
+                         "credence": pr,
+                         "falsifier": "a find with a legible ship identity at this site naming another ship",
+                         "basis": [det, f"inf:{P}/mag-{k}/label-birch"]})
+    # what the divers reported at Site 1 lies within the Site 1 spread
+    for i, d in enumerate(x["detection_id"] for x in dets if x["detection_id"].startswith(f"det:{P}/site1-survey#")):
+        B["relations"].append({**hdr("detection_relation"), "relation_id": f"rel:{P}/mag-site1-{i + 1}",
+                               "a": d, "b": det_of["SITE1"], "type": "within", "agent": A["birch-mcelvogue"],
+                               "observed_at": "1985/1998", "note": "reported under 'La Juliana (Site 1)', Birch & McElvogue 1999 p. 271"})
+
+    # can the spreads be read as iron mass? Compare with the budget's ferrous mass per ship
+    budget = json.load(open(os.path.join(os.path.dirname(HERE), "output", "mass_budget.json"), encoding="utf-8"))
+    rows, area = {}, {}
+    for r in read("magnetometry_1985.csv"):
+        k = r["site"]
+        area[k] = float(r["length_m"]) * float(r["width_m"])
+        fe = budget["layer2"]["ships"][MAG_SHIP[k]]["ferrous_to_seabed"]
+        rows[k] = {"spread_m2": area[k], "ship_by_heading": MAG_SHIP[k], "ferrous_t_median": fe["median"],
+                   "ferrous_t_interval": [fe["p05"], fe["p95"]],
+                   "kg_per_m2_if_all_in_spread": round(fe["median"] * 1000 / area[k], 1)}
+    fe_all = [rows[k]["ferrous_t_median"] for k in rows]
+    infs.append({**hdr("inference"), "inference_id": f"inf:{P}/magnetometry/spread-vs-mass", "agent": A["budget"],
+                 "kind": "explanation", "subject": [f"sig:{P}/mag-{k}" for k in rows],
+                 "statement": {
+                     "finding": (f"the spreads differ in area by a factor of {max(area.values()) / min(area.values()):.0f}, "
+                                 f"the expected ferrous masses by a factor of {max(fe_all) / min(fe_all):.1f}: "
+                                 "spread area does not measure iron mass"),
+                     "comparison": rows,
+                     "alternatives": ["dispersal: material spread along the shore by different amounts at each site",
+                                      "survey: different coverage, line spacing or sensor height at each site",
+                                      "grouping: Site 2 lies 20 m from Site 3, so they may be one scatter split in two, "
+                                      "or Site 3 may hold material from more than one ship",
+                                      "burial: sand cover differs (greatest at Site 3)"],
+                     "residue": "no amplitudes, sensor heights or georeferenced plot are held; the earlier claim that the "
+                                "spreads 'match' a modelled ~76 t of iron (site assessment v1) had no basis and is withdrawn",
+                     "units_note": "ferrous_to_seabed from seabed_mass_budget.py layer 2: iron guns, iron shot, metal "
+                                   "fittings and anchors, iron in the siege cargo"},
+                 "credence": 0.8,
+                 "falsifier": "a calibrated re-survey showing anomaly strength scaling with spread area",
+                 "basis": [det_of[k] for k in rows] + [f"inf:{P}/mass-budget/layer2-{MAG_SHIP[k].lower()}" for k in rows]})
+    c = budget["layer2"]["ships"]["Combined"]["ferrous_to_seabed"]
+    infs.append({**hdr("inference"), "inference_id": f"inf:{P}/magnetometry/resurvey-prediction", "agent": A["budget"],
+                 "kind": "prediction", "subject": [f"sig:{P}/mag-{k}" for k in rows],
+                 "statement": {"observable": "ferrous mass at Sites 1-3 from a calibrated re-survey (total-field amplitudes, "
+                                             "sensor altitude, positions in frm:ITM) inverted for magnetic moment",
+                               "expected": {"combined": {"semantic": "phys.mass", "value": c["median"],
+                                                         "interval": [c["p05"], c["p95"]], "unit": "t",
+                                                         "basis": {"kind": "derived", "recipe": {"name": "seabed_mass_budget.layer2.ferrous",
+                                                                                                  "version": "0.1"}}},
+                                            "per_site": {k: v["ferrous_t_median"] for k, v in rows.items()}},
+                               "stated_before": "2026-11-07; no calibrated magnetometer data held",
+                               "priors": budget["layer2"]["priors_ferrous"],
+                               "note": "per-site values assume Birch & McElvogue's site-ship headings"},
+                 "credence": 0.4,
+                 "falsifier": "a calibrated re-survey giving combined ferrous mass outside the 5-95% range",
+                 "basis": [f"inf:{P}/mass-budget/layer2-{MAG_SHIP[k].lower()}" for k in rows]})
 
 
 def main():
