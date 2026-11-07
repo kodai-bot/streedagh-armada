@@ -24,8 +24,8 @@
   load is built up from the hull, ballast (scaled from the Rosa's mound, Martin p. 150), what was left
   of the rations (pp. 349-350), arms and siege cargo; each part is split into seabed and strand.
   Checked by putting the May loading back aboard. Ranks which priors drive the answer.
-  Report: `output/mass_budget_report.md`. The ~601 t in the site assessment v2 (L3.2) comes from the
-  superseded v1 tonnage-to-mass chain and should not be quoted.
+  Report: `output/mass_budget_report.md`. Site assessment v2 L3.2 now quotes these figures (revised
+  2026-11-07); the earlier ~601 t came from the superseded v1 tonnage-to-mass chain.
 - `site_record/` (`make site`): **the site record**, one bundle in the new signal schema
   (`Signal_Pipeline/signal_schema`, v0.4), built by `build_site_record.py` from the CSVs in `data/` and
   validated by the schema's own CLI. Design: `SITE_SIGNAL_DESIGN.md`. So far: the recovered guns, the

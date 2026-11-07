@@ -68,7 +68,7 @@ Traces are still physical. They say what happened, not what existed.
 - **Ordnance-tier pattern** — light/medium defensive bronze recovered; heavy siege ordnance absent from the recovered set → a **tiered stowage pattern** (accessible armament vs deep cargo), predicting where the missing tier is (Part III).
 
 ## L3 — Entities (the inferred vessels) and their physical reconstruction
-**[DRAFTED]** ⟵ `streedagh_hull.py`, `streedagh_manifest.py`, `streedagh_guns.py`, `juliana_guns.py`
+**[DRAFTED]** ⟵ `seabed_mass_budget.py`, `juliana_guns.py`, `site_record/` (the v1 `streedagh_hull.py` / `streedagh_manifest.py` chain is superseded)
 *(→ §6 Vessel Assessments; §10 Ship Reconstruction; App. E–F)*
 
 Only now do ships appear — as inferences over assembled patterns, each held at a confidence.
@@ -85,7 +85,7 @@ Each confidence below is derived from a specific physical or documentary basis, 
 | Recovered bronze battery (12 guns; Dorino II Gioardi 1570; St. Matrona / Barcelona patron) | Founder + patron-saint link to a Barcelona-built hull; all 12 recovered at Site 1; one *esmeril* at Site 2 only | **0.87** | 0.05 | 0.08 | — |
 | Site-1 footprint (165×40 m) | Footprint scale consistent with Juliana as largest hull (860 t); carriage-wheel locus at this site | **0.80** | — | 0.05 | 0.15 |
 | Site-3 footprint (270×72 m; greatest sand cover) | Greatest areal spread consistent with *almiranta* (more material, more dispersal); greatest sand cover consistent with shelter by headland; survey literature identifies tentatively as Lavia | 0.05 | **0.72** | — | 0.23 |
-| Site-2 footprint (15×10 m) | Smallest anomaly consistent with Visón as smallest hull (666 t); survey literature tentative identification | — | — | **0.65** | 0.35 |
+| Site-2 footprint (15×10 m) | Smallest anomaly consistent with Visón as smallest hull (566 t, Martin's emendation of the muster's 666); survey literature tentative identification | — | — | **0.65** | 0.35 |
 | Five siege-carriage wheels (Site 1) | Documented career of La Juliana as siege-engineering carrier (*Archivo de la Corona de Aragón*) | **0.92** | — | — | 0.08 |
 | De Cuéllar letter (explicit documentary) | De Cuéllar names himself aboard La Lavia, the *almiranta*, during the wrecking | 0.01 | **≥0.98** | — | — |
 
@@ -96,20 +96,37 @@ A dispersed gun found midway between sites would carry, illustratively: Juliana 
 ### L3.2 Entity physical models (inverse reconstruction)
 **[DRAFTED]**
 
-The inverse chain (burthen → cargo volume → internal volume → dimensions → displacement → deadweight → payload), each factor a distribution, propagated by Monte Carlo. Medians [5–95th]:
+**Revised 2026-11-07.** The earlier version of this section went from the wartime toneladas to displacement and then to a surviving mass (~601 t). Reconstruction v0.7 §2 retires that chain: toneladas are a hire-and-compensation rating, not a weight. The budget below lets mass in only from a measured dimension, a count, or a weight with a sourced unit. ⟵ `seabed_mass_budget.py` (`make mass`; seed 20261107, N = 100,000); full report `output/mass_budget_report.md`.
 
-| Entity | Burthen (t) | Guns | Displacement (t) | Deadweight (t) | Non-ballast payload (t) |
-|---|---|---|---|---|---|
-| La Juliana | 860 | 32 | **1,390** [1,133–1,706] | 694 [550–874] | 450 [348–579] |
-| La Lavia | 728 | 25 | **1,177** [959–1,443] | 588 [466–738] | 381 [295–489] |
-| S.M. de Visón | 666 | 18 | **1,077** [878–1,320] | 538 [426–676] | 349 [270–448] |
-| **Combined** | 2,254 | 75 | **~3,640** [~2,970–4,469] | ~1,820 | ~1,180 |
+**The dimensions.** Lavia and Visón were measured at Lisbon in April 1588 (AGS GA 223/28, printed in Martin 1984 App. 11 p. 411): Lavia 51 × 18¼ × 10¾ codos (esloria, manga, puntal), Visón 47½ × 16 × 10. At a codo of 0.5747 m that is 29.3 × 10.5 × 6.2 m and 27.3 × 9.2 × 5.7 m. Juliana is not in that document; her dimensions are the v0.7 §28.2 envelope (about 30.1–31.0 × 10.6–11.1 × 6.3–6.5 m). Martin's "three percent" rating formula, recomputed, reproduces the stated ratings for Lavia and Anunciada exactly; Regazona's stated rating is 20% off her own dimensions, so the v0.7 interpolation that uses her is the weakest of Juliana's three estimates.
 
-⟵ `streedagh_hull.py` (seed 20260629, N = 200,000). All figures median [5th–95th percentile]. Headline: *La Juliana* ≈ **2.4× the Galeón Andalucía** by displacement (displacement-to-displacement is the honest comparison; the "46% larger" figure mismatches burthen against weight).
+**Layer 1, ordnance and munitions** (Lisbon muster counts × sourced units: libra 460 g, quintal 46 kg; shot calibres from the Sicilian ships' gun list; Juliana's weight-marked guns; Channel expenditure as a prior from *Trinidad de Escala*'s firing record):
+
+| Entity | Guns | Ordnance + munitions on the wreck day (t) | of which durable (guns, shot, lead) |
+|---|---|---|---|
+| La Juliana | 32 | 29 [23–37] | 26 [21–35] |
+| La Lavia | 25 | 23 [17–32] | 22 [16–31] |
+| S.M. de Visón | 18 | 17 [13–24] | 16 [11–22] |
+| **Combined** | 75 | **69 [54–93]** | 63 [48–87] |
+
+**Layer 2, the whole ship.** A hull-form model on the dimensions gives the laden displacement. The wreck-day load is then built up from its parts: the hull (a share of the laden displacement), ballast scaled from the Santa María de la Rosa's excavated mound (~90 t, Martin p. 150), what was left of the rations (Medina Sidonia's scale, pp. 349–350), the soldiers' arms, and siege cargo (the Valencera's May 1588 issue list, pp. 115–116, as the comparison; Juliana's carriage wheels set her minimum above zero). The draught on the day is derived, not assumed. Each part is then split into what stayed on the seabed and what broke away to the strand. Tonnes, median [5–95th]:
+
+| Entity | Laden displacement | Wreck-day draught (m) | Aboard (people excluded) | Ballast | **To the seabed** | To the strand |
+|---|---|---|---|---|---|---|
+| La Juliana | 845 [649–1,085] | 3.5 [2.8–4.3] | 552 [433–702] | 86 [53–119] | **324 [246–424]** | 224 [150–328] |
+| La Lavia | 758 [586–967] | 3.3 [2.6–4.0] | 482 [375–616] | 73 [45–101] | **280 [210–369]** | 198 [133–291] |
+| S.M. de Visón | 576 [445–735] | 3.2 [2.6–3.9] | 380 [296–483] | 57 [35–78] | **222 [166–292]** | 155 [104–226] |
+| **Combined** | 2,179 [1,682–2,783] | | 1,413 [1,104–1,801] | 215 [132–299] | **~826 [623–1,084]** | 577 [388–845] |
+
+**Headline: about 830 t went to the bottom on 25 September 1588, within a range of roughly 620–1,080 t.** Most of the rest, chiefly upper hull timber, rig and casks, came ashore. The figures are budgets, not finds: the five-to-ninety-five range is wide on purpose, because every assumption is drawn once and shared by the three ships.
+
+*Checks.* Put the May loading back aboard (six months' rations, munitions as mustered) and the ships come out at 0.87–1.0 of the laden displacement the hull model gives from dimensions alone. On the wreck day, with most stores consumed, they ride about 1.5 m above that line: light and tall-castled, the windage condition of v0.7 §9 on a lee shore.
+
+*What drives the answer, and how to test it.* In order: how much of the hull stayed on the seabed; how heavy the hull was (35–55% of laden displacement, an unsourced assumption); the ballast. Each has a field test: the extent and depth of buried timber at Sites 1–3; the ballast mounds measured as Martin measured the Rosa's (area × depth × packing); the Streedagh rudder's length, read for draught as Martin read the Tobermory rudder (p. 217); and issue lists for Juliana, Lavia and Visón like the Valencera's. The earlier iron-versus-magnetometer cross-check belonged to the retired chain and has to be redone on these figures once the anomaly extents are in the site record.
+
+These figures are carried in the site record as per-ship predictions, stated before any whole-site survey, each with its falsifier.
 
 **Ordnance (calibrated).** Same foundry (Dorino II Gioardi) as the *San Giorgio*, so the Genoese unit is fixed at **1 cantaro = 47.65 kg**. The 12 recovered Juliana guns are her **own defensive armament** (sakers, falcons, falconet, *petrieri*; ~6 t total; heaviest ~1 t) — light/medium, *not* the siege train. For scale, one Valencera siege gun = 2.5 t. Three functional tiers: (1) defensive armament (recovered ~6 t); (2) iron guns (~20 of 32, mostly unaccounted); (3) **siege train (cargo)** — evidenced by the carriage wheels, buried, unrecovered.
-
-**Surviving-mass budget** (bottom-up, cross-checked against the payload ceiling *and* against the ferrous footprints): combined durable material on the seabed ~**601 t (upper bound ~660)** — ballast ~474 t, iron ~76 t (matches the magnetometer scatters), bronze ~33 t, lead ~11 t, ceramic ~7 t, organics ~32 t; artefact-grade (metal+ceramic) ~125 t.
 
 **Complement / war grave.** Documented minimum 1,013 aboard (likely higher); de Cuéllar records >1,000 dead. Heavily manned *and* heavily equipped — combined troop-and-materiel transports. The site is a war grave; every downstream section holds that alongside the numbers.
 
@@ -199,7 +216,7 @@ More practically: the conventional approach cannot represent the Site 2 and Site
 
 **The forward model as the framework's payoff.** Every assessment reaches a point where it must say what to do next. The conventional response is recommendations driven by significance and condition: the site is important, it is under threat, therefore survey and protect. That is correct but not specific — it does not tell the manager which of the three sites to prioritise, which target within a site to hit first, or how to falsify a claim if the survey does not find what is expected. The forward model in Part III is specific: a buried heavy-ordnance tier is predicted at Site 1, seaward of the ballast mound, at the lowest stratigraphic horizon. If it is not there — if targeted excavation at that location finds neither guns nor mounting hardware — the L3/L4/L5 reconstruction is in trouble and must be revised. That is a scientific prediction, not a management recommendation, and the difference is what makes the assessment actionable rather than advisory.
 
-**Methodological transferability.** The inverse reconstruction method applied here — burthen in toneladas → internal volume → dimensions → displacement → deadweight → surviving-mass budget, Monte Carlo throughout — is applicable to any site where vessel tonnage is documented. It has been applied here to three hulls with full parameter uncertainty propagation and two independent cross-checks built in (manifest-vs-payload ceiling; modelled iron-vs-magnetometry footprint). The same method can be run on any of the other eight Levant-squadron losses, or on the Baltic bulk carriers of the Urcas squadron, giving a resource baseline before a single dive. More broadly, the signal-and-motion hierarchy (L0→L5) is domain-independent: the same six levels that order Streedagh from magnetic anomaly to invasion logistics can order a ringfort from soil anomaly to territorial administration, or a bronze hoard from XRF result to metalworking network. The framework scales without changing its structure. That is not a claim about universality; it is a claim about a useful abstraction level.
+**Methodological transferability.** The inverse reconstruction method applied here — measured dimensions → hull-form displacement → a wreck-day load built from sourced parts → seabed and strand, Monte Carlo throughout — is applicable to any site where a ship's dimensions or muster are documented. It has been applied here to three hulls with full parameter uncertainty propagation and a built-in consistency check (the May loading against the laden displacement); the iron-versus-magnetometry footprint check is to be redone on the new figures. The same method can be run on any of the other eight Levant-squadron losses, or on the Baltic bulk carriers of the Urcas squadron, giving a resource baseline before a single dive. More broadly, the signal-and-motion hierarchy (L0→L5) is domain-independent: the same six levels that order Streedagh from magnetic anomaly to invasion logistics can order a ringfort from soil anomaly to territorial administration, or a bronze hoard from XRF result to metalworking network. The framework scales without changing its structure. That is not a claim about universality; it is a claim about a useful abstraction level.
 - **[DEFERRED] References / Appendices** — App. E (hull reconstruction) and F (cargo estimates) = model write-ups + code.
 
 ---
@@ -211,7 +228,7 @@ More practically: the conventional approach cannot represent the Site 2 and Site
 | L0 Signals | geophysics; Birch & McElvogue 1999; Moore 2015; McElvogue 2002; Ridella 2016; AGS records | §5, §8, App. C |
 | L1 Traces | founder/cantara marks; timber records; carriage wheels; sediment obs | §7, §8 |
 | L2 Patterns | `streedagh_manifest.py` (density logic); footprints | §7, §9.7 |
-| L3 Entities | `streedagh_hull.py`, `streedagh_manifest.py`, `streedagh_guns.py`, `juliana_guns.py` | §6, §10, App. E–F |
+| L3 Entities | `seabed_mass_budget.py`, `juliana_guns.py`, `site_record/` | §6, §10, App. E–F |
 | — attribution | probabilistic model (L3.1) | §8 (novel) |
 | L4 Systems | functional specialisation; ACA career of La Juliana | §9.1, §9.6 |
 | L5 Behavioural | invasion logistics; Terceira template | §9.1, §13 |
