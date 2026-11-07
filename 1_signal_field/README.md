@@ -19,8 +19,10 @@
   (`Signal_Pipeline/signal_schema`, v0.4), built by `build_site_record.py` from the CSVs in `data/` and
   validated by the schema's own CLI. Design: `SITE_SIGNAL_DESIGN.md`. So far: the recovered guns, the
   Lisbon muster, what the divers reported at Site 1 and how it lay, path events (cast in Genoa 1570;
-  to the seabed 21-26 Sep 1588), attributions, mounting-station hypotheses and the break-up prediction.
-  Positions are absent until recovery coordinates are found. The v3 store above stays as the
+  to the seabed 21-26 Sep 1588), attributions, mounting-station hypotheses and the break-up prediction,
+  and Cuéllar's letter: 125 coded passages, each with its verbatim span in Crawford's translation
+  (`../3_cuellar_worldline/data/cuellar_spans.csv`), the coding as label inferences, and the 31
+  worldline nodes as dated event sources. Positions are absent until recovery coordinates are found. The v3 store above stays as the
   estimator's input until the site record replaces it.
 - `finds_study_plan.md`: the plan for the guns, rudder and anchor.
 - `SPEC_astro_tide_module.md`: spec for the astronomical and tidal module. The sun/moon half is now

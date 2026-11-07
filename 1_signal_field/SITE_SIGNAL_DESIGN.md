@@ -1,6 +1,6 @@
 # Streedagh as a site signal record: design pass
 
-Status: design, 2026-11-07. Nothing built yet. Target schema: `Signal_Pipeline/signal_schema` (v0.4
+Status: design, 2026-11-07. Built so far: guns, muster, Site 1 relations, Cuéllar's 125 (see `site_record/`). Target schema: `Signal_Pipeline/signal_schema` (v0.4
 prototype); its `docs/DESIGN.md` is the canonical design and this note only maps Streedagh onto it.
 Related: `robotics/senchas/docs/geometry.md` (the building-scale geometry), the legacy
 `LIFECYCLE_VECTOR_DESIGN.md` (March 2026) and `SignalObjectV3_Design.md` (from this site, July 2026).

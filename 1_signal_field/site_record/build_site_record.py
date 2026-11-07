@@ -9,9 +9,10 @@ script. Design: ../SITE_SIGNAL_DESIGN.md. Validate with the schema's own CLI:
     cd Signal_Pipeline/signal_schema && uv run signal-schema validate \
         ../../Archaeology/Armada/1_signal_field/site_record/streedagh_site.json
 
-What goes in (this round): the recovered guns, the Lisbon muster, the observed relations
-at Site 1, and the inferences built on them. Cuéllar's letter, the reconstruction's
-inputs and the magnetometry come next. Positions are absent: none are held yet.
+What goes in: the recovered guns, the Lisbon muster, the observed relations at Site 1,
+Cuéllar's letter (125 coded passages, from ../../3_cuellar_worldline/data/) and the
+inferences built on them. The reconstruction's inputs and the magnetometry come next.
+Positions are absent: none are held yet.
 
 Records follow the schema's rules: detections hold only what was observed or stated
 (verbatim where stated); every class word ("saker", "petriere", "Type C") is a label
@@ -24,6 +25,7 @@ import os
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 DATA = os.path.join(os.path.dirname(HERE), "data")
+CUELLAR = os.path.join(os.path.dirname(os.path.dirname(HERE)), "3_cuellar_worldline")
 OUT = os.path.join(HERE, "streedagh_site.json")
 P = "pipeline.streedagh"                      # producer name in every minted id
 CANTARO_KG = 47.65
@@ -45,8 +47,14 @@ def tau_year(year):
     return {"semantic": "time.tau", "interval": [tau(year + 1), tau(year)], "unit": "a"}
 
 
-def read(name):
-    with open(os.path.join(DATA, name), newline="", encoding="utf-8") as f:
+def tau_days(lo, hi):
+    """Gregorian dates 'YYYY-MM-DD', inclusive, as a τ interval (whole days)."""
+    a, b = [int(x) for x in lo.split("-")], [int(x) for x in hi.split("-")]
+    return {"semantic": "time.tau", "interval": [tau(b[0], b[1], b[2] + 1.0), tau(a[0], a[1], float(a[2]))], "unit": "a"}
+
+
+def read(name, folder=DATA):
+    with open(os.path.join(folder, name), newline="", encoding="utf-8") as f:
         return list(csv.DictReader(f))
 
 
@@ -69,6 +77,10 @@ AGENTS = [
     ("birch-mcelvogue", "person", "Steven Birch and Daniel M. McElvogue"),
     ("mcelvogue", "person", "Daniel M. McElvogue"),
     ("moore", "person", "Fionnbarr Moore and co-authors (2015)"),
+    ("cuellar", "person", "Francisco de Cuéllar, captain, survivor of La Lavia"),
+    ("duro", "person", "Cesáreo Fernández Duro (editor, La Armada Invencible, 1885)"),
+    ("crawford", "person", "Robert Crawford (translator, 1897)"),
+    ("exclassics", "organisation", "The Ex-classics Project (digital edition, 2021)"),
     ("dylan", "person", "Dylan Foley"),
     ("v1", "software", "build_site_record.py"),
     ("estimator", "software", "attribution_estimator.py v0.2"),
@@ -93,6 +105,7 @@ HELD = {
     "ridella": ("392021ca4496353dbbccfaca62c1130970afbe52d939a20e2e122b8ac8e81ced",
                 "sources/The_Cadiz-Delta_II_wreck_the_San_Giorgio.pdf"),
     "birch": ("5b6a87d9c7eda206a3a4f07f92b823d2bfd99abf09f4313717c96742db5046f1", "sources/ArmadaWrecksStreedagh.pdf"),
+    "cuellar": ("18086133cf90cb8c3063f05b44f6456f44fb47eaacb2727d22b0f2509feda18f", "sources/cuellar.pdf"),
 }
 
 
@@ -364,6 +377,8 @@ def build():
                  "falsifier": "light guns lie seaward of the keel line, or show no relation to mounting height",
                  "basis": [f"note:{P}/dylan-breakup-2026-11-07"]})
 
+    cuellar(B)
+
     # ── sources ──────────────────────────────────────────────────────────────
     def supports(src):
         return [i["inference_id"] for i in infs if i["kind"] == "attribution" and i["statement"]["source"] == src]
@@ -381,7 +396,8 @@ def build():
     B["sources"].append({**hdr("source"), "source_id": "src:streedagh-breakup-1588", "kind": "event",
                          "designations": [{"name": "the wreck and break-up of the three ships at Streedagh, Sept 1588",
                                            "from": "cat:birch-mcelvogue-1999"}],
-                         "support": [breakup_pred], "recipe": {"name": "breakup_sequence", "version": "0.1",
+                         "support": [breakup_pred] + supports("src:streedagh-breakup-1588"),
+                         "recipe": {"name": "breakup_sequence", "version": "0.1",
                                                                "params": {"stages": ["at anchor", "anchors fail", "driven onto the outer bar",
                                                                                      "heel shoreward", "castles collapse",
                                                                                      "release sorted by density", "burial"]}},
@@ -397,6 +413,130 @@ def build():
                                       "hypotheseis the highest mounted swivels might be found inshore from the keel - just a hypothesis "
                                       "but something to test")})
     return B
+
+
+# ── Cuéllar's letter (Antwerp, 4 Oct 1589) ───────────────────────────────────
+# Each coded passage in 3_cuellar_worldline/data/cuellar_signal_map.csv becomes one detection.
+# The verbatim span is the located passage in Crawford's translation (cuellar_spans.csv); the
+# coder's short gloss ("anchor") is not a quotation, so it lives in the coding inference.
+# A report of an event is not a physical trace: no signals are minted (decision D14). The
+# detections are attributed straight to event Sources, one per worldline node.
+TRUST = {"high": 0.85, "mid": 0.65, "low": 0.4}
+SECOND_HAND = {"S002", "S011", "S022", "S092", "S104", "S106", "S107", "S108", "S109", "S119",
+               "S124", "S131", "S148", "S150"}      # Cuéllar reports what he heard, not what he saw
+HEDGES = ("more than", "about", "would be", "appeared", "may have", "rather more", "(?)",
+          "not much fewer", "and odd")
+BREAKUP = {"S015": 0.85, "S017": 0.85, "S018": 0.85, "S019": 0.85, "S020": 0.7, "S021": 0.75}
+LAVIA = {"S010": ("the Judge Advocate General, Martín de Aranda, sailed in La Lavia "
+                  "(site assessment v2; source still to be cited)", 0.8),
+         "S013": ("La Lavia was of the Squadron of Levant; Cuéllar says his ship was 'from the Levant'", 0.75)}
+
+
+def cuellar(B):
+    acq, cats, dets, infs, srcs = (B["acquisitions"], B["catalogue_entries"], B["detections"],
+                                   B["inferences"], B["sources"])
+    coded = read("cuellar_signal_map.csv", os.path.join(CUELLAR, "data"))
+    spans = {r["signal_id"]: r for r in read("cuellar_spans.csv", os.path.join(CUELLAR, "data"))}
+    nodes = read("worldline_intervals.csv", os.path.join(CUELLAR, "output"))
+    a = f"acq:{P}/cuellar-letter-1589"
+
+    acq.append({**hdr("acquisition"), "acquisition_id": a, "acquisition_class": "historical_observation",
+                "perturbation": "none", "agents": [{"agent": A["cuellar"], "role": "observer"}],
+                "method": "written_report",
+                "epoch": {"semantic": "time.epoch", "value": "1589-10-04", "calendar": "gregorian",
+                          "basis": stated(["closing line: 'From the City of Antwerp, 4th October, 1589.'"])},
+                "footprint": {"absent": {"reason": "not_applicable"}},
+                "completeness": {"blind_spots": "one survivor's account, written about a year after the wreck; "
+                                                "tells what he saw, suffered or was told, and omits what did not concern him"},
+                "resolved": True, "raw": [],
+                "note": "the letter itself (Spanish) is reached through Duro's edition and Crawford's translation"})
+    cats += [
+        cat("duro-1885/cuellar", "Fernández Duro, La Armada Invencible, vol. 2 (Madrid, 1885): Cuéllar's letter",
+            "duro", "editor", "Cuéllar's letter", 1885, {"absent": {"reason": "not_held"}},
+            "printed edition of Armada documents; first publication of the letter", src_acq=[a]),
+        cat("crawford-1897/cuellar", "Crawford (trans.), Narrative of the Spanish Armada, by Captain Francisco de "
+            "Cuéllar (1897); Ex-classics Project edition, 2021", "crawford", "translator", "pp. 10-27", 1897,
+            {"text": "English running text, pages marked -n-"},
+            "English translation of Cuéllar's letter, made 'to follow closely the wording of the original Spanish'",
+            held="cuellar", src_entries=["cat:duro-1885/cuellar"],
+            fidelity="literal translation (translator's preface, 1897); page numbers are the Ex-classics edition's"),
+    ]
+
+    det_of = {}
+    for r in coded:
+        sid = r["signal_id"]
+        sp = spans[sid]
+        det = f"det:{P}/cuellar-letter-1589#{sid}"
+        det_of[sid] = det
+        text = sp["span"]
+        note = "Crawford's English, not Cuéllar's Spanish; running page headers removed"
+        if "[...]" in text:
+            note += "; two nearby passages joined, the gap marked [...]"
+        dets.append({**hdr("detection"), "detection_id": det, "acquisition": a,
+                     "read_from": ["cat:crawford-1897/cuellar"], "detected": True,
+                     "position": {"absent": {"reason": "not_stated_in_carrier"}}, "quantities": [], "descriptors": [],
+                     "extension": {"historical_observation": {
+                         "verbatim": {"text": text, "language": "en", "locator": f"Crawford trans., p. {sp['page']}",
+                                      "note": note},
+                         "observer_role": "reporter" if sid in SECOND_HAND else "eyewitness",
+                         "hedges": [h.strip() for h in HEDGES if h in text.lower() or h in text]}}})
+        stmt = {"signal_class": r["signal_class"], "episode": r["episode"], "gloss": r["anchor"],
+                "reading": r["inference"], "page_coded": r["page"]}
+        if r["motion_vector"] not in ("", "-"):
+            stmt["motion_vector"] = r["motion_vector"]
+        if r["magnitude"] not in ("", "-"):
+            stmt["magnitude"] = r["magnitude"]
+        if sp["covers_gloss"] == "partial":
+            stmt["note"] = "the verbatim span carries only part of the gloss; the rest is in the text nearby"
+        infs.append({**hdr("inference"), "inference_id": f"inf:{P}/cuellar/{sid}/coding", "agent": A["dylan"],
+                     "kind": "label", "subject": [det], "label": r["signal_class"], "statement": stmt,
+                     "credence": TRUST[r["trust"]],
+                     "falsifier": "the passage, read in Duro's Spanish, does not say this, or says it of another place or time",
+                     "basis": [det]})
+
+    # worldline nodes: one event Source each, dated by a source_event
+    for n in nodes:
+        src = f"src:cuellar/{n['node']}"
+        sup = []
+        for sid in [x for x in n["signals"].split(";") if x]:
+            iid = f"inf:{P}/cuellar/{sid}/at-{n['node']}"
+            p = TRUST[next(r["trust"] for r in coded if r["signal_id"] == sid)]
+            infs.append({**hdr("inference"), "inference_id": iid, "agent": A["dylan"], "kind": "attribution",
+                         "subject": [det_of[sid]],
+                         "statement": {"detection": det_of[sid], "source": src, "probability": p},
+                         "credence": p, "falsifier": "the passage describes a different moment of the journey",
+                         "basis": [det_of[sid], f"inf:{P}/cuellar/{sid}/coding"]})
+            sup.append(iid)
+        exact = n["lo_date"] == n["hi_date"]
+        ev = f"inf:{P}/cuellar/{n['node']}/when"
+        infs.append({**hdr("inference"), "inference_id": ev, "agent": A["dylan"], "kind": "source_event",
+                     "subject": [src],
+                     "statement": {"type": "creation", "outputs": [src], "tau": tau_days(n["lo_date"], n["hi_date"]),
+                                   "why": f"{n['lo_date']} to {n['hi_date']} (Gregorian), from the worldline's day counts"
+                                          + (f"; light test {n['light_test']}" if n["light_test"] else ""),
+                                   "note": "an event Source is created when it happens (the schema has no 'occurrence' type)"},
+                     "credence": 0.8 if exact else 0.6,
+                     "falsifier": "an independent dated record (English state papers, another survivor) puts this event outside the interval",
+                     "basis": [det_of[x] for x in n["signals"].split(";") if x]})
+        srcs.append({**hdr("source"), "source_id": src, "kind": "event",
+                     "designations": [{"name": n["event"], "from": "cat:crawford-1897/cuellar"}],
+                     "support": sup, "recipe": {"name": "cuellar_worldline", "version": "0.1",
+                                                "params": {"node": n["node"], "episode": n["episode"]}},
+                     "created_by": sup[0], "worldline": [ev], "status": "candidate"})
+
+    # his testimony also bears on the break-up and on his ship
+    for sid, p in BREAKUP.items():
+        infs.append({**hdr("inference"), "inference_id": f"inf:{P}/cuellar/{sid}/breakup", "agent": A["dylan"],
+                     "kind": "attribution", "subject": [det_of[sid]],
+                     "statement": {"detection": det_of[sid], "source": "src:streedagh-breakup-1588", "probability": p},
+                     "credence": p, "falsifier": "Cuéllar's wreck was not at Streedagh (the identification of his strand fails)",
+                     "basis": [det_of[sid]]})
+    for sid, (why, p) in LAVIA.items():
+        infs.append({**hdr("inference"), "inference_id": f"inf:{P}/cuellar/{sid}/ship", "agent": A["dylan"],
+                     "kind": "attribution", "subject": [det_of[sid]],
+                     "statement": {"detection": det_of[sid], "source": "src:ship-lavia", "probability": p, "note": why},
+                     "credence": p, "falsifier": "a muster or relación placing Cuéllar or the Judge Advocate in another ship",
+                     "basis": [det_of[sid], "cat:martin-1984/app4-p448"]})
 
 
 def main():
