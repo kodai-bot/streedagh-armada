@@ -174,6 +174,9 @@ PRIORS_FE = {
 }
 
 
+RAW = {}                                 # combined draws of the last layer2() run
+
+
 def layer2(rng, muster, l1, stone_frac):
     P = {k: draw2(rng, k) for k in PRIORS2}
     rfe = np.random.default_rng(SEED + 1)
@@ -213,7 +216,8 @@ def layer2(rng, muster, l1, stone_frac):
                  "ordnance_munitions": ordn, "ballast": ballast, "stores": stores, "personal_arms": arms,
                  "cargo": cargo, "hull_timber": timber, "rig": rig, "metal_fittings_anchors": metal,
                  "to_seabed": seabed, "to_strand": on_board - seabed, "displacement_may": may,
-                 "ferrous_to_seabed": ferrous}
+                 "ferrous_to_seabed": ferrous, "timber_to_seabed": timber * P["timber_retained"],
+                 "cargo_to_seabed": cargo * P["cargo_retained"], "guns_to_seabed": g, "lead_to_seabed": l1[ship]["lead"]}
         out[ship] = {k: q(v) for k, v in parts.items()}
         out[ship]["may_over_full"] = {k: round(v / 1000, 3) for k, v in q(may / full * 1000).items()}
         out[ship]["overladen_frac"] = round(float((day > full).mean()), 3)
@@ -226,6 +230,8 @@ def layer2(rng, muster, l1, stone_frac):
                 tot[k] = tot.get(k, 0) + v
         raw[ship] = seabed
     out["Combined"] = {k: q(v) for k, v in tot.items()}
+    RAW.clear()
+    RAW.update(tot)                      # the combined draws, for museum_capacity.py
     # which priors drive the combined seabed mass: Spearman rank correlation
     rs = ranks(tot["to_seabed"])
     drivers = {k: round(float(np.corrcoef(ranks(v), rs)[0, 1]), 3) for k, v in P.items()}
@@ -279,7 +285,7 @@ def shot_mass_kg(rng):
     return mean_kg, stone_frac, int(n.sum())
 
 
-def main():
+def main(write=True):
     rng = np.random.default_rng(SEED)
     muster = {SHIPS[r["ship"]]: r for r in read("lisbon_muster_1588.csv") if r["ship"] in SHIPS}
     rec = read("juliana_guns.csv")
@@ -329,6 +335,8 @@ def main():
     for k in ("shot_mean_kg", "stone_shot_mass_frac"):
         for s in ("median", "p05", "p95"):
             result[k][s] = round(result[k][s] / 1000, 3)
+    if not write:
+        return result
     os.makedirs(OUT, exist_ok=True)
     with open(os.path.join(OUT, "mass_budget.json"), "w", encoding="utf-8") as f:
         json.dump(result, f, indent=1)

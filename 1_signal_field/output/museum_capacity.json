@@ -1,0 +1,486 @@
+{
+ "generated_by": "museum_capacity.py",
+ "seed": 20261109,
+ "budget_seed": 20261107,
+ "draws": 100000,
+ "guns_documented": 75,
+ "guns_already_raised": 12,
+ "la_belle_chamber_m3": 56.9,
+ "basis_seabed": {
+  "to_seabed": {
+   "median": 826,
+   "p05": 623,
+   "p95": 1084
+  },
+  "timber_to_seabed": {
+   "median": 331,
+   "p05": 189,
+   "p95": 541
+  },
+  "ferrous_to_seabed": {
+   "median": 113,
+   "p05": 76,
+   "p95": 162
+  },
+  "ballast": {
+   "median": 215,
+   "p05": 132,
+   "p95": 299
+  },
+  "cargo_to_seabed": {
+   "median": 69,
+   "p05": 13,
+   "p95": 142
+  }
+ },
+ "priors": {
+  "oak_service_density": {
+   "dist": "uniform",
+   "params": [
+    0.75,
+    1.0
+   ],
+   "basis": "t/m3 of hull timber in service, seasoned to wet; turns the budget's timber mass into volume. HYPOTHESIS"
+  },
+  "basic_density_waterlogged": {
+   "dist": "uniform",
+   "params": [
+    0.25,
+    0.5
+   ],
+   "basis": "g/cm3 dry matter per wet volume after four centuries; with dry-matter density 1.5 g/cm3 it gives the wet bulk density. HYPOTHESIS"
+  },
+  "peg_tank_factor": {
+   "dist": "uniform",
+   "params": [
+    1.5,
+    3.0
+   ],
+   "basis": "tank volume per m3 of dismantled timber (packing, solution, access). The Bremen cog needed an 800 m3 tank for one ship. HYPOTHESIS"
+  },
+  "peg_years": {
+   "dist": "uniform",
+   "params": [
+    10.0,
+    20.0
+   ],
+   "basis": "years of PEG treatment: Vasa 17 (spray), Mary Rose about 19 (spray), Bremen cog about 18-20 (immersion); dismantled timbers may go faster"
+  },
+  "freeze_load_frac": {
+   "dist": "uniform",
+   "params": [
+    0.3,
+    0.6
+   ],
+   "basis": "share of a freeze-dryer chamber filled per load. HYPOTHESIS"
+  },
+  "freeze_cycle_months": {
+   "dist": "uniform",
+   "params": [
+    4.0,
+    6.0
+   ],
+   "basis": "months per freeze-drying load (La Belle, Texas A&M)"
+  },
+  "concretion_per_t_iron": {
+   "dist": "uniform",
+   "params": [
+    1.5,
+    3.0
+   ],
+   "basis": "tonnes of concretion (iron, corrosion products, sand, shell, trapped shot) per tonne of original iron. HYPOTHESIS"
+  },
+  "concretion_density": {
+   "dist": "uniform",
+   "params": [
+    1.8,
+    2.5
+   ],
+   "basis": "t/m3. HYPOTHESIS"
+  },
+  "electrolysis_tank_factor": {
+   "dist": "uniform",
+   "params": [
+    4.0,
+    10.0
+   ],
+   "basis": "tank volume per m3 of concreted iron (solution around each object). HYPOTHESIS"
+  },
+  "iron_treatment_years": {
+   "dist": "uniform",
+   "params": [
+    2.0,
+    5.0
+   ],
+   "basis": "years of desalination or electrolytic reduction per batch: about four years for cannon at the QAR lab; small finds faster"
+  },
+  "timber_stack_height_m": {
+   "dist": "uniform",
+   "params": [
+    0.4,
+    0.8
+   ],
+   "basis": "effective height of timber in wet storage or tanks per m2 of floor. HYPOTHESIS"
+  },
+  "gun_floor_m2": {
+   "dist": "uniform",
+   "params": [
+    6.0,
+    12.0
+   ],
+   "basis": "m2 of floor per gun in storage or display, with access and its carriage or cradle. HYPOTHESIS"
+  }
+ },
+ "brackets": [
+  {
+   "fraction": "1/8",
+   "guns_surviving": 9.4,
+   "guns_still_to_raise": 0.0,
+   "timber_m3": {
+    "median": 47,
+    "p05": 27,
+    "p95": 79
+   },
+   "timber_wet_t": {
+    "median": 53,
+    "p05": 30,
+    "p95": 89
+   },
+   "peg_tank_m3": {
+    "median": 104,
+    "p05": 54,
+    "p95": 192
+   },
+   "peg_years": {
+    "median": 15.0,
+    "p05": 10.5,
+    "p95": 19.5
+   },
+   "freeze_dryer_years_la_belle_size": {
+    "median": 0.8,
+    "p05": 0.4,
+    "p95": 1.5
+   },
+   "iron_t": {
+    "median": 14,
+    "p05": 9,
+    "p95": 20
+   },
+   "concretion_t": {
+    "median": 31,
+    "p05": 18,
+    "p95": 50
+   },
+   "electrolysis_tank_m3": {
+    "median": 99,
+    "p05": 49,
+    "p95": 189
+   },
+   "iron_treatment_years": {
+    "median": 3.5,
+    "p05": 2.2,
+    "p95": 4.9
+   },
+   "timber_wet_storage_m2": {
+    "median": 80,
+    "p05": 42,
+    "p95": 149
+   },
+   "gun_floor_m2": {
+    "median": 0,
+    "p05": 0,
+    "p95": 0
+   },
+   "lead_t": {
+    "median": 0.2,
+    "p05": 0.2,
+    "p95": 0.2
+   },
+   "ballast_t_not_curated": {
+    "median": 27,
+    "p05": 17,
+    "p95": 37
+   }
+  },
+  {
+   "fraction": "1/4",
+   "guns_surviving": 18.8,
+   "guns_still_to_raise": 6.8,
+   "timber_m3": {
+    "median": 95,
+    "p05": 53,
+    "p95": 158
+   },
+   "timber_wet_t": {
+    "median": 107,
+    "p05": 60,
+    "p95": 178
+   },
+   "peg_tank_m3": {
+    "median": 209,
+    "p05": 108,
+    "p95": 385
+   },
+   "peg_years": {
+    "median": 15.0,
+    "p05": 10.5,
+    "p95": 19.5
+   },
+   "freeze_dryer_years_la_belle_size": {
+    "median": 1.5,
+    "p05": 0.8,
+    "p95": 3.0
+   },
+   "iron_t": {
+    "median": 28,
+    "p05": 19,
+    "p95": 40
+   },
+   "concretion_t": {
+    "median": 62,
+    "p05": 37,
+    "p95": 101
+   },
+   "electrolysis_tank_m3": {
+    "median": 199,
+    "p05": 98,
+    "p95": 379
+   },
+   "iron_treatment_years": {
+    "median": 3.5,
+    "p05": 2.2,
+    "p95": 4.9
+   },
+   "timber_wet_storage_m2": {
+    "median": 160,
+    "p05": 83,
+    "p95": 297
+   },
+   "gun_floor_m2": {
+    "median": 61,
+    "p05": 43,
+    "p95": 79
+   },
+   "lead_t": {
+    "median": 0.4,
+    "p05": 0.3,
+    "p95": 0.4
+   },
+   "ballast_t_not_curated": {
+    "median": 54,
+    "p05": 33,
+    "p95": 75
+   }
+  },
+  {
+   "fraction": "1/3",
+   "guns_surviving": 25.0,
+   "guns_still_to_raise": 13.0,
+   "timber_m3": {
+    "median": 127,
+    "p05": 71,
+    "p95": 210
+   },
+   "timber_wet_t": {
+    "median": 142,
+    "p05": 80,
+    "p95": 237
+   },
+   "peg_tank_m3": {
+    "median": 278,
+    "p05": 143,
+    "p95": 513
+   },
+   "peg_years": {
+    "median": 15.0,
+    "p05": 10.5,
+    "p95": 19.5
+   },
+   "freeze_dryer_years_la_belle_size": {
+    "median": 2.1,
+    "p05": 1.0,
+    "p95": 4.0
+   },
+   "iron_t": {
+    "median": 38,
+    "p05": 25,
+    "p95": 54
+   },
+   "concretion_t": {
+    "median": 83,
+    "p05": 49,
+    "p95": 134
+   },
+   "electrolysis_tank_m3": {
+    "median": 265,
+    "p05": 131,
+    "p95": 505
+   },
+   "iron_treatment_years": {
+    "median": 3.5,
+    "p05": 2.2,
+    "p95": 4.9
+   },
+   "timber_wet_storage_m2": {
+    "median": 213,
+    "p05": 111,
+    "p95": 396
+   },
+   "gun_floor_m2": {
+    "median": 117,
+    "p05": 82,
+    "p95": 152
+   },
+   "lead_t": {
+    "median": 0.5,
+    "p05": 0.5,
+    "p95": 0.6
+   },
+   "ballast_t_not_curated": {
+    "median": 72,
+    "p05": 44,
+    "p95": 100
+   }
+  },
+  {
+   "fraction": "1/2",
+   "guns_surviving": 37.5,
+   "guns_still_to_raise": 25.5,
+   "timber_m3": {
+    "median": 190,
+    "p05": 107,
+    "p95": 316
+   },
+   "timber_wet_t": {
+    "median": 213,
+    "p05": 120,
+    "p95": 355
+   },
+   "peg_tank_m3": {
+    "median": 417,
+    "p05": 215,
+    "p95": 769
+   },
+   "peg_years": {
+    "median": 15.0,
+    "p05": 10.5,
+    "p95": 19.5
+   },
+   "freeze_dryer_years_la_belle_size": {
+    "median": 3.1,
+    "p05": 1.6,
+    "p95": 5.9
+   },
+   "iron_t": {
+    "median": 57,
+    "p05": 38,
+    "p95": 81
+   },
+   "concretion_t": {
+    "median": 125,
+    "p05": 74,
+    "p95": 202
+   },
+   "electrolysis_tank_m3": {
+    "median": 397,
+    "p05": 196,
+    "p95": 758
+   },
+   "iron_treatment_years": {
+    "median": 3.5,
+    "p05": 2.2,
+    "p95": 4.9
+   },
+   "timber_wet_storage_m2": {
+    "median": 320,
+    "p05": 167,
+    "p95": 594
+   },
+   "gun_floor_m2": {
+    "median": 229,
+    "p05": 161,
+    "p95": 298
+   },
+   "lead_t": {
+    "median": 0.8,
+    "p05": 0.7,
+    "p95": 0.8
+   },
+   "ballast_t_not_curated": {
+    "median": 108,
+    "p05": 66,
+    "p95": 149
+   }
+  },
+  {
+   "fraction": "all",
+   "guns_surviving": 75.0,
+   "guns_still_to_raise": 63.0,
+   "timber_m3": {
+    "median": 380,
+    "p05": 213,
+    "p95": 631
+   },
+   "timber_wet_t": {
+    "median": 427,
+    "p05": 239,
+    "p95": 711
+   },
+   "peg_tank_m3": {
+    "median": 834,
+    "p05": 430,
+    "p95": 1538
+   },
+   "peg_years": {
+    "median": 15.0,
+    "p05": 10.5,
+    "p95": 19.5
+   },
+   "freeze_dryer_years_la_belle_size": {
+    "median": 6.2,
+    "p05": 3.1,
+    "p95": 11.9
+   },
+   "iron_t": {
+    "median": 113,
+    "p05": 76,
+    "p95": 162
+   },
+   "concretion_t": {
+    "median": 250,
+    "p05": 148,
+    "p95": 403
+   },
+   "electrolysis_tank_m3": {
+    "median": 794,
+    "p05": 392,
+    "p95": 1515
+   },
+   "iron_treatment_years": {
+    "median": 3.5,
+    "p05": 2.2,
+    "p95": 4.9
+   },
+   "timber_wet_storage_m2": {
+    "median": 640,
+    "p05": 334,
+    "p95": 1189
+   },
+   "gun_floor_m2": {
+    "median": 566,
+    "p05": 397,
+    "p95": 737
+   },
+   "lead_t": {
+    "median": 1.5,
+    "p05": 1.4,
+    "p95": 1.7
+   },
+   "ballast_t_not_curated": {
+    "median": 215,
+    "p05": 132,
+    "p95": 299
+   }
+  }
+ ]
+}

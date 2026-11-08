@@ -21,6 +21,17 @@
   Checked by putting the May loading back aboard. Ranks which priors drive the answer.
   Report: `output/mass_budget_report.md`. Site assessment v2 L3.2 now quotes these figures (revised
   2026-11-07); the earlier ~601 t came from the superseded v1 tonnage-to-mass chain.
+- `museum_capacity.py` (`make museum`): capacity brackets for a museum and conservation facility if
+  1/8, 1/4, 1/3, 1/2 or all of the seabed material survives and is raised: guns, timber volume, PEG
+  tank and years, freeze-dryer years, concreted iron and its tanks, floor areas. From the budget's
+  own draws; every assumption stated. Report: `output/museum_capacity_report.md`. Sources:
+  [Vasa Museum](https://www.vasamuseet.se/en/research/conservation),
+  [Mary Rose Trust](https://maryrose.org/news/mary-rose-enters-final-phase-of-conservation/),
+  [Bremen cog](https://en.wikipedia.org/wiki/Bremen_cog) and its
+  [800 m³ tank](https://artsandculture.google.com/asset/the-800-cubic-metre-preservation-tank-for-the-cog-german-maritime-museum-dsm/ngH1Fn5b8Xit_A),
+  [La Belle freeze-dryer](https://stories.tamu.edu/?p=288715),
+  [QAR lab report](https://qaronline.org/20050708-qar-lab-report/open),
+  [National Museum of Ireland](https://museum.ie/ga-IE/Collections-Research/Conservation/Conservation-Projects/Armada-Cannons-and-Gun-Carriage-Wheel).
 - `site_record/` (`make site`): **the site record**, one bundle in the new signal schema
   (`Signal_Pipeline/signal_schema`, v0.4), built by `build_site_record.py` from the CSVs in `data/` and
   validated by the schema's own CLI. Design: `SITE_SIGNAL_DESIGN.md`. So far: the recovered guns, the

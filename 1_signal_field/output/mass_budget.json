@@ -397,6 +397,26 @@
      "p05": 25.47,
      "p95": 55.44
     },
+    "timber_to_seabed": {
+     "median": 115.25,
+     "p05": 65.75,
+     "p95": 188.04
+    },
+    "cargo_to_seabed": {
+     "median": 21.73,
+     "p05": 2.18,
+     "p95": 47.17
+    },
+    "guns_to_seabed": {
+     "median": 16.84,
+     "p05": 11.04,
+     "p95": 25.86
+    },
+    "lead_to_seabed": {
+     "median": 0.59,
+     "p05": 0.49,
+     "p95": 0.68
+    },
     "may_over_full": {
      "median": 0.872,
      "p05": 0.727,
@@ -505,6 +525,26 @@
      "median": 44.22,
      "p05": 30.38,
      "p95": 62.65
+    },
+    "timber_to_seabed": {
+     "median": 128.49,
+     "p05": 73.07,
+     "p95": 210.26
+    },
+    "cargo_to_seabed": {
+     "median": 25.32,
+     "p05": 8.95,
+     "p95": 48.24
+    },
+    "guns_to_seabed": {
+     "median": 20.47,
+     "p05": 15.13,
+     "p95": 28.75
+    },
+    "lead_to_seabed": {
+     "median": 0.47,
+     "p05": 0.39,
+     "p95": 0.54
     },
     "may_over_full": {
      "median": 0.956,
@@ -615,6 +655,26 @@
      "p05": 19.66,
      "p95": 44.11
     },
+    "timber_to_seabed": {
+     "median": 87.54,
+     "p05": 49.94,
+     "p95": 142.83
+    },
+    "cargo_to_seabed": {
+     "median": 21.73,
+     "p05": 2.18,
+     "p95": 47.17
+    },
+    "guns_to_seabed": {
+     "median": 12.13,
+     "p05": 7.95,
+     "p95": 18.62
+    },
+    "lead_to_seabed": {
+     "median": 0.47,
+     "p05": 0.39,
+     "p95": 0.54
+    },
     "may_over_full": {
      "median": 1.004,
      "p05": 0.837,
@@ -713,6 +773,26 @@
      "median": 113.11,
      "p05": 75.76,
      "p95": 161.96
+    },
+    "timber_to_seabed": {
+     "median": 331.44,
+     "p05": 188.91,
+     "p95": 540.8
+    },
+    "cargo_to_seabed": {
+     "median": 68.81,
+     "p05": 13.38,
+     "p95": 142.49
+    },
+    "guns_to_seabed": {
+     "median": 49.43,
+     "p05": 34.12,
+     "p95": 73.23
+    },
+    "lead_to_seabed": {
+     "median": 1.53,
+     "p05": 1.38,
+     "p95": 1.67
     }
    }
   },
