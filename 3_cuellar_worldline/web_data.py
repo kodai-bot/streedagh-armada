@@ -112,11 +112,6 @@ def main(out_path):
                for r in rows(os.path.join(HERE, "data", "cuellar_signal_map.csv"))}
     nights = [{k: (int(v) if k in ("days_after_wreck", "illum_pct") else v) for k, v in r.items()}
               for r in rows(os.path.join(HERE, "output", "moon_nights.csv"))]
-    view = json.load(open(os.path.join(ROOT, "1_signal_field", "data", "streedagh_view.geojson"), encoding="utf-8"))
-    wrecks = [{"id": f["properties"]["uari"], "class": f["properties"]["acquisition_class"],
-               "top": f["properties"].get("top_attribution"),
-               "lon": f["geometry"]["coordinates"][0], "lat": f["geometry"]["coordinates"][1]}
-              for f in view["features"]]
 
     data = {
         "generated": dt.date.today().isoformat(),
@@ -126,7 +121,6 @@ def main(out_path):
         "nights": nights,
         "moon": moon_illumination(),
         "findings": report_findings(),
-        "wrecks": wrecks,
     }
     with open(out_path, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, separators=(",", ":"))

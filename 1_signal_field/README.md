@@ -5,16 +5,11 @@
   production of a signal field. Part III is the forward arc (predicting what has not yet been
   observed).
 - `v01_to_V3_reconciliation.md`: how the signal store moved from the v0.1 schema to SignalObject v3.
-- `data/streedagh_store_v3.json`: the signal store. `attribution_estimator.py` computes each
-  signal's probability of belonging to each candidate ship and writes
-  `data/streedagh_store_v3_attributed.json` and `data/streedagh_view.geojson`. Re-running it
-  reproduces the saved attributions exactly, except for the `committed_at` timestamps (July 2026).
-- `juliana_guns.py` (`make guns`): turns `data/juliana_guns.csv` (the nine recovered guns attributed
-  to Dorino II Gioardi; Ridella et al. 2016 tab. 1) and `data/lisbon_muster_1588.csv` (the Levant
-  squadron at the Lisbon muster; Martin 1984 App. 4) into signals in the store. Gun positions are
-  unknown, so their geometry is null and the estimator skips the spatial term for them. Candidate
-  mounting stations are kept as tagged hypotheses, never as evidence. Report:
-  `output/juliana_guns_report.md`.
+- `data/juliana_guns.csv` (the nine recovered guns attributed to Dorino II Gioardi; Ridella et al. 2016
+  tab. 1), `data/lisbon_muster_1588.csv` (the Levant squadron at the Lisbon muster; Martin 1984 App. 4)
+  and `data/juliana_attribution_v3.csv` (each gun's posterior for Juliana from the retired v3
+  estimator, frozen 2026-11-08) feed the site record below. The v3 store, its estimator and its
+  GeoJSON view are in `../superseded/v3_store/`: their coordinates were placeholders.
 - `seabed_mass_budget.py` (`make mass`): what went to the bottom on the wreck day, layer by layer.
   Layer 1, done: ordnance and munitions per ship from the muster counts times sourced units (libra
   460 g, quintal 46 kg; shot calibres from the Sicilian ships' gun list, `data/levant_guns_1587.csv`;
@@ -36,8 +31,9 @@
   worldline nodes as dated event sources; the six ships measured in 1588 with metric conversions and
   the rating-formula check; the Sicilian gun list; layers 1 and 2 of the mass budget as per-ship predictions; the 1985
   magnetometer spreads (`data/magnetometry_1985.csv`) with the test of spread area against iron mass.
-  Positions are absent until recovery coordinates are found. The v3 store above stays as the
-  estimator's input until the site record replaces it.
+  Positions are absent until recovery coordinates are found.
+- `site_record/export_view.py` (`make view`): the site record as page data, `output/site_view.json`.
+  Every value is copied from a record and carries that record's id; positions are null.
 - `finds_study_plan.md`: the plan for the guns, rudder and anchor.
 - `SPEC_astro_tide_module.md`: spec for the astronomical and tidal module. The sun/moon half is now
   implemented in `../3_cuellar_worldline/sun_moon.py`; tides are not done yet.

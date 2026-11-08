@@ -1,0 +1,1551 @@
+{
+ "generated": "2026-11-08",
+ "record": {
+  "path": "1_signal_field/site_record/streedagh_site.json",
+  "sha256": "6971c99a158da6146d50fccf65d4dd55147e3a60feba135e45ce3aea7bf4fd5c",
+  "counts": {
+   "agents": 19,
+   "frames": 1,
+   "acquisitions": 8,
+   "catalogue_entries": 13,
+   "detections": 160,
+   "relations": 9,
+   "signals": 18,
+   "inferences": 303,
+   "sources": 36,
+   "field_notes": 1
+  }
+ },
+ "positions": {
+  "held": false,
+  "note": "no recovery or survey coordinates are held; every position is null and each record states why"
+ },
+ "sites": [
+  {
+   "id": "SITE1",
+   "ref": "det:pipeline.streedagh/magnetometer-1985#SITE1",
+   "signal": "sig:pipeline.streedagh/mag-SITE1",
+   "position": null,
+   "position_absent": "not_held",
+   "quantities": [
+    {
+     "value": 165.0,
+     "unit": "m",
+     "note": "extent of the magnetometer readings, longer side",
+     "basis": "stated"
+    },
+    {
+     "value": 40.0,
+     "unit": "m",
+     "note": "extent of the magnetometer readings, shorter side",
+     "basis": "stated"
+    },
+    {
+     "value": 3.8,
+     "unit": "m",
+     "note": "water depth, least (varies with tide and sand)",
+     "basis": "stated"
+    },
+    {
+     "value": 5.2,
+     "unit": "m",
+     "note": "water depth, greatest (varies with tide and sand)",
+     "basis": "stated"
+    },
+    {
+     "value": 0.8,
+     "unit": "m",
+     "note": "sand overburden, greatest measured, above the highest known part of the wreck",
+     "basis": "stated"
+    },
+    {
+     "value": 1.2,
+     "unit": "m",
+     "note": "depth of the lowest known point (a wrought iron anchor) below that highest point",
+     "basis": "stated"
+    }
+   ],
+   "verbatim": {
+    "text": "Site 1 is situated almost in the centre of the Strand, and is the closest inshore. The site is represented by a distinct pattern of magnetometer readings covering an area 165 by 40 m, suggesting a wide scatter of ferrous remains (Fig. 1c). Due to its exposed position the site is the most dynamic of the three. Its depth varies between 3.8 and 5.2 m depending on the state of the tide and sand accretion (all depths are mean averages for the centres of the sites as indicated by magnetometer readings). Sand overburden has reached a maximum measured depth of 0.8 m above the highest known part of the wreck and at its lowest point is 1.2 m below the same point, represented by a wrought iron anchor.",
+    "locator": "Birch & McElvogue 1999 p. 270",
+    "observer_role": "reporter"
+   },
+   "label_by_authors": "La Juliana",
+   "attributions": [
+    {
+     "to": "Juliana",
+     "p": 0.8,
+     "by": "dylan",
+     "ref": "inf:pipeline.streedagh/mag-SITE1/attr-juliana"
+    },
+    {
+     "to": "Vison",
+     "p": 0.05,
+     "by": "dylan",
+     "ref": "inf:pipeline.streedagh/mag-SITE1/attr-vison"
+    }
+   ]
+  },
+  {
+   "id": "SITE2",
+   "ref": "det:pipeline.streedagh/magnetometer-1985#SITE2",
+   "signal": "sig:pipeline.streedagh/mag-SITE2",
+   "position": null,
+   "position_absent": "not_held",
+   "quantities": [
+    {
+     "value": 15.0,
+     "unit": "m",
+     "note": "extent of the magnetometer readings, longer side",
+     "basis": "stated"
+    },
+    {
+     "value": 10.0,
+     "unit": "m",
+     "note": "extent of the magnetometer readings, shorter side",
+     "basis": "stated"
+    },
+    {
+     "value": 3.5,
+     "unit": "m",
+     "note": "water depth, least (varies with tide and sand)",
+     "basis": "stated"
+    },
+    {
+     "value": 5.0,
+     "unit": "m",
+     "note": "water depth, greatest (varies with tide and sand)",
+     "basis": "stated"
+    },
+    {
+     "value": 390.0,
+     "unit": "m",
+     "note": "distance south-west from Site 1",
+     "basis": "stated"
+    }
+   ],
+   "verbatim": {
+    "text": "Site 2. South-west of La Juliana's location, some 390 m distant, a smaller group of readings constitutes Site 2. It covers an area 15 by 10 m of high intensity magnetometer readings. The depth varies between 3.5 and 5.0 m.",
+    "locator": "Birch & McElvogue 1999 p. 271",
+    "observer_role": "reporter"
+   },
+   "label_by_authors": "Santa Maria de Vison",
+   "attributions": [
+    {
+     "to": "Vison",
+     "p": 0.65,
+     "by": "dylan",
+     "ref": "inf:pipeline.streedagh/mag-SITE2/attr-vison"
+    }
+   ]
+  },
+  {
+   "id": "SITE3",
+   "ref": "det:pipeline.streedagh/magnetometer-1985#SITE3",
+   "signal": "sig:pipeline.streedagh/mag-SITE3",
+   "position": null,
+   "position_absent": "not_held",
+   "quantities": [
+    {
+     "value": 270.0,
+     "unit": "m",
+     "note": "extent of the magnetometer readings, longer side",
+     "basis": "stated"
+    },
+    {
+     "value": 72.0,
+     "unit": "m",
+     "note": "extent of the magnetometer readings, shorter side",
+     "basis": "stated"
+    },
+    {
+     "value": 3.8,
+     "unit": "m",
+     "note": "water depth, least (varies with tide and sand)",
+     "basis": "stated"
+    },
+    {
+     "value": 5.0,
+     "unit": "m",
+     "note": "water depth, greatest (varies with tide and sand)",
+     "basis": "stated"
+    },
+    {
+     "value": 20.0,
+     "unit": "m",
+     "note": "distance south-west from Site 2",
+     "basis": "stated"
+    }
+   ],
+   "verbatim": {
+    "text": "Site 3. 20 m south-west from Site 2 is the largest group of readings, covering some 270 m by 72 m. The depth of water recorded on the site varies between 3.8 and 5.0 m depending on the state of the tide and the sand overburden. Monitoring of the sites indicates that Site 3 is where the maximum sand accretion occurs; this being influenced by Streedagh Point which acts as barrier to south-west wind generated swell.",
+    "locator": "Birch & McElvogue 1999 p. 271",
+    "observer_role": "reporter"
+   },
+   "label_by_authors": "La Lavia",
+   "attributions": [
+    {
+     "to": "Lavia",
+     "p": 0.72,
+     "by": "dylan",
+     "ref": "inf:pipeline.streedagh/mag-SITE3/attr-lavia"
+    },
+    {
+     "to": "Juliana",
+     "p": 0.05,
+     "by": "dylan",
+     "ref": "inf:pipeline.streedagh/mag-SITE3/attr-juliana"
+    }
+   ]
+  }
+ ],
+ "ships": {
+  "Juliana": {
+   "source": "src:ship-juliana",
+   "muster": {
+    "ref": "det:pipeline.streedagh/muster-1588#row-75",
+    "quantities": [
+     {
+      "value": 860,
+      "unit": "tons",
+      "basis": "stated"
+     },
+     {
+      "value": 325,
+      "unit": "1",
+      "note": "Soldiers",
+      "basis": "stated"
+     },
+     {
+      "value": 70,
+      "unit": "1",
+      "note": "Seamen",
+      "basis": "stated"
+     },
+     {
+      "value": 32,
+      "unit": "1",
+      "note": "Guns",
+      "basis": "stated"
+     },
+     {
+      "value": 1600,
+      "unit": "1",
+      "note": "Shot",
+      "basis": "stated"
+     },
+     {
+      "value": 67,
+      "unit": "quintales",
+      "note": "Powder",
+      "basis": "stated"
+     },
+     {
+      "value": 12,
+      "unit": "quintales",
+      "note": "Lead",
+      "basis": "stated"
+     },
+     {
+      "value": 12,
+      "unit": "quintales",
+      "note": "Match",
+      "basis": "stated"
+     }
+    ],
+    "verbatim": {
+     "text": "75 La Juliana | 860 | 325 | 70 | 32 | 1600 | 67 | 12 | 12 | 'Missing' list: X",
+     "locator": "Martin 1984 App. 4 p. 448 (Lisbon muster 9 May 1588; Paz Salas ed.)",
+     "observer_role": "compiler"
+    }
+   },
+   "dimensions": {
+    "ref": "inf:pipeline.streedagh/juliana/dimensions",
+    "measured": false,
+    "alternatives": [
+     {
+      "method": "interpolation",
+      "esloria_manga_puntal_m": [
+       30.38,
+       10.86,
+       6.34
+      ],
+      "codos": [
+       52.86,
+       18.89,
+       11.04
+      ]
+     },
+     {
+      "method": "ols",
+      "esloria_manga_puntal_m": [
+       30.14,
+       10.57,
+       6.27
+      ],
+      "codos": [
+       52.45,
+       18.4,
+       10.91
+      ]
+     },
+     {
+      "method": "cube_root",
+      "esloria_manga_puntal_m": [
+       30.98,
+       11.08,
+       6.53
+      ],
+      "codos": [
+       53.9,
+       19.29,
+       11.36
+      ]
+     }
+    ],
+    "residue": "Juliana's own measurements are not in any held source; 716.7 machos is 860 / 1.2"
+   }
+  },
+  "Lavia": {
+   "source": "src:ship-lavia",
+   "muster": {
+    "ref": "det:pipeline.streedagh/muster-1588#row-69",
+    "quantities": [
+     {
+      "value": 728,
+      "unit": "tons",
+      "basis": "stated"
+     },
+     {
+      "value": 203,
+      "unit": "1",
+      "note": "Soldiers",
+      "basis": "stated"
+     },
+     {
+      "value": 71,
+      "unit": "1",
+      "note": "Seamen",
+      "basis": "stated"
+     },
+     {
+      "value": 25,
+      "unit": "1",
+      "note": "Guns",
+      "basis": "stated"
+     },
+     {
+      "value": 1250,
+      "unit": "1",
+      "note": "Shot",
+      "basis": "stated"
+     },
+     {
+      "value": 39,
+      "unit": "quintales",
+      "note": "Powder",
+      "basis": "stated"
+     },
+     {
+      "value": 15,
+      "unit": "quintales",
+      "note": "Lead",
+      "basis": "stated"
+     },
+     {
+      "value": 12,
+      "unit": "quintales",
+      "note": "Match",
+      "basis": "stated"
+     }
+    ],
+    "verbatim": {
+     "text": "69 La Lavia (almiranta) | 728 | 203 | 71 | 25 | 1250 | 39 | 15 | 12 | 'Missing' list: X",
+     "locator": "Martin 1984 App. 4 p. 448 (Lisbon muster 9 May 1588; Paz Salas ed.)",
+     "observer_role": "compiler"
+    }
+   },
+   "dimensions": {
+    "ref": "det:pipeline.streedagh/ratings-1588#69",
+    "measured": true,
+    "metres": [
+     {
+      "value": 29.309,
+      "unit": "m",
+      "note": "esloria in metres",
+      "basis": "derived"
+     },
+     {
+      "value": 10.488,
+      "unit": "m",
+      "note": "manga in metres",
+      "basis": "derived"
+     },
+     {
+      "value": 6.178,
+      "unit": "m",
+      "note": "puntal in metres",
+      "basis": "derived"
+     }
+    ]
+   }
+  },
+  "Vison": {
+   "source": "src:ship-vison",
+   "muster": {
+    "ref": "det:pipeline.streedagh/muster-1588#row-76",
+    "quantities": [
+     {
+      "value": 666,
+      "unit": "tons",
+      "basis": "stated"
+     },
+     {
+      "value": 236,
+      "unit": "1",
+      "note": "Soldiers",
+      "basis": "stated"
+     },
+     {
+      "value": 71,
+      "unit": "1",
+      "note": "Seamen",
+      "basis": "stated"
+     },
+     {
+      "value": 18,
+      "unit": "1",
+      "note": "Guns",
+      "basis": "stated"
+     },
+     {
+      "value": 900,
+      "unit": "1",
+      "note": "Shot",
+      "basis": "stated"
+     },
+     {
+      "value": 32,
+      "unit": "quintales",
+      "note": "Powder",
+      "basis": "stated"
+     },
+     {
+      "value": 12,
+      "unit": "quintales",
+      "note": "Lead",
+      "basis": "stated"
+     },
+     {
+      "value": 10,
+      "unit": "quintales",
+      "note": "Match",
+      "basis": "stated"
+     }
+    ],
+    "verbatim": {
+     "text": "76 Santa Maria de Vison | 666 | 236 | 71 | 18 | 900 | 32 | 12 | 10 | 'Missing' list: X",
+     "locator": "Martin 1984 App. 4 p. 449 (Lisbon muster 9 May 1588; Paz Salas ed.); v0.7 emends tons to 566",
+     "observer_role": "compiler"
+    }
+   },
+   "dimensions": {
+    "ref": "det:pipeline.streedagh/ratings-1588#76",
+    "measured": true,
+    "metres": [
+     {
+      "value": 27.297,
+      "unit": "m",
+      "note": "esloria in metres",
+      "basis": "derived"
+     },
+     {
+      "value": 9.195,
+      "unit": "m",
+      "note": "manga in metres",
+      "basis": "derived"
+     },
+     {
+      "value": 5.747,
+      "unit": "m",
+      "note": "puntal in metres",
+      "basis": "derived"
+     }
+    ]
+   }
+  }
+ },
+ "guns": [
+  {
+   "id": "G-SEVERO",
+   "ref": "det:pipeline.streedagh/recovery-1985#G-SEVERO",
+   "signal": "sig:pipeline.streedagh/G-SEVERO",
+   "recovered": "1985",
+   "position": null,
+   "class_by_compiler": "Heavy Saker",
+   "mass": [
+    {
+     "value": 20.82,
+     "unit": "cantara",
+     "basis": "stated"
+    },
+    {
+     "value": 992.0,
+     "unit": "kg",
+     "basis": "derived"
+    }
+   ],
+   "attributions": [
+    {
+     "to": "src:dorino-gioardi-workshop",
+     "p": 0.9,
+     "by": "v1",
+     "ref": "inf:pipeline.streedagh/G-SEVERO/attr-dorino"
+    },
+    {
+     "to": "Juliana",
+     "p": 0.9994,
+     "by": "estimator",
+     "ref": "inf:pipeline.streedagh/G-SEVERO/attr-juliana"
+    }
+   ]
+  },
+  {
+   "id": "G-GBATTISTA",
+   "ref": "det:pipeline.streedagh/recovery-2015#G-GBATTISTA",
+   "signal": "sig:pipeline.streedagh/G-GBATTISTA",
+   "recovered": "2015",
+   "position": null,
+   "class_by_compiler": "Heavy Saker",
+   "mass": [
+    {
+     "absent": "not_stated_in_carrier",
+     "unit": null,
+     "note": "weight mark partly illegible: '19.??' cantara",
+     "basis": null
+    },
+    {
+     "interval": [
+      905.0,
+      952.0
+     ],
+     "unit": "kg",
+     "basis": "derived"
+    }
+   ],
+   "attributions": [
+    {
+     "to": "src:dorino-gioardi-workshop",
+     "p": 0.9,
+     "by": "v1",
+     "ref": "inf:pipeline.streedagh/G-GBATTISTA/attr-dorino"
+    },
+    {
+     "to": "Juliana",
+     "p": 0.9895,
+     "by": "estimator",
+     "ref": "inf:pipeline.streedagh/G-GBATTISTA/attr-juliana"
+    }
+   ]
+  },
+  {
+   "id": "G-MATRONA",
+   "ref": "det:pipeline.streedagh/recovery-2015#G-MATRONA",
+   "signal": "sig:pipeline.streedagh/G-MATRONA",
+   "recovered": "2015",
+   "position": null,
+   "class_by_compiler": "Heavy Falcon",
+   "mass": [
+    {
+     "value": 11.12,
+     "unit": "cantara",
+     "basis": "stated"
+    },
+    {
+     "value": 530.0,
+     "unit": "kg",
+     "basis": "derived"
+    }
+   ],
+   "attributions": [
+    {
+     "to": "src:dorino-gioardi-workshop",
+     "p": 0.9,
+     "by": "v1",
+     "ref": "inf:pipeline.streedagh/G-MATRONA/attr-dorino"
+    },
+    {
+     "to": "Juliana",
+     "p": 0.9995,
+     "by": "estimator",
+     "ref": "inf:pipeline.streedagh/G-MATRONA/attr-juliana"
+    }
+   ]
+  },
+  {
+   "id": "G-ILARIA",
+   "ref": "det:pipeline.streedagh/recovery-2015#G-ILARIA",
+   "signal": "sig:pipeline.streedagh/G-ILARIA",
+   "recovered": "2015",
+   "position": null,
+   "class_by_compiler": "Heavy Falcon",
+   "mass": [
+    {
+     "value": 10.74,
+     "unit": "cantara",
+     "basis": "stated"
+    },
+    {
+     "value": 512.0,
+     "unit": "kg",
+     "basis": "derived"
+    }
+   ],
+   "attributions": [
+    {
+     "to": "src:dorino-gioardi-workshop",
+     "p": 0.9,
+     "by": "v1",
+     "ref": "inf:pipeline.streedagh/G-ILARIA/attr-dorino"
+    },
+    {
+     "to": "Juliana",
+     "p": 0.9994,
+     "by": "estimator",
+     "ref": "inf:pipeline.streedagh/G-ILARIA/attr-juliana"
+    }
+   ]
+  },
+  {
+   "id": "G-SEBASTIANO",
+   "ref": "det:pipeline.streedagh/recovery-2015#G-SEBASTIANO",
+   "signal": "sig:pipeline.streedagh/G-SEBASTIANO",
+   "recovered": "2015",
+   "position": null,
+   "class_by_compiler": "Medium Falcon",
+   "mass": [
+    {
+     "value": 8.54,
+     "unit": "cantara",
+     "basis": "stated"
+    },
+    {
+     "value": 407.0,
+     "unit": "kg",
+     "basis": "derived"
+    }
+   ],
+   "attributions": [
+    {
+     "to": "src:dorino-gioardi-workshop",
+     "p": 0.9,
+     "by": "v1",
+     "ref": "inf:pipeline.streedagh/G-SEBASTIANO/attr-dorino"
+    },
+    {
+     "to": "Juliana",
+     "p": 0.9994,
+     "by": "estimator",
+     "ref": "inf:pipeline.streedagh/G-SEBASTIANO/attr-juliana"
+    }
+   ]
+  },
+  {
+   "id": "G-ROCCO",
+   "ref": "det:pipeline.streedagh/recovery-2015#G-ROCCO",
+   "signal": "sig:pipeline.streedagh/G-ROCCO",
+   "recovered": "2015",
+   "position": null,
+   "class_by_compiler": "Medium Falcon",
+   "mass": [
+    {
+     "absent": "not_stated_in_carrier",
+     "unit": null,
+     "note": "weight mark partly illegible: '?.74' cantara",
+     "basis": null
+    },
+    {
+     "interval": [
+      321.0,
+      416.0
+     ],
+     "unit": "kg",
+     "basis": "derived"
+    }
+   ],
+   "attributions": [
+    {
+     "to": "src:dorino-gioardi-workshop",
+     "p": 0.9,
+     "by": "v1",
+     "ref": "inf:pipeline.streedagh/G-ROCCO/attr-dorino"
+    },
+    {
+     "to": "Juliana",
+     "p": 0.9895,
+     "by": "estimator",
+     "ref": "inf:pipeline.streedagh/G-ROCCO/attr-juliana"
+    }
+   ]
+  },
+  {
+   "id": "G-GIOVANNI",
+   "ref": "det:pipeline.streedagh/recovery-2015#G-GIOVANNI",
+   "signal": "sig:pipeline.streedagh/G-GIOVANNI",
+   "recovered": "2015",
+   "position": null,
+   "class_by_compiler": "Falconet",
+   "mass": [
+    {
+     "value": 3.88,
+     "unit": "cantara",
+     "basis": "stated"
+    },
+    {
+     "value": 185.0,
+     "unit": "kg",
+     "basis": "derived"
+    }
+   ],
+   "attributions": [
+    {
+     "to": "src:dorino-gioardi-workshop",
+     "p": 0.9,
+     "by": "v1",
+     "ref": "inf:pipeline.streedagh/G-GIOVANNI/attr-dorino"
+    },
+    {
+     "to": "Juliana",
+     "p": 0.9994,
+     "by": "estimator",
+     "ref": "inf:pipeline.streedagh/G-GIOVANNI/attr-juliana"
+    }
+   ]
+  },
+  {
+   "id": "G-PETRIERE-F",
+   "ref": "det:pipeline.streedagh/recovery-1985#G-PETRIERE-F",
+   "signal": "sig:pipeline.streedagh/G-PETRIERE-F",
+   "recovered": "1985",
+   "position": null,
+   "class_by_compiler": "Medium Petriere",
+   "mass": [
+    {
+     "interval": [
+      475.0,
+      570.0
+     ],
+     "unit": "kg",
+     "basis": "inference"
+    }
+   ],
+   "attributions": [
+    {
+     "to": "src:dorino-gioardi-workshop",
+     "p": 0.7,
+     "by": "v1",
+     "ref": "inf:pipeline.streedagh/G-PETRIERE-F/attr-dorino"
+    },
+    {
+     "to": "Juliana",
+     "p": 0.7102,
+     "by": "estimator",
+     "ref": "inf:pipeline.streedagh/G-PETRIERE-F/attr-juliana"
+    }
+   ]
+  },
+  {
+   "id": "G-PETRIERE-2",
+   "ref": "det:pipeline.streedagh/recovery-1985#G-PETRIERE-2",
+   "signal": "sig:pipeline.streedagh/G-PETRIERE-2",
+   "recovered": "1985",
+   "position": null,
+   "class_by_compiler": "Medium Petriere",
+   "mass": [
+    {
+     "interval": [
+      475.0,
+      570.0
+     ],
+     "unit": "kg",
+     "basis": "inference"
+    }
+   ],
+   "attributions": [
+    {
+     "to": "src:dorino-gioardi-workshop",
+     "p": 0.7,
+     "by": "v1",
+     "ref": "inf:pipeline.streedagh/G-PETRIERE-2/attr-dorino"
+    },
+    {
+     "to": "Juliana",
+     "p": 0.7102,
+     "by": "estimator",
+     "ref": "inf:pipeline.streedagh/G-PETRIERE-2/attr-juliana"
+    }
+   ]
+  }
+ ],
+ "site1": {
+  "observations": [
+   {
+    "id": "CONCRETION",
+    "ref": "det:pipeline.streedagh/site1-survey#CONCRETION",
+    "verbatim": {
+     "text": "Held within the concretions are iron and stone shot of varying calibre, and lead sheeting.",
+     "locator": "Birch & McElvogue 1999 p. 271 (Site 1)",
+     "observer_role": "reporter"
+    }
+   },
+   {
+    "id": "ANCHORS",
+    "ref": "det:pipeline.streedagh/site1-survey#ANCHORS",
+    "verbatim": {
+     "text": "Sitting on top of this concretion were three anchors and three bronze guns.",
+     "locator": "Birch & McElvogue 1999 p. 271 (Site 1)",
+     "observer_role": "reporter"
+    }
+   },
+   {
+    "id": "GUNS3",
+    "ref": "det:pipeline.streedagh/site1-survey#GUNS3",
+    "verbatim": {
+     "text": "Sitting on top of this concretion were three anchors and three bronze guns. The three guns have been lifted and are being conserved by the National Museum of Ireland.",
+     "locator": "Birch & McElvogue 1999 p. 271 (Site 1)",
+     "observer_role": "reporter"
+    }
+   },
+   {
+    "id": "RUDDER",
+    "ref": "det:pipeline.streedagh/site1-survey#RUDDER",
+    "verbatim": {
+     "text": "At a later date the continued exportation of sand from the site uncovered the rudder of the vessel overlying another bronze gun with lifting dolphins (Fig. 6).",
+     "locator": "Birch & McElvogue 1999 p. 271 (Site 1)",
+     "observer_role": "reporter"
+    }
+   },
+   {
+    "id": "GUN-UNDER-RUDDER",
+    "ref": "det:pipeline.streedagh/site1-survey#GUN-UNDER-RUDDER",
+    "verbatim": {
+     "text": "…the rudder of the vessel overlying another bronze gun with lifting dolphins (Fig. 6).",
+     "locator": "Birch & McElvogue 1999 p. 271 (Site 1)",
+     "observer_role": "reporter"
+    }
+   },
+   {
+    "id": "WHEELS",
+    "ref": "det:pipeline.streedagh/site1-survey#WHEELS",
+    "verbatim": {
+     "text": "A further four wooden spoked wheels, making a total of five, were also recorded.",
+     "locator": "Birch & McElvogue 1999 p. 271 (Site 1)",
+     "observer_role": "reporter"
+    }
+   }
+  ],
+  "relations": [
+   {
+    "a": "ANCHORS",
+    "b": "CONCRETION",
+    "type": "overlies",
+    "ref": "rel:pipeline.streedagh/site1-1"
+   },
+   {
+    "a": "GUNS3",
+    "b": "CONCRETION",
+    "type": "overlies",
+    "ref": "rel:pipeline.streedagh/site1-2"
+   },
+   {
+    "a": "RUDDER",
+    "b": "GUN-UNDER-RUDDER",
+    "type": "overlies",
+    "ref": "rel:pipeline.streedagh/site1-3"
+   },
+   {
+    "a": "CONCRETION",
+    "b": "SITE1",
+    "type": "within",
+    "ref": "rel:pipeline.streedagh/mag-site1-1"
+   },
+   {
+    "a": "ANCHORS",
+    "b": "SITE1",
+    "type": "within",
+    "ref": "rel:pipeline.streedagh/mag-site1-2"
+   },
+   {
+    "a": "GUNS3",
+    "b": "SITE1",
+    "type": "within",
+    "ref": "rel:pipeline.streedagh/mag-site1-3"
+   },
+   {
+    "a": "RUDDER",
+    "b": "SITE1",
+    "type": "within",
+    "ref": "rel:pipeline.streedagh/mag-site1-4"
+   },
+   {
+    "a": "GUN-UNDER-RUDDER",
+    "b": "SITE1",
+    "type": "within",
+    "ref": "rel:pipeline.streedagh/mag-site1-5"
+   },
+   {
+    "a": "WHEELS",
+    "b": "SITE1",
+    "type": "within",
+    "ref": "rel:pipeline.streedagh/mag-site1-6"
+   }
+  ]
+ },
+ "predictions": [
+  {
+   "ref": "inf:pipeline.streedagh/breakup/prediction-inshore",
+   "subject": "9 records",
+   "observable": "signed distance inshore of each wreck's keel line, in the site frame (frm:ITM), for every recovered gun with a recovery position",
+   "expected": "distance inshore increases with mounting height (rank correlation > 0): castle pieces inshore, heavy low pieces near the keel and ballast",
+   "stated_before": "2026-11-07; no recovery positions held when stated",
+   "credence": 0.55,
+   "falsifier": "light guns lie seaward of the keel line, or show no relation to mounting height",
+   "check": null
+  },
+  {
+   "ref": "inf:pipeline.streedagh/mass-budget/layer1-lavia",
+   "subject": [
+    "src:ship-lavia"
+   ],
+   "observable": "mass of guns, great shot and lead from Lavia's wreck, once the site is fully surveyed",
+   "expected": {
+    "ordnance_and_munitions_to_seabed": {
+     "value": 23.33,
+     "interval": [
+      17.45,
+      32.38
+     ],
+     "unit": "t",
+     "basis": "derived"
+    },
+    "durable_guns_shot_lead": {
+     "value": 21.52,
+     "interval": [
+      15.64,
+      30.55
+     ],
+     "unit": "t",
+     "basis": "derived"
+    },
+    "guns": {
+     "value": 16.84,
+     "interval": [
+      11.04,
+      25.86
+     ],
+     "unit": "t",
+     "basis": "derived"
+    },
+    "shot": {
+     "value": 4.06,
+     "interval": [
+      3.1,
+      5.12
+     ],
+     "unit": "t",
+     "basis": "derived"
+    },
+    "powder": {
+     "value": 1.39,
+     "interval": [
+      1.11,
+      1.67
+     ],
+     "unit": "t",
+     "basis": "derived"
+    },
+    "lead": {
+     "value": 0.59,
+     "interval": [
+      0.49,
+      0.68
+     ],
+     "unit": "t",
+     "basis": "derived"
+    },
+    "match": {
+     "value": 0.43,
+     "interval": [
+      0.34,
+      0.51
+     ],
+     "unit": "t",
+     "basis": "derived"
+    }
+   },
+   "stated_before": "2026-11-07; no whole-site inventory exists",
+   "credence": 0.6,
+   "falsifier": "a full inventory above the 95th percentile, or a record that guns or munitions were taken off the ship between the May muster and the wreck",
+   "check": null
+  },
+  {
+   "ref": "inf:pipeline.streedagh/mass-budget/layer1-juliana",
+   "subject": [
+    "src:ship-juliana"
+   ],
+   "observable": "mass of guns, great shot and lead from Juliana's wreck, once the site is fully surveyed",
+   "expected": {
+    "ordnance_and_munitions_to_seabed": {
+     "value": 28.99,
+     "interval": [
+      23.47,
+      37.36
+     ],
+     "unit": "t",
+     "basis": "derived"
+    },
+    "durable_guns_shot_lead": {
+     "value": 26.17,
+     "interval": [
+      20.67,
+      34.52
+     ],
+     "unit": "t",
+     "basis": "derived"
+    },
+    "guns": {
+     "value": 20.47,
+     "interval": [
+      15.13,
+      28.75
+     ],
+     "unit": "t",
+     "basis": "derived"
+    },
+    "shot": {
+     "value": 5.2,
+     "interval": [
+      3.97,
+      6.55
+     ],
+     "unit": "t",
+     "basis": "derived"
+    },
+    "powder": {
+     "value": 2.39,
+     "interval": [
+      1.9,
+      2.87
+     ],
+     "unit": "t",
+     "basis": "derived"
+    },
+    "lead": {
+     "value": 0.47,
+     "interval": [
+      0.39,
+      0.54
+     ],
+     "unit": "t",
+     "basis": "derived"
+    },
+    "match": {
+     "value": 0.43,
+     "interval": [
+      0.34,
+      0.51
+     ],
+     "unit": "t",
+     "basis": "derived"
+    }
+   },
+   "stated_before": "2026-11-07; no whole-site inventory exists",
+   "credence": 0.6,
+   "falsifier": "a full inventory above the 95th percentile, or a record that guns or munitions were taken off the ship between the May muster and the wreck",
+   "check": null
+  },
+  {
+   "ref": "inf:pipeline.streedagh/mass-budget/layer1-vison",
+   "subject": [
+    "src:ship-vison"
+   ],
+   "observable": "mass of guns, great shot and lead from Vison's wreck, once the site is fully surveyed",
+   "expected": {
+    "ordnance_and_munitions_to_seabed": {
+     "value": 17.04,
+     "interval": [
+      12.79,
+      23.54
+     ],
+     "unit": "t",
+     "basis": "derived"
+    },
+    "durable_guns_shot_lead": {
+     "value": 15.54,
+     "interval": [
+      11.31,
+      22.04
+     ],
+     "unit": "t",
+     "basis": "derived"
+    },
+    "guns": {
+     "value": 12.13,
+     "interval": [
+      7.95,
+      18.62
+     ],
+     "unit": "t",
+     "basis": "derived"
+    },
+    "shot": {
+     "value": 2.93,
+     "interval": [
+      2.23,
+      3.68
+     ],
+     "unit": "t",
+     "basis": "derived"
+    },
+    "powder": {
+     "value": 1.14,
+     "interval": [
+      0.91,
+      1.37
+     ],
+     "unit": "t",
+     "basis": "derived"
+    },
+    "lead": {
+     "value": 0.47,
+     "interval": [
+      0.39,
+      0.54
+     ],
+     "unit": "t",
+     "basis": "derived"
+    },
+    "match": {
+     "value": 0.36,
+     "interval": [
+      0.28,
+      0.43
+     ],
+     "unit": "t",
+     "basis": "derived"
+    }
+   },
+   "stated_before": "2026-11-07; no whole-site inventory exists",
+   "credence": 0.6,
+   "falsifier": "a full inventory above the 95th percentile, or a record that guns or munitions were taken off the ship between the May muster and the wreck",
+   "check": null
+  },
+  {
+   "ref": "inf:pipeline.streedagh/mass-budget/layer2-lavia",
+   "subject": [
+    "src:ship-lavia"
+   ],
+   "observable": "mass of Lavia's wreck on the seabed (ballast mound, lower hull, metal, guns and cargo), once the site is surveyed; and her ballast mound alone",
+   "expected": {
+    "to_seabed": {
+     "value": 280.05,
+     "interval": [
+      209.6,
+      369.22
+     ],
+     "unit": "t",
+     "basis": "derived"
+    },
+    "to_strand": {
+     "value": 198.25,
+     "interval": [
+      132.72,
+      291.1
+     ],
+     "unit": "t",
+     "basis": "derived"
+    },
+    "on_board_excl_people": {
+     "value": 481.73,
+     "interval": [
+      374.59,
+      616.04
+     ],
+     "unit": "t",
+     "basis": "derived"
+    },
+    "ballast": {
+     "value": 72.85,
+     "interval": [
+      44.77,
+      100.92
+     ],
+     "unit": "t",
+     "basis": "derived"
+    },
+    "hull_timber_aboard": {
+     "value": 275.72,
+     "interval": [
+      195.71,
+      382.6
+     ],
+     "unit": "t",
+     "basis": "derived"
+    },
+    "ferrous_to_seabed": {
+     "value": 38.5,
+     "interval": [
+      25.47,
+      55.44
+     ],
+     "unit": "t",
+     "basis": "derived"
+    }
+   },
+   "stated_before": "2026-11-07; no ballast mound or timber extent measured at Streedagh",
+   "credence": 0.4,
+   "falsifier": "a measured ballast mound outside the 5-95% range, or lower-hull timber extent implying a seabed mass outside it; or an issue list showing cargo beyond 60 t",
+   "check": {
+    "may_loading_over_laden": {
+     "median": 0.872,
+     "p05": 0.727,
+     "p95": 1.037
+    },
+    "draught_laden_m": {
+     "median": 4.95,
+     "p05": 4.11,
+     "p95": 5.78
+    },
+    "draught_wreck_day_m": {
+     "median": 3.26,
+     "p05": 2.61,
+     "p95": 4.01
+    }
+   }
+  },
+  {
+   "ref": "inf:pipeline.streedagh/mass-budget/layer2-juliana",
+   "subject": [
+    "src:ship-juliana"
+   ],
+   "observable": "mass of Juliana's wreck on the seabed (ballast mound, lower hull, metal, guns and cargo), once the site is surveyed; and her ballast mound alone",
+   "expected": {
+    "to_seabed": {
+     "value": 324.15,
+     "interval": [
+      246.12,
+      424.32
+     ],
+     "unit": "t",
+     "basis": "derived"
+    },
+    "to_strand": {
+     "value": 223.63,
+     "interval": [
+      150.1,
+      328.25
+     ],
+     "unit": "t",
+     "basis": "derived"
+    },
+    "on_board_excl_people": {
+     "value": 551.68,
+     "interval": [
+      432.51,
+      702.32
+     ],
+     "unit": "t",
+     "basis": "derived"
+    },
+    "ballast": {
+     "value": 85.99,
+     "interval": [
+      52.85,
+      119.13
+     ],
+     "unit": "t",
+     "basis": "derived"
+    },
+    "hull_timber_aboard": {
+     "value": 307.35,
+     "interval": [
+      217.45,
+      428.25
+     ],
+     "unit": "t",
+     "basis": "derived"
+    },
+    "ferrous_to_seabed": {
+     "value": 44.22,
+     "interval": [
+      30.38,
+      62.65
+     ],
+     "unit": "t",
+     "basis": "derived"
+    }
+   },
+   "stated_before": "2026-11-07; no ballast mound or timber extent measured at Streedagh",
+   "credence": 0.4,
+   "falsifier": "a measured ballast mound outside the 5-95% range, or lower-hull timber extent implying a seabed mass outside it; or an issue list showing cargo beyond 60 t",
+   "check": {
+    "may_loading_over_laden": {
+     "median": 0.956,
+     "p05": 0.798,
+     "p95": 1.143
+    },
+    "draught_laden_m": {
+     "median": 5.12,
+     "p05": 4.25,
+     "p95": 5.99
+    },
+    "draught_wreck_day_m": {
+     "median": 3.5,
+     "p05": 2.83,
+     "p95": 4.28
+    }
+   }
+  },
+  {
+   "ref": "inf:pipeline.streedagh/mass-budget/layer2-vison",
+   "subject": [
+    "src:ship-vison"
+   ],
+   "observable": "mass of Vison's wreck on the seabed (ballast mound, lower hull, metal, guns and cargo), once the site is surveyed; and her ballast mound alone",
+   "expected": {
+    "to_seabed": {
+     "value": 222.11,
+     "interval": [
+      166.02,
+      291.56
+     ],
+     "unit": "t",
+     "basis": "derived"
+    },
+    "to_strand": {
+     "value": 154.91,
+     "interval": [
+      104.26,
+      225.87
+     ],
+     "unit": "t",
+     "basis": "derived"
+    },
+    "on_board_excl_people": {
+     "value": 379.64,
+     "interval": [
+      295.63,
+      483.13
+     ],
+     "unit": "t",
+     "basis": "derived"
+    },
+    "ballast": {
+     "value": 56.63,
+     "interval": [
+      34.81,
+      78.46
+     ],
+     "unit": "t",
+     "basis": "derived"
+    },
+    "hull_timber_aboard": {
+     "value": 209.43,
+     "interval": [
+      148.65,
+      290.62
+     ],
+     "unit": "t",
+     "basis": "derived"
+    },
+    "ferrous_to_seabed": {
+     "value": 30.37,
+     "interval": [
+      19.66,
+      44.11
+     ],
+     "unit": "t",
+     "basis": "derived"
+    }
+   },
+   "stated_before": "2026-11-07; no ballast mound or timber extent measured at Streedagh",
+   "credence": 0.4,
+   "falsifier": "a measured ballast mound outside the 5-95% range, or lower-hull timber extent implying a seabed mass outside it; or an issue list showing cargo beyond 60 t",
+   "check": {
+    "may_loading_over_laden": {
+     "median": 1.004,
+     "p05": 0.837,
+     "p95": 1.204
+    },
+    "draught_laden_m": {
+     "median": 4.6,
+     "p05": 3.82,
+     "p95": 5.37
+    },
+    "draught_wreck_day_m": {
+     "median": 3.19,
+     "p05": 2.56,
+     "p95": 3.92
+    }
+   }
+  },
+  {
+   "ref": "inf:pipeline.streedagh/mass-budget/combined",
+   "subject": [
+    "src:ship-juliana",
+    "src:ship-lavia",
+    "src:ship-vison"
+   ],
+   "observable": "mass on the seabed from all three Streedagh wrecks, once Sites 1-3 are surveyed",
+   "expected": {
+    "to_seabed": {
+     "value": 826.36,
+     "interval": [
+      622.56,
+      1084.28
+     ],
+     "unit": "t",
+     "basis": "derived"
+    },
+    "to_strand": {
+     "value": 576.63,
+     "interval": [
+      387.7,
+      845.08
+     ],
+     "unit": "t",
+     "basis": "derived"
+    },
+    "on_board_excl_people": {
+     "value": 1413.23,
+     "interval": [
+      1103.89,
+      1800.64
+     ],
+     "unit": "t",
+     "basis": "derived"
+    },
+    "ballast": {
+     "value": 215.47,
+     "interval": [
+      132.44,
+      298.52
+     ],
+     "unit": "t",
+     "basis": "derived"
+    },
+    "ferrous_to_seabed": {
+     "value": 113.11,
+     "interval": [
+      75.76,
+      161.96
+     ],
+     "unit": "t",
+     "basis": "derived"
+    },
+    "ordnance_and_munitions": {
+     "value": 69.38,
+     "interval": [
+      53.77,
+      93.25
+     ],
+     "unit": "t",
+     "basis": "derived"
+    },
+    "durable_guns_shot_lead": {
+     "value": 63.23,
+     "interval": [
+      47.65,
+      87.11
+     ],
+     "unit": "t",
+     "basis": "derived"
+    }
+   },
+   "stated_before": "2026-11-07; no whole-site inventory exists",
+   "credence": 0.4,
+   "falsifier": "a whole-site survey placing the combined seabed mass outside the 5-95% range",
+   "check": null
+  },
+  {
+   "ref": "inf:pipeline.streedagh/magnetometry/resurvey-prediction",
+   "subject": [
+    "sig:pipeline.streedagh/mag-SITE1",
+    "sig:pipeline.streedagh/mag-SITE2",
+    "sig:pipeline.streedagh/mag-SITE3"
+   ],
+   "observable": "ferrous mass at Sites 1-3 from a calibrated re-survey (total-field amplitudes, sensor altitude, positions in frm:ITM) inverted for magnetic moment",
+   "expected": {
+    "combined": {
+     "value": 113.11,
+     "interval": [
+      75.76,
+      161.96
+     ],
+     "unit": "t",
+     "basis": "derived"
+    },
+    "per_site": {
+     "SITE1": 44.22,
+     "SITE2": 30.37,
+     "SITE3": 38.5
+    }
+   },
+   "stated_before": "2026-11-07; no calibrated magnetometer data held",
+   "credence": 0.4,
+   "falsifier": "a calibrated re-survey giving combined ferrous mass outside the 5-95% range",
+   "check": null
+  }
+ ],
+ "findings": [
+  {
+   "ref": "inf:pipeline.streedagh/ratings/formula-martin",
+   "by": "martin",
+   "finding": null,
+   "alternatives": [
+    "machos = (manga / 2) x puntal x esloria x (1 - 0.03) / 8; toneladas = machos x 1.2",
+    "the 1590 Casa de Contratacion formula, with 5% deducted instead of 3%"
+   ],
+   "residue": "Regazona and San Nicolas do not fit; 'sloppy arithmetic' or 'more fundamental errors'",
+   "credence": {
+    "absent": {
+     "reason": "reported_claim"
+    }
+   }
+  },
+  {
+   "ref": "inf:pipeline.streedagh/ratings/formula-check",
+   "by": "budget",
+   "finding": null,
+   "alternatives": [
+    "the 'three percent' formula is the 1588 rule"
+   ],
+   "residue": {
+    "Nave de Marino Prodanela (San Nicolas)": "+9.3%",
+    "Nave de Stefano Deoliste (Anunciada)": "+0.1%",
+    "Santa Maria de Vison": "+2.4%",
+    "El Galeon del Duque (Florencia)": "+3.9%",
+    "La Regazona Beneziana": "+19.7%",
+    "La Lavia Beneziana": "+0.1%"
+   },
+   "credence": 0.85
+  },
+  {
+   "ref": "inf:pipeline.streedagh/magnetometry/spread-vs-mass",
+   "by": "budget",
+   "finding": "the spreads differ in area by a factor of 130, the expected ferrous masses by a factor of 1.5: spread area does not measure iron mass",
+   "alternatives": [
+    "dispersal: material spread along the shore by different amounts at each site",
+    "survey: different coverage, line spacing or sensor height at each site",
+    "grouping: Site 2 lies 20 m from Site 3, so they may be one scatter split in two, or Site 3 may hold material from more than one ship",
+    "burial: sand cover differs (greatest at Site 3)"
+   ],
+   "residue": "no amplitudes, sensor heights or georeferenced plot are held; the earlier claim that the spreads 'match' a modelled ~76 t of iron (site assessment v1) had no basis and is withdrawn",
+   "credence": 0.8
+  }
+ ],
+ "cuellar": {
+  "passages": 125,
+  "events": 31
+ }
+}

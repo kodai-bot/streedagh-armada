@@ -88,7 +88,7 @@ AGENTS = [
     ("sicily-clerks", "organisation", "officials who listed the guns of the five ships from Sicily, Sept 1587 (unnamed)"),
     ("v1", "software", "build_site_record.py"),
     ("budget", "software", "seabed_mass_budget.py"),
-    ("estimator", "software", "attribution_estimator.py v0.2"),
+    ("estimator", "software", "attribution_estimator.py v0.2 (superseded; posteriors frozen in data/juliana_attribution_v3.csv)"),
 ]
 A = {k: f"agt:{P}/{k}" for k, _, _ in AGENTS}
 
@@ -137,7 +137,6 @@ def build():
     muster = read("lisbon_muster_1588.csv")
     obs = {r["id"]: r for r in read("site1_observations.csv")}
     rels = read("site1_relations.csv")
-    attributed = json.load(open(os.path.join(DATA, "streedagh_store_v3_attributed.json"), encoding="utf-8"))
 
     B = {"agents": agents(),
          "frames": [{**hdr("frame"), "frame_id": "frm:ITM", "crs": "EPSG:2157", "geographic": False,
@@ -200,12 +199,9 @@ def build():
 
     # ── guns ─────────────────────────────────────────────────────────────────
     gun_sig = {}
-    latest = {}
-    for s in attributed["signals"]:
-        if s.get("entity_attributions"):
-            jul = [a for a in s["entity_attributions"] if a["entity_signal_id"] == "streedagh:ENT-JUL"]
-            if jul:
-                latest[s["uari"]] = jul[-1]["confidence"]
+    # posteriors from attribution_estimator.py v0.2 (now in superseded/v3_store/), frozen 2026-11-08; the
+    # guns have no positions, so the estimator's placeholder spatial term never touched these values
+    latest = {f"streedagh:SIG-{r['id']}": float(r["p_juliana"]) for r in read("juliana_attribution_v3.csv")}
     for g in guns:
         gid, year = g["id"], g["recovered"]
         a = f"acq:{P}/recovery-{year}"
@@ -744,6 +740,26 @@ def reconstruction_inputs(B):
                                   "implying a seabed mass outside it; or an issue list showing cargo beyond 60 t",
                      "basis": [dims, f"inf:{P}/mass-budget/layer1-{ship.lower()}", f"det:{P}/muster-1588#row-{code}",
                                f"inf:{P}/ratings/formula-check"]})
+
+    # the three ships together: drawn jointly (shared priors), so not the sum of the per-ship medians
+    c1, c2 = budget["ships"]["Combined"], L2["ships"]["Combined"]
+    tc = lambda d, k, layer: {"semantic": "phys.mass", "value": d[k]["median"], "interval": [d[k]["p05"], d[k]["p95"]],
+                              "unit": "t", "basis": {"kind": "derived", "recipe": {"name": f"seabed_mass_budget.{layer}",
+                                                                                  "version": "0.1", "params": {"seed": budget["seed"], "draws": budget["draws"]}}}}
+    infs.append({**hdr("inference"), "inference_id": f"inf:{P}/mass-budget/combined", "agent": A["budget"],
+                 "kind": "prediction", "subject": list(BUDGET_SRC.values()),
+                 "statement": {"observable": "mass on the seabed from all three Streedagh wrecks, once Sites 1-3 are surveyed",
+                               "expected": {"to_seabed": tc(c2, "to_seabed", "layer2"), "to_strand": tc(c2, "to_strand", "layer2"),
+                                            "on_board_excl_people": tc(c2, "on_board_excl_people", "layer2"),
+                                            "ballast": tc(c2, "ballast", "layer2"), "ferrous_to_seabed": tc(c2, "ferrous_to_seabed", "layer2"),
+                                            "ordnance_and_munitions": tc(c1, "total", "layer1"),
+                                            "durable_guns_shot_lead": tc(c1, "durable", "layer1")},
+                               "stated_before": "2026-11-07; no whole-site inventory exists",
+                               "note": "median with 5-95% interval; every prior shared by the three ships, so the combined "
+                                       "interval does not narrow by averaging; people excluded (war grave)"},
+                 "credence": 0.4,
+                 "falsifier": "a whole-site survey placing the combined seabed mass outside the 5-95% range",
+                 "basis": [f"inf:{P}/mass-budget/layer{n}-{s.lower()}" for n in (1, 2) for s in BUDGET_SRC]})
 
 
 # ── the 1985 magnetometer search (Birch & McElvogue 1999) ────────────────────

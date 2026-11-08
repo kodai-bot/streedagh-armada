@@ -1,6 +1,6 @@
 # Streedagh as a site signal record: design pass
 
-Status: design, 2026-11-07. Built so far: guns, muster, Site 1 relations, Cuéllar's 125, reconstruction inputs, mass budget layers 1-2 and magnetometry (see `site_record/`). Target schema: `Signal_Pipeline/signal_schema` (v0.4
+Status: design, 2026-11-07. Built so far: guns, muster, Site 1 relations, Cuéllar's 125, reconstruction inputs, mass budget layers 1-2, magnetometry and the view exporter (see `site_record/`). Target schema: `Signal_Pipeline/signal_schema` (v0.4
 prototype); its `docs/DESIGN.md` is the canonical design and this note only maps Streedagh onto it.
 Related: `robotics/senchas/docs/geometry.md` (the building-scale geometry), the legacy
 `LIFECYCLE_VECTOR_DESIGN.md` (March 2026) and `SignalObjectV3_Design.md` (from this site, July 2026).
@@ -95,8 +95,9 @@ inference's falsifier fires.
    (`juliana_guns.csv`, `lisbon_muster_1588.csv`, later `cuellar_signal_map.csv`) and writes schema
    records. The CSVs stay the place to edit.
 2. Validate every record with `signal-schema validate`.
-3. A **view exporter** that writes today's v3-style store and GeoJSON from the records, so
-   `attribution_estimator.py`, `web_data.py` and the pages keep working unchanged.
+3. A **view exporter**, built 2026-11-08 as `site_record/export_view.py`: page data straight from
+   the records. The v3 store was retired instead of rebuilt, because the only thing the pages and
+   the estimator took from it was placeholder coordinates.
 4. Order of content: guns + muster (small, real, already sourced) → observed relations → Cuéllar's
    125 → reconstruction inputs → magnetometry.
 

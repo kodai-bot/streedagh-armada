@@ -1,0 +1,10 @@
+id,p_juliana,basis,committed_at
+G-SEVERO,0.9994,"bayesian component accumulation [casting_provenance, ship_programme:St_Severo, individual_id]; diagnostic-group correlation control",2026-11-07T00:43:25.531145Z
+G-MATRONA,0.9995,"bayesian component accumulation [casting_provenance, ship_programme:St_Matrona, individual_id]; diagnostic-group correlation control",2026-11-07T00:43:25.531266Z
+G-GBATTISTA,0.9895,"bayesian component accumulation [casting_provenance, ship_programme:St_Giovanni_Battista]; diagnostic-group correlation control",2026-11-07T00:43:25.531376Z
+G-ILARIA,0.9994,"bayesian component accumulation [casting_provenance, ship_programme:St_Ilaria, individual_id]; diagnostic-group correlation control",2026-11-07T00:43:25.531399Z
+G-SEBASTIANO,0.9994,"bayesian component accumulation [casting_provenance, ship_programme:St_Sebastiano, individual_id]; diagnostic-group correlation control",2026-11-07T00:43:25.531418Z
+G-ROCCO,0.9895,"bayesian component accumulation [casting_provenance, ship_programme:St_Rocco]; diagnostic-group correlation control",2026-11-07T00:43:25.531434Z
+G-GIOVANNI,0.9994,"bayesian component accumulation [casting_provenance, ship_programme:St_Giovanni, individual_id]; diagnostic-group correlation control",2026-11-07T00:43:25.531454Z
+G-PETRIERE-F,0.7102,bayesian component accumulation [casting_provenance]; diagnostic-group correlation control,2026-11-07T00:43:25.531469Z
+G-PETRIERE-2,0.7102,bayesian component accumulation [casting_provenance]; diagnostic-group correlation control,2026-11-07T00:43:25.531485Z

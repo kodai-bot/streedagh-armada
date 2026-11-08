@@ -12,3 +12,9 @@ Kept as the record of how the work got here. **Do not quote these numbers.**
 - `drafts/`: the v1 site assessment (entity-first; replaced by the signal-field v2) and the
   WordPress-block draft of the "What Streedagh still holds" article (the clean version is in
   `1_signal_field/`).
+- `v3_store/`: the SignalObject v3 store (`streedagh_store_v3*.json`), `attribution_estimator.py`,
+  `juliana_guns.py`, the GeoJSON view and the v0.1-to-v3 reconciliation note. Retired 2026-11-08 for
+  the site record (`1_signal_field/site_record/`). The store's wreck coordinates were placeholders;
+  the guns' attribution posteriors did not use them and are kept in
+  `1_signal_field/data/juliana_attribution_v3.csv`. The scripts' paths now point at files that have
+  moved, so they no longer run as they stand.

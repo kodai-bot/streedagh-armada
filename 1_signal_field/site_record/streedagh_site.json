@@ -95,7 +95,7 @@
   {
    "agent_id": "agt:pipeline.streedagh/estimator",
    "kind": "software",
-   "name": "attribution_estimator.py v0.2",
+   "name": "attribution_estimator.py v0.2 (superseded; posteriors frozen in data/juliana_attribution_v3.csv)",
    "version": "0.1"
   }
  ],
@@ -16565,6 +16565,174 @@
     "inf:pipeline.streedagh/mass-budget/layer1-vison",
     "det:pipeline.streedagh/muster-1588#row-76",
     "inf:pipeline.streedagh/ratings/formula-check"
+   ]
+  },
+  {
+   "schema": "signal_schema/inference/0.3.0",
+   "inference_id": "inf:pipeline.streedagh/mass-budget/combined",
+   "agent": "agt:pipeline.streedagh/budget",
+   "kind": "prediction",
+   "subject": [
+    "src:ship-juliana",
+    "src:ship-lavia",
+    "src:ship-vison"
+   ],
+   "statement": {
+    "observable": "mass on the seabed from all three Streedagh wrecks, once Sites 1-3 are surveyed",
+    "expected": {
+     "to_seabed": {
+      "semantic": "phys.mass",
+      "value": 826.36,
+      "interval": [
+       622.56,
+       1084.28
+      ],
+      "unit": "t",
+      "basis": {
+       "kind": "derived",
+       "recipe": {
+        "name": "seabed_mass_budget.layer2",
+        "version": "0.1",
+        "params": {
+         "seed": 20261107,
+         "draws": 100000
+        }
+       }
+      }
+     },
+     "to_strand": {
+      "semantic": "phys.mass",
+      "value": 576.63,
+      "interval": [
+       387.7,
+       845.08
+      ],
+      "unit": "t",
+      "basis": {
+       "kind": "derived",
+       "recipe": {
+        "name": "seabed_mass_budget.layer2",
+        "version": "0.1",
+        "params": {
+         "seed": 20261107,
+         "draws": 100000
+        }
+       }
+      }
+     },
+     "on_board_excl_people": {
+      "semantic": "phys.mass",
+      "value": 1413.23,
+      "interval": [
+       1103.89,
+       1800.64
+      ],
+      "unit": "t",
+      "basis": {
+       "kind": "derived",
+       "recipe": {
+        "name": "seabed_mass_budget.layer2",
+        "version": "0.1",
+        "params": {
+         "seed": 20261107,
+         "draws": 100000
+        }
+       }
+      }
+     },
+     "ballast": {
+      "semantic": "phys.mass",
+      "value": 215.47,
+      "interval": [
+       132.44,
+       298.52
+      ],
+      "unit": "t",
+      "basis": {
+       "kind": "derived",
+       "recipe": {
+        "name": "seabed_mass_budget.layer2",
+        "version": "0.1",
+        "params": {
+         "seed": 20261107,
+         "draws": 100000
+        }
+       }
+      }
+     },
+     "ferrous_to_seabed": {
+      "semantic": "phys.mass",
+      "value": 113.11,
+      "interval": [
+       75.76,
+       161.96
+      ],
+      "unit": "t",
+      "basis": {
+       "kind": "derived",
+       "recipe": {
+        "name": "seabed_mass_budget.layer2",
+        "version": "0.1",
+        "params": {
+         "seed": 20261107,
+         "draws": 100000
+        }
+       }
+      }
+     },
+     "ordnance_and_munitions": {
+      "semantic": "phys.mass",
+      "value": 69.38,
+      "interval": [
+       53.77,
+       93.25
+      ],
+      "unit": "t",
+      "basis": {
+       "kind": "derived",
+       "recipe": {
+        "name": "seabed_mass_budget.layer1",
+        "version": "0.1",
+        "params": {
+         "seed": 20261107,
+         "draws": 100000
+        }
+       }
+      }
+     },
+     "durable_guns_shot_lead": {
+      "semantic": "phys.mass",
+      "value": 63.23,
+      "interval": [
+       47.65,
+       87.11
+      ],
+      "unit": "t",
+      "basis": {
+       "kind": "derived",
+       "recipe": {
+        "name": "seabed_mass_budget.layer1",
+        "version": "0.1",
+        "params": {
+         "seed": 20261107,
+         "draws": 100000
+        }
+       }
+      }
+     }
+    },
+    "stated_before": "2026-11-07; no whole-site inventory exists",
+    "note": "median with 5-95% interval; every prior shared by the three ships, so the combined interval does not narrow by averaging; people excluded (war grave)"
+   },
+   "credence": 0.4,
+   "falsifier": "a whole-site survey placing the combined seabed mass outside the 5-95% range",
+   "basis": [
+    "inf:pipeline.streedagh/mass-budget/layer1-juliana",
+    "inf:pipeline.streedagh/mass-budget/layer1-lavia",
+    "inf:pipeline.streedagh/mass-budget/layer1-vison",
+    "inf:pipeline.streedagh/mass-budget/layer2-juliana",
+    "inf:pipeline.streedagh/mass-budget/layer2-lavia",
+    "inf:pipeline.streedagh/mass-budget/layer2-vison"
    ]
   },
   {
