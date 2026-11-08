@@ -1,7 +1,7 @@
 # Armada / Streedagh. Python with numpy + astropy: python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
 PYTHON ?= .venv/bin/python
 
-.PHONY: worldline sun_moon capacity mass museum site view all
+.PHONY: worldline sun_moon capacity mass museum targets site view all
 
 all: worldline sun_moon capacity
 
@@ -24,6 +24,10 @@ mass:
 # Museum and conservation capacity brackets (1/8 ... all surviving), from the budget's draws
 museum:
 	$(PYTHON) 1_signal_field/museum_capacity.py
+
+# Excavation targets: seabed mass per site against exposure to motion (expected loss per decade)
+targets:
+	$(PYTHON) 1_signal_field/excavation_targets.py
 
 # The site record: one signal_schema v0.4 bundle (JSON), validated by the schema's CLI
 SCHEMA ?= ../../Signal_Pipeline/signal_schema

@@ -32,6 +32,10 @@
   [La Belle freeze-dryer](https://stories.tamu.edu/?p=288715),
   [QAR lab report](https://qaronline.org/20050708-qar-lab-report/open),
   [National Museum of Ireland](https://museum.ie/ga-IE/Collections-Research/Conservation/Conservation-Projects/Armada-Cannons-and-Gun-Carriage-Wheel).
+- `excavation_targets.py` (`make targets`): each site's seabed mass (from the budget, by Birch &
+  McElvogue's site headings) against its exposure to motion (`data/exposure_record.csv`: the dated
+  exposure episodes and site descriptions), as expected loss per decade with no intervention, by class.
+  Report: `output/excavation_targets_report.md`.
 - `site_record/` (`make site`): **the site record**, one bundle in the new signal schema
   (`Signal_Pipeline/signal_schema`, v0.4), built by `build_site_record.py` from the CSVs in `data/` and
   validated by the schema's own CLI. Design: `SITE_SIGNAL_DESIGN.md`. So far: the recovered guns, the

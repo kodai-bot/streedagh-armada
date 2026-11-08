@@ -175,6 +175,7 @@ PRIORS_FE = {
 
 
 RAW = {}                                 # combined draws of the last layer2() run
+RAW_SHIP = {}                            # per-ship draws of the last layer2() run
 
 
 def layer2(rng, muster, l1, stone_frac):
@@ -229,6 +230,7 @@ def layer2(rng, muster, l1, stone_frac):
             if not k.startswith("draught"):
                 tot[k] = tot.get(k, 0) + v
         raw[ship] = seabed
+        RAW_SHIP[ship] = parts
     out["Combined"] = {k: q(v) for k, v in tot.items()}
     RAW.clear()
     RAW.update(tot)                      # the combined draws, for museum_capacity.py
