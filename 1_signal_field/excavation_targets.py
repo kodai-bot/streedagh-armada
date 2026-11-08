@@ -39,6 +39,7 @@ ATTR_P = {"SITE1": 0.80, "SITE2": 0.65, "SITE3": 0.72}       # site record, from
 GUNS = {"Juliana": 32, "Vison": 18, "Lavia": 25}
 RAISED = {"Juliana": 12, "Vison": 0, "Lavia": 0}             # 1985 and 2015 recoveries, all attributed to Site 1
 YEARS = 10
+CURVE_YEARS = [0, 5, 10, 15, 20, 25, 30, 40, 50]   # for the page: cumulative loss if nothing is done, same rates
 
 RATE = {   # exposure events per year (an event = enough sand removed to uncover wreck material)
     "SITE1": ((0.05, 0.30), "two dated exposure episodes in about 40 years of watching (1985, 2015) give 0.05; "
@@ -89,6 +90,9 @@ def main():
         lost_guns = guns_left * lost_frac["guns"]
         total_lost = sum(lost_t.values())
         score[site] = total_lost
+        k = {c: rate[site] * sh["exposed_share"] * loss[c] for c in LOSS}     # per-year loss intensity by class
+        curve = [{"years": t, "all_classes_t": q(sum(mass[c] * (1 - np.exp(-t * k[c])) for c in CLASSES)),
+                  "timber_t": q(mass["timber"] * (1 - np.exp(-t * k["timber"])))} for t in CURVE_YEARS]
         sites[site] = {
             "ship_by_heading": ship, "attribution_p": ATTR_P[site],
             "on_seabed_t": {c: q(m) for c, m in mass.items()} | {"all": q(S[ship]["to_seabed"])},
@@ -97,6 +101,7 @@ def main():
             "lost_per_decade_t": {c: q(v) for c, v in lost_t.items()} | {"all_classes": q(total_lost)},
             "lost_per_decade_share": {c: q(v * 100) for c, v in lost_frac.items()},
             "guns_damaged_or_lost_per_decade": q(lost_guns, 2),
+            "loss_curve": curve,
         }
     stack = np.vstack([score[s] for s in SITE_SHIP])
     order = np.argsort(-stack, axis=0)
