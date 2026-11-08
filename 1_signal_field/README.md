@@ -48,7 +48,9 @@
   magnetometer spreads (`data/magnetometry_1985.csv`) with the test of spread area against iron mass.
   Positions are absent until recovery coordinates are found.
 - `site_record/export_view.py` (`make view`): the site record as page data, `output/site_view.json`.
-  Every value is copied from a record and carries that record's id; positions are null.
+  Every value is copied from a record and carries that record's id; positions are null. Also
+  `output/signal_chains.json`: every trace followed from the act of looking, through its carriers,
+  to its inferences, for the [From trace to ship](https://kodai-bot.github.io/streedagh/signals/) page.
 - `finds_study_plan.md`: the plan for the guns, rudder and anchor.
 - `SPEC_astro_tide_module.md`: spec for the astronomical and tidal module. The sun/moon half is now
   implemented in `../3_cuellar_worldline/sun_moon.py`; tides are not done yet.
