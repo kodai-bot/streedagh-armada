@@ -150,6 +150,10 @@ def main():
                    "counts": view["record"]["counts"], "chains": ch},
                   f, ensure_ascii=False, separators=(",", ":"))
     print(f"{CH}: {os.path.getsize(CH):,} bytes; {len(ch)} chains")
+    SP = os.path.join(os.path.dirname(OUT), "seabed_page.json")
+    with open(SP, "w", encoding="utf-8") as f:
+        json.dump(seabed_page(R), f, ensure_ascii=False, separators=(",", ":"))
+    print(f"{SP}: {os.path.getsize(SP):,} bytes")
     print(f"{OUT}: {os.path.getsize(OUT):,} bytes; {len(sites)} sites, {len(guns)} guns, "
           f"{len(predictions)} predictions, {len(findings)} findings")
 
@@ -318,6 +322,66 @@ def chains(R):
             lab = next((i for i in subj.get(d["detection_id"], []) if i["kind"] == "label"), None)
             out.append(chain(sid, "cuellar", f"{sid}: {lab['statement'].get('gloss', '') if lab else ''}", d))
     return out
+
+
+# ── "What went down, and what it would take": the budget, the museum brackets, the predictions ──
+# The headline figures and predictions come from the site record; the component breakdown and the
+# capacity brackets from the budget's own outputs (mass_budget.json, museum_capacity.json), which
+# the record's predictions cite. Each component says how it is known and where its anchor comes from.
+COMPONENTS = [
+    ("hull_timber", "hull_timber", "timber_to_seabed", "Hull timber", "inferred",
+     "hull-form model on the measured dimensions (AGS GA 223/28, Martin App. 11 p. 411); the hull taken as 35-55% of the laden displacement (an assumption)"),
+    ("ballast", "ballast", "ballast", "Ballast", "inferred",
+     "scaled from the Santa María de la Rosa's excavated mound, about 90 t (Martin p. 150)"),
+    ("cargo", "cargo", "cargo_to_seabed", "Siege cargo", "inferred",
+     "the Valencera's May 1588 issue list as the comparison (Martin pp. 115-116); Juliana's five carriage wheels"),
+    ("rig", "rig", "rig_to_seabed", "Masts, yards, sails, cordage", "hypothesis",
+     "8-15% of the hull (an assumption)"),
+    ("ordnance", "ordnance_munitions", "ordnance_munitions", "Guns, shot, powder, lead, match", "derived",
+     "the Lisbon muster's counts (Martin App. 4) times the libra and quintal (Martin p. ix); Juliana's weight-marked guns"),
+    ("metal", "metal_fittings_anchors", "metal_fittings_anchors", "Iron fittings and anchors", "inferred",
+     "iron-fastened Levant hulls (Martin p. 217); 4-10% of the hull"),
+    ("stores", "stores", "stores_to_seabed", "Food, wine, water, casks", "inferred",
+     "Medina Sidonia's ration scale (Martin pp. 349-350); days left by 25 September assumed"),
+    ("arms", "personal_arms", "personal_arms", "Soldiers' arms", "hypothesis",
+     "6-14 kg per soldier mustered (an assumption)"),
+]
+
+
+def seabed_page(R):
+    out_dir = os.path.dirname(OUT)
+    B = json.load(open(os.path.join(out_dir, "mass_budget.json"), encoding="utf-8"))
+    M = json.load(open(os.path.join(out_dir, "museum_capacity.json"), encoding="utf-8"))
+    inf = {i["inference_id"]: i for i in R["inferences"]}
+    L2 = B["layer2"]["ships"]
+    ships = {}
+    for ship in ("Combined", "Juliana", "Lavia", "Vison"):
+        d = L2[ship]
+        comps = [{"key": k, "label": lab, "tag": tag, "basis": basis, "aboard": d[a], "to_seabed": d[sb]}
+                 for k, a, sb, lab, tag, basis in COMPONENTS]
+        ships[ship] = {"aboard": d["on_board_excl_people"], "to_seabed": d["to_seabed"], "to_strand": d["to_strand"],
+                       "people_t": d["people"], "ferrous": d["ferrous_to_seabed"], "components": comps,
+                       "ref": f"inf:{P}/mass-budget/" + ("combined" if ship == "Combined" else f"layer2-{ship.lower()}")}
+        if ship != "Combined":
+            ships[ship] |= {"men": d["men"], "dims_m": d["dims_m_median"], "draught_laden": d["draught_full_m"],
+                            "draught_day": d["draught_day_m"], "may_over_laden": d["may_over_full"],
+                            "measured": ship != "Juliana"}
+    preds = [{"ref": i["inference_id"], "title": i["inference_id"].split("/", 1)[1],
+              "observable": i["statement"]["observable"],
+              "expected": (i["statement"]["expected"] if isinstance(i["statement"]["expected"], str) else
+                           {k: qv(v) if isinstance(v, dict) and "semantic" in v else v
+                            for k, v in i["statement"]["expected"].items()}),
+              "stated_before": i["statement"].get("stated_before"), "credence": i["credence"],
+              "falsifier": i["falsifier"], "by": agent_name(R, i["agent"])}
+             for i in R["inferences"] if i["kind"] == "prediction"]
+    return {"generated": dt.date.today().isoformat(),
+            "record_sha256": hashlib.sha256(open(RECORD, "rb").read()).hexdigest(),
+            "headline": inf[f"inf:{P}/mass-budget/combined"]["statement"]["expected"],
+            "ships": ships, "drivers": dict(list(B["layer2"]["drivers"].items())[:6]),
+            "museum": {"brackets": M["brackets"], "guns_documented": M["guns_documented"],
+                       "guns_already_raised": M["guns_already_raised"], "la_belle_chamber_m3": M["la_belle_chamber_m3"],
+                       "priors": M["priors"]},
+            "predictions": preds}
 
 
 if __name__ == "__main__":

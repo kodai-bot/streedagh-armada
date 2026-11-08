@@ -218,7 +218,8 @@ def layer2(rng, muster, l1, stone_frac):
                  "cargo": cargo, "hull_timber": timber, "rig": rig, "metal_fittings_anchors": metal,
                  "to_seabed": seabed, "to_strand": on_board - seabed, "displacement_may": may,
                  "ferrous_to_seabed": ferrous, "timber_to_seabed": timber * P["timber_retained"],
-                 "cargo_to_seabed": cargo * P["cargo_retained"], "guns_to_seabed": g, "lead_to_seabed": l1[ship]["lead"]}
+                 "cargo_to_seabed": cargo * P["cargo_retained"], "guns_to_seabed": g, "lead_to_seabed": l1[ship]["lead"],
+                 "rig_to_seabed": rig * P["rig_retained"], "stores_to_seabed": stores * P["stores_retained"]}
         out[ship] = {k: q(v) for k, v in parts.items()}
         out[ship]["may_over_full"] = {k: round(v / 1000, 3) for k, v in q(may / full * 1000).items()}
         out[ship]["overladen_frac"] = round(float((day > full).mean()), 3)
